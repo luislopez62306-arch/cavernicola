@@ -8,343 +8,339 @@
 <meta name="theme-color" content="#4a0f17">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Forum&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Forum&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --burdeos:#4a0f17;
-    --burdeos-2:#5e1520;
+    --burdeos-2:#62161f;
     --vino:#7a1c28;
     --cereza:#9b1b2a;
-    --azul:#b5c8dd;
-    --azul-2:#a3b9d2;
-    --crema:#f4ecdb;
-    --crema-2:#ebe0c8;
-    --chocolate:#3a221c;
+    --azul:#b6c9de;
+    --azul-2:#9fb6d0;
+    --azul-osc:#7d97b8;
+    --crema:#f5eddc;
+    --crema-2:#e9dcc2;
+    --oro:#c8a96a;
+    --oro-2:#e8d4a2;
     --texto:#4a1a1f;
-    --plata:#b9b2a6;
     --script:'Great Vibes', cursive;
     --display:'Forum', serif;
+    --serif:'Cormorant Garamond', serif;
     --sans:'Raleway', system-ui, sans-serif;
+    --grano:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:var(--sans);
-    color:var(--texto);
-    background:#2b2420;
+    font-family:var(--sans);color:var(--texto);
+    background:#241d19;
     background-image:
-      radial-gradient(ellipse at 20% 10%, rgba(210,190,160,.35), transparent 55%),
-      radial-gradient(ellipse at 80% 60%, rgba(160,130,90,.3), transparent 50%),
-      radial-gradient(ellipse at 30% 90%, rgba(120,95,70,.4), transparent 60%),
-      linear-gradient(160deg,#3b322b,#1f1915);
-    background-attachment:fixed;
-    min-height:100vh;
+      radial-gradient(ellipse at 15% 8%, rgba(222,200,165,.45), transparent 50%),
+      radial-gradient(ellipse at 85% 45%, rgba(170,140,100,.35), transparent 45%),
+      radial-gradient(ellipse at 25% 85%, rgba(140,110,80,.4), transparent 55%),
+      linear-gradient(160deg,#3d342d,#1c1612);
+    background-attachment:fixed;min-height:100vh;
     -webkit-font-smoothing:antialiased;
   }
   body.locked{overflow:hidden}
-  .invitacion{
-    max-width:440px;margin:0 auto;
-    box-shadow:0 0 60px rgba(0,0,0,.55);
-    overflow:hidden;
-    position:relative;
+  .invitacion{max-width:440px;margin:0 auto;box-shadow:0 0 0 1px rgba(255,255,255,.05),0 0 80px rgba(0,0,0,.6);overflow:hidden;position:relative}
+  .invitacion::after{ /* textura de papel en toda la invitación */
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:40;
+    background:var(--grano);opacity:.22;mix-blend-mode:multiply;
   }
-  section{position:relative;overflow:hidden}
+  section{position:relative}
   .script{font-family:var(--script);font-weight:400}
-  .display{font-family:var(--display)}
 
-  /* ---------- Aparición al hacer scroll ---------- */
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s ease, transform 1s ease}
+  /* Bordes festoneados entre secciones: el color de la sección anterior "muerde" la siguiente */
+  .feston{--prev:var(--burdeos)}
+  .feston::before{
+    content:"";position:absolute;left:0;right:0;top:-1px;height:13px;z-index:6;
+    background:radial-gradient(circle at 50% 0, var(--prev) 10px, transparent 10.6px) 0 0/22px 13px repeat-x;
+  }
+
+  /* Ornamento dorado divisor */
+  .divisor{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px auto;color:var(--oro)}
+  .divisor::before,.divisor::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,currentColor)}
+  .divisor::after{transform:scaleX(-1)}
+  .divisor svg{width:18px;height:18px}
+
+  /* Aparición */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.2,.7,.2,1)}
   .reveal.visible{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.15s}.reveal.d2{transition-delay:.3s}.reveal.d3{transition-delay:.45s}
+  .reveal.zoom{transform:scale(.92)}
+  .reveal.zoom.visible{transform:none}
+  .d1{transition-delay:.15s!important}.d2{transition-delay:.3s!important}.d3{transition-delay:.45s!important}
 
-  /* ---------- Sobre de apertura ---------- */
+  /* =============== SOBRE =============== */
   #sobre{
-    position:fixed;inset:0;z-index:100;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
-    background:var(--burdeos);
-    background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 28px, transparent 28px 56px);
-    cursor:pointer;
-    transition:opacity 1.1s ease, visibility 1.1s;
+    position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+    background:
+      radial-gradient(ellipse at 50% 40%, var(--burdeos-2), var(--burdeos) 60%, #2c070d);
+    cursor:pointer;transition:opacity 1s ease .2s, visibility 1.2s;
   }
+  #sobre::after{content:"";position:absolute;inset:0;background:var(--grano);opacity:.25;mix-blend-mode:multiply;pointer-events:none}
   #sobre.abierto{opacity:0;visibility:hidden}
-  #sobre .tapa{
-    width:min(78vw,320px);aspect-ratio:1.45;position:relative;
-    background:var(--crema);border-radius:6px;
-    box-shadow:0 20px 50px rgba(0,0,0,.45);
-    perspective:900px;
+  #sobre .para{font-family:var(--serif);font-style:italic;color:var(--oro-2);font-size:20px;opacity:.9;text-align:center;line-height:1.2}
+  #sobre .para b{display:block;font-family:var(--display);font-style:normal;font-weight:400;letter-spacing:.35em;font-size:11px;color:var(--crema);opacity:.7;margin-bottom:6px}
+  .escena{width:min(80vw,330px);aspect-ratio:1.5;position:relative;perspective:1000px;transition:transform 1s ease}
+  #sobre.abriendo .escena{transform:translateY(60px)}
+  .escena .fondo{position:absolute;inset:0;background:#d9cbad;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+  .escena .carta{
+    position:absolute;left:6%;right:6%;top:6%;height:88%;z-index:1;
+    background:var(--crema);border-radius:4px;text-align:center;padding-top:16%;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    opacity:0;transition:transform 1.1s cubic-bezier(.3,.8,.3,1) .55s, opacity .3s .4s;
   }
-  #sobre .tapa::before{ /* solapa */
-    content:"";position:absolute;left:0;right:0;top:0;height:58%;
-    background:var(--crema-2);
-    clip-path:polygon(0 0,100% 0,50% 100%);
-    transform-origin:top;transition:transform .9s ease;
-    filter:drop-shadow(0 3px 3px rgba(0,0,0,.15));
-    z-index:2;
+  #sobre.abriendo .carta{opacity:1}
+  .escena .carta::before{content:"";position:absolute;inset:6px;border:1px solid var(--oro);border-radius:2px}
+  .escena .carta .script{font-size:34px;color:var(--vino);line-height:1}
+  .escena .carta small{display:block;font-family:var(--display);letter-spacing:.3em;font-size:11px;margin-top:8px;color:var(--texto)}
+  #sobre.abriendo .carta{transform:translateY(-62%)}
+  .escena .bolsillo{
+    position:absolute;inset:0;z-index:2;border-radius:6px;
+    background:
+      linear-gradient(to top right, #e9dcc0 49.6%, transparent 50%) left bottom/50.2% 100% no-repeat,
+      linear-gradient(to top left, #e3d5b7 49.6%, transparent 50%) right bottom/50.2% 100% no-repeat,
+      #dccdae;
+    filter:drop-shadow(0 -2px 3px rgba(0,0,0,.12));
   }
-  #sobre.abriendo .tapa::before{transform:rotateX(180deg)}
-  #sobre .sello{
-    position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);z-index:3;
-    width:74px;height:74px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, #c0303f, var(--cereza) 45%, #5a0c15);
-    box-shadow:0 4px 10px rgba(0,0,0,.35), inset 0 0 0 5px rgba(0,0,0,.12);
-    display:grid;place-items:center;color:#f3d9d9;
-    font-family:var(--script);font-size:30px;
-    transition:transform .6s ease, opacity .6s;
-    animation:latido 2.2s ease-in-out infinite;
+  .escena .bolsillo::after{content:"";position:absolute;inset:0;border-radius:6px;background:var(--grano);opacity:.2;mix-blend-mode:multiply}
+  .escena .solapa{
+    position:absolute;left:0;right:0;top:0;height:60%;z-index:3;transform-origin:top;
+    transition:transform .8s cubic-bezier(.5,0,.3,1), z-index 0s .4s;
   }
-  #sobre.abriendo .sello{opacity:0;transform:translate(-50%,-50%) scale(.4)}
-  @keyframes latido{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
-  #sobre p{
-    color:var(--crema);font-family:var(--display);letter-spacing:.25em;text-transform:uppercase;font-size:13px;
-    animation:parpadeo 2s ease-in-out infinite;
+  .escena .solapa::before{
+    content:"";position:absolute;inset:0;background:linear-gradient(#efe4cb,#e2d3b3);
+    clip-path:polygon(0 0,100% 0,50% 100%);filter:drop-shadow(0 4px 4px rgba(0,0,0,.2));
   }
-  #sobre h1{color:var(--crema);font-family:var(--script);font-size:44px;font-weight:400}
-  @keyframes parpadeo{50%{opacity:.45}}
+  #sobre.abriendo .solapa{transform:rotateX(180deg);z-index:0}
+  .sello{
+    position:absolute;left:50%;top:100%;width:76px;height:76px;transform:translate(-50%,-55%);z-index:4;
+    transition:opacity .4s;
+  }
+  .sello svg{width:100%;height:100%;filter:drop-shadow(0 5px 6px rgba(0,0,0,.4));animation:latido 2.4s ease-in-out infinite}
+  #sobre.abriendo .sello{opacity:0}
+  @keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  #sobre .toca{color:var(--crema);font-family:var(--display);letter-spacing:.35em;text-transform:uppercase;font-size:12px;animation:parpadeo 2s ease-in-out infinite;transition:opacity .4s}
+  #sobre.abriendo .toca{opacity:0}
+  @keyframes parpadeo{50%{opacity:.4}}
 
-  /* ---------- 1. Portada ---------- */
-  .portada{
-    background:var(--burdeos);
-    padding:26px 22px 30px;
-  }
+  /* =============== PORTADA =============== */
+  .portada{background:var(--burdeos);padding:24px 20px 36px;overflow:hidden}
   .portada .marco{
-    border:1px solid rgba(220,140,140,.35);
-    padding:44px 10px 40px;
-    text-align:center;position:relative;
-    background:radial-gradient(ellipse at 50% 45%, var(--burdeos-2), var(--burdeos) 70%);
+    border:1px solid rgba(200,169,106,.45);padding:46px 8px 36px;text-align:center;position:relative;
+    background:radial-gradient(ellipse at 50% 42%, #6c1a25, var(--burdeos) 68%);
   }
-  .portada .marco::after{content:"";position:absolute;inset:6px;border:1px solid rgba(220,140,140,.15);pointer-events:none}
-  .portada h2{
-    font-family:var(--display);color:var(--crema);font-weight:400;
-    font-size:30px;letter-spacing:.04em;text-transform:lowercase;
-  }
-  .corazon-wrap{position:relative;width:100%;max-width:340px;margin:18px auto 8px;aspect-ratio:1/0.92}
-  .corazon-wrap svg.encaje{width:100%;height:100%;display:block;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4));animation:flotar 6s ease-in-out infinite}
-  @keyframes flotar{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-6px) rotate(1deg)}}
-  .corazon-wrap .nombres{
-    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding-bottom:16%;
-    font-family:var(--script);color:var(--vino);line-height:.9;
-    animation:flotar 6s ease-in-out infinite;
-  }
-  .nombres .n1{font-size:clamp(40px,12vw,54px);transform:rotate(-8deg)}
-  .nombres .y{font-size:30px;margin:2px 0}
-  .nombres .n2{font-size:clamp(40px,12vw,54px);transform:rotate(-8deg)}
-  .dalia{position:absolute;pointer-events:none}
-  .dalia.izq{left:-38px;top:24%;width:120px;opacity:.95}
-  .dalia.der{right:-30px;bottom:6%;width:140px}
-  .fecha-portada{
-    font-family:var(--display);color:var(--crema);font-size:34px;letter-spacing:.06em;margin-top:8px;
-    display:flex;justify-content:center;align-items:center;gap:10px;
-  }
-  .fecha-portada span.bar{width:2px;height:30px;background:var(--crema);opacity:.85}
-  .flecha{margin-top:22px;color:var(--crema);opacity:.6;font-size:12px;letter-spacing:.3em;text-transform:uppercase}
-  .flecha i{display:block;margin:8px auto 0;width:12px;height:12px;border-right:1px solid;border-bottom:1px solid;transform:rotate(45deg);animation:baja 1.6s infinite}
+  .portada .marco::after{content:"";position:absolute;inset:6px;border:1px solid rgba(200,169,106,.2);pointer-events:none}
+  .esquina{position:absolute;width:44px;height:44px;color:var(--oro);opacity:.8}
+  .esquina.tl{top:-1px;left:-1px}.esquina.tr{top:-1px;right:-1px;transform:scaleX(-1)}
+  .esquina.bl{bottom:-1px;left:-1px;transform:scaleY(-1)}.esquina.br{bottom:-1px;right:-1px;transform:scale(-1)}
+  .portada h2{font-family:var(--display);color:var(--crema);font-weight:400;font-size:32px;letter-spacing:.05em}
+  .portada .sub{font-family:var(--serif);font-style:italic;color:var(--oro-2);font-size:17px;opacity:.85;margin-top:2px}
+  .corazon-wrap{position:relative;width:100%;max-width:350px;margin:14px auto 6px;aspect-ratio:1/0.93}
+  .corazon-wrap .flota{position:absolute;inset:0;animation:flotar 7s ease-in-out infinite}
+  .corazon-wrap svg.encaje{width:100%;height:100%;display:block;filter:drop-shadow(0 12px 18px rgba(0,0,0,.45))}
+  @keyframes flotar{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-7px) rotate(1.2deg)}}
+  .nombres{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:15%;font-family:var(--script);color:var(--vino);line-height:.85}
+  .nombres .n{font-size:clamp(42px,12.5vw,56px);transform:rotate(-7deg);text-shadow:0 1px 0 rgba(255,255,255,.8)}
+  .nombres .y{font-size:30px;margin:4px 0 2px;color:var(--azul-osc)}
+  .dalia{position:absolute;pointer-events:none;filter:drop-shadow(0 6px 8px rgba(0,0,0,.45))}
+  .dalia.izq{left:-44px;top:22%;width:120px;animation:girolento 40s linear infinite}
+  .dalia.der{right:-36px;bottom:4%;width:150px;animation:girolento 50s linear infinite reverse}
+  .dalia.mini{left:22%;bottom:-2%;width:58px;animation:girolento 30s linear infinite}
+  @keyframes girolento{to{transform:rotate(360deg)}}
+  .fecha-portada{font-family:var(--display);color:var(--crema);font-size:36px;letter-spacing:.08em;margin-top:6px;display:flex;justify-content:center;align-items:center;gap:12px}
+  .fecha-portada .bar{width:1.5px;height:32px;background:var(--oro)}
+  .flecha{margin-top:22px;color:var(--oro-2);opacity:.65;font-size:11px;letter-spacing:.35em;text-transform:uppercase}
+  .flecha i{display:block;margin:8px auto 0;width:11px;height:11px;border-right:1px solid;border-bottom:1px solid;transform:rotate(45deg);animation:baja 1.6s infinite}
   @keyframes baja{50%{transform:translateY(6px) rotate(45deg)}}
+  .petalo{position:absolute;top:-30px;z-index:3;pointer-events:none;border-radius:80% 0 80% 0;opacity:.85;animation:cae linear infinite}
+  @keyframes cae{
+    0%{transform:translate(0,0) rotate(0)}
+    50%{transform:translate(30px,320px) rotate(200deg)}
+    100%{transform:translate(-20px,680px) rotate(420deg);opacity:0}
+  }
 
-  /* ---------- Rayas ---------- */
-  .rayas-burdeos{background:repeating-linear-gradient(90deg,var(--burdeos) 0 22px,var(--azul) 22px 44px)}
+  /* =============== Rayas =============== */
+  .rayas-burdeos{background:repeating-linear-gradient(90deg,#561520 0 22px,var(--azul) 22px 44px)}
   .rayas-crema{background:repeating-linear-gradient(90deg,var(--crema) 0 26px,var(--azul) 26px 52px)}
+  .rayas-burdeos::after,.rayas-crema::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(0,0,0,.12),transparent 18%,transparent 82%,rgba(0,0,0,.12))}
 
-  /* ---------- 2. Queridos invitados ---------- */
-  .invitados{padding:56px 22px}
-  .tarjeta-encaje{
-    position:relative;padding:16px;
-    background:#fffdf7;
-    --hueco:radial-gradient(circle, transparent 3px, #fffdf7 3.5px);
-    border-radius:4px;
-    box-shadow:0 12px 30px rgba(0,0,0,.3);
-  }
-  .tarjeta-encaje::before{ /* borde de encaje */
-    content:"";position:absolute;inset:0;border-radius:4px;
-    background:
-      radial-gradient(circle at 50% 50%, #d9d2c4 1.4px, transparent 1.8px) 0 0/9px 9px,
-      #f8f4ea;
-  }
-  .tarjeta-encaje .interior{
-    position:relative;background:var(--crema);padding:28px 20px 22px;text-align:center;
-    border:1px solid #d8ccb2;
-    border-radius:14px;
-    box-shadow:inset 0 0 0 5px var(--crema), inset 0 0 0 6px #d8ccb2;
-  }
-  .tarjeta-encaje h3{font-family:var(--script);font-size:42px;color:var(--vino);font-weight:400;line-height:1.1}
-  .tarjeta-encaje p.texto{font-size:14px;line-height:1.6;margin:10px auto 18px;max-width:300px}
-  .mes{font-family:var(--display);font-size:24px;letter-spacing:.15em;color:var(--texto);border-bottom:1px solid #cdbfa2;display:inline-block;padding:0 24px 4px;margin-bottom:10px}
-  .calendario{display:grid;grid-template-columns:repeat(7,1fr);gap:4px 2px;max-width:290px;margin:0 auto;font-size:13px}
-  .calendario .dia-sem{font-size:10px;letter-spacing:.06em;color:#9a7f78;text-transform:uppercase;padding-bottom:4px}
-  .calendario .d{padding:5px 0;position:relative}
+  /* =============== INVITADOS =============== */
+  .invitados{padding:62px 20px}
+  .tarjeta{position:relative;z-index:1;filter:drop-shadow(0 16px 24px rgba(0,0,0,.35))}
+  .tarjeta svg.borde{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .tarjeta .interior{position:relative;margin:24px;padding:30px 18px 24px;text-align:center;background:radial-gradient(ellipse at 50% 30%,#fbf6ea,var(--crema) 70%,#efe3c9)}
+  .tarjeta .interior::before{content:"";position:absolute;inset:6px;border:1px solid rgba(200,169,106,.6);pointer-events:none}
+  .tarjeta h3{font-family:var(--script);font-size:44px;color:var(--vino);font-weight:400;line-height:1.05}
+  .tarjeta p.texto{font-family:var(--serif);font-size:17px;line-height:1.45;margin:8px auto 4px;max-width:300px}
+  .mes{font-family:var(--display);font-size:24px;letter-spacing:.3em;color:var(--texto);margin:2px 0 10px}
+  .calendario{display:grid;grid-template-columns:repeat(7,1fr);gap:3px 0;max-width:280px;margin:0 auto;font-size:13px;font-family:var(--sans)}
+  .calendario .dia-sem{font-size:10px;letter-spacing:.08em;color:#a08a7e;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid rgba(200,169,106,.5);margin-bottom:4px}
+  .calendario .d{padding:6px 0;position:relative;isolation:isolate}
+  .calendario .d.pasa{color:#b9a79a}
   .calendario .d.boda{color:#fff;font-weight:600;cursor:pointer}
-  .calendario .d.boda::before{
-    content:"";position:absolute;left:50%;top:50%;width:30px;height:28px;z-index:-1;
-    transform:translate(-50%,-52%);
-    background:var(--azul-2);
-    clip-path:path("M15 27 C 5 19 0 13 0 8 C 0 3 4 0 8 0 C 11 0 13.5 2 15 4.5 C 16.5 2 19 0 22 0 C 26 0 30 3 30 8 C 30 13 25 19 15 27 Z");
-    animation:pulso 1.6s ease-in-out infinite;
-  }
-  .calendario .d.boda{isolation:isolate}
+  .calendario .d.boda svg{position:absolute;left:50%;top:50%;width:34px;height:32px;transform:translate(-50%,-52%);z-index:-1;animation:pulso 1.6s ease-in-out infinite;color:var(--azul-osc)}
   @keyframes pulso{50%{transform:translate(-50%,-52%) scale(1.18)}}
-  .save{font-family:var(--script);font-size:36px;color:var(--vino);margin-top:14px;word-spacing:.3em}
+  .save{font-family:var(--script);font-size:40px;color:var(--vino);margin-top:10px;word-spacing:.25em}
+  .cuenta{display:flex;justify-content:center;gap:8px;margin-top:14px}
+  .cuenta div{width:62px;padding:9px 0 7px;border-radius:40px 40px 6px 6px;background:var(--vino);color:var(--crema);box-shadow:inset 0 0 0 3px var(--vino),inset 0 0 0 4px rgba(232,212,162,.6)}
+  .cuenta b{display:block;font-family:var(--display);font-size:25px;font-weight:400;line-height:1.1}
+  .cuenta small{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
 
-  .cuenta{display:flex;justify-content:center;gap:10px;margin-top:16px}
-  .cuenta div{min-width:58px;padding:8px 4px;border:1px solid #cdbfa2;border-radius:8px;background:#fbf6ea}
-  .cuenta b{display:block;font-family:var(--display);font-size:24px;font-weight:400;color:var(--vino)}
-  .cuenta small{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#8a6f68}
-
-  /* ---------- 3. Plan del día ---------- */
-  .plan{background:var(--burdeos);padding:46px 26px 50px;color:var(--crema)}
+  /* =============== PLAN =============== */
+  .plan{background:var(--burdeos);padding:56px 22px 54px;color:var(--crema);overflow:hidden}
+  .plan::before{--prev:var(--azul)}
   .plan .titulo{text-align:center;margin-bottom:26px}
-  .plan .titulo .display{font-size:60px;letter-spacing:.06em;line-height:.9;display:block}
-  .plan .titulo .script{font-size:44px;line-height:.6;display:block;margin-top:-4px}
-  .hito{display:flex;align-items:center;gap:12px;margin:8px 0;cursor:pointer}
-  .hito.der{flex-direction:row-reverse;text-align:right}
-  .hito .hora{font-family:var(--display);font-size:46px;line-height:1}
-  .hito .que{font-size:16px;letter-spacing:.02em;margin-top:2px}
-  .hito .info{flex:1}
-  .hito .detalle{font-size:12.5px;opacity:0;max-height:0;overflow:hidden;transition:all .5s ease;line-height:1.5;color:#e8cfcf}
-  .hito.abierto .detalle{opacity:.9;max-height:80px;margin-top:6px}
-  .hito .copa{width:96px;flex-shrink:0;transition:transform .4s}
-  .hito:hover .copa,.hito.abierto .copa{transform:rotate(-6deg) scale(1.05)}
-  .hito .mini{width:96px;flex-shrink:0;display:grid;place-items:center}
-  .hito .mini span{display:block;width:8px;height:8px;border-radius:50%;background:var(--crema);opacity:.5}
-  .plan .pista{text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;margin-top:20px}
+  .plan .titulo .grande{font-family:var(--display);font-size:68px;letter-spacing:.08em;line-height:.9;display:block}
+  .plan .titulo .script{font-size:48px;line-height:.5;display:block;color:var(--oro-2)}
+  .linea{position:relative}
+  .linea::before{content:"";position:absolute;left:50%;top:10px;bottom:10px;width:1px;background:linear-gradient(transparent,var(--oro) 8%,var(--oro) 92%,transparent);opacity:.6}
+  .hito{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:132px;cursor:pointer}
+  .hito::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:11px;transform:translate(-50%,-50%) rotate(45deg);background:var(--burdeos);border:1px solid var(--oro);transition:background .4s}
+  .hito.abierto::after{background:var(--oro)}
+  .hito .info{padding-right:22px;text-align:right}
+  .hito .icono{padding-left:22px;display:flex;justify-content:flex-start}
+  .hito.inv .info{order:2;padding:0 0 0 22px;text-align:left}
+  .hito.inv .icono{order:1;padding:0 22px 0 0;justify-content:flex-end}
+  .hito .hora{font-family:var(--display);font-size:44px;line-height:1}
+  .hito .que{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--oro-2);margin-top:2px}
+  .hito .detalle{font-size:12px;opacity:0;max-height:0;overflow:hidden;transition:all .5s ease;line-height:1.5;color:#ecd6d6}
+  .hito.abierto .detalle{opacity:.9;max-height:90px;margin-top:6px}
+  .hito .icono svg{width:92px;height:110px;transition:transform .5s cubic-bezier(.3,1.6,.5,1);filter:drop-shadow(0 8px 10px rgba(0,0,0,.4))}
+  .hito:hover .icono svg,.hito.abierto .icono svg{transform:rotate(-7deg) scale(1.08)}
+  .plan .pista{text-align:center;font-size:10.5px;letter-spacing:.25em;text-transform:uppercase;opacity:.5;margin-top:22px}
 
-  /* ---------- 4. Lugar ---------- */
-  .lugar{background:var(--azul);padding:46px 26px 50px}
+  /* =============== LUGAR =============== */
+  .lugar{background:var(--azul);padding:64px 22px 30px;overflow:hidden}
+  .lugar.feston::before{--prev:var(--burdeos)}
+  .cartela{position:relative;margin:0 auto;max-width:310px;padding:62px 0 54px}
+  .cartela .cresta{position:absolute;left:50%;transform:translateX(-50%);width:200px;z-index:3;filter:drop-shadow(0 4px 4px rgba(0,0,0,.3))}
+  .cartela .cresta.arriba{top:6px}
+  .cartela .cresta.abajo{bottom:4px;transform:translateX(-50%) scaleY(-1);width:150px}
   .marco-plata{
-    position:relative;margin:0 auto;max-width:300px;
-    padding:20px;
-    border-radius:140px 140px 40px 40px / 90px 90px 40px 40px;
-    background:
-      linear-gradient(145deg,#efece6,#9d958a 30%,#e8e4dc 50%,#8a8277 70%,#d9d4cb);
-    box-shadow:0 14px 30px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.4);
+    position:relative;padding:18px;
+    border-radius:150px 150px 46px 46px / 100px 100px 46px 46px;
+    background:linear-gradient(145deg,#f3f1ec,#9a9286 22%,#ecE8e0 42%,#867e72 62%,#dcd7ce 80%,#a39b8f);
+    box-shadow:0 18px 36px rgba(0,0,0,.35), inset 0 0 0 1.5px rgba(255,255,255,.55), inset 0 0 0 4px rgba(90,80,70,.25);
   }
-  .marco-plata::before{
-    content:"";position:absolute;inset:8px;border-radius:inherit;
-    border:2px dotted rgba(90,80,70,.55);pointer-events:none;
+  .marco-plata::before{ /* perlas */
+    content:"";position:absolute;inset:7px;border-radius:inherit;
+    border:4px dotted rgba(255,255,255,.85);filter:drop-shadow(0 1px 0 rgba(60,50,40,.6));pointer-events:none;
   }
   .marco-plata .lienzo{
-    position:relative;border-radius:120px 120px 26px 26px / 76px 76px 26px 26px;
-    background:radial-gradient(ellipse at 50% 30%, #d8cdb9, #b9ab92);
-    padding:36px 18px 28px;text-align:center;
-    box-shadow:inset 0 0 0 3px #8b8174, inset 0 0 22px rgba(60,40,20,.35);
+    position:relative;border-radius:132px 132px 30px 30px / 84px 84px 30px 30px;
+    background:radial-gradient(ellipse at 50% 28%, #e3d9c6, #c2b49b 75%, #a8987d);
+    padding:42px 18px 30px;text-align:center;
+    box-shadow:inset 0 0 0 2px #7f7568, inset 0 0 0 5px #d8d1c4, inset 0 0 0 6px #7f7568, inset 0 0 28px rgba(60,40,20,.35);
   }
-  .lugar h3{font-family:var(--script);font-size:54px;font-weight:400;color:var(--texto);line-height:1}
-  .lugar .bloque{margin-top:14px;font-size:13.5px;line-height:1.55}
-  .lugar .bloque b{font-weight:600}
+  .marco-plata .lienzo::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--grano);opacity:.35;mix-blend-mode:multiply;pointer-events:none}
+  .lugar h3{font-family:var(--script);font-size:58px;font-weight:400;color:var(--texto);line-height:1}
+  .lugar .bloque{margin-top:12px;font-family:var(--serif);font-size:17px;line-height:1.35;position:relative;z-index:1}
+  .lugar .bloque b{font-family:var(--sans);font-size:13.5px;font-weight:600;display:block;margin-top:4px}
   .btn{
-    display:inline-block;margin-top:12px;padding:9px 22px;border:1px solid var(--texto);border-radius:8px;
-    font-family:var(--sans);font-size:12px;font-weight:600;color:var(--texto);text-decoration:none;
-    background:rgba(255,255,255,.12);cursor:pointer;transition:all .3s;
+    display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:8px 20px;border:1px solid var(--texto);border-radius:30px;
+    font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--texto);text-decoration:none;
+    background:rgba(255,255,255,.18);transition:all .3s;
   }
+  .btn svg{width:13px;height:13px}
   .btn:hover{background:var(--texto);color:var(--crema)}
-  .lugar .sep{width:40%;height:1px;background:rgba(74,26,31,.35);margin:18px auto 4px}
-  .cerezas{position:absolute;right:-6px;top:-8px;width:110px;transform-origin:top right;animation:balanceo 4s ease-in-out infinite}
-  @keyframes balanceo{50%{transform:rotate(5deg)}}
+  .lugar .sep{color:var(--texto);opacity:.5;margin:16px auto 4px}
+  .lugar .sep::before,.lugar .sep::after{width:50px}
+  .cerezas{position:absolute;right:-14px;top:-4px;width:130px;transform-origin:95% 0;animation:balanceo 5s ease-in-out infinite;z-index:4}
+  @keyframes balanceo{50%{transform:rotate(6deg)}}
 
-  /* ---------- 5. Código de vestimenta ---------- */
-  .vestimenta{background:var(--azul);padding:20px 26px 50px;text-align:center}
-  .vestimenta h3{font-family:var(--display);font-size:52px;font-weight:400;color:var(--texto);line-height:1}
-  .vestimenta p{font-size:14px;line-height:1.55;margin:14px auto 24px;max-width:320px}
-  .paleta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:320px;margin:0 auto;box-shadow:0 8px 20px rgba(0,0,0,.2)}
-  .paleta button{aspect-ratio:1;border:0;cursor:pointer;position:relative;transition:transform .3s, z-index 0s .3s;z-index:0}
-  .paleta button:hover,.paleta button.activo{transform:scale(1.12);z-index:2;transition:transform .3s;box-shadow:0 6px 16px rgba(0,0,0,.35)}
-  .paleta button span{
-    position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);white-space:nowrap;
-    font-size:11px;background:var(--texto);color:var(--crema);padding:3px 8px;border-radius:4px;
-    opacity:0;pointer-events:none;transition:opacity .3s;
-  }
-  .paleta button.activo span{opacity:1}
-  .sw1{background:linear-gradient(135deg,#a9c3e3,#9cb7da)}
-  .sw2{background:repeating-linear-gradient(45deg,#3a221c 0 6px,#4d2e25 6px 12px),#3a221c}
-  .sw3{background:#5c1a22}
-  .sw4{background:radial-gradient(circle at 30% 30%,#fff 0 20%,transparent 40%),radial-gradient(circle at 70% 70%,#e6dcc6 0 25%,transparent 50%),#f1e9d6}
-  .sw5{background:radial-gradient(circle,#6f8fb5 0 30%,#3e5677 45%,transparent 48%) 0 0/16px 16px,#8aa5c8}
-  .sw6{background:#3b2622}
-  .sw7{background:radial-gradient(circle,#8a1222 0 30%,#3b0610 46%,transparent 50%) 0 0/18px 18px,#2a0509}
-  .sw8{background:#e7dccb}
+  /* =============== DRESS CODE =============== */
+  .vestimenta{background:var(--azul);padding:34px 22px 50px;text-align:center}
+  .vestimenta h3{font-family:var(--display);font-size:56px;font-weight:400;color:var(--texto);line-height:1;letter-spacing:.02em}
+  .vestimenta p{font-family:var(--serif);font-size:18px;line-height:1.4;margin:12px auto 24px;max-width:330px}
+  .paleta{display:grid;grid-template-columns:repeat(4,1fr);max-width:330px;margin:0 auto;padding:8px;background:#fff;box-shadow:0 12px 26px rgba(40,50,70,.3);transform:rotate(-1.5deg)}
+  .paleta button{aspect-ratio:1;border:0;cursor:pointer;position:relative;transition:transform .35s cubic-bezier(.3,1.6,.5,1);z-index:0;outline-offset:2px}
+  .paleta button::after{content:"";position:absolute;inset:0;background:var(--grano);opacity:.35;mix-blend-mode:overlay}
+  .paleta button:hover,.paleta button.activo{transform:scale(1.15) rotate(2deg);z-index:2;box-shadow:0 8px 18px rgba(0,0,0,.35)}
+  .nombre-color{height:26px;margin-top:18px;font-family:var(--script);font-size:30px;color:var(--vino);transition:opacity .3s}
+  .sw1{background:radial-gradient(ellipse at 30% 30%,#c9daef,#a3bde0)}
+  .sw2{background:repeating-linear-gradient(45deg,#3a221c 0 5px,#55332a 5px 7px,#3a221c 7px 12px),#3a221c}
+  .sw3{background:radial-gradient(ellipse at 70% 30%,#7a2430,#4f1219)}
+  .sw4{background:radial-gradient(circle at 25% 30%,#fff 0 18%,transparent 34%),radial-gradient(circle at 70% 65%,#fffaf0 0 22%,transparent 40%),radial-gradient(circle at 60% 20%,#e9dfca 0 10%,transparent 24%),#efe5cf}
+  .sw5{background:radial-gradient(circle at 40% 40%,#9db2cf 0 12%,#4d6587 30%,#2e4261 46%,transparent 49%) 0 0/17px 17px,#7d97bb}
+  .sw6{background:linear-gradient(160deg,#4a302a,#2e1c18)}
+  .sw7{background:radial-gradient(circle at 38% 35%,#e0485a 0 8%,#8a1222 24%,#3b0610 44%,transparent 48%) 0 0/19px 19px,#24040a}
+  .sw8{background:radial-gradient(ellipse at 40% 30%,#f2e9da,#ddd0b9)}
 
-  /* ---------- 6. Foto ---------- */
-  .foto{background:var(--azul);padding:10px 26px 46px;text-align:center}
-  .marco-oval{position:relative;width:230px;margin:0 auto;padding-top:52px}
-  .marco-oval .lazo{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px}
-  .marco-oval .oval{
-    position:relative;width:230px;height:290px;border-radius:50%;
-    background:radial-gradient(circle at 30% 25%,#c2394a,#8e1626 40%,#4e0a14 80%);
-    padding:18px;
-    box-shadow:0 14px 30px rgba(0,0,0,.4), inset 0 0 0 4px rgba(0,0,0,.2);
+  /* =============== FOTO =============== */
+  .foto{background:var(--azul);padding:0 22px 52px;text-align:center}
+  .marco-oval{position:relative;width:250px;height:340px;margin:0 auto}
+  .marco-oval svg.orla{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 14px 18px rgba(0,0,0,.4))}
+  .marco-oval .img{
+    position:absolute;left:39px;top:84px;width:172px;height:226px;border-radius:50%;overflow:hidden;
+    background:linear-gradient(180deg,#f6c08a 0%,#eda38c 32%,#b7c6dc 72%,#829dc1 100%);display:grid;place-items:center;
   }
-  .marco-oval .oval::before{
-    content:"";position:absolute;inset:6px;border-radius:50%;
-    border:3px dotted rgba(255,190,190,.45);
-  }
-  .marco-oval .oval .img{
-    width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;
-    box-shadow:inset 0 0 0 3px #5a0c15, 0 0 0 2px #c2394a;
-    background:linear-gradient(180deg,#f2b680 0%,#e9a38a 30%,#a9bcd6 75%,#7e98bd 100%);
-    display:grid;place-items:center;
-  }
-  .marco-oval .oval .img img{width:100%;height:100%;object-fit:cover;display:block}
-  .marco-oval .oval .img .ph{font-family:var(--script);color:#fff;font-size:56px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+  .marco-oval .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .marco-oval .img .ph{font-family:var(--script);color:#fff;font-size:54px;text-shadow:0 2px 12px rgba(80,20,30,.35)}
+  .foto .pie{font-family:var(--serif);font-style:italic;font-size:18px;margin-top:26px;color:var(--texto)}
 
-  /* ---------- Cinta save the date ---------- */
-  .cinta{background:var(--azul);border-top:1px solid rgba(74,26,31,.25);border-bottom:1px solid rgba(74,26,31,.25);overflow:hidden;white-space:nowrap;padding:9px 0}
-  .cinta div{display:inline-block;animation:desliza 22s linear infinite;font-family:var(--display);font-size:14px;letter-spacing:.08em;color:var(--texto)}
+  .cinta{background:var(--azul);border-top:1px solid rgba(74,26,31,.3);border-bottom:1px solid rgba(74,26,31,.3);overflow:hidden;white-space:nowrap;padding:10px 0;position:relative;z-index:2}
+  .cinta div{display:inline-block;animation:desliza 26s linear infinite;font-family:var(--display);font-size:14px;letter-spacing:.1em;color:var(--texto)}
   @keyframes desliza{to{transform:translateX(-50%)}}
 
-  /* ---------- 7. Detalles ---------- */
-  .detalles{padding:44px 26px 50px}
-  .detalles .caja{background:rgba(244,236,219,.86);padding:24px 22px;border-radius:4px;backdrop-filter:blur(2px)}
-  .detalles h3{font-family:var(--script);font-size:58px;font-weight:400;color:var(--texto);text-align:center;line-height:1;margin-bottom:10px}
-  .detalles h4{font-family:var(--script);font-size:38px;font-weight:400;color:var(--texto);margin-top:14px;line-height:1.1}
-  .detalles p{font-size:14px;line-height:1.6}
+  /* =============== DETALLES =============== */
+  .detalles{padding:54px 22px 60px}
+  .detalles .caja{position:relative;background:rgba(248,242,229,.92);padding:30px 24px 30px;box-shadow:0 14px 30px rgba(0,0,0,.18)}
+  .detalles .caja::before{content:"";position:absolute;inset:7px;border:1px solid var(--oro);pointer-events:none}
+  .detalles h3{font-family:var(--script);font-size:62px;font-weight:400;color:var(--texto);text-align:center;line-height:1}
+  .item{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;margin-top:16px}
+  .item svg{width:44px;height:44px;color:var(--vino)}
+  .detalles h4{font-family:var(--script);font-size:38px;font-weight:400;color:var(--texto);line-height:1}
+  .detalles p{font-family:var(--serif);font-size:17px;line-height:1.4;margin-top:4px}
 
-  /* ---------- 8. Confirmación ---------- */
-  .rsvp{background:var(--burdeos);padding:50px 26px 56px;color:var(--crema);text-align:center}
-  .rsvp h3{font-family:var(--script);font-size:54px;font-weight:400;line-height:1}
-  .rsvp > p{font-size:14px;line-height:1.6;margin:12px auto 24px;max-width:320px;opacity:.9}
-  .rsvp form{text-align:left;display:grid;gap:14px}
-  .rsvp label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.8;display:block;margin-bottom:6px}
+  /* =============== RSVP =============== */
+  .rsvp{background:var(--burdeos);padding:62px 22px 56px;color:var(--crema);text-align:center}
+  .rsvp.feston::before{--prev:var(--azul)}
+  .rsvp h3{font-family:var(--script);font-size:52px;font-weight:400;line-height:1}
+  .rsvp > p{font-family:var(--serif);font-size:18px;line-height:1.4;margin:8px auto 24px;max-width:320px;opacity:.9}
+  .rsvp > p b{color:var(--oro-2);font-weight:500}
+  .rsvp form{text-align:left;display:grid;gap:18px;padding:26px 20px;border:1px solid rgba(200,169,106,.4);position:relative;background:rgba(255,255,255,.03)}
+  .rsvp form::before{content:"";position:absolute;inset:5px;border:1px solid rgba(200,169,106,.18);pointer-events:none}
+  .rsvp label.l{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro-2);display:block;margin-bottom:6px}
   .rsvp input[type=text],.rsvp textarea,.rsvp select{
-    width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(244,236,219,.35);
-    background:rgba(255,255,255,.06);color:var(--crema);font-family:var(--sans);font-size:15px;
+    width:100%;padding:10px 2px;border:0;border-bottom:1px solid rgba(245,237,220,.35);border-radius:0;
+    background:transparent;color:var(--crema);font-family:var(--serif);font-size:19px;-webkit-appearance:none;appearance:none;
   }
+  .rsvp select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e8d4a2' fill='none'/%3E%3C/svg%3E") right 4px center no-repeat}
   .rsvp select option{color:#222}
-  .rsvp input::placeholder,.rsvp textarea::placeholder{color:rgba(244,236,219,.45)}
-  .rsvp input:focus,.rsvp textarea:focus,.rsvp select:focus{outline:none;border-color:var(--azul)}
+  .rsvp textarea{resize:vertical}
+  .rsvp input::placeholder,.rsvp textarea::placeholder{color:rgba(245,237,220,.38);font-style:italic}
+  .rsvp input:focus,.rsvp textarea:focus,.rsvp select:focus{outline:none;border-bottom-color:var(--oro)}
   .opciones{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .opciones input{position:absolute;opacity:0}
-  .opciones label{
-    margin:0;padding:12px 8px;text-align:center;border:1px solid rgba(244,236,219,.35);border-radius:8px;cursor:pointer;
-    font-size:12.5px;letter-spacing:.04em;text-transform:none;opacity:1;transition:all .3s;
-  }
-  .opciones input:checked + label{background:var(--azul);color:var(--burdeos);border-color:var(--azul);font-weight:600}
-  .opciones input:focus-visible + label{outline:2px solid var(--azul);outline-offset:2px}
+  .opciones label{padding:12px 6px;text-align:center;border:1px solid rgba(245,237,220,.35);border-radius:40px;cursor:pointer;font-size:13px;transition:all .3s}
+  .opciones input:checked + label{background:var(--crema);color:var(--burdeos);border-color:var(--crema);font-weight:600}
+  .opciones input:focus-visible + label{outline:2px solid var(--oro);outline-offset:2px}
   .btn-enviar{
-    margin-top:6px;padding:15px;border:0;border-radius:40px;background:var(--crema);color:var(--burdeos);
-    font-family:var(--display);font-size:18px;letter-spacing:.12em;cursor:pointer;transition:transform .2s, box-shadow .3s;
+    margin-top:4px;padding:16px;border:0;border-radius:40px;cursor:pointer;
+    background:linear-gradient(135deg,var(--oro-2),var(--oro));color:var(--burdeos);
+    font-family:var(--display);font-size:18px;letter-spacing:.25em;transition:transform .2s, box-shadow .3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
   }
-  .btn-enviar:hover{box-shadow:0 0 0 4px rgba(244,236,219,.25)}
+  .btn-enviar:hover{box-shadow:0 0 0 4px rgba(232,212,162,.25),0 8px 20px rgba(0,0,0,.3)}
   .btn-enviar:active{transform:scale(.98)}
   .gracias{display:none;padding:30px 10px}
   .gracias.visible{display:block;animation:aparece .8s ease}
-  .gracias .script{font-size:46px}
+  .gracias .script{font-size:56px;color:var(--oro-2)}
+  .gracias p{font-family:var(--serif);font-size:18px;opacity:.9}
   @keyframes aparece{from{opacity:0;transform:scale(.9)}}
 
-  footer{background:var(--burdeos);border-top:1px solid rgba(244,236,219,.15);color:var(--crema);text-align:center;padding:36px 20px 50px}
-  footer .script{font-size:40px}
-  footer p{font-family:var(--display);letter-spacing:.3em;font-size:13px;opacity:.7;margin-top:6px}
+  footer{background:var(--burdeos);color:var(--crema);text-align:center;padding:10px 20px 60px}
+  footer .sello-final{width:96px;margin:0 auto 10px;display:block;filter:drop-shadow(0 6px 8px rgba(0,0,0,.4))}
+  footer .script{font-size:44px}
+  footer p{font-family:var(--display);letter-spacing:.4em;font-size:13px;color:var(--oro-2);margin-top:4px}
 
-  /* ---------- Botón música ---------- */
-  #musica{
-    position:fixed;right:16px;bottom:16px;z-index:50;width:48px;height:48px;border-radius:50%;
-    border:1px solid rgba(244,236,219,.5);background:var(--burdeos);color:var(--crema);
-    font-size:20px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.4);display:none;
-  }
-  #musica.sonando{animation:girar 4s linear infinite}
-  @keyframes girar{to{transform:rotate(360deg)}}
+  #musica{position:fixed;right:16px;bottom:16px;z-index:50;width:50px;height:50px;border-radius:50%;border:1px solid var(--oro);background:var(--burdeos);color:var(--oro-2);font-size:20px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.4);display:none}
+  #musica.sonando{animation:girolento 5s linear infinite}
 
-  /* Corazones flotantes */
-  .corazoncito{position:fixed;z-index:120;pointer-events:none;color:var(--cereza);font-size:22px;animation:sube 2.4s ease-out forwards}
-  @keyframes sube{to{transform:translateY(-160px) scale(1.4) rotate(20deg);opacity:0}}
+  .corazoncito{position:fixed;z-index:120;pointer-events:none;font-size:22px;animation:sube 2.4s ease-out forwards}
+  @keyframes sube{to{transform:translateY(-170px) scale(1.4) rotate(20deg);opacity:0}}
 
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation:none!important;transition:none!important}
@@ -356,9 +352,14 @@
 
 <!-- ================= SOBRE ================= -->
 <div id="sobre" role="button" tabindex="0" aria-label="Abrir invitación">
-  <h1>A &amp; O</h1>
-  <div class="tapa"><div class="sello">A·O</div></div>
-  <p>Toca para abrir</p>
+  <div class="para"><b>INVITACIÓN DE BODA</b>con todo nuestro cariño</div>
+  <div class="escena">
+    <div class="fondo"></div>
+    <div class="carta"><div class="script" data-ini></div><small>27 · 07 · 2027</small></div>
+    <div class="bolsillo"></div>
+    <div class="solapa"><div class="sello"><svg viewBox="0 0 100 100"><use href="#sello"/></svg></div></div>
+  </div>
+  <div class="toca">Toca para abrir</div>
 </div>
 
 <button id="musica" aria-label="Música">♫</button>
@@ -366,19 +367,28 @@
 <main class="invitacion">
 
   <!-- ================= PORTADA ================= -->
-  <section class="portada">
+  <section class="portada" id="portada">
     <div class="marco">
-      <h2 class="reveal">¡nos casamos!</h2>
+      <svg class="esquina tl" viewBox="0 0 44 44"><use href="#esquina"/></svg>
+      <svg class="esquina tr" viewBox="0 0 44 44"><use href="#esquina"/></svg>
+      <svg class="esquina bl" viewBox="0 0 44 44"><use href="#esquina"/></svg>
+      <svg class="esquina br" viewBox="0 0 44 44"><use href="#esquina"/></svg>
 
-      <div class="corazon-wrap reveal d1">
+      <h2 class="reveal">¡nos casamos!</h2>
+      <div class="sub reveal d1">y queremos celebrarlo contigo</div>
+
+      <div class="corazon-wrap reveal zoom d1">
         <svg class="dalia izq" viewBox="0 0 100 100" aria-hidden="true"><use href="#dalia"/></svg>
-        <svg class="encaje" id="encaje" viewBox="0 0 400 370" aria-hidden="true"></svg>
-        <svg class="dalia der" viewBox="0 0 100 100" aria-hidden="true"><use href="#dalia"/></svg>
-        <div class="nombres">
-          <span class="n1" data-cfg="novio">Alejandro</span>
-          <span class="y">y</span>
-          <span class="n2" data-cfg="novia">Oksana</span>
+        <div class="flota">
+          <svg class="encaje" id="encaje" viewBox="0 0 400 372" aria-hidden="true"></svg>
+          <div class="nombres">
+            <span class="n" data-cfg="novio">Alejandro</span>
+            <span class="y">y</span>
+            <span class="n" data-cfg="novia">Oksana</span>
+          </div>
         </div>
+        <svg class="dalia der" viewBox="0 0 100 100" aria-hidden="true"><use href="#dalia"/></svg>
+        <svg class="dalia mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#dalia"/></svg>
       </div>
 
       <div class="fecha-portada reveal d2">
@@ -390,10 +400,12 @@
 
   <!-- ================= QUERIDOS INVITADOS ================= -->
   <section class="invitados rayas-burdeos">
-    <div class="tarjeta-encaje reveal">
+    <div class="tarjeta reveal zoom" id="tarjeta">
+      <svg class="borde" id="borde-encaje" aria-hidden="true"></svg>
       <div class="interior">
         <h3>¡Queridos invitados!</h3>
-        <p class="texto">Con enorme alegría y emoción en el corazón, los invitamos a acompañarnos en un acontecimiento muy importante para nosotros: ¡el día de nuestra boda!</p>
+        <p class="texto">Con enorme alegría y el corazón lleno de emoción, los invitamos a acompañarnos en un día muy especial para nosotros: ¡el día de nuestra boda!</p>
+        <div class="divisor"><svg viewBox="0 0 24 24"><use href="#mini-corazon"/></svg></div>
         <div class="mes">JULIO</div>
         <div class="calendario" id="calendario"></div>
         <div class="save">save the date</div>
@@ -408,103 +420,97 @@
   </section>
 
   <!-- ================= PLAN DEL DÍA ================= -->
-  <section class="plan">
+  <section class="plan feston">
     <div class="titulo reveal">
-      <span class="display">PLAN</span>
+      <span class="grande">PLAN</span>
       <span class="script">del día</span>
     </div>
-
-    <div class="hito reveal">
-      <div class="info">
-        <div class="hora">15:00</div>
-        <div class="que">Recepción de invitados</div>
-        <div class="detalle">Llega con calma: habrá bebidas de bienvenida y música en vivo.</div>
+    <div class="linea">
+      <div class="hito reveal">
+        <div class="info">
+          <div class="hora">15:00</div>
+          <div class="que">Recepción</div>
+          <div class="detalle">Bebidas de bienvenida y música en vivo.</div>
+        </div>
+        <div class="icono"><svg viewBox="0 0 120 150"><use href="#copa"/></svg></div>
       </div>
-      <svg class="copa" viewBox="0 0 120 150" aria-hidden="true"><use href="#copa"/></svg>
-    </div>
-
-    <div class="hito der reveal">
-      <div class="info">
-        <div class="hora">17:00</div>
-        <div class="que">Ceremonia</div>
-        <div class="detalle">El momento más importante: el «sí, quiero». ¡No olvides los pañuelos!</div>
+      <div class="hito inv reveal">
+        <div class="info">
+          <div class="hora">17:00</div>
+          <div class="que">Ceremonia</div>
+          <div class="detalle">El momento del «sí, quiero». ¡Trae pañuelos!</div>
+        </div>
+        <div class="icono"><svg viewBox="0 0 120 150"><use href="#anillos"/></svg></div>
       </div>
-      <div class="mini"><span></span></div>
-    </div>
-
-    <div class="hito reveal">
-      <div class="info">
-        <div class="hora">18:00</div>
-        <div class="que">Banquete</div>
-        <div class="detalle">Cena, brindis, primer baile y mucha fiesta.</div>
+      <div class="hito reveal">
+        <div class="info">
+          <div class="hora">18:00</div>
+          <div class="que">Banquete</div>
+          <div class="detalle">Cena, brindis y nuestro primer baile.</div>
+        </div>
+        <div class="icono"><svg viewBox="0 0 120 150"><use href="#champan"/></svg></div>
       </div>
-      <svg class="copa" viewBox="0 0 120 150" aria-hidden="true"><use href="#copa"/></svg>
-    </div>
-
-    <div class="hito der reveal">
-      <div class="info">
-        <div class="hora">23:00</div>
-        <div class="que">Fin de la velada</div>
-        <div class="detalle">Nos despedimos con un último baile… y el pastel.</div>
+      <div class="hito inv reveal">
+        <div class="info">
+          <div class="hora">23:00</div>
+          <div class="que">Fin de la velada</div>
+          <div class="detalle">Último baile… ¡y el pastel!</div>
+        </div>
+        <div class="icono"><svg viewBox="0 0 120 150"><use href="#copa"/></svg></div>
       </div>
-      <div class="mini"><span></span></div>
     </div>
     <div class="pista">toca cada hora para ver más</div>
   </section>
 
   <!-- ================= LUGAR ================= -->
-  <section class="lugar">
-    <svg class="cerezas" viewBox="0 0 120 150" aria-hidden="true">
-      <path d="M118 0 C 90 20 70 40 62 70 M118 0 C 100 40 96 70 92 104 M118 0 C 80 50 40 70 30 110" stroke="#5a4a2a" stroke-width="2" fill="none"/>
-      <g><circle cx="62" cy="80" r="12" fill="url(#cer)"/><circle cx="92" cy="114" r="12" fill="url(#cer)"/><circle cx="30" cy="120" r="12" fill="url(#cer)"/></g>
-      <path d="M100 18 q 14 -4 16 6 q -10 6 -16 -6z" fill="#6b7d3a"/>
-    </svg>
-    <div class="marco-plata reveal">
-      <div class="lienzo">
-        <h3>Lugar</h3>
-        <div class="bloque">
-          La ceremonia civil será en<br>
-          <b data-cfg="lugar1">Palacio de Bodas · Salón Dorado</b><br>
-          <a class="btn" data-mapa="1" target="_blank" rel="noopener">Abrir mapa</a>
-        </div>
-        <div class="sep"></div>
-        <div class="bloque">
-          La celebración será en<br>
-          <b data-cfg="lugar2">Salón de banquetes «Estrada»</b><br>
-          <a class="btn" data-mapa="2" target="_blank" rel="noopener">Abrir mapa</a>
+  <section class="lugar feston">
+    <svg class="cerezas" viewBox="0 0 130 160" aria-hidden="true"><use href="#cerezas"/></svg>
+    <div class="cartela reveal zoom">
+      <svg class="cresta arriba" viewBox="0 0 200 70"><use href="#cresta"/></svg>
+      <div class="marco-plata">
+        <div class="lienzo">
+          <h3>Lugar</h3>
+          <div class="bloque">
+            La ceremonia civil será en
+            <b data-cfg="lugar1">Palacio de Bodas · Salón Dorado</b>
+            <a class="btn" data-mapa="1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#pin"/></svg>Abrir mapa</a>
+          </div>
+          <div class="divisor sep"><svg viewBox="0 0 24 24"><use href="#mini-corazon"/></svg></div>
+          <div class="bloque">
+            La celebración será en
+            <b data-cfg="lugar2">Salón de banquetes «Estrada»</b>
+            <a class="btn" data-mapa="2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#pin"/></svg>Abrir mapa</a>
+          </div>
         </div>
       </div>
+      <svg class="cresta abajo" viewBox="0 0 200 70"><use href="#cresta"/></svg>
     </div>
   </section>
 
   <!-- ================= DRESS CODE ================= -->
   <section class="vestimenta">
     <h3 class="reveal">dress code</h3>
-    <p class="reveal d1">Para nosotros lo más importante es su presencia. Pero nos hará muy felices si en su atuendo apoyan la paleta de colores de nuestra boda.</p>
-    <div class="paleta reveal d2" id="paleta">
-      <button class="sw1"><span>Azul cielo</span></button>
-      <button class="sw2"><span>Chocolate</span></button>
-      <button class="sw3"><span>Burdeos</span></button>
-      <button class="sw4"><span>Crema batida</span></button>
-      <button class="sw5"><span>Arándano</span></button>
-      <button class="sw6"><span>Cacao</span></button>
-      <button class="sw7"><span>Cereza</span></button>
-      <button class="sw8"><span>Marfil</span></button>
+    <p class="reveal d1">Para nosotros lo más importante es su presencia. Pero nos hará muy felices si su atuendo acompaña la paleta de colores de nuestra boda.</p>
+    <div class="paleta reveal zoom d2" id="paleta">
+      <button class="sw1" data-n="Azul cielo" aria-label="Azul cielo"></button>
+      <button class="sw2" data-n="Chocolate" aria-label="Chocolate"></button>
+      <button class="sw3" data-n="Burdeos" aria-label="Burdeos"></button>
+      <button class="sw4" data-n="Crema batida" aria-label="Crema batida"></button>
+      <button class="sw5" data-n="Arándano" aria-label="Arándano"></button>
+      <button class="sw6" data-n="Cacao" aria-label="Cacao"></button>
+      <button class="sw7" data-n="Cereza negra" aria-label="Cereza negra"></button>
+      <button class="sw8" data-n="Marfil" aria-label="Marfil"></button>
     </div>
+    <div class="nombre-color" id="nombre-color">toca un color</div>
   </section>
 
   <!-- ================= FOTO ================= -->
   <section class="foto">
-    <div class="marco-oval reveal">
-      <svg class="lazo" viewBox="0 0 120 70" aria-hidden="true">
-        <path d="M60 22 C 40 0 10 4 14 22 C 18 38 46 30 60 22 Z M60 22 C 80 0 110 4 106 22 C 102 38 74 30 60 22 Z" fill="#8e1626" stroke="#5a0c15" stroke-width="2"/>
-        <path d="M58 24 L 40 64 L 48 60 L 52 68 L 60 30 M62 24 L 80 64 L 72 60 L 68 68 L 60 30" fill="#7a1220" stroke="#5a0c15" stroke-width="1.5"/>
-        <circle cx="60" cy="23" r="7" fill="#a51d2f" stroke="#5a0c15" stroke-width="2"/>
-      </svg>
-      <div class="oval">
-        <div class="img" id="foto-pareja"><span class="ph">A &amp; O</span></div>
-      </div>
+    <div class="marco-oval reveal zoom">
+      <div class="img" id="foto-pareja"><span class="ph" data-ini></span></div>
+      <svg class="orla" id="orla" viewBox="0 0 250 340" aria-hidden="true"></svg>
     </div>
+    <div class="pie reveal d1">nuestra historia continúa…</div>
   </section>
 
   <div class="cinta" aria-hidden="true"><div id="cinta"></div></div>
@@ -513,97 +519,184 @@
   <section class="detalles rayas-crema">
     <div class="caja reveal">
       <h3>Detalles</h3>
-      <h4>Flores</h4>
-      <p>Les proponemos no cargar con flores durante todo el camino y, en su lugar, traer una botella de su bebida favorita, para que podamos disfrutarla juntos más adelante.</p>
-      <h4>Regalos</h4>
-      <p>No seremos originales, pero sí prácticos: el mejor regalo para nosotros es su aporte económico, una inversión en nuestra joven familia.</p>
+      <div class="item">
+        <svg viewBox="0 0 48 48"><use href="#ico-botella"/></svg>
+        <div><h4>Flores</h4><p>Les proponemos no cargar flores durante todo el camino y, en su lugar, traer una botella de su bebida favorita para disfrutarla juntos más adelante.</p></div>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 48 48"><use href="#ico-sobre"/></svg>
+        <div><h4>Regalos</h4><p>No seremos originales, pero sí prácticos: el mejor regalo es su aporte económico, una inversión en nuestra joven familia.</p></div>
+      </div>
     </div>
   </section>
 
   <!-- ================= CONFIRMACIÓN ================= -->
-  <section class="rsvp" id="rsvp">
+  <section class="rsvp feston" id="rsvp">
     <h3 class="reveal">Confirma tu asistencia</h3>
-    <p class="reveal d1">Les pedimos confirmar antes del <b data-cfg="limite">1 de julio de 2027</b>.</p>
+    <p class="reveal d1">Les pedimos confirmar antes del <b data-cfg="limite">1 de julio de 2027</b></p>
     <form id="form-rsvp" class="reveal d2">
       <div>
-        <label for="nombre">Nombre y apellido</label>
-        <input type="text" id="nombre" required placeholder="Tu nombre">
+        <label class="l" for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" required placeholder="Escribe tu nombre">
       </div>
       <div>
-        <label>¿Asistirás?</label>
+        <span class="l" style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro-2);display:block;margin-bottom:8px">¿Asistirás?</span>
         <div class="opciones">
           <input type="radio" name="asiste" id="si" value="Sí, asistiré" checked><label for="si">Sí, con gusto</label>
           <input type="radio" name="asiste" id="no" value="No podré asistir"><label for="no">No podré ir</label>
         </div>
       </div>
       <div>
-        <label for="acompanantes">Acompañantes</label>
-        <select id="acompanantes">
-          <option>Solo yo</option><option>+1</option><option>+2</option><option>+3</option>
-        </select>
+        <label class="l" for="acompanantes">Acompañantes</label>
+        <select id="acompanantes"><option>Solo yo</option><option>+1</option><option>+2</option><option>+3</option></select>
       </div>
       <div>
-        <label for="bebida">Bebida preferida</label>
-        <select id="bebida">
-          <option>Vino tinto</option><option>Vino blanco</option><option>Champán</option><option>Coctel</option><option>Sin alcohol</option>
-        </select>
+        <label class="l" for="bebida">Bebida preferida</label>
+        <select id="bebida"><option>Vino tinto</option><option>Vino blanco</option><option>Champán</option><option>Coctel</option><option>Sin alcohol</option></select>
       </div>
       <div>
-        <label for="mensaje">Mensaje para los novios</label>
-        <textarea id="mensaje" rows="3" placeholder="Opcional"></textarea>
+        <label class="l" for="mensaje">Mensaje para los novios</label>
+        <textarea id="mensaje" rows="2" placeholder="Opcional"></textarea>
       </div>
       <button class="btn-enviar" type="submit">ENVIAR</button>
     </form>
     <div class="gracias" id="gracias">
       <div class="script">¡Gracias!</div>
-      <p>Tu respuesta está lista. Si no se abrió WhatsApp, envíanos un mensaje directamente.</p>
+      <p>Tu respuesta está lista. Si no se abrió WhatsApp, escríbenos directamente.</p>
     </div>
   </section>
 
   <footer>
+    <svg class="sello-final" viewBox="0 0 100 100"><use href="#sello"/></svg>
     <div class="script">Los esperamos</div>
     <p>27 · 07 · 2027</p>
   </footer>
 </main>
 
-<!-- ================= Símbolos SVG reutilizables ================= -->
+<!-- ================= Símbolos SVG ================= -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <radialGradient id="cer" cx="35%" cy="30%"><stop offset="0" stop-color="#ff6b78"/><stop offset=".4" stop-color="#b3132a"/><stop offset="1" stop-color="#4a0510"/></radialGradient>
-    <linearGradient id="plata" x1="0" x2="1"><stop offset="0" stop-color="#8d8a85"/><stop offset=".35" stop-color="#f2f0ec"/><stop offset=".6" stop-color="#a9a59e"/><stop offset="1" stop-color="#e2dfd9"/></linearGradient>
-    <radialGradient id="petalo" cx="50%" cy="90%" r="90%"><stop offset="0" stop-color="#3a0610"/><stop offset=".6" stop-color="#7c1424"/><stop offset="1" stop-color="#a9283a"/></radialGradient>
+    <radialGradient id="cer" cx="35%" cy="30%"><stop offset="0" stop-color="#ff7a86"/><stop offset=".35" stop-color="#b3132a"/><stop offset="1" stop-color="#3e040c"/></radialGradient>
+    <linearGradient id="plata" x1="0" x2="1"><stop offset="0" stop-color="#7f7b75"/><stop offset=".3" stop-color="#f4f2ee"/><stop offset=".55" stop-color="#a5a19a"/><stop offset=".8" stop-color="#ebe8e3"/><stop offset="1" stop-color="#8e8a83"/></linearGradient>
+    <linearGradient id="plata-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f2ee"/><stop offset=".5" stop-color="#9c968c"/><stop offset="1" stop-color="#e2ddd4"/></linearGradient>
+    <linearGradient id="oro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e3b5"/><stop offset=".5" stop-color="#c8a96a"/><stop offset="1" stop-color="#8f7034"/></linearGradient>
+    <radialGradient id="petalo" cx="50%" cy="95%" r="95%"><stop offset="0" stop-color="#2e040b"/><stop offset=".55" stop-color="#7c1424"/><stop offset="1" stop-color="#b8344a"/></radialGradient>
+    <radialGradient id="cera" cx="38%" cy="32%"><stop offset="0" stop-color="#d4404f"/><stop offset=".5" stop-color="#9b1b2a"/><stop offset="1" stop-color="#560a14"/></radialGradient>
+    <radialGradient id="burdeos-lac" cx="35%" cy="28%"><stop offset="0" stop-color="#d14a5b"/><stop offset=".45" stop-color="#8e1626"/><stop offset="1" stop-color="#41060f"/></radialGradient>
 
-    <symbol id="dalia" viewBox="0 0 100 100">
-      <g transform="translate(50 50)">
-        <g id="anillo1"></g>
+    <symbol id="mini-corazon" viewBox="0 0 24 24"><path d="M12 21C5 15.5 2 12 2 8a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 4-3 7.5-10 13z" fill="currentColor"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></symbol>
+
+    <symbol id="esquina" viewBox="0 0 44 44">
+      <path d="M2 42 V12 Q2 2 12 2 H42" fill="none" stroke="currentColor" stroke-width="1"/>
+      <path d="M8 34 V16 Q8 8 16 8 H34" fill="none" stroke="currentColor" stroke-width=".6"/>
+      <circle cx="14" cy="14" r="2.4" fill="currentColor"/>
+      <path d="M14 14 q 8 -2 10 6 q -6 0 -10 -6z M14 14 q -2 8 6 10 q 0 -6 -6 -10z" fill="currentColor" opacity=".7"/>
+    </symbol>
+
+    <symbol id="sello" viewBox="0 0 100 100">
+      <path d="M50 4 C58 3 62 9 70 9 C79 10 84 16 88 24 C93 31 97 38 95 47 C96 56 92 62 91 70 C87 79 80 84 72 89 C64 94 57 96 49 95 C40 97 33 93 25 89 C17 84 11 78 8 70 C3 61 4 54 5 46 C4 37 9 30 13 22 C19 14 27 9 35 7 C41 4 45 5 50 4Z" fill="url(#cera)"/>
+      <circle cx="50" cy="50" r="31" fill="none" stroke="#5a0c15" stroke-width="2" opacity=".55"/>
+      <circle cx="50" cy="50" r="28" fill="none" stroke="#e57a86" stroke-width="1" opacity=".5"/>
+      <text x="50" y="60" text-anchor="middle" font-family="Great Vibes, cursive" font-size="30" fill="#f6d6d8" class="ini-sello">A·O</text>
+      <ellipse cx="36" cy="26" rx="12" ry="5" fill="#fff" opacity=".18" transform="rotate(-25 36 26)"/>
+    </symbol>
+
+    <symbol id="dalia" viewBox="0 0 100 100"><g transform="translate(50 50)" id="dalia-g"></g></symbol>
+
+    <symbol id="copa" viewBox="0 0 120 150">
+      <ellipse cx="60" cy="141" rx="26" ry="6" fill="url(#plata)"/>
+      <path d="M57 96 L56 138 H64 L63 96 Z" fill="url(#plata)"/>
+      <ellipse cx="60" cy="97" rx="10" ry="4" fill="url(#plata)"/>
+      <path d="M20 64 Q 60 70 100 64 Q 94 97 60 99 Q 26 97 20 64 Z" fill="url(#plata)" stroke="#6f6b65" stroke-width=".8"/>
+      <path d="M28 72 Q 40 92 60 94" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/>
+      <g fill="#fdfaf5" stroke="#e2d8ca" stroke-width="1">
+        <ellipse cx="60" cy="63" rx="40" ry="10"/>
+        <path d="M26 62 Q 26 40 60 37 Q 94 40 94 62 Z"/>
+        <path d="M36 46 Q 42 22 60 20 Q 78 22 84 46 Z"/>
+        <path d="M47 27 Q 53 9 60 7 Q 67 9 73 27 Z"/>
+      </g>
+      <path d="M36 54 q 6 4 2 14 q 4 10 0 18 M80 50 q -4 6 2 12 q 2 8 -2 14 M58 60 q 3 6 0 12" stroke="#4a1611" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <path d="M63 4 q 5 -8 13 -5" stroke="#4d3a1c" stroke-width="2" fill="none"/>
+      <circle cx="60" cy="7" r="7.5" fill="url(#cer)"/>
+      <g fill="#8a1424" stroke="#4a0a12" stroke-width="1">
+        <path d="M60 106 C 38 90 26 104 36 116 C 44 122 54 113 60 106 Z"/>
+        <path d="M60 106 C 82 90 94 104 84 116 C 76 122 66 113 60 106 Z"/>
+        <path d="M58 108 L 42 144 L 50 139 L 57 110 Z M62 108 L 78 144 L 70 139 L 63 110 Z"/>
+        <ellipse cx="60" cy="107" rx="5" ry="4.5"/>
       </g>
     </symbol>
 
-    <symbol id="copa" viewBox="0 0 120 150">
-      <!-- pie -->
-      <ellipse cx="60" cy="140" rx="26" ry="6" fill="url(#plata)"/>
-      <rect x="56" y="92" width="8" height="48" fill="url(#plata)"/>
-      <ellipse cx="60" cy="96" rx="9" ry="4" fill="url(#plata)"/>
-      <!-- copa -->
-      <path d="M22 66 Q 60 70 98 66 Q 92 96 60 98 Q 28 96 22 66 Z" fill="url(#plata)" stroke="#7d7a74" stroke-width="1"/>
-      <!-- crema -->
-      <g fill="#fbf7f1" stroke="#e5dccf" stroke-width="1">
-        <ellipse cx="60" cy="64" rx="38" ry="10"/>
-        <path d="M28 62 Q 30 40 60 38 Q 90 40 92 62 Z"/>
-        <path d="M38 46 Q 44 24 60 22 Q 76 24 82 46 Z"/>
-        <path d="M48 28 Q 54 12 60 10 Q 66 12 72 28 Z"/>
+    <symbol id="anillos" viewBox="0 0 120 150">
+      <circle cx="46" cy="88" r="26" fill="none" stroke="url(#oro)" stroke-width="7"/>
+      <circle cx="74" cy="88" r="26" fill="none" stroke="url(#plata)" stroke-width="7"/>
+      <path d="M46 62 a26 26 0 0 1 22 12" fill="none" stroke="url(#oro)" stroke-width="7"/>
+      <path d="M74 56 l-9 -10 l9 -10 l9 10 z" fill="#e8f0fb" stroke="#aac0dc" stroke-width="1.5"/>
+      <path d="M65 46 h18 M74 36 l-3 10 l3 10 l3 -10 z" stroke="#aac0dc" stroke-width="1" fill="none"/>
+      <path d="M86 26 l2 -6 l2 6 l6 2 l-6 2 l-2 6 l-2 -6 l-6 -2z" fill="#fff" opacity=".9"/>
+      <g fill="#8a1424" stroke="#4a0a12" stroke-width="1" transform="translate(0 20)">
+        <path d="M60 106 C 42 94 32 104 40 114 C 46 120 54 112 60 106 Z"/>
+        <path d="M60 106 C 78 94 88 104 80 114 C 74 120 66 112 60 106 Z"/>
+        <ellipse cx="60" cy="107" rx="4.5" ry="4"/>
       </g>
-      <path d="M40 60 q 4 10 2 22 M78 58 q 3 8 -1 18" stroke="#4a1611" stroke-width="5" stroke-linecap="round" fill="none"/>
-      <!-- cereza -->
-      <path d="M62 6 q 4 -8 12 -6" stroke="#4d3a1c" stroke-width="2" fill="none"/>
-      <circle cx="60" cy="8" r="7" fill="url(#cer)"/>
-      <!-- lazo -->
-      <g fill="#7a1220" stroke="#4a0a12" stroke-width="1">
-        <path d="M60 106 C 40 92 30 104 38 114 C 44 120 54 112 60 106 Z"/>
-        <path d="M60 106 C 80 92 90 104 82 114 C 76 120 66 112 60 106 Z"/>
-        <path d="M58 108 L 44 140 L 52 136 L 58 110 Z M62 108 L 76 140 L 68 136 L 62 110 Z"/>
-        <circle cx="60" cy="107" r="4"/>
+    </symbol>
+
+    <symbol id="champan" viewBox="0 0 120 150">
+      <g transform="rotate(-14 40 110)">
+        <path d="M24 20 H52 L50 64 Q 38 76 26 64 Z" fill="rgba(255,255,255,.18)" stroke="url(#plata-v)" stroke-width="2"/>
+        <path d="M27 36 H50 L49 62 Q 38 72 28 62 Z" fill="#f2d48e" opacity=".85"/>
+        <circle cx="34" cy="50" r="1.5" fill="#fff"/><circle cx="42" cy="44" r="1.2" fill="#fff"/><circle cx="38" cy="56" r="1" fill="#fff"/>
+        <rect x="36.5" y="70" width="3" height="50" fill="url(#plata)"/>
+        <ellipse cx="38" cy="122" rx="16" ry="4" fill="url(#plata)"/>
       </g>
+      <g transform="rotate(14 80 110)">
+        <path d="M68 20 H96 L94 64 Q 82 76 70 64 Z" fill="rgba(255,255,255,.18)" stroke="url(#plata-v)" stroke-width="2"/>
+        <path d="M71 36 H94 L93 62 Q 82 72 72 62 Z" fill="#f2d48e" opacity=".85"/>
+        <circle cx="80" cy="48" r="1.4" fill="#fff"/><circle cx="87" cy="54" r="1.1" fill="#fff"/>
+        <rect x="80.5" y="70" width="3" height="50" fill="url(#plata)"/>
+        <ellipse cx="82" cy="122" rx="16" ry="4" fill="url(#plata)"/>
+      </g>
+      <path d="M60 10 l2 -7 l2 7 l7 2 l-7 2 l-2 7 l-2 -7 l-7 -2z" fill="#f3e3b5"/>
+      <g fill="#8a1424" stroke="#4a0a12" stroke-width="1">
+        <path d="M60 78 C 44 66 34 76 42 86 C 48 92 55 84 60 78 Z"/>
+        <path d="M60 78 C 76 66 86 76 78 86 C 72 92 65 84 60 78 Z"/>
+        <path d="M58 80 L 48 110 L 55 106 L 59 82 Z M62 80 L 72 110 L 65 106 L 61 82 Z"/>
+        <ellipse cx="60" cy="79" rx="4.5" ry="4"/>
+      </g>
+    </symbol>
+
+    <symbol id="cerezas" viewBox="0 0 130 160">
+      <path d="M128 0 C 100 18 78 40 66 76 M128 0 C 112 40 104 74 98 112 M128 0 C 90 46 50 74 34 118" stroke="#5a4426" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M112 14 q 18 -6 20 8 q -14 8 -20 -8z" fill="#5f7434"/>
+      <path d="M112 14 q 10 0 18 6" stroke="#3e4f1f" fill="none"/>
+      <circle cx="66" cy="86" r="13" fill="url(#cer)"/><circle cx="98" cy="122" r="13" fill="url(#cer)"/><circle cx="34" cy="128" r="13" fill="url(#cer)"/>
+      <ellipse cx="61" cy="81" rx="3.5" ry="2" fill="#fff" opacity=".7"/><ellipse cx="93" cy="117" rx="3.5" ry="2" fill="#fff" opacity=".7"/><ellipse cx="29" cy="123" rx="3.5" ry="2" fill="#fff" opacity=".7"/>
+    </symbol>
+
+    <symbol id="cresta" viewBox="0 0 200 70">
+      <g fill="url(#plata-v)" stroke="#6f685e" stroke-width="1">
+        <!-- volutas -->
+        <path d="M100 58 C 80 58 62 50 48 40 C 36 32 22 34 20 44 C 18 54 30 58 36 50 C 40 44 32 40 29 45 C 34 26 56 30 66 38 C 76 46 88 50 100 50 Z"/>
+        <path d="M100 58 C 120 58 138 50 152 40 C 164 32 178 34 180 44 C 182 54 170 58 164 50 C 160 44 168 40 171 45 C 166 26 144 30 134 38 C 124 46 112 50 100 50 Z"/>
+        <!-- concha -->
+        <path d="M100 56 C 76 54 72 30 82 18 C 90 8 110 8 118 18 C 128 30 124 54 100 56 Z"/>
+      </g>
+      <g stroke="#6f685e" stroke-width="1" fill="none">
+        <path d="M100 54 L 100 12 M100 54 L 88 16 M100 54 L 112 16 M100 54 L 80 26 M100 54 L 120 26 M100 54 L 78 38 M100 54 L 122 38"/>
+      </g>
+      <circle cx="100" cy="58" r="5" fill="url(#plata)" stroke="#6f685e"/>
+    </symbol>
+
+    <symbol id="ico-botella" viewBox="0 0 48 48">
+      <path d="M20 4 h8 v10 c0 3 6 6 6 12 v16 a2 2 0 0 1-2 2 H16 a2 2 0 0 1-2-2 V26 c0-6 6-9 6-12z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="15.5" y="26" width="17" height="10" fill="currentColor" opacity=".2"/>
+      <path d="M24 30 c-3-2.2-4-3.4-4-4.6a2 2 0 0 1 4-.4 2 2 0 0 1 4 .4c0 1.2-1 2.4-4 4.6z" fill="currentColor"/>
+      <path d="M20 8 h8" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="ico-sobre" viewBox="0 0 48 48">
+      <rect x="5" y="12" width="38" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M5 13 l19 14 l19 -14" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M24 32 c-3-2.2-4-3.4-4-4.6a2 2 0 0 1 4-.4 2 2 0 0 1 4 .4c0 1.2-1 2.4-4 4.6z" fill="currentColor"/>
     </symbol>
   </defs>
 </svg>
@@ -621,100 +714,158 @@ const CONFIG = {
   lugar2: "Salón de banquetes «Estrada»",
   mapa2:  "https://maps.google.com/?q=Salon+de+banquetes+Estrada",
   limite: "1 de julio de 2027",
-  whatsapp: "",                            // ej. "5215512345678" (con código de país, sin +). Vacío = solo se muestra el agradecimiento
+  whatsapp: "",                            // ej. "5215512345678" (código de país, sin +). Vacío = solo muestra el agradecimiento
   foto: "",                                // ej. "foto.jpg" (colócala junto a este archivo)
   musica: ""                               // ej. "cancion.mp3" (vacío = sin botón de música)
 };
 
-/* ---- Aplicar configuración ---- */
+const NS = 'http://www.w3.org/2000/svg';
+const mk = (parent, tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+// muestrea N puntos (con ángulo de la normal) a lo largo de un path
+function muestrear(svg, d, n){
+  const p = mk(svg, 'path', {d, fill: 'none'}); const L = p.getTotalLength(), out = [];
+  for (let i = 0; i < n; i++) {
+    const a = p.getPointAtLength(L * i / n), b = p.getPointAtLength(L * ((i + .5) % n) / n);
+    out.push({x: a.x, y: a.y, ang: Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI});
+  }
+  p.remove(); return out;
+}
+const gota = (len, w) => `M0 0 C ${-w} ${-len*.45} ${-w*.55} ${-len} 0 ${-len} C ${w*.55} ${-len} ${w} ${-len*.45} 0 0Z`;
+
+/* ---- Configuración en la página ---- */
+const ini = CONFIG.novio[0] + ' & ' + CONFIG.novia[0];
 document.querySelectorAll('[data-cfg]').forEach(el => { if (CONFIG[el.dataset.cfg]) el.textContent = CONFIG[el.dataset.cfg]; });
+document.querySelectorAll('[data-ini]').forEach(el => el.textContent = ini);
+document.querySelectorAll('.ini-sello').forEach(el => el.textContent = CONFIG.novio[0] + '·' + CONFIG.novia[0]);
 document.querySelectorAll('[data-mapa]').forEach(a => a.href = CONFIG['mapa' + a.dataset.mapa]);
-const ini = CONFIG.novio[0] + ' &amp; ' + CONFIG.novia[0];
-document.querySelector('#sobre h1').innerHTML = ini;
-document.querySelector('#sobre .sello').textContent = CONFIG.novio[0] + '·' + CONFIG.novia[0];
-document.querySelector('#foto-pareja .ph').innerHTML = ini;
 document.title = CONFIG.novio + ' y ' + CONFIG.novia;
 if (CONFIG.foto) document.getElementById('foto-pareja').innerHTML = `<img src="${CONFIG.foto}" alt="${CONFIG.novio} y ${CONFIG.novia}">`;
 
-/* ---- Corazón de encaje (generado) ---- */
-(function encaje(){
-  const svg = document.getElementById('encaje'), NS = 'http://www.w3.org/2000/svg';
-  const heart = (s) => {
-    const pts = [];
+/* ---- Corazón de encaje ---- */
+(function(){
+  const svg = document.getElementById('encaje');
+  const heart = s => {
+    let d = '';
     for (let t = 0; t <= Math.PI * 2 + .001; t += .02) {
       const x = 16 * Math.pow(Math.sin(t), 3);
       const y = -(13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
-      pts.push([200 + x * s, 178 + y * s]);
+      d += (d ? 'L' : 'M') + (200 + x * s).toFixed(1) + ' ' + (180 + y * s).toFixed(1);
     }
-    return pts;
+    return d + 'Z';
   };
-  const toPath = p => 'M' + p.map(q => q.map(v => v.toFixed(1)).join(' ')).join(' L') + 'Z';
-  const el = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; };
-  const sample = (s, n) => {
-    const p = el('path', {d: toPath(heart(s)), fill: 'none'});
-    const L = p.getTotalLength(), out = [];
-    for (let i = 0; i < n; i++) { const q = p.getPointAtLength(L * i / n); out.push([q.x, q.y]); }
-    p.remove(); return out;
-  };
-  const g = el('g', {});
-  const add = (tag, a) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); g.appendChild(e); return e; };
-  // festón exterior
-  sample(10.6, 64).forEach(([x, y]) => add('circle', {cx: x, cy: y, r: 12, fill: '#f6f3f0'}));
-  add('path', {d: toPath(heart(10.6)), fill: '#f6f3f0'});
-  // agujeros del borde
-  sample(10.6, 64).forEach(([x, y]) => add('circle', {cx: x, cy: y, r: 3.2, fill: '#7a1c28', opacity: .55}));
-  // anillo de rombos calados
-  sample(9.4, 52).forEach(([x, y], i) => {
-    add('circle', {cx: x, cy: y, r: i % 2 ? 4.2 : 2.6, fill: 'none', stroke: '#d7d0cc', 'stroke-width': 1.4});
+  const g = mk(svg, 'g', {});
+  const blanco = '#f8f5f1', hueco = '#7a1c28';
+  // festón exterior doble
+  muestrear(svg, heart(10.9), 74).forEach(p => mk(g, 'circle', {cx: p.x, cy: p.y, r: 10, fill: blanco}));
+  muestrear(svg, heart(10.2), 74).forEach((p, i) => mk(g, 'circle', {cx: p.x, cy: p.y, r: 10, fill: blanco}));
+  mk(g, 'path', {d: heart(10.4), fill: blanco});
+  // ojales del festón
+  muestrear(svg, heart(10.9), 74).forEach(p => mk(g, 'circle', {cx: p.x, cy: p.y, r: 2.6, fill: hueco, opacity: .75}));
+  // pétalos calados orientados
+  muestrear(svg, heart(9.55), 56).forEach(p => {
+    const t = `translate(${p.x} ${p.y}) rotate(${p.ang})`;
+    mk(g, 'path', {d: gota(9, 4.5), transform: t + ' rotate(-90)', fill: hueco, opacity: .55});
+    mk(g, 'path', {d: gota(9, 4.5), transform: t + ' rotate(90)', fill: hueco, opacity: .3});
   });
-  sample(8.5, 46).forEach(([x, y]) => add('circle', {cx: x, cy: y, r: 2, fill: '#7a1c28', opacity: .35}));
-  // centro azulado
-  add('path', {d: toPath(heart(7.9)), fill: '#e7eef5', stroke: '#cfd8e2', 'stroke-width': 1.5});
-  add('path', {d: toPath(heart(7.4)), fill: 'none', stroke: '#d6dee8', 'stroke-width': 1, 'stroke-dasharray': '2 4'});
+  // anillo de puntitos
+  muestrear(svg, heart(8.75), 64).forEach(p => mk(g, 'circle', {cx: p.x, cy: p.y, r: 1.6, fill: hueco, opacity: .45}));
+  // línea en relieve
+  mk(g, 'path', {d: heart(8.4), fill: 'none', stroke: '#d9d1c8', 'stroke-width': 2});
+  // centro
+  const grad = mk(svg, 'radialGradient', {id: 'centro-corazon', cx: '50%', cy: '35%', r: '70%'});
+  mk(grad, 'stop', {offset: 0, 'stop-color': '#ffffff'}); mk(grad, 'stop', {offset: 1, 'stop-color': '#dce6f1'});
+  mk(g, 'path', {d: heart(8.05), fill: 'url(#centro-corazon)'});
+  mk(g, 'path', {d: heart(7.6), fill: 'none', stroke: '#c8d4e2', 'stroke-width': 1, 'stroke-dasharray': '1 5', 'stroke-linecap': 'round'});
 })();
 
-/* ---- Dalias (generadas) ---- */
-(function dalia(){
-  const g = document.getElementById('anillo1'), NS = 'http://www.w3.org/2000/svg';
-  [[46, 22, 7], [36, 18, 6], [26, 16, 5], [16, 12, 4]].forEach(([len, n, w], ring) => {
-    for (let i = 0; i < n; i++) {
-      const a = 360 / n * i + ring * 9;
-      const p = document.createElementNS(NS, 'path');
-      p.setAttribute('d', `M0 0 C ${-w} ${-len*.4} ${-w*.6} ${-len} 0 ${-len} C ${w*.6} ${-len} ${w} ${-len*.4} 0 0Z`);
-      p.setAttribute('transform', `rotate(${a})`);
-      p.setAttribute('fill', 'url(#petalo)');
-      p.setAttribute('stroke', '#2a0309'); p.setAttribute('stroke-width', '.6');
-      g.appendChild(p);
-    }
+/* ---- Dalia ---- */
+(function(){
+  const g = document.getElementById('dalia-g');
+  [[47, 24, 7.5, 0], [39, 20, 6.5, 7], [30, 17, 5.5, 3], [21, 13, 4.5, 9], [12, 9, 3.5, 0]].forEach(([len, n, w, off]) => {
+    for (let i = 0; i < n; i++) mk(g, 'path', {d: gota(len, w), transform: `rotate(${360 / n * i + off})`, fill: 'url(#petalo)', stroke: '#27030a', 'stroke-width': .5});
   });
-  const c = document.createElementNS(NS, 'circle');
-  c.setAttribute('r', 5); c.setAttribute('fill', '#3a0610'); g.appendChild(c);
+  mk(g, 'circle', {r: 4.5, fill: '#2e040b'});
+})();
+
+/* ---- Borde de encaje de la tarjeta ---- */
+function bordeEncaje(){
+  const svg = document.getElementById('borde-encaje'), box = svg.getBoundingClientRect();
+  const w = box.width, h = box.height; if (!w) return;
+  svg.setAttribute('viewBox', `0 0 ${w} ${h}`); svg.innerHTML = '';
+  const r = 22, i = 10;
+  const rect = (m, rr) => `M${m + rr} ${m} H${w - m - rr} Q${w - m} ${m} ${w - m} ${m + rr} V${h - m - rr} Q${w - m} ${h - m} ${w - m - rr} ${h - m} H${m + rr} Q${m} ${h - m} ${m} ${h - m - rr} V${m + rr} Q${m} ${m} ${m + rr} ${m}Z`;
+  const per = 2 * (w + h), blanco = '#fdfbf6', hueco = '#c9bfae';
+  const ext = muestrear(svg, rect(i, r), Math.round(per / 15));
+  ext.forEach(p => mk(svg, 'circle', {cx: p.x, cy: p.y, r: 8.5, fill: blanco}));
+  mk(svg, 'path', {d: rect(i, r), fill: blanco});
+  ext.forEach(p => mk(svg, 'circle', {cx: p.x, cy: p.y, r: 2.2, fill: hueco}));
+  muestrear(svg, rect(i + 9, r - 6), Math.round(per / 22)).forEach(p => {
+    const t = `translate(${p.x} ${p.y}) rotate(${p.ang})`;
+    mk(svg, 'path', {d: gota(7, 3.6), transform: t + ' rotate(-90)', fill: 'none', stroke: hueco, 'stroke-width': 1});
+    mk(svg, 'path', {d: gota(7, 3.6), transform: t + ' rotate(90)', fill: 'none', stroke: hueco, 'stroke-width': 1});
+  });
+  mk(svg, 'path', {d: rect(i + 16, r - 10), fill: 'none', stroke: hueco, 'stroke-width': 1, 'stroke-dasharray': '1 4', 'stroke-linecap': 'round'});
+}
+bordeEncaje();
+new ResizeObserver(bordeEncaje).observe(document.getElementById('tarjeta'));
+
+/* ---- Orla del marco ovalado ---- */
+(function(){
+  const svg = document.getElementById('orla');
+  const cx = 125, cy = 197, ell = (rx, ry) => `M${cx - rx} ${cy} a${rx} ${ry} 0 1 0 ${rx * 2} 0 a${rx} ${ry} 0 1 0 ${-rx * 2} 0`;
+  // hojas exteriores
+  muestrear(svg, ell(118, 150), 46).forEach((p, k) => mk(svg, 'path', {d: gota(16, 7), transform: `translate(${p.x} ${p.y}) rotate(${p.ang - 90}) rotate(${k % 2 ? 18 : -18})`, fill: 'url(#burdeos-lac)', stroke: '#3b050d', 'stroke-width': .6}));
+  // marco principal
+  mk(svg, 'path', {d: ell(108, 140) + ell(88, 115), fill: 'url(#burdeos-lac)', 'fill-rule': 'evenodd', stroke: '#3b050d', 'stroke-width': 1.2});
+  mk(svg, 'path', {d: ell(98, 127.5), fill: 'none', stroke: '#e07b88', 'stroke-width': 1, opacity: .5});
+  // perlas
+  muestrear(svg, ell(98, 127.5), 52).forEach(p => {
+    mk(svg, 'circle', {cx: p.x, cy: p.y, r: 3.4, fill: 'url(#burdeos-lac)', stroke: '#f2a6b0', 'stroke-width': .6});
+  });
+  mk(svg, 'path', {d: ell(88, 115), fill: 'none', stroke: '#3b050d', 'stroke-width': 3});
+  // brillo
+  mk(svg, 'path', {d: `M${cx - 92} ${cy - 40} Q ${cx - 90} ${cy - 120} ${cx - 20} ${cy - 134}`, fill: 'none', stroke: '#fff', 'stroke-width': 3, opacity: .35, 'stroke-linecap': 'round'});
+  // lazo y cinta
+  mk(svg, 'path', {d: `M${cx} 46 L ${cx - 34} 4 M${cx} 46 L ${cx + 34} 4`, stroke: '#7a1220', 'stroke-width': 3});
+  const lazo = mk(svg, 'g', {transform: `translate(${cx - 60} 0)`, fill: '#8e1626', stroke: '#4a0a12', 'stroke-width': 1.5});
+  mk(lazo, 'path', {d: 'M60 30 C 38 6 6 10 12 30 C 18 48 46 38 60 30 Z M60 30 C 82 6 114 10 108 30 C 102 48 74 38 60 30 Z'});
+  mk(lazo, 'path', {d: 'M57 32 L 40 76 L 49 71 L 53 80 L 60 36 Z M63 32 L 80 76 L 71 71 L 67 80 L 60 36 Z'});
+  mk(lazo, 'ellipse', {cx: 60, cy: 31, rx: 8, ry: 7, fill: '#a51d2f'});
+})();
+
+/* ---- Pétalos cayendo en la portada ---- */
+(function(){
+  const portada = document.getElementById('portada');
+  const colores = ['#9b1b2a', '#7a1c28', '#e9c7c9', '#b6c9de', '#c8a96a'];
+  for (let i = 0; i < 14; i++) {
+    const p = document.createElement('span'), s = 7 + Math.random() * 9;
+    p.className = 'petalo';
+    Object.assign(p.style, {left: Math.random() * 100 + '%', width: s + 'px', height: s * 1.2 + 'px', background: colores[i % colores.length], animationDuration: 9 + Math.random() * 8 + 's', animationDelay: -Math.random() * 14 + 's'});
+    portada.appendChild(p);
+  }
 })();
 
 /* ---- Calendario ---- */
-(function calendario(){
-  const cal = document.getElementById('calendario');
-  const f = new Date(CONFIG.fecha);
+(function(){
+  const cal = document.getElementById('calendario'), f = new Date(CONFIG.fecha);
   const y = f.getFullYear(), m = f.getMonth(), dia = f.getDate();
-  const meses = ['ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO','JULIO','AGOSTO','SEPTIEMBRE','OCTUBRE','NOVIEMBRE','DICIEMBRE'];
-  document.querySelector('.mes').textContent = meses[m];
+  document.querySelector('.mes').textContent = ['ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO','JULIO','AGOSTO','SEPTIEMBRE','OCTUBRE','NOVIEMBRE','DICIEMBRE'][m];
   ['lu','ma','mi','ju','vi','sá','do'].forEach(d => cal.insertAdjacentHTML('beforeend', `<div class="dia-sem">${d}</div>`));
   const offset = (new Date(y, m, 1).getDay() + 6) % 7;
   for (let i = 0; i < offset; i++) cal.insertAdjacentHTML('beforeend', '<div></div>');
   const total = new Date(y, m + 1, 0).getDate();
-  for (let d = 1; d <= total; d++) cal.insertAdjacentHTML('beforeend', `<div class="d${d === dia ? ' boda' : ''}">${d}</div>`);
-  cal.querySelector('.boda').addEventListener('click', e => lluvia(e.clientX, e.clientY, 8));
+  for (let d = 1; d <= total; d++) cal.insertAdjacentHTML('beforeend', d === dia
+    ? `<div class="d boda"><svg viewBox="0 0 24 24"><use href="#mini-corazon"/></svg>${d}</div>`
+    : `<div class="d">${d}</div>`);
+  cal.querySelector('.boda').addEventListener('click', e => lluvia(e.clientX, e.clientY, 10));
 })();
 
 /* ---- Cuenta regresiva ---- */
-(function cuenta(){
-  const fin = new Date(CONFIG.fecha).getTime();
-  const pad = n => String(n).padStart(2, '0');
+(function(){
+  const fin = new Date(CONFIG.fecha).getTime(), pad = n => String(n).padStart(2, '0');
   const tick = () => {
     let s = Math.max(0, Math.floor((fin - Date.now()) / 1000));
-    const d = Math.floor(s / 86400); s %= 86400;
-    const h = Math.floor(s / 3600); s %= 3600;
-    const m = Math.floor(s / 60); s %= 60;
+    const d = Math.floor(s / 86400); s %= 86400; const h = Math.floor(s / 3600); s %= 3600; const m = Math.floor(s / 60); s %= 60;
     document.getElementById('c-d').textContent = d;
     document.getElementById('c-h').textContent = pad(h);
     document.getElementById('c-m').textContent = pad(m);
@@ -723,47 +874,36 @@ if (CONFIG.foto) document.getElementById('foto-pareja').innerHTML = `<img src="$
   tick(); setInterval(tick, 1000);
 })();
 
-/* ---- Cinta ---- */
-document.getElementById('cinta').textContent = ' • SAVE THE DATE'.repeat(16);
+document.getElementById('cinta').textContent = '  ♥  SAVE THE DATE'.repeat(16);
 
-/* ---- Plan del día: desplegar detalles ---- */
+/* ---- Interacciones ---- */
 document.querySelectorAll('.hito').forEach(h => h.addEventListener('click', () => h.classList.toggle('abierto')));
-
-/* ---- Paleta: mostrar nombre ---- */
+const nombreColor = document.getElementById('nombre-color');
 document.querySelectorAll('#paleta button').forEach(b => b.addEventListener('click', () => {
   const ya = b.classList.contains('activo');
   document.querySelectorAll('#paleta button').forEach(x => x.classList.remove('activo'));
+  nombreColor.style.opacity = 0;
+  setTimeout(() => { nombreColor.textContent = ya ? 'toca un color' : b.dataset.n; nombreColor.style.opacity = 1; }, 200);
   if (!ya) b.classList.add('activo');
 }));
 
-/* ---- Aparición al hacer scroll ---- */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), {threshold: .15});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ---- Lluvia de corazones ---- */
 function lluvia(x, y, n = 12){
   for (let i = 0; i < n; i++) {
     const s = document.createElement('span');
     s.className = 'corazoncito'; s.textContent = '♥';
-    s.style.left = (x + (Math.random() - .5) * 120) + 'px';
-    s.style.top = (y + (Math.random() - .5) * 40) + 'px';
-    s.style.animationDelay = (Math.random() * .4) + 's';
-    s.style.color = ['#9b1b2a', '#b5c8dd', '#f4ecdb', '#7a1c28'][i % 4];
-    document.body.appendChild(s);
-    setTimeout(() => s.remove(), 3000);
+    Object.assign(s.style, {left: x + (Math.random() - .5) * 140 + 'px', top: y + (Math.random() - .5) * 40 + 'px', animationDelay: Math.random() * .4 + 's', color: ['#9b1b2a', '#b6c9de', '#f5eddc', '#c8a96a'][i % 4], fontSize: 14 + Math.random() * 16 + 'px'});
+    document.body.appendChild(s); setTimeout(() => s.remove(), 3000);
   }
 }
 
 /* ---- Música ---- */
-const btnMusica = document.getElementById('musica');
-let audio = null;
+const btnMusica = document.getElementById('musica'); let audio = null;
 if (CONFIG.musica) {
-  audio = new Audio(CONFIG.musica); audio.loop = true;
-  btnMusica.style.display = 'block';
-  btnMusica.addEventListener('click', () => {
-    if (audio.paused) { audio.play(); btnMusica.classList.add('sonando'); }
-    else { audio.pause(); btnMusica.classList.remove('sonando'); }
-  });
+  audio = new Audio(CONFIG.musica); audio.loop = true; btnMusica.style.display = 'block';
+  btnMusica.addEventListener('click', () => { if (audio.paused) { audio.play(); btnMusica.classList.add('sonando'); } else { audio.pause(); btnMusica.classList.remove('sonando'); } });
 }
 
 /* ---- Abrir sobre ---- */
@@ -771,27 +911,24 @@ const sobre = document.getElementById('sobre');
 function abrir(){
   if (sobre.classList.contains('abriendo')) return;
   sobre.classList.add('abriendo');
-  const r = sobre.querySelector('.tapa').getBoundingClientRect();
-  lluvia(r.left + r.width / 2, r.top + r.height / 2, 16);
-  if (audio) { audio.play().then(() => btnMusica.classList.add('sonando')).catch(() => {}); }
-  setTimeout(() => { sobre.classList.add('abierto'); document.body.classList.remove('locked'); }, 900);
+  const r = sobre.querySelector('.escena').getBoundingClientRect();
+  setTimeout(() => lluvia(r.left + r.width / 2, r.top, 18), 700);
+  if (audio) audio.play().then(() => btnMusica.classList.add('sonando')).catch(() => {});
+  setTimeout(() => { sobre.classList.add('abierto'); document.body.classList.remove('locked'); }, 1900);
 }
 sobre.addEventListener('click', abrir);
 sobre.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); } });
 
-/* ---- Confirmación (RSVP) ---- */
+/* ---- Confirmación ---- */
 document.getElementById('form-rsvp').addEventListener('submit', e => {
   e.preventDefault();
   const v = id => document.getElementById(id).value.trim();
   const asiste = document.querySelector('input[name=asiste]:checked').value;
-  const texto = `¡Hola ${CONFIG.novio} y ${CONFIG.novia}! 💌\n` +
-    `Nombre: ${v('nombre')}\nRespuesta: ${asiste}\nAcompañantes: ${v('acompanantes')}\n` +
-    `Bebida: ${v('bebida')}` + (v('mensaje') ? `\nMensaje: ${v('mensaje')}` : '');
+  const texto = `¡Hola ${CONFIG.novio} y ${CONFIG.novia}! 💌\nNombre: ${v('nombre')}\nRespuesta: ${asiste}\nAcompañantes: ${v('acompanantes')}\nBebida: ${v('bebida')}` + (v('mensaje') ? `\nMensaje: ${v('mensaje')}` : '');
   if (CONFIG.whatsapp) window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto)}`, '_blank');
   e.target.style.display = 'none';
   document.getElementById('gracias').classList.add('visible');
-  const r = e.target.getBoundingClientRect();
-  lluvia(window.innerWidth / 2, Math.max(120, r.top + 80), 18);
+  lluvia(window.innerWidth / 2, Math.max(140, e.target.getBoundingClientRect().top + 60), 20);
 });
 </script>
 </body>
