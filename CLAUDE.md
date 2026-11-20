@@ -66,7 +66,6 @@ There is no component framework. "Components" are BEM-less class groups in one H
 | Image panel | `.panel > img` plus `.t` text overlays | Text is absolutely positioned in `%` over a raster background. |
 | Curtain | `.curtain.l/.r.velvet` | It opens when `body.go` is set. |
 | Polaroid stack | `.stack`, `.pol.b1/.b2/.b3/.front`, `.ph`, `.pclip`, `.cap` | Photo upload uses `<label><input type=file hidden>`. |
-| Dress code | `.dress-box`, `.dress-ic`, `.pal > i[style=--c]` | Swatches take their color from the `--c` custom property. |
 | Gallery | `.gal`, `.ggrid.one`, `.gp`, `.gph` | |
 | RSVP card | `.rsvp > div`, `.cd3` (countdown), `form#rsvp`, `.send`, `.pill`, `.copy` | It builds a WhatsApp message. |
 | Music button | `.fab` | Uses a Web Audio synth; no audio files. |
@@ -144,7 +143,7 @@ The markup order is:
 2. `.fab`
 3. `main.col`:
    1. panel 1 (curtain, title, calendar, venue)
-   2. panel 2 (dress code, polaroids, details)
+   2. panel 2 (polaroids, details)
    3. gallery
    4. RSVP
 4. script
