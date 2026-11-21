@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birthday party!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Fredoka:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosa:#fbdce3; --blanco:#fff; --oscuro:#2e3230; --tinta:#1d1d1d;
+    --script:'Great Vibes',cursive; --sans:'Inter',system-ui,sans-serif;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--rosa);font-family:var(--script);color:var(--tinta);-webkit-font-smoothing:antialiased;padding:40px 0}
+  .inv{max-width:420px;margin:0 auto;background:var(--blanco);container-type:inline-size;overflow:hidden;box-shadow:0 10px 40px rgba(160,90,110,.15)}
+  section{position:relative;text-align:center}
+  img{display:block;max-width:100%}
+  h1,h2{font-weight:400}
+
+  /* Bordes de papel rasgado */
+  .rasgo{position:absolute;left:0;width:100%;height:9cqw;display:block;z-index:2;pointer-events:none}
+  .rasgo.arriba{top:-1px}
+  .rasgo.abajo{bottom:-1px;transform:scaleY(-1)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.on{opacity:1;transform:none}
+
+  /* Portada */
+  .portada h1{font-size:12cqw;padding:10cqw 0 6cqw;letter-spacing:.02em}
+  .foto{position:relative}
+  .foto img{width:100%;height:auto}
+  .frase{font-size:5.6cqw;margin-top:4cqw}
+  .lazo{width:22cqw;margin:4cqw auto 0}
+
+  .texto{padding:20cqw 7cqw 0}
+  .texto h2{font-size:9cqw;margin-bottom:9cqw}
+  .texto p{font-size:5.6cqw;line-height:1.75}
+  .texto .inv-linea{margin-top:7cqw;font-size:6.6cqw}
+  .pastel{width:50cqw;margin:20cqw auto 34cqw}
+
+  /* Bloques oscuros */
+  .oscuro{background:var(--oscuro);color:#fff;padding:20cqw 8cqw 22cqw}
+  .oscuro h2{font-size:9cqw;margin-bottom:10cqw}
+  .lugar p{font-size:6cqw;line-height:1.35}
+  .btn{display:inline-block;font-family:var(--sans);font-size:2.6cqw;text-decoration:none;color:var(--tinta);background:#fff;padding:4.3cqw 9cqw;margin:15cqw 0 9cqw;letter-spacing:.02em}
+  .fecha{font-size:6.4cqw;line-height:2}
+
+  /* Тайминг */
+  .timing{padding:26cqw 4cqw 0}
+  .timing h2{font-size:9cqw;margin-left:20cqw}
+  .linea{position:relative;height:84cqw;margin-top:2cqw}
+  .paso{position:absolute;width:46cqw}
+  .paso b{display:block;font-weight:400;font-size:7.2cqw}
+  .paso span{display:block;font-size:4.2cqw;line-height:1.35}
+  .flecha{position:absolute;width:12cqw;height:10cqw;stroke:var(--tinta);fill:none;stroke-width:1.2}
+  .p1{left:0;top:8cqw}  .p2{right:-2cqw;top:25cqw} .p3{left:2cqw;top:51cqw} .p4{right:0;top:68cqw}
+  .f1{left:20cqw;top:-2cqw} .f2{left:63cqw;top:14cqw} .f3{left:22cqw;top:40cqw} .f4{left:65cqw;top:57cqw}
+  .champan{width:44cqw;margin:14cqw auto 26cqw}
+
+  .deseos{padding-top:18cqw;padding-bottom:12cqw}
+  .deseos p{font-size:5.9cqw;line-height:1.9}
+  .deseos p+p{margin-top:8cqw}
+  .deseos .btn{border-radius:99px;padding:2.6cqw 9cqw;margin:10cqw 0 5cqw;font-size:2.2cqw}
+  .nick{font-family:'Fredoka',sans-serif;font-size:13cqw;color:#fff;letter-spacing:.01em;text-decoration:none;display:block}
+
+  /* Dress code */
+  .dress{padding:36cqw 10cqw 0}
+  .dress h2{font-size:8.4cqw;margin-bottom:13cqw}
+  .dress p{font-size:5.6cqw;line-height:1.9}
+  .colores{display:flex;justify-content:space-between;margin:24cqw 0 34cqw;padding:0 0}
+  .colores i{width:34cqw;height:24cqw;border:1px solid var(--tinta);display:block}
+  .colores i+i{background:#231f20}
+
+  /* RSVP */
+  .rsvp{padding:4cqw 6cqw 8cqw}
+  .rsvp h2{font-size:6.6cqw;line-height:1.6}
+  form{width:51cqw;margin:8cqw auto 0;text-align:left;font-family:var(--sans)}
+  label{display:block;font-size:2cqw;color:#444;margin:3cqw 0 1cqw}
+  input,select{width:100%;font:inherit;font-size:3cqw;padding:1cqw 2cqw;border:1px solid #bbb;border-radius:1.4cqw;background:#fff}
+  button{width:100%;margin-top:4cqw;border:0;border-radius:99px;background:#333;color:#fff;font:500 2.6cqw var(--sans);padding:2cqw;cursor:pointer}
+  .nota{font-family:var(--sans);font-size:1.6cqw;color:#888;text-align:center;margin-top:2cqw;line-height:1.4}
+  .gracias{font-size:6cqw;margin-top:6cqw;display:none}
+
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- borde rasgado: relleno blanco que "muerde" la sección -->
+    <symbol id="rasgo" viewBox="0 0 400 40" preserveAspectRatio="none">
+      <path d="M0 0H400V23.0L400 23.0 393.6 25.2 389.6 23.2 384.8 23.1 378.6 19.1 375.5 22.2 370.8 20.9 367.8 18.8 361.9 16.8 355.1 19.4 352.0 14.7 346.8 19.0 342.3 15.2 337.6 14.3 333.7 16.5 328.7 15.7 324.8 15.8 320.0 16.5 316.9 19.5 311.7 18.9 307.9 20.8 301.5 16.7 297.2 19.7 291.3 20.6 286.6 19.7 280.9 16.4 275.6 18.4 269.2 15.2 263.9 11.4 259.9 14.1 255.2 9.5 250.0 10.5 244.3 7.0 239.6 6.1 233.5 4.3 228.9 3 225.8 3 220.0 3.6 214.6 3 210.9 3 204.0 3 198.8 3 194.9 3 188.1 3 183.2 3 178.0 6.7 175.0 6.7 168.7 9.2 162.8 10.7 157.7 11.0 153.0 9.9 146.5 14.2 142.7 14.8 137.8 15.0 133.4 16.7 127.9 17.7 123.1 15.2 119.2 16.1 113.8 19.5 107.6 19.1 101.4 16.0 95.0 17.7 91.7 14.2 88.6 17.7 84.6 14.3 79.1 15.3 75.8 14.3 70.7 14.5 66.6 17.4 61.8 15.8 56.9 14.8 52.4 17.4 48.6 16.5 42.0 19.7 38.2 21.0 31.9 19.4 28.8 20.7 23.0 21.9 17.1 25.5 12.0 24.0 5.1 27.5 0 27.5Z" fill="#fff"/>
+    </symbol>
+    <symbol id="rasgo2" viewBox="0 0 400 40" preserveAspectRatio="none">
+      <path d="M0 0H400V5.3L400 5.3 396.6 5.2 393.0 3 388.4 5.9 382.2 3.9 378.3 3 374.2 3 370.7 3 364.0 3 357.8 3 354.0 3 348.5 3.5 342.1 5.6 338.8 5.1 333.1 6.4 329.4 7.4 326.0 10.9 319.5 11.3 315.3 14.7 310.0 16.5 303.7 16.7 299.0 18.6 294.3 17.6 290.1 21.8 286.9 18.6 281.4 20.6 276.2 22.0 271.9 24.8 268.1 21.9 264.3 22.9 260.2 21.3 254.2 20.6 248.9 22.9 245.5 18.3 241.6 21.4 236.2 18.1 231.8 17.3 227.0 16.2 221.2 20.1 214.4 19.2 207.6 15.7 203.4 20.7 197.3 18.4 190.5 20.2 184.3 19.4 180.5 20.6 176.9 20.7 170.1 21.2 167.1 20.0 163.4 24.0 158.9 21.7 155.5 25.1 150.8 21.1 147.6 20.1 143.9 22.8 140.3 19.1 135.4 19.2 128.4 16.8 123.3 18.6 118.6 18.1 113.7 12.6 109.1 9.9 104.4 9.2 97.8 9.8 92.8 4.1 88.8 3.9 85.0 3 78.5 3 75.3 4.2 70.0 3.8 65.4 3.1 59.8 3 53.8 3 50.5 3 44.0 4.7 37.3 3.2 31.6 6.8 26.1 8.3 21.0 8.7 15.2 8.1 8.5 13.0 5.2 13.7 0 13.7Z" fill="#fff"/>
+    </symbol>
+    <symbol id="arco" viewBox="0 0 48 40"><path d="M42 6C30 2 12 4 8 22M3 15 8 23 15 17"/></symbol>
+  </defs>
+</svg>
+
+<main class="inv">
+  <!-- Portada -->
+  <section class="portada">
+    <h1>Birthday party!</h1>
+    <div class="foto">
+      <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+      <img src="cumple/foto1.jpg" alt="Фото именинницы с тортом" width="918" height="999">
+      <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+    </div>
+    <p class="frase reveal">25 лет один раз в жизни..</p>
+    <img class="lazo reveal" src="cumple/lazo.png" alt="">
+  </section>
+
+  <section class="texto">
+    <h2 class="reveal">Дорогие друзья!</h2>
+    <p class="reveal">Совсем скоро наступит значимый для меня день - мне исполнится 25 лет!<br>Я бы очень хотела разделить его с вами, моими самыми любимыми и близкими людьми.</p>
+    <p class="inv-linea reveal">Приглашаю на свой Birthday party!</p>
+    <img class="pastel reveal" src="cumple/pastel.png" alt="">
+  </section>
+
+  <!-- Где пройдет? -->
+  <section class="oscuro lugar">
+    <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+    <h2 class="reveal">Где пройдет?</h2>
+    <p class="reveal">ресторан The loft<br>Проспект Шакарима, 1<br>город Семей</p>
+    <a class="btn reveal" href="https://maps.google.com/?q=The+Loft+Проспект+Шакарима+1+Семей" target="_blank" rel="noopener">открыть карту</a>
+    <p class="fecha reveal">26.08.26<br>в 16:00</p>
+    <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+  </section>
+
+  <!-- Тайминг -->
+  <section class="timing">
+    <h2 class="reveal">Тайминг</h2>
+    <div class="linea">
+      <svg class="flecha f1"><use href="#arco"/></svg>
+      <div class="paso p1 reveal"><b>в 17:00</b><span>сбор гостей, фуршет</span></div>
+      <svg class="flecha f2" style="transform:scaleX(-1)"><use href="#arco"/></svg>
+      <div class="paso p2 reveal"><b>в 18:00</b><span>время вкусной еды, танцев и развлечений</span></div>
+      <svg class="flecha f3"><use href="#arco"/></svg>
+      <div class="paso p3 reveal"><b>в 20:00</b><span>праздничный торт</span></div>
+      <svg class="flecha f4" style="transform:scaleX(-1)"><use href="#arco"/></svg>
+      <div class="paso p4 reveal"><b>в 01:00</b><span>окончание вечера</span></div>
+    </div>
+    <img class="champan reveal" src="cumple/champan.png" alt="">
+  </section>
+
+  <!-- Пожелания -->
+  <section class="oscuro deseos">
+    <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+    <h2 class="reveal">Пожелания:</h2>
+    <p class="reveal">Если вы захотите сделать подарок — для меня лучшим будет вклад в мои мечты.</p>
+    <p class="reveal">А если предпочитаете выбрать что-то конкретное, я собрала для вас небольшой виш—лист с идеями.</p>
+    <a class="btn reveal" href="#" target="_blank" rel="noopener">вишлист</a>
+    <a class="nick reveal" href="#" target="_blank" rel="noopener">jellybellyys</a>
+    <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+  </section>
+
+  <!-- Дресс-код -->
+  <section class="dress">
+    <h2 class="reveal">Дресс—код</h2>
+    <p class="reveal">Я очень старалась сделать праздник красивым и мне будет очень приятно, если вы поддержите цветовую гамму торжества</p>
+    <div class="colores reveal"><i title="белый"></i><i title="черный"></i></div>
+  </section>
+
+  <section class="final">
+    <div class="foto">
+      <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+      <img src="cumple/foto2.jpg" alt="Фото именинницы с тортом" width="687" height="636">
+      <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+    </div>
+    <div class="rsvp">
+      <h2 class="reveal">Буду вам благодарна если вы подтвердите свое присутствие до 18.08.26</h2>
+      <form id="rsvp">
+        <label for="nombre">Ваше имя?</label>
+        <input id="nombre" name="nombre" required>
+        <label for="viene">Ты придешь?</label>
+        <select id="viene" name="viene" required>
+          <option value=""></option>
+          <option>Да, с удовольствием!</option>
+          <option>К сожалению, не смогу</option>
+        </select>
+        <button type="submit">Отправить</button>
+        <p class="nota">Нажимая на кнопку, вы даете согласие на обработку персональных данных</p>
+      </form>
+      <p class="gracias" id="gracias">Спасибо! Ваш ответ получен ♡</p>
+    </div>
+  </section>
+</main>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.getElementById('rsvp').addEventListener('submit', e => {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('gracias').style.display = 'block';
+  });
+</script>
+</body>
+</html>
