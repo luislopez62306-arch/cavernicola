@@ -21,7 +21,7 @@
   h1,h2{font-weight:400}
 
   /* Bordes de papel rasgado */
-  .rasgo{position:absolute;left:0;width:100%;height:9cqw;display:block;z-index:2;pointer-events:none}
+  .rasgo{position:absolute;left:0;width:100%;height:9cqw;display:block;z-index:2;pointer-events:none;filter:drop-shadow(0 1.5px 1.5px rgba(0,0,0,.18))}
   .rasgo.arriba{top:-1px}
   .rasgo.abajo{bottom:-1px;transform:scaleY(-1)}
 
@@ -31,9 +31,13 @@
   /* Portada */
   .portada h1{font-size:12cqw;padding:10cqw 0 6cqw;letter-spacing:.02em}
   .foto{position:relative}
-  .foto img{width:100%;height:auto}
+  .foto{overflow:hidden}
+  .foto img{width:100%;height:auto;transform:scale(1.06);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+  .foto.on img{transform:scale(1)}
   .frase{font-size:5.6cqw;margin-top:4cqw}
-  .lazo{width:22cqw;margin:4cqw auto 0}
+  .lazo{width:22cqw;margin:4cqw auto 0;transform-origin:50% 20%}
+  .lazo.on{animation:mece 4s ease-in-out 1s infinite}
+  @keyframes mece{0%,100%{rotate:0deg}30%{rotate:4deg}70%{rotate:-4deg}}
 
   .texto{padding:20cqw 7cqw 0}
   .texto h2{font-size:9cqw;margin-bottom:9cqw}
@@ -45,7 +49,7 @@
   .oscuro{background:var(--oscuro);color:#fff;padding:20cqw 8cqw 22cqw}
   .oscuro h2{font-size:9cqw;margin-bottom:10cqw}
   .lugar p{font-size:6cqw;line-height:1.35}
-  .btn{display:inline-block;font-family:var(--sans);font-size:2.6cqw;text-decoration:none;color:var(--tinta);background:#fff;padding:4.3cqw 9cqw;margin:15cqw 0 9cqw;letter-spacing:.02em}
+  .btn{display:inline-block;font-family:var(--sans);font-size:3.2cqw;transition:background .3s,color .3s;text-decoration:none;color:var(--tinta);background:#fff;padding:4.3cqw 9cqw;margin:15cqw 0 9cqw;letter-spacing:.02em}
   .fecha{font-size:6.4cqw;line-height:2}
 
   /* Itinerario */
@@ -55,7 +59,8 @@
   .paso{position:absolute;width:46cqw}
   .paso b{display:block;font-weight:400;font-size:7.2cqw}
   .paso span{display:block;font-size:4.2cqw;line-height:1.35}
-  .flecha{position:absolute;width:12cqw;height:10cqw;stroke:var(--tinta);fill:none;stroke-width:1.2}
+  .flecha{position:absolute;width:12cqw;height:10cqw;stroke:var(--tinta);fill:none;stroke-width:1.2;stroke-dasharray:80;stroke-dashoffset:80;transition:stroke-dashoffset 1.4s ease .3s}
+  .flecha.on{stroke-dashoffset:0}
   .p1{left:0;top:8cqw}  .p2{right:-2cqw;top:25cqw} .p3{left:2cqw;top:51cqw} .p4{right:0;top:68cqw}
   .f1{left:20cqw;top:-2cqw} .f2{left:63cqw;top:14cqw} .f3{left:22cqw;top:40cqw} .f4{left:65cqw;top:57cqw}
   .champan{width:44cqw;margin:14cqw auto 26cqw}
@@ -63,7 +68,7 @@
   .deseos{padding-top:18cqw;padding-bottom:12cqw}
   .deseos p{font-size:5.9cqw;line-height:1.9}
   .deseos p+p{margin-top:8cqw}
-  .deseos .btn{border-radius:99px;padding:2.6cqw 9cqw;margin:10cqw 0 5cqw;font-size:2.2cqw}
+  .deseos .btn{border-radius:99px;padding:2.6cqw 9cqw;margin:10cqw 0 5cqw;font-size:3cqw}
   .nick{font-family:'Fredoka',sans-serif;font-size:13cqw;color:#fff;letter-spacing:.01em;text-decoration:none;display:block}
 
   /* Dress code */
@@ -71,20 +76,48 @@
   .dress h2{font-size:8cqw;margin-bottom:13cqw}
   .dress p{font-size:5.6cqw;line-height:1.9}
   .colores{display:flex;justify-content:space-between;margin:24cqw 0 34cqw;padding:0 0}
-  .colores i{width:34cqw;height:24cqw;border:1px solid var(--tinta);display:block}
-  .colores i+i{background:#231f20}
+  .colores figure{text-align:center;font-size:5cqw}
+  .colores i{width:34cqw;height:24cqw;border:1px solid var(--tinta);display:block;margin-bottom:2cqw}
+  .colores figure+figure i{background:#231f20}
 
   /* RSVP */
   .rsvp{padding:4cqw 6cqw 8cqw}
   .rsvp h2{font-size:6.6cqw;line-height:1.6}
-  form{width:51cqw;margin:8cqw auto 0;text-align:left;font-family:var(--sans)}
-  label{display:block;font-size:2cqw;color:#444;margin:3cqw 0 1cqw}
-  input,select{width:100%;font:inherit;font-size:3cqw;padding:1cqw 2cqw;border:1px solid #bbb;border-radius:1.4cqw;background:#fff}
-  button{width:100%;margin-top:4cqw;border:0;border-radius:99px;background:#333;color:#fff;font:500 2.6cqw var(--sans);padding:2cqw;cursor:pointer}
-  .nota{font-family:var(--sans);font-size:1.6cqw;color:#888;text-align:center;margin-top:2cqw;line-height:1.4}
-  .gracias{font-size:6cqw;margin-top:6cqw;display:none}
+  form{width:72cqw;margin:8cqw auto 0;text-align:left;font-family:var(--sans)}
+  label{display:block;font-size:3.4cqw;color:#444;margin:4cqw 0 1.5cqw}
+  input,select{width:100%;font:inherit;font-size:16px;padding:2.4cqw 3cqw;border:1px solid #c9c9c9;border-radius:2.4cqw;background:#fff;color:var(--tinta)}
+  input:focus,select:focus{outline:none;border-color:var(--tinta)}
+  button{width:100%;margin-top:6cqw;border:0;border-radius:99px;background:#333;color:#fff;font:500 3.8cqw var(--sans);padding:3.4cqw;cursor:pointer;transition:background .3s}
+  button:hover{background:#000}
+  button:disabled{opacity:.6;cursor:wait}
+  .nota{font-family:var(--sans);font-size:2.6cqw;color:#888;text-align:center;margin-top:3cqw;line-height:1.4}
+  .gracias{font-size:7cqw;margin-top:8cqw;display:none;line-height:1.4}
+  .gracias small{display:block;font-family:var(--sans);font-size:3cqw;color:#888;margin-top:3cqw}
+  .gracias a{color:inherit}
+  .error{font-family:var(--sans);font-size:3cqw;color:#a33;text-align:center;margin-top:3cqw;min-height:1em}
+  .cal{display:block;width:max-content;margin:-4cqw auto 0;font-family:var(--sans);font-size:3cqw;color:#fff;opacity:.8}
+  .firma{font-size:9cqw;padding:10cqw 0 14cqw}
 
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  /* Panel de respuestas (solo la anfitriona) */
+  .panel{display:none;font-family:var(--sans);background:#f6f4f4;margin:0 6cqw 10cqw;padding:6cqw;border-radius:3cqw;text-align:left}
+  .panel h3{font:400 7cqw var(--script);text-align:center;margin-bottom:3cqw}
+  .totales{display:flex;justify-content:center;gap:6cqw;font-size:3.2cqw;margin-bottom:4cqw;text-align:center}
+  .totales b{display:block;font-size:7cqw;font-weight:500}
+  .panel li{list-style:none;display:flex;justify-content:space-between;gap:3cqw;font-size:3.4cqw;padding:2.2cqw 0;border-top:1px solid #e2dddd}
+  .panel li span:last-child{color:#666;white-space:nowrap}
+  .panel .vacio{font-size:3.2cqw;color:#888;text-align:center}
+
+  /* Sobre de entrada */
+  .sobre{position:fixed;inset:0;z-index:50;background:var(--rosa);display:grid;place-items:center;cursor:pointer;transition:opacity .9s ease,visibility .9s}
+  .sobre.fuera{opacity:0;visibility:hidden}
+  .sobre .tarjeta{background:#fff;width:min(78vw,330px);aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;box-shadow:0 20px 50px rgba(160,90,110,.25);transition:transform .9s cubic-bezier(.6,0,.3,1)}
+  .sobre.fuera .tarjeta{transform:translateY(-30px) scale(1.04)}
+  .sobre .tarjeta img{width:28%;animation:mece 3s ease-in-out infinite;transform-origin:50% 20%}
+  .sobre p{font-size:clamp(26px,9vw,40px);text-align:center;line-height:1.2}
+  .sobre small{font-family:var(--sans);font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:#888;animation:late 2s ease-in-out infinite}
+  @keyframes late{50%{opacity:.35}}
+
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.lazo.on,.sobre img{animation:none}.flecha{stroke-dashoffset:0}.foto img{transform:none}}
 </style>
 </head>
 <body>
@@ -101,11 +134,19 @@
   </defs>
 </svg>
 
+<div class="sobre" id="sobre" role="button" tabindex="0" aria-label="Abrir la invitación">
+  <div class="tarjeta">
+    <img src="cumple/lazo.png" alt="">
+    <p>Tienes una<br>invitación</p>
+    <small>toca para abrir</small>
+  </div>
+</div>
+
 <main class="inv">
   <!-- Portada -->
   <section class="portada">
     <h1>Birthday party!</h1>
-    <div class="foto">
+    <div class="foto reveal">
       <svg class="rasgo arriba"><use href="#rasgo"/></svg>
       <img src="cumple/foto1.jpg" alt="Foto de la cumpleañera con su pastel" width="918" height="999">
       <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
@@ -128,6 +169,7 @@
     <p class="reveal">restaurante The loft<br>Avenida Shakarim, 1<br>ciudad de Semey</p>
     <a class="btn reveal" href="https://maps.google.com/?q=The+Loft+Проспект+Шакарима+1+Семей" target="_blank" rel="noopener">abrir mapa</a>
     <p class="fecha reveal">26.08.26<br>a las 16:00</p>
+    <a class="cal reveal" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Birthday%20party&amp;dates=20260826T160000/20260827T010000&amp;location=The%20loft%2C%20Avenida%20Shakarim%201%2C%20Semey">+ agregar al calendario</a>
     <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
   </section>
 
@@ -135,13 +177,13 @@
   <section class="timing">
     <h2 class="reveal">Itinerario</h2>
     <div class="linea">
-      <svg class="flecha f1"><use href="#arco"/></svg>
+      <svg class="reveal flecha f1"><use href="#arco"/></svg>
       <div class="paso p1 reveal"><b>17:00</b><span>llegada de invitados, bocadillos</span></div>
-      <svg class="flecha f2" style="transform:scaleX(-1)"><use href="#arco"/></svg>
+      <svg class="reveal flecha f2" style="transform:scaleX(-1)"><use href="#arco"/></svg>
       <div class="paso p2 reveal"><b>18:00</b><span>hora de comida rica, baile y diversión</span></div>
-      <svg class="flecha f3"><use href="#arco"/></svg>
+      <svg class="reveal flecha f3"><use href="#arco"/></svg>
       <div class="paso p3 reveal"><b>20:00</b><span>pastel de cumpleaños</span></div>
-      <svg class="flecha f4" style="transform:scaleX(-1)"><use href="#arco"/></svg>
+      <svg class="reveal flecha f4" style="transform:scaleX(-1)"><use href="#arco"/></svg>
       <div class="paso p4 reveal"><b>01:00</b><span>fin de la fiesta</span></div>
     </div>
     <img class="champan reveal" src="cumple/champan.png" alt="">
@@ -162,11 +204,11 @@
   <section class="dress">
     <h2 class="reveal">Código de vestimenta</h2>
     <p class="reveal">Me esforcé mucho para que la fiesta sea hermosa, y me encantaría que se vistieran con los colores de la celebración</p>
-    <div class="colores reveal"><i title="blanco"></i><i title="negro"></i></div>
+    <div class="colores reveal"><figure><i></i>blanco</figure><figure><i></i>negro</figure></div>
   </section>
 
   <section class="final">
-    <div class="foto">
+    <div class="foto reveal">
       <svg class="rasgo arriba"><use href="#rasgo"/></svg>
       <img src="cumple/foto2.jpg" alt="Foto de la cumpleañera con su pastel" width="687" height="636">
       <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
@@ -175,29 +217,114 @@
       <h2 class="reveal">Les agradecería mucho que confirmen su asistencia antes del 18.08.26</h2>
       <form id="rsvp">
         <label for="nombre">¿Cuál es tu nombre?</label>
-        <input id="nombre" name="nombre" required>
+        <input id="nombre" name="nombre" required maxlength="80" autocomplete="name">
         <label for="viene">¿Vienes?</label>
         <select id="viene" name="viene" required>
-          <option value=""></option>
-          <option>¡Sí, con mucho gusto!</option>
-          <option>Lo siento, no podré ir</option>
+          <option value="">Elige una opción</option>
+          <option value="si">¡Sí, con mucho gusto!</option>
+          <option value="no">Lo siento, no podré ir</option>
         </select>
-        <button type="submit">Enviar</button>
+        <label for="personas">¿Cuántas personas vienen contigo? (contándote)</label>
+        <select id="personas" name="personas">
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+        </select>
+        <button type="submit" id="enviar">Enviar</button>
+        <p class="error" id="error" role="alert"></p>
         <p class="nota">Al presionar el botón aceptas el uso de tus datos para esta invitación</p>
       </form>
-      <p class="gracias" id="gracias">¡Gracias! Recibí tu respuesta ♡</p>
+      <p class="gracias" id="gracias" role="status"></p>
+    </div>
+    <p class="firma reveal">¡Te espero!</p>
+    <div class="panel" id="panel">
+      <h3>Respuestas</h3>
+      <div class="totales"><div><b id="t-si">0</b>vienen</div><div><b id="t-no">0</b>no vienen</div><div><b id="t-pers">0</b>personas</div></div>
+      <ul id="lista"></ul>
     </div>
   </section>
 </main>
 
 <script>
+  /* Sobre de entrada */
+  const sobre = document.getElementById('sobre');
+  const abrir = () => { sobre.classList.add('fuera'); document.body.style.overflow = ''; };
+  document.body.style.overflow = 'hidden';
+  sobre.addEventListener('click', abrir);
+  sobre.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); } });
+
+  /* Aparición al hacer scroll */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .15});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  document.getElementById('rsvp').addEventListener('submit', e => {
+
+  /* Confirmación de asistencia */
+  const form = document.getElementById('rsvp'), gracias = document.getElementById('gracias'),
+        error = document.getElementById('error'), enviar = document.getElementById('enviar'),
+        viene = document.getElementById('viene'), personas = document.getElementById('personas');
+  viene.addEventListener('change', () => { personas.disabled = viene.value === 'no'; });
+
+  let db = null, uid = null;
+  const listo = (async () => {
+    if (!window.claude?.use) return;
+    const [d, u] = await Promise.all([claude.use('db'), claude.use('user')]);
+    db = d; uid = u ? await u.id() : null;
+    if (!db) return;
+    if (uid) {
+      const mio = await db.doc('rsvp/' + uid).get().catch(() => null);
+      if (mio?.exists) mostrarGracias(mio.data(), true);
+    }
+    if (u && await u.isOwner()) verPanel();
+  })().catch(() => {});
+
+  function mostrarGracias(r, previo) {
+    form.style.display = 'none';
+    gracias.textContent = '';
+    gracias.append(r.viene === 'si' ? '¡Gracias, ' + r.nombre + '! Te espero ♡' : 'Gracias por avisarme, ' + r.nombre + ' ♡');
+    const sm = document.createElement('small');
+    sm.append(previo ? 'Ya habías respondido. ' : 'Tu respuesta quedó guardada. ');
+    const a = document.createElement('a'); a.href = '#'; a.textContent = 'Cambiar respuesta';
+    a.onclick = e => { e.preventDefault(); gracias.style.display = 'none'; form.style.display = '';
+      document.getElementById('nombre').value = r.nombre; viene.value = r.viene; personas.value = String(r.personas || 1); personas.disabled = r.viene === 'no'; };
+    sm.append(a); gracias.append(sm);
+    gracias.style.display = 'block';
+  }
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    e.target.style.display = 'none';
-    document.getElementById('gracias').style.display = 'block';
+    error.textContent = '';
+    const r = { nombre: document.getElementById('nombre').value.trim().slice(0, 80), viene: viene.value,
+                personas: viene.value === 'si' ? Number(personas.value) : 0, fecha: new Date().toISOString() };
+    if (!r.nombre || !r.viene) return;
+    enviar.disabled = true; enviar.textContent = 'Enviando…';
+    await Promise.race([listo, new Promise(ok => setTimeout(ok, 10000))]);
+    try {
+      if (!db || !uid) throw new Error('sin-db');
+      await db.doc('rsvp/' + uid).set(r);
+      mostrarGracias(r, false);
+    } catch (err) {
+      error.textContent = 'No se pudo guardar tu respuesta. Inicia sesión en claude.ai o avísale directamente a la cumpleañera.';
+    } finally { enviar.disabled = false; enviar.textContent = 'Enviar'; }
   });
+
+  function verPanel() {
+    const panel = document.getElementById('panel'), lista = document.getElementById('lista');
+    panel.style.display = 'block';
+    const t = setTimeout(() => { lista.innerHTML = '<p class="vacio">No se pudieron cargar las respuestas.</p>'; }, 10000);
+    db.collection('rsvp').orderBy('fecha', 'desc').onSnapshot(snap => {
+      clearTimeout(t);
+      let si = 0, no = 0, pers = 0; lista.textContent = '';
+      snap.docs.forEach(d => {
+        const r = d.data() || {};
+        if (r.viene === 'si') { si++; pers += Number(r.personas) || 1; } else no++;
+        const li = document.createElement('li'), a = document.createElement('span'), b = document.createElement('span');
+        a.textContent = String(r.nombre || '—');
+        b.textContent = r.viene === 'si' ? 'viene · ' + (r.personas || 1) : 'no viene';
+        li.append(a, b); lista.append(li);
+      });
+      if (snap.empty) lista.innerHTML = '<p class="vacio">Aún no hay respuestas.</p>';
+      document.getElementById('t-si').textContent = si;
+      document.getElementById('t-no').textContent = no;
+      document.getElementById('t-pers').textContent = pers;
+    }, () => { clearTimeout(t); lista.innerHTML = '<p class="vacio">No se pudieron cargar las respuestas.</p>'; });
+  }
 </script>
 </body>
 </html>
