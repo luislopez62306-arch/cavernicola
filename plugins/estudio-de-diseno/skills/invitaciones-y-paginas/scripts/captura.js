@@ -24,7 +24,22 @@ if (!archivo) { console.error('Uso: node captura.js archivo.html [--salida carpe
 const opt = n => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : undefined; };
 const salida = path.resolve(opt('--salida') || path.join(path.dirname(archivo), 'capturas'));
 fs.mkdirSync(salida, { recursive: true });
-const url = /^https?:/.test(archivo) ? archivo : 'file://' + path.resolve(archivo);
+// Servir la carpeta por HTTP local (evita errores CORS de file:// con máscaras, fuentes y fetch)
+const http = require('http');
+const TIPOS = { '.html':'text/html; charset=utf-8', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg',
+  '.webp':'image/webp', '.svg':'image/svg+xml', '.gif':'image/gif', '.mp3':'audio/mpeg', '.mp4':'video/mp4', '.json':'application/json', '.woff2':'font/woff2' };
+let url, servidor;
+function servir() {
+  if (/^https?:/.test(archivo)) { url = archivo; return Promise.resolve(); }
+  const raiz = path.dirname(path.resolve(archivo));
+  servidor = http.createServer((req, res) => {
+    const f = path.join(raiz, decodeURIComponent(req.url.split(/[?#]/)[0]));
+    if (!f.startsWith(raiz) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); return res.end(); }
+    res.writeHead(200, { 'Content-Type': TIPOS[path.extname(f).toLowerCase()] || 'application/octet-stream' });
+    fs.createReadStream(f).pipe(res);
+  });
+  return new Promise(r => servidor.listen(0, '127.0.0.1', () => { url = `http://127.0.0.1:${servidor.address().port}/${encodeURIComponent(path.basename(archivo))}`; r(); }));
+}
 
 async function auditar(page) {
   return page.evaluate(async () => {
@@ -55,6 +70,7 @@ async function auditar(page) {
 }
 
 (async () => {
+  await servir();
   const browser = await chromium.launch();
   const reporte = { archivo: url, vistas: {} };
   const vistas = [['movil', { width: 390, height: 844 }, 2, true]];
@@ -109,6 +125,7 @@ async function auditar(page) {
   }
 
   await browser.close();
+  servidor?.close();
   fs.writeFileSync(path.join(salida, 'reporte.json'), JSON.stringify(reporte, null, 2));
 
   let graves = 0;

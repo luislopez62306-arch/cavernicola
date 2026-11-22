@@ -1,6 +1,6 @@
 ---
 name: invitaciones-y-paginas
-description: Diseña invitaciones digitales y páginas web terminadas, listas para entregar — bodas, XV años, bautizos, cumpleaños, baby shower, graduaciones, eventos corporativos, landing pages, menús, tarjetas y páginas de negocio. Produce un único archivo HTML final (y PNG/PDF para impresión) con diseño exacto, cuidado al detalle y verificado con capturas. Úsalo SIEMPRE que el usuario pida crear, rediseñar, copiar o mejorar una invitación, tarjeta, save the date, página, landing, sitio de evento o cualquier pieza visual, aunque no diga "skill", y especialmente cuando comparta una imagen de referencia que quiera replicar fielmente.
+description: Diseña invitaciones digitales y páginas web terminadas, listas para entregar — bodas, XV años, bautizos, cumpleaños, baby shower, graduaciones, eventos corporativos, landing pages, menús, tarjetas y páginas de negocio. Produce un único archivo HTML final (y PNG/PDF para impresión) con diseño exacto, cuidado al detalle y verificado con capturas. Úsalo SIEMPRE que el usuario pida crear, rediseñar, copiar o mejorar una invitación, tarjeta, save the date, página, landing, sitio de evento o cualquier pieza visual, aunque no diga "skill", especialmente cuando comparta una imagen de referencia que quiera replicar fielmente o mencione sus diseños anteriores (Geraldine, Danna Sofía, etc.).
 ---
 
 # Invitaciones y páginas — diseños exactos y finales
@@ -34,20 +34,30 @@ en conversaciones o archivos anteriores (por ejemplo un `index.html` existente o
 un historial de commits), léelos primero: sus preferencias pasadas son el mejor
 brief.
 
-### 2a. Diseñar desde cero
+### 2a. Partir de los diseños propios del usuario (opción por defecto)
+
+El usuario ya tiene un estilo aprobado: las invitaciones **Geraldine** (vino y
+rosa) y **Danna Sofía** (rosa rose-gold). Lee `references/estilo-de-la-casa.md`,
+elige la que mejor encaje (o la que el usuario nombre) y adáptala desde
+`assets/disenos-propios/`. Conserva su firma: intro tipo video con monograma,
+destellos, música, pases por invitado con código, cuenta regresiva, itinerario
+con iconos, RSVP por WhatsApp y despedida con firma en caligrafía. Si el usuario
+menciona otro diseño suyo por nombre, búscalo en sus artefactos primero.
+
+### 2b. Diseñar desde cero (solo si pide un estilo distinto o no es invitación)
 
 1. Lee `references/tipos-de-evento.md` (secciones y textos de ejemplo del evento).
 2. Lee `references/paletas-y-tipografias.md` y fija **una** paleta (5–6 colores en
    hex) y **una** pareja/trío de fuentes. Escríbelas como variables CSS antes de
    dibujar nada. La coherencia viene de usar solo esas.
-3. Parte de `assets/plantilla-base.html`: ya trae columna móvil, `CONFIG`,
+3. Parte de `assets/plantilla-base.html` (plantilla genérica de un solo archivo): ya trae columna móvil, `CONFIG`,
    portada, cuenta regresiva, calendario, itinerario, lugares con mapa, código de
    vestimenta, regalos, galería, RSVP por WhatsApp, agregar al calendario, música
    y sobre animado de apertura. Quita lo que no aplique; no dejes secciones vacías.
 4. Ve a `references/componentes.md` si necesitas un componente que no está en la
    plantilla.
 
-### 2b. Modo fidelidad (hay imagen de referencia)
+### 2c. Modo fidelidad (hay imagen de referencia)
 
 Cuando el usuario comparte una imagen y dice "así", "igual", "como esta", la
 referencia es el contrato. Lee `references/fidelidad-a-referencia.md` y sigue su
@@ -61,7 +71,7 @@ invitación, con sus datos.
 
 Reglas que hacen que el resultado sea final y no un prototipo:
 
-- **Un solo archivo HTML** autocontenido. Imágenes incrustadas en base64 (WebP)
+- **Un solo archivo HTML** autocontenido (en los diseños propios, carpeta con index.html + fotos + monograma + musica.mp3, que es como el usuario los publica). Imágenes incrustadas en base64 (WebP)
   con `scripts/incrustar_imagenes.py`, para que funcione al mandarlo por WhatsApp,
   correo o subirlo a cualquier hosting. Fuentes desde Google Fonts con
   respaldo (`Georgia, serif`, etc.).
@@ -119,6 +129,8 @@ python3 <skill>/scripts/comparar.py referencia.png <carpeta>/movil.png --salida 
 
 ## Archivos del skill
 
+- `references/estilo-de-la-casa.md` — **los diseños propios del usuario (Geraldine, Danna Sofía)**: cuándo usar cada uno y cómo adaptarlos.
+- `assets/disenos-propios/` — copias completas y funcionales de esos diseños (sin datos personales).
 - `references/tipos-de-evento.md` — secciones, orden y textos modelo por evento y para páginas de negocio.
 - `references/paletas-y-tipografias.md` — paletas exactas (hex) y combinaciones de fuentes probadas.
 - `references/fidelidad-a-referencia.md` — método para replicar una imagen de referencia al detalle.

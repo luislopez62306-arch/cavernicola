@@ -22,7 +22,8 @@ Solo pide lo que quieres, por ejemplo:
 ## Contenido
 - `SKILL.md`: flujo de trabajo (brief → diseño → construcción → verificación → entrega)
 - `references/`: tipos de evento, paletas y fuentes, fidelidad a referencia, componentes, checklist
-- `assets/plantilla-base.html`: invitación completa y funcional para partir
+- `references/estilo-de-la-casa.md` + `assets/disenos-propios/`: tus diseños Geraldine y Danna Sofía, que el skill usa como base por defecto
+- `assets/plantilla-base.html`: plantilla genérica para estilos distintos
 - `scripts/captura.js`: capturas móvil/escritorio + auditoría + PNG/PDF de impresión
 - `scripts/comparar.py`: referencia vs. render con mapa de diferencias
 - `scripts/incrustar_imagenes.py`: imágenes → WebP base64 dentro del HTML
