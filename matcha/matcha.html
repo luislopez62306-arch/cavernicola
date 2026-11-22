@@ -1,169 +1,237 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Nunito:ital,wght@0,600;0,800;1,800&display=swap" rel="stylesheet">
 <style>
-html,body{margin:0;background:#fbf6ea}
-svg{display:block}
-.ink{stroke:#3d3b2f;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:url(#wob)}
-.thin{stroke:#3d3b2f;stroke-width:2;fill:none;stroke-linecap:round;filter:url(#wob)}
-.t{font-family:'Caveat',cursive;fill:#4f5a2a}
-.h{font-family:'Caveat',cursive;font-weight:700;fill:#5f7a2e;font-size:50px}
-.h,.p{paint-order:stroke;stroke:#fbf6ea;stroke-width:9px;stroke-linejoin:round}
-.p{font-family:'Caveat',cursive;font-weight:500;fill:#4a4636;font-size:29px}
-.n{font-family:'Caveat',cursive;font-weight:700;fill:#fff;font-size:38px}
+html,body{margin:0;background:#4e6a2b}
+.ln{stroke:#2e2a20;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;filter:url(#hand)}
+.hl{stroke:#2e2a20;stroke-width:1.3;fill:none;stroke-linecap:round;filter:url(#hand)}
+.wh{stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;opacity:.75}
+.num{font-family:Nunito;font-weight:800;font-size:22px;fill:#fdf3d8}
+.ttl{font-family:Nunito;font-weight:800;font-style:italic;font-size:40px;fill:#fdf3d8}
+.txt{font-family:Nunito;font-weight:600;font-size:21px;fill:#f3ecd2}
 </style></head><body>
-<svg width="1200" height="1700" viewBox="0 0 1200 1700" xmlns="http://www.w3.org/2000/svg">
+<svg id="s" width="1200" height="1700" viewBox="0 0 1200 1700" xmlns="http://www.w3.org/2000/svg">
 <defs>
-  <filter id="wob"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3.5"/></filter>
-  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 0.45 0 0 0 0 0.42 0 0 0 0 0.3 0 0 0 0.07 0"/></filter>
-  <g id="leaf"><path d="M0 0 C 20 -30 60 -30 80 0 C 60 30 20 30 0 0Z" fill="#c9d6a3" opacity=".55"/><path d="M5 0 L75 0" stroke="#b5c48a" stroke-width="2" opacity=".6"/></g>
-  <g id="heart"><path d="M0 8 C -14 -6 -6 -18 0 -9 C 6 -18 14 -6 0 8Z" fill="#f2b9c8" stroke="#3d3b2f" stroke-width="1.5" filter="url(#wob)"/></g>
-  <g id="spark"><path d="M0 -14 Q2 -2 14 0 Q2 2 0 14 Q-2 2 -14 0 Q-2 -2 0 -14Z" fill="#f6d77d" stroke="#3d3b2f" stroke-width="1.5" filter="url(#wob)"/></g>
+  <filter id="hand"><feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="3"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.10 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+  <filter id="shadow"><feGaussianBlur stdDeviation="6"/></filter>
+  <linearGradient id="gM" x1="0" x2="1"><stop offset="0" stop-color="#b4c96c"/><stop offset=".55" stop-color="#93ad4a"/><stop offset="1" stop-color="#6f8a32"/></linearGradient>
+  <linearGradient id="gMv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c060"/><stop offset="1" stop-color="#7a963a"/></linearGradient>
+  <linearGradient id="gP" x1="0" x2="1"><stop offset="0" stop-color="#fbe4ea"/><stop offset=".6" stop-color="#f2c3cf"/><stop offset="1" stop-color="#df9fb1"/></linearGradient>
+  <linearGradient id="gC" x1="0" x2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#ece3cc"/></linearGradient>
+  <linearGradient id="gW" x1="0" x2="1"><stop offset="0" stop-color="#f6e6c0"/><stop offset="1" stop-color="#d9bd80"/></linearGradient>
+  <linearGradient id="gG" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".9"/><stop offset="1" stop-color="#e3ecf0" stop-opacity=".6"/></linearGradient>
+  <linearGradient id="gS" x1="0" x2="1"><stop offset="0" stop-color="#eceae4"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#c9c5bb"/></linearGradient>
+  <path id="leafP" d="M0 0 C 40 -70 160 -80 240 0 C 160 80 40 70 0 0Z"/>
+  <g id="spark"><path d="M0 -16 Q2 -2 16 0 Q2 2 0 16 Q-2 2 -16 0 Q-2 -2 0 -16Z" fill="#fdf3d8"/></g>
 </defs>
-<rect width="1200" height="1700" fill="#fbf6ea"/>
-<rect width="1200" height="1700" filter="url(#paper)"/>
+<rect width="1200" height="1700" fill="#4e6a2b"/>
+<!-- big leaf pattern -->
+<g fill="#5b7934" id="leaves"></g>
+<rect width="1200" height="1700" fill="#000" filter="url(#grain)" opacity=".6"/>
 
-<!-- background leaves -->
-<g opacity=".9">
-<use href="#leaf" transform="translate(60 120) rotate(-30) scale(1.6)"/>
-<use href="#leaf" transform="translate(1020 260) rotate(200) scale(1.4)"/>
-<use href="#leaf" transform="translate(40 820) rotate(20) scale(1.3)"/>
-<use href="#leaf" transform="translate(1130 980) rotate(160) scale(1.6)"/>
-<use href="#leaf" transform="translate(120 1520) rotate(-60) scale(1.2)"/>
-<use href="#leaf" transform="translate(1080 1600) rotate(220) scale(1.2)"/>
-<use href="#leaf" transform="translate(620 640) rotate(40) scale(1)"/>
-</g>
+<!-- title -->
+<text x="120" y="215" font-family="DM Serif Display" font-size="200" fill="#fdf3d8" letter-spacing="-4">Matcha</text>
+<text x="620" y="300" font-family="Pacifico" font-size="96" fill="#f4b8c6" transform="rotate(-8 620 300)" stroke="#4e6a2b" stroke-width="8" paint-order="stroke">Latte</text>
+<text x="128" y="268" font-family="Nunito" font-weight="600" font-size="26" fill="#f3ecd2" letter-spacing="6">PASO A PASO PARA</text>
+<text x="128" y="302" font-family="Nunito" font-weight="600" font-size="26" fill="#f3ecd2" letter-spacing="6">PREPARAR UN MATCHA</text>
+<use href="#spark" transform="translate(1080 120)"/><use href="#spark" transform="translate(1040 175) scale(.55)"/>
 
-<!-- Title -->
-<text x="140" y="215" font-family="Sacramento" font-size="210" fill="#7c9a3d" class="ink" style="stroke-width:1.5">Matcha</text>
-<text x="790" y="300" font-family="Caveat" font-weight="700" font-size="110" fill="#e69bb0" transform="rotate(-6 790 300)" class="ink" style="stroke-width:1.5">Latte</text>
-<text x="160" y="320" class="p" style="font-size:34px">paso a paso para preparar un matcha ♡</text>
-<g transform="translate(1000 130)"><use href="#heart" transform="scale(2.2)"/></g>
-<g transform="translate(1080 90)"><use href="#heart" transform="scale(1.3) rotate(15)"/></g>
-<use href="#spark" transform="translate(110 90)"/>
+<g id="plats"></g>
 
-<!-- winding path (pink ribbon) -->
-<path d="M260 470 C 600 430 900 470 900 600 C 900 760 300 700 300 860 C 300 1010 900 960 900 1120 C 900 1280 300 1250 300 1420 C 300 1520 600 1560 820 1540"
-  fill="none" stroke="#f2c4cf" stroke-width="34" stroke-linecap="round" class="" filter="url(#wob)"/>
-<path d="M260 470 C 600 430 900 470 900 600 C 900 760 300 700 300 860 C 300 1010 900 960 900 1120 C 900 1280 300 1250 300 1420 C 300 1520 600 1560 820 1540"
-  fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="14 14" filter="url(#wob)"/>
-
-<!-- ===== STEP 1: Prepara ===== -->
-<g transform="translate(70 340)">
-  <ellipse cx="190" cy="215" rx="185" ry="34" fill="#dfe8c4" class="ink"/>
+<!-- ============ ILLUSTRATIONS ============ -->
+<!-- STEP 1 on platform 1 (top surface center ~ 250,470) -->
+<g transform="translate(95 330)">
   <!-- tin -->
-  <rect x="40" y="70" width="95" height="140" rx="8" fill="#9bb35a" class="ink"/>
-  <rect x="34" y="55" width="107" height="26" rx="6" fill="#c9d6a3" class="ink"/>
-  <rect x="55" y="110" width="65" height="60" rx="6" fill="#fbeef1" class="ink"/>
-  <text x="62" y="148" class="t" font-size="22" font-weight="700">抹茶</text>
+  <ellipse cx="80" cy="168" rx="58" ry="10" fill="#000" opacity=".18" filter="url(#shadow)"/>
+  <path d="M30 40 L30 160 Q80 175 130 160 L130 40Z" fill="url(#gM)" class="ln"/>
+  <path d="M26 22 L26 46 Q80 60 134 46 L134 22Z" fill="#dbe6b5" class="ln"/>
+  <ellipse cx="80" cy="22" rx="54" ry="11" fill="#eef3d8" class="ln"/>
+  <rect x="48" y="78" width="64" height="58" rx="6" fill="#fbeef1" class="ln"/>
+  <text x="56" y="116" font-size="24" font-weight="700" fill="#5d7a2e" font-family="serif">抹茶</text>
+  <path d="M40 60 L40 150" class="wh"/>
+  <!-- chashaku -->
+  <path d="M150 165 Q215 150 245 120 Q252 116 248 128 Q220 160 152 172Z" fill="url(#gW)" class="ln"/>
   <!-- chasen -->
-  <path d="M175 210 L170 140 Q195 120 220 140 L215 210Z" fill="#f3e2b3" class="ink"/>
-  <path d="M178 145 L183 205 M190 140 L192 207 M202 140 L200 207 M213 145 L208 205" class="thin"/>
-  <rect x="178" y="95" width="34" height="48" rx="6" fill="#e8cf8f" class="ink"/>
-  <!-- milk -->
-  <path d="M260 90 L330 90 L330 210 L260 210Z" fill="#fbeef1" class="ink"/>
-  <path d="M260 90 L275 60 L315 60 L330 90" fill="#f2c4cf" class="ink"/>
-  <text x="268" y="160" class="t" font-size="28" font-weight="700" fill="#d27b95">leche</text>
-</g>
-<g transform="translate(470 370)">
-  <circle cx="0" cy="0" r="26" fill="#e69bb0" class="ink" style="stroke-width:2"/><text x="-8" y="12" class="n">1</text>
-  <text x="40" y="14" class="h">Prepara</text>
-  <text x="0" y="60" class="p">Ten listo el matcha, el batidor</text>
-  <text x="0" y="92" class="p">(chasen), un bol y tu leche favorita.</text>
+  <ellipse cx="300" cy="168" rx="38" ry="7" fill="#000" opacity=".18" filter="url(#shadow)"/>
+  <path d="M272 165 Q264 115 278 92 L322 92 Q336 115 328 165 Q300 172 272 165Z" fill="url(#gW)" class="ln"/>
+  <path d="M282 100 Q278 130 284 163 M292 96 Q290 130 293 167 M302 96 L303 168 M312 96 Q314 130 311 167 M320 100 Q324 130 318 163" class="hl"/>
+  <path d="M284 92 L284 40 Q300 32 316 40 L316 92Z" fill="#e3c98e" class="ln"/>
+  <path d="M284 72 Q300 78 316 72" class="hl"/>
+  <!-- milk carton -->
+  <ellipse cx="410" cy="170" rx="44" ry="8" fill="#000" opacity=".18" filter="url(#shadow)"/>
+  <path d="M370 60 L450 60 L450 168 L370 168Z" fill="url(#gC)" class="ln"/>
+  <path d="M370 60 L385 25 L435 25 L450 60Z" fill="#f4c2ce" class="ln"/>
+  <path d="M385 25 L385 12 L435 12 L435 25" fill="#f4c2ce" class="ln"/>
+  <text x="378" y="122" font-family="Nunito" font-weight="800" font-size="24" fill="#d97b95">MILK</text>
+  <path d="M376 135 Q410 128 444 135" stroke="#f4c2ce" stroke-width="10" fill="none"/>
 </g>
 
-<!-- ===== STEP 2: Tamiza ===== -->
-<g transform="translate(700 600)">
-  <ellipse cx="180" cy="200" rx="170" ry="30" fill="#dfe8c4" class="ink"/>
+<!-- STEP 2 on platform 2 (right) -->
+<g transform="translate(700 590)">
+  <ellipse cx="200" cy="178" rx="130" ry="16" fill="#000" opacity=".2" filter="url(#shadow)"/>
   <!-- bowl -->
-  <path d="M60 120 Q180 260 300 120Z" fill="#f6dbe2" class="ink"/>
-  <ellipse cx="180" cy="120" rx="120" ry="22" fill="#fbeef1" class="ink"/>
-  <ellipse cx="180" cy="122" rx="60" ry="10" fill="#8fae4a" filter="url(#wob)"/>
+  <path d="M80 100 Q85 175 200 180 Q315 175 320 100Z" fill="url(#gP)" class="ln"/>
+  <path d="M150 178 L152 188 L248 188 L250 178" fill="#df9fb1" class="ln"/>
+  <ellipse cx="200" cy="100" rx="120" ry="24" fill="#fff3f5" class="ln"/>
+  <ellipse cx="200" cy="104" rx="78" ry="12" fill="url(#gMv)"/>
+  <path d="M95 115 Q120 160 170 172" class="wh"/>
   <!-- sieve -->
-  <ellipse cx="180" cy="40" rx="60" ry="14" fill="#e6e3d6" class="ink"/>
-  <path d="M120 40 Q180 95 240 40" fill="#f1efe6" class="ink"/>
-  <path d="M240 40 L310 20" class="ink" fill="none" style="stroke-width:5"/>
-  <g fill="#8fae4a"><circle cx="165" cy="85" r="3"/><circle cx="185" cy="95" r="2.5"/><circle cx="175" cy="105" r="3"/><circle cx="195" cy="82" r="2"/></g>
-</g>
-<g transform="translate(260 650)">
-  <circle cx="0" cy="0" r="26" fill="#e69bb0" class="ink" style="stroke-width:2"/><text x="-9" y="12" class="n">2</text>
-  <text x="40" y="14" class="h">Tamiza</text>
-  <text x="0" y="60" class="p">Cierne 2 g (1 cdta) de matcha</text>
-  <text x="0" y="92" class="p">en el bol para que no haga grumos.</text>
+  <path d="M140 20 Q200 85 260 20" fill="#f1efe8" class="ln"/>
+  <path d="M150 30 Q200 70 250 30 M170 22 L180 58 M200 22 L200 66 M230 22 L220 58" class="hl" opacity=".6"/>
+  <ellipse cx="200" cy="20" rx="60" ry="12" fill="url(#gS)" class="ln"/>
+  <path d="M260 18 L330 -8" class="ln" stroke-width="5" fill="none"/>
+  <ellipse cx="200" cy="18" rx="40" ry="6" fill="#9bb550"/>
+  <g fill="#9bb550"><circle cx="185" cy="72" r="2.5"/><circle cx="200" cy="80" r="2"/><circle cx="212" cy="70" r="2.5"/><circle cx="194" cy="88" r="2"/><circle cx="207" cy="92" r="1.6"/></g>
 </g>
 
-<!-- ===== STEP 3: Agua ===== -->
-<g transform="translate(90 900)">
-  <ellipse cx="180" cy="210" rx="175" ry="30" fill="#dfe8c4" class="ink"/>
+<!-- STEP 3 on platform 3 (left) -->
+<g transform="translate(90 870)">
+  <ellipse cx="170" cy="190" rx="110" ry="15" fill="#000" opacity=".2" filter="url(#shadow)"/>
   <!-- kettle -->
-  <path d="M40 200 Q20 110 110 100 Q200 110 180 200Z" fill="#f6dbe2" class="ink"/>
-  <path d="M175 160 Q230 130 250 90" fill="none" class="ink" style="stroke-width:9"/>
-  <path d="M175 160 Q230 130 250 90" fill="none" stroke="#f6dbe2" stroke-width="4"/>
-  <path d="M60 110 Q110 30 160 110" fill="none" class="ink" style="stroke-width:5"/>
-  <ellipse cx="110" cy="100" rx="35" ry="8" fill="#e69bb0" class="ink"/>
-  <path d="M255 85 Q265 60 255 40 Q245 20 260 0 M275 90 Q285 65 275 45" class="thin"/>
-  <!-- thermometer bubble -->
-  <rect x="270" y="120" width="90" height="46" rx="20" fill="#fff" class="ink" style="stroke-width:2"/>
-  <text x="283" y="153" class="t" font-size="30" font-weight="700" fill="#d27b95">80°C</text>
-</g>
-<g transform="translate(560 960)">
-  <circle cx="0" cy="0" r="26" fill="#e69bb0" class="ink" style="stroke-width:2"/><text x="-9" y="12" class="n">3</text>
-  <text x="40" y="14" class="h">Añade agua</text>
-  <text x="0" y="60" class="p">Vierte 60 ml de agua a 75–80 °C.</text>
-  <text x="0" y="92" class="p">¡Nunca hirviendo, o amargará!</text>
-</g>
-
-<!-- ===== STEP 4: Bate ===== -->
-<g transform="translate(700 1150)">
-  <ellipse cx="180" cy="200" rx="170" ry="30" fill="#dfe8c4" class="ink"/>
-  <path d="M60 120 Q180 260 300 120Z" fill="#f6dbe2" class="ink"/>
-  <ellipse cx="180" cy="120" rx="120" ry="22" fill="#fbeef1" class="ink"/>
-  <ellipse cx="180" cy="122" rx="105" ry="17" fill="#a9c260" filter="url(#wob)"/>
-  <g fill="#e3edc4"><circle cx="150" cy="120" r="5"/><circle cx="200" cy="118" r="4"/><circle cx="175" cy="126" r="6"/><circle cx="225" cy="124" r="3"/></g>
-  <!-- whisk tilted -->
-  <g transform="rotate(18 200 60)">
-    <path d="M185 120 L180 60 Q205 42 230 60 L225 120Z" fill="#f3e2b3" class="ink"/>
-    <rect x="190" y="0" width="30" height="58" rx="6" fill="#e8cf8f" class="ink"/>
+  <path d="M75 185 Q50 120 90 85 Q170 60 250 85 Q290 120 265 185Z" fill="url(#gP)" class="ln"/>
+  <path d="M90 85 Q170 100 250 85" class="hl"/>
+  <path d="M262 135 Q310 120 330 70 L342 74 Q330 140 268 160" fill="url(#gP)" class="ln"/>
+  <path d="M110 88 Q170 -10 230 88" fill="none" stroke="#2e2a20" stroke-width="7" stroke-linecap="round" filter="url(#hand)"/>
+  <path d="M110 88 Q170 -10 230 88" fill="none" stroke="#e3c98e" stroke-width="3.5" stroke-linecap="round"/>
+  <ellipse cx="170" cy="80" rx="40" ry="9" fill="#df9fb1" class="ln"/>
+  <circle cx="170" cy="68" r="7" fill="#e3c98e" class="ln"/>
+  <path d="M92 110 Q80 145 95 175" class="wh"/>
+  <path d="M340 60 Q355 35 340 15 Q325 -5 342 -30 M360 66 Q375 40 360 18" stroke="#fdf3d8" stroke-width="3" fill="none" stroke-linecap="round" opacity=".85"/>
+  <!-- thermometer tag -->
+  <g transform="translate(330 120)">
+    <rect x="0" y="0" width="98" height="48" rx="24" fill="#fdf3d8" class="ln"/>
+    <text x="16" y="33" font-family="Nunito" font-weight="800" font-size="24" fill="#c86a85">80°C</text>
   </g>
-  <path d="M40 40 L60 80 L80 45 L100 80 L120 40" class="thin" style="stroke:#d27b95;stroke-width:3"/>
-</g>
-<g transform="translate(260 1200)">
-  <circle cx="0" cy="0" r="26" fill="#e69bb0" class="ink" style="stroke-width:2"/><text x="-9" y="12" class="n">4</text>
-  <text x="40" y="14" class="h">Bate en “W”</text>
-  <text x="0" y="60" class="p">Bate rápido en zigzag 20–30 seg</text>
-  <text x="0" y="92" class="p">hasta que salga una espumita.</text>
 </g>
 
-<!-- ===== STEP 5 & 6: Leche + servir ===== -->
-<g transform="translate(70 1400)">
-  <ellipse cx="200" cy="250" rx="190" ry="30" fill="#dfe8c4" class="ink"/>
-  <!-- glass with milk+ice -->
-  <path d="M110 70 L290 70 L270 250 L130 250Z" fill="#fffaf0" class="ink"/>
-  <path d="M120 150 L280 150 L270 250 L130 250Z" fill="#fbf3e6" filter="url(#wob)"/>
-  <path d="M117 120 Q200 135 283 120 L280 150 Q200 160 120 150Z" fill="#a9c260" filter="url(#wob)"/>
-  <rect x="140" y="160" width="40" height="36" rx="6" fill="#eef4f8" class="thin" transform="rotate(-10 160 178)"/>
-  <rect x="200" y="175" width="40" height="36" rx="6" fill="#eef4f8" class="thin" transform="rotate(12 220 193)"/>
-  <!-- straw & bow -->
-  <path d="M235 75 L265 -20" stroke="#e69bb0" stroke-width="14" stroke-linecap="round" filter="url(#wob)"/>
-  <path d="M248 40 Q205 0 215 55 Q240 60 248 40 Q290 15 290 60 Q265 65 248 40 M248 40 Q230 80 215 105 M248 40 Q265 85 280 100" fill="none" stroke="#e69bb0" stroke-width="7" stroke-linecap="round" filter="url(#wob)"/>
-  <path d="M110 70 L290 70 L270 250 L130 250Z" fill="none" class="ink"/>
-  <path d="M135 90 L145 230" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+<!-- STEP 4 on platform 4 (right) -->
+<g transform="translate(700 1110)">
+  <ellipse cx="200" cy="178" rx="130" ry="16" fill="#000" opacity=".2" filter="url(#shadow)"/>
+  <path d="M80 100 Q85 175 200 180 Q315 175 320 100Z" fill="url(#gP)" class="ln"/>
+  <path d="M150 178 L152 188 L248 188 L250 178" fill="#df9fb1" class="ln"/>
+  <ellipse cx="200" cy="100" rx="120" ry="24" fill="#fff3f5" class="ln"/>
+  <ellipse cx="200" cy="103" rx="108" ry="19" fill="url(#gMv)"/>
+  <g fill="#dfeab7" opacity=".95"><circle cx="150" cy="100" r="5"/><circle cx="170" cy="108" r="3.5"/><circle cx="235" cy="98" r="4"/><circle cx="255" cy="108" r="3"/><circle cx="195" cy="112" r="3"/><circle cx="130" cy="106" r="2.5"/></g>
+  <path d="M95 115 Q120 160 170 172" class="wh"/>
+  <g transform="rotate(20 215 40)">
+    <path d="M190 108 Q182 70 196 50 L238 50 Q252 70 244 108 Q217 114 190 108Z" fill="url(#gW)" class="ln"/>
+    <path d="M200 56 Q196 85 202 106 M210 54 L212 110 M220 54 L221 110 M230 54 Q234 85 230 106" class="hl"/>
+    <path d="M202 50 L202 -5 Q217 -12 232 -5 L232 50Z" fill="#e3c98e" class="ln"/>
+    <path d="M202 28 Q217 34 232 28" class="hl"/>
+  </g>
+  <path d="M40 20 L58 60 L76 28 L94 60 L112 20" stroke="#fdf3d8" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 80 l14 0 M24 92 l18 0" stroke="#fdf3d8" stroke-width="3" stroke-linecap="round" opacity=".7"/>
 </g>
-<use href="#spark" transform="translate(410 1440)"/>
-<use href="#spark" transform="translate(60 1450) scale(.7)"/>
-<use href="#heart" transform="translate(400 1530) scale(1.4)"/>
 
-<g transform="translate(530 1395)">
-  <circle cx="0" cy="0" r="26" fill="#e69bb0" class="ink" style="stroke-width:2"/><text x="-9" y="12" class="n">5</text>
-  <text x="40" y="14" class="h">Leche y hielo</text>
-  <text x="0" y="56" class="p">Llena un vaso con hielo y 180 ml de leche.</text>
+<!-- STEP 5: pitcher pouring (left, like reference) -->
+<g transform="translate(40 1300)">
+  <!-- glass -->
+  <ellipse cx="250" cy="250" rx="85" ry="12" fill="#000" opacity=".2" filter="url(#shadow)"/>
+  <path d="M180 100 L320 100 L305 248 L195 248Z" fill="url(#gG)" class="ln"/>
+  <path d="M186 160 L314 160 L305 248 L195 248Z" fill="#fbf5e8"/>
+  <path d="M184 140 Q250 150 316 140 L314 160 Q250 170 186 160Z" fill="url(#gMv)"/>
+  <path d="M186 160 Q250 175 314 160" stroke="#b8cb7a" stroke-width="6" fill="none" opacity=".7"/>
+  <rect x="205" y="175" width="38" height="34" rx="7" fill="#eaf3f6" stroke="#9fb4bd" stroke-width="1.5" transform="rotate(-12 224 192)"/>
+  <rect x="255" y="190" width="38" height="34" rx="7" fill="#eaf3f6" stroke="#9fb4bd" stroke-width="1.5" transform="rotate(10 274 207)"/>
+  <path d="M180 100 L320 100 L305 248 L195 248Z" fill="none" class="ln"/>
+  <path d="M198 115 L208 235" class="wh"/>
+  <!-- pour stream -->
+  <path d="M150 40 Q235 30 240 140" stroke="#93ad4a" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <!-- pitcher -->
+  <g transform="rotate(-28 90 40)">
+    <path d="M20 0 L150 0 L165 -10 L160 8 L145 110 Q85 125 30 110Z" fill="url(#gS)" class="ln"/>
+    <path d="M30 20 Q-15 30 0 70 Q10 95 35 92" fill="none" stroke="#2e2a20" stroke-width="10" stroke-linecap="round" filter="url(#hand)"/>
+    <path d="M30 20 Q-15 30 0 70 Q10 95 35 92" fill="none" stroke="#e8a9b9" stroke-width="6" stroke-linecap="round"/>
+    <path d="M42 15 L50 100" class="wh"/>
+    <path d="M30 70 Q85 80 148 70 L145 110 Q85 125 30 110Z" fill="#e8a9b9" opacity=".7"/>
+  </g>
 </g>
-<g transform="translate(530 1520)">
-  <circle cx="0" cy="0" r="26" fill="#e69bb0" class="ink" style="stroke-width:2"/><text x="-9" y="12" class="n">6</text>
-  <text x="40" y="14" class="h">Sirve y disfruta</text>
-  <text x="0" y="56" class="p">Vierte el matcha encima, mira las capas</text>
-  <text x="0" y="88" class="p">y endulza al gusto ♡</text>
+
+<!-- STEP 6: final drinks on bottom platform -->
+<g transform="translate(590 1360)">
+  <!-- hot matcha latte cup -->
+  <ellipse cx="120" cy="250" rx="110" ry="14" fill="#000" opacity=".2" filter="url(#shadow)"/>
+  <ellipse cx="120" cy="240" rx="110" ry="18" fill="url(#gC)" class="ln"/>
+  <path d="M40 150 Q45 238 120 240 Q195 238 200 150Z" fill="url(#gC)" class="ln"/>
+  <path d="M198 165 Q245 160 238 195 Q230 222 190 212" fill="none" stroke="#2e2a20" stroke-width="13" stroke-linecap="round" filter="url(#hand)"/>
+  <path d="M198 165 Q245 160 238 195 Q230 222 190 212" fill="none" stroke="#fffaf0" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="120" cy="150" rx="80" ry="16" fill="url(#gMv)" class="ln"/>
+  <path d="M120 162 C 95 150 98 136 112 140 C 116 141 119 144 120 147 C 121 144 124 141 128 140 C 142 136 145 150 120 162Z" fill="#fdf6e6"/>
+  <path d="M120 147 L120 136" stroke="#fdf6e6" stroke-width="2"/>
+  <path d="M55 170 Q65 215 105 230" class="wh"/>
+  <!-- iced matcha cup with bow straw -->
+  <g transform="translate(300 -10) scale(.85)">
+    <ellipse cx="110" cy="292" rx="80" ry="12" fill="#000" opacity=".2" filter="url(#shadow)"/>
+    <path d="M140 105 L158 20" stroke="#2e2a20" stroke-width="16" stroke-linecap="round" filter="url(#hand)"/>
+    <path d="M140 105 L158 20" stroke="#f2b6c4" stroke-width="12" stroke-linecap="round"/>
+    <path d="M40 110 L180 110 L162 285 Q110 296 58 285Z" fill="url(#gM)" class="ln"/>
+    <path d="M44 150 Q110 160 176 150" class="hl" opacity=".5"/>
+    <path d="M52 240 Q110 250 168 240 M55 262 Q110 272 165 262" class="hl" opacity=".45"/>
+    <path d="M30 98 Q110 82 190 98 L186 115 Q110 128 34 115Z" fill="#dbe6b5" class="ln"/>
+    <path d="M40 105 l0 8 M60 102 l0 9 M80 100 l0 10 M140 100 l0 10 M160 102 l0 9 M178 104 l0 8" class="hl" opacity=".6"/>
+    <path d="M60 130 L72 270" class="wh"/>
+    <!-- heart label -->
+    <path d="M110 245 C 60 210 60 160 88 160 C 100 160 107 168 110 178 C 113 168 120 160 132 160 C 160 160 160 210 110 245Z" fill="#fbe8ec" class="ln"/>
+    <text x="110" y="205" text-anchor="middle" font-family="Pacifico" font-size="17" fill="#6f8a32">matcha</text>
+    <!-- bow -->
+    <g stroke="#2e2a20" stroke-width="10" fill="none" stroke-linecap="round" filter="url(#hand)">
+      <path d="M152 50 Q110 10 108 50 Q120 75 152 50 Q190 20 198 55 Q190 80 152 50 M152 50 Q125 95 118 125 M152 50 Q170 100 190 120"/>
+    </g>
+    <g stroke="#f2b6c4" stroke-width="6" fill="none" stroke-linecap="round">
+      <path d="M152 50 Q110 10 108 50 Q120 75 152 50 Q190 20 198 55 Q190 80 152 50 M152 50 Q125 95 118 125 M152 50 Q170 100 190 120"/>
+    </g>
+  </g>
+  <use href="#spark" transform="translate(20 110)"/><use href="#spark" transform="translate(510 140) scale(.8)"/>
 </g>
-<text x="600" y="1670" text-anchor="middle" class="p" style="font-size:26px;fill:#9a937a">matcha · matcha · matcha</text>
+
+<!-- ============ TEXT ============ -->
+<g id="labels"></g>
 </svg>
+<script>
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(p||document.getElementById('s')).appendChild(e);return e};
+// background leaves
+const L=document.getElementById('leaves');
+[[-40,420,30,1.3],[900,330,-20,1.4],[700,820,60,1.1],[-60,1040,-15,1.5],[940,1380,200,1.2],[380,1520,-40,1.0],[460,700,150,.9],[1000,40,120,.9],[330,10,20,.8]]
+.forEach(([x,y,r,s])=>{const g=el('g',{transform:`translate(${x} ${y}) rotate(${r}) scale(${s})`},L);el('use',{href:'#leafP'},g);el('path',{d:'M10 0 Q120 -6 230 0',stroke:'#4e6a2b','stroke-width':4,fill:'none'},g);for(let i=1;i<6;i++){const x0=i*38;el('path',{d:`M${x0} -2 Q${x0+25} -25 ${x0+40} -35 M${x0} 2 Q${x0+25} 25 ${x0+40} 35`,stroke:'#4e6a2b','stroke-width':2.5,fill:'none'},g)}});
+// isometric slabs
+const P=document.getElementById('plats');
+function slab(x,y,w,dp,h){ // top: parallelogram skewed left
+  const sk=dp*0.9;
+  const top=`M${x+sk} ${y} L${x+w+sk} ${y} L${x+w} ${y+dp} L${x} ${y+dp}Z`;
+  el('path',{d:`M${x} ${y+dp} L${x+w} ${y+dp} L${x+w} ${y+dp+h} L${x} ${y+dp+h}Z`,fill:'#c99aa5',stroke:'#2e2a20','stroke-width':2,'stroke-linejoin':'round',filter:'url(#hand)'},P);
+  el('path',{d:`M${x+w} ${y+dp} L${x+w+sk} ${y} L${x+w+sk} ${y+h} L${x+w} ${y+dp+h}Z`,fill:'#ae7f8b',stroke:'#2e2a20','stroke-width':2,'stroke-linejoin':'round',filter:'url(#hand)'},P);
+  el('path',{d:top,fill:'#f8e6ea',stroke:'#2e2a20','stroke-width':2,'stroke-linejoin':'round',filter:'url(#hand)'},P);
+}
+// connectors (bamboo-style pipes)
+function pipe(d){el('path',{d,stroke:'#2e2a20','stroke-width':16,fill:'none','stroke-linecap':'round','stroke-linejoin':'round',filter:'url(#hand)'},P);el('path',{d,stroke:'#e3c98e','stroke-width':11,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'},P);}
+pipe('M560 470 L960 470 L960 610');
+pipe('M780 780 L420 780 L420 880');
+pipe('M560 1060 L960 1060 L960 1130');
+pipe('M790 1300 L360 1300 L360 1380');
+slab(30,470,500,70,34);
+slab(690,750,420,60,30);
+slab(50,1030,450,60,30);
+slab(690,1270,420,60,30);
+slab(-40,1530,1300,90,40);
+// labels
+const Lb=document.getElementById('labels');
+function label(x,y,n,t,lines,anchor){
+  const a=anchor||'start';
+  const g=el('g',{},Lb);
+  const cx=a==='end'?x-24:x+24;
+  el('circle',{cx,cy:y-14,r:22,fill:'none',stroke:'#fdf3d8','stroke-width':2.5},g);
+  const nt=el('text',{x:cx,y:y-6,'text-anchor':'middle',class:'num'},g);nt.textContent=n;
+  const tt=el('text',{x:a==='end'?x-60:x+60,y,'text-anchor':a,class:'ttl'},g);tt.textContent=t;
+  lines.forEach((l,i)=>{const tx=el('text',{x,y:y+38+i*27,'text-anchor':a,class:'txt'},g);tx.textContent=l;});
+}
+label(610,390,'1','Prepara',['Matcha de buena calidad, batidor','de bambú (chasen), un bol y leche.']);
+label(560,670,'2','Tamiza',['Cierne 2 g (1 cdta) de matcha','en el bol para evitar grumos.'],'end');
+label(1160,930,'3','Agua caliente',['Añade 60 ml de agua a 75–80 °C.','Nunca hirviendo: lo vuelve amargo.'],'end');
+label(80,1180,'4','Bate en “W”',['Bate rápido en zigzag 20–30 seg','hasta lograr una espuma fina.']);
+label(430,1400,'5','Leche y hielo',['Vaso con hielo y 180 ml de leche;','vierte el matcha encima.'],'start');
+label(1160,1675,'6','Sirve y disfruta',[],'end');
+const ft=el('text',{x:60,y:1675,class:'txt','font-size':20},Lb);ft.textContent='Endulza al gusto y disfruta las capas ♡';
+</script>
 </body></html>
