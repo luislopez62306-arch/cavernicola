@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birthday party!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Fredoka:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosa:#fbdce3; --blanco:#fff; --oscuro:#2e3230; --tinta:#1d1d1d;
+    --script:'Great Vibes',cursive; --sans:'Inter',system-ui,sans-serif; --serif:'Cormorant Garamond',Georgia,serif;
+    --grano:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    color-scheme:light;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(circle at 1px 1px,rgba(200,120,140,.16) 1px,transparent 0) 0 0/22px 22px,var(--rosa);font-family:var(--script);color:var(--tinta);-webkit-font-smoothing:antialiased;padding:40px 0}
+  .inv{max-width:430px;margin:0 auto;background:var(--blanco);border-radius:6px;container-type:inline-size;overflow:hidden;box-shadow:0 10px 40px rgba(160,90,110,.15)}
+  section{position:relative;text-align:center}
+  img{display:block;max-width:100%}
+  h1,h2{font-weight:400}
+
+  /* Bordes de papel rasgado */
+  .rasgo{position:absolute;left:0;width:100%;height:9cqw;display:block;z-index:2;pointer-events:none;filter:drop-shadow(0 1.5px 1.5px rgba(0,0,0,.18))}
+  .rasgo.arriba{top:-1px}
+  .rasgo.abajo{bottom:-1px;transform:scaleY(-1)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.on{opacity:1;transform:none}
+
+  /* Portada */
+  .portada h1{font-size:12.5cqw;padding:11cqw 0 1cqw;letter-spacing:.02em}
+  .sub{font-family:var(--serif);font-size:3.3cqw;letter-spacing:.42em;text-transform:uppercase;color:#555;padding:0 0 8cqw;margin-right:-.42em}
+  .sub i{display:inline-block;width:6cqw;height:1px;background:#999;vertical-align:middle;margin:0 2.4cqw}
+  .foto{position:relative}
+  .foto{overflow:hidden;background:#d9d9dc}
+  .foto::after{content:'';position:absolute;inset:0;background:var(--grano);opacity:.32;mix-blend-mode:overlay;pointer-events:none;z-index:1}
+  .foto img{filter:contrast(1.04) saturate(.92)}
+  .foto img{width:100%;height:auto;transform:scale(1.06);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+  .foto.on img{transform:scale(1)}
+  .frase{font-family:var(--serif);font-style:italic;font-size:5.4cqw;margin-top:5cqw;color:#333}
+  .lazo{width:22cqw;margin:4cqw auto 0;transform-origin:50% 20%}
+  .lazo.on{animation:mece 4s ease-in-out 1s infinite}
+  @keyframes mece{0%,100%{rotate:0deg}30%{rotate:4deg}70%{rotate:-4deg}}
+
+  .texto{padding:20cqw 7cqw 0}
+  .texto h2{font-size:9cqw;margin-bottom:9cqw}
+  .texto p{font-family:var(--serif);font-style:italic;font-size:5.5cqw;line-height:1.6;color:#2a2a2a}
+  .texto .inv-linea{margin-top:9cqw;font-family:var(--script);font-style:normal;font-size:8cqw;line-height:1.2}
+  .pastel{width:50cqw;margin:20cqw auto 34cqw}
+
+  /* Bloques oscuros */
+  .oscuro{background:var(--grano) 0 0/160px,var(--oscuro);background-blend-mode:soft-light;color:#fff;padding:20cqw 8cqw 22cqw}
+  .oscuro h2{font-size:9cqw;margin-bottom:10cqw}
+  .lugar p{font-family:var(--serif);font-style:italic;font-size:5.8cqw;line-height:1.45}
+  .lugar p:first-of-type::first-line{font-family:var(--script);font-style:normal;font-size:7.6cqw}
+  .btn{display:inline-block;font-family:var(--sans);font-size:3.2cqw;transition:background .3s,color .3s;text-decoration:none;color:var(--tinta);background:#fff;padding:4.3cqw 9cqw;margin:15cqw 0 9cqw;letter-spacing:.02em}
+  .fecha{font-family:var(--serif);font-size:5.4cqw;letter-spacing:.3em;line-height:2;margin-right:-.3em}
+  .fecha small{display:block;font-size:4.6cqw;letter-spacing:.2em;font-style:italic;text-transform:none}
+
+  /* Itinerario */
+  .timing{padding:26cqw 4cqw 0}
+  .timing h2{font-size:9cqw;margin-left:16cqw}
+  .linea{position:relative;height:84cqw;margin-top:2cqw}
+  .paso{position:absolute;width:46cqw}
+  .paso b{display:block;font-family:var(--serif);font-weight:500;font-style:italic;font-size:7.4cqw}
+  .paso span{display:block;font-family:var(--serif);font-style:italic;font-size:4.3cqw;line-height:1.3;color:#444}
+  .flecha{position:absolute;width:12cqw;height:10cqw;stroke:var(--tinta);fill:none;stroke-width:1.2;stroke-dasharray:80;stroke-dashoffset:80;transition:stroke-dashoffset 1.4s ease .3s}
+  .flecha.on{stroke-dashoffset:0}
+  .p1{left:0;top:8cqw}  .p2{right:-2cqw;top:25cqw} .p3{left:2cqw;top:51cqw} .p4{right:0;top:68cqw}
+  .f1{left:20cqw;top:-2cqw} .f2{left:63cqw;top:14cqw} .f3{left:22cqw;top:40cqw} .f4{left:65cqw;top:57cqw}
+  .champan{width:44cqw;margin:14cqw auto 26cqw}
+
+  .deseos{padding-top:18cqw;padding-bottom:12cqw}
+  .deseos p{font-family:var(--serif);font-style:italic;font-size:5.5cqw;line-height:1.6;color:#eee}
+  .deseos p+p{margin-top:8cqw}
+  .deseos .btn{border-radius:99px;padding:2.6cqw 9cqw;margin:10cqw 0 5cqw;font-size:3cqw}
+  .nick{font-family:'Fredoka',sans-serif;font-size:13cqw;color:#fff;letter-spacing:.01em;text-decoration:none;display:block}
+
+  /* Dress code */
+  .dress{padding:30cqw 10cqw 0}
+  .orn{display:flex;align-items:center;justify-content:center;gap:4cqw;margin-bottom:10cqw}
+  .orn::before,.orn::after{content:'';width:18cqw;height:1px;background:#bbb}
+  .orn img{width:9cqw}
+  .dress h2{font-size:8cqw;margin-bottom:13cqw}
+  .dress p{font-family:var(--serif);font-style:italic;font-size:5.5cqw;line-height:1.6;color:#2a2a2a}
+  .colores{display:flex;justify-content:space-between;margin:24cqw 0 34cqw;padding:0 0}
+  .colores figure{text-align:center;font-family:var(--serif);font-size:3.4cqw;letter-spacing:.3em;text-transform:uppercase;color:#555}
+  .colores i{width:34cqw;height:24cqw;border:1px solid var(--tinta);display:block;margin-bottom:3cqw;box-shadow:0 2cqw 4cqw rgba(0,0,0,.08)}
+  .colores figure+figure i{background:#231f20}
+
+  /* RSVP */
+  .rsvp{padding:4cqw 6cqw 8cqw}
+  .rsvp h2{font-family:var(--serif);font-style:italic;font-size:5.6cqw;line-height:1.5;color:#2a2a2a}
+  .rsvp h2 b{display:block;font-family:var(--script);font-style:normal;font-weight:400;font-size:9cqw;margin-bottom:3cqw;color:var(--tinta)}
+  form{width:72cqw;margin:8cqw auto 0;text-align:left;font-family:var(--sans)}
+  label{display:block;font-size:3.4cqw;color:#444;margin:4cqw 0 1.5cqw}
+  input,select{width:100%;font:inherit;font-size:16px;padding:2.4cqw 3cqw;border:1px solid #c9c9c9;border-radius:2.4cqw;background:#fff;color:var(--tinta)}
+  input:focus,select:focus{outline:none;border-color:var(--tinta)}
+  button{width:100%;margin-top:6cqw;border:0;border-radius:99px;background:#333;color:#fff;font:500 3.8cqw var(--sans);padding:3.4cqw;cursor:pointer;transition:background .3s}
+  button:hover{background:#000}
+  button:disabled{opacity:.6;cursor:wait}
+  .nota{font-family:var(--sans);font-size:2.6cqw;color:#888;text-align:center;margin-top:3cqw;line-height:1.4}
+  .gracias{font-size:7cqw;margin-top:8cqw;display:none;line-height:1.4}
+  .gracias small{display:block;font-family:var(--sans);font-size:3cqw;color:#888;margin-top:3cqw}
+  .gracias a{color:inherit}
+  .error{font-family:var(--sans);font-size:3cqw;color:#a33;text-align:center;margin-top:3cqw;min-height:1em}
+  .cal{display:block;width:max-content;margin:6cqw auto 0;text-underline-offset:3px;font-family:var(--sans);font-size:3cqw;color:#fff;opacity:.8}
+  .firma{font-size:9cqw;padding:10cqw 0 14cqw}
+
+  /* Panel de respuestas (solo la anfitriona) */
+  .panel{display:none;font-family:var(--sans);background:#f6f4f4;margin:0 6cqw 10cqw;padding:6cqw;border-radius:3cqw;text-align:left}
+  .panel h3{font:400 7cqw var(--script);text-align:center;margin-bottom:3cqw}
+  .totales{display:flex;justify-content:center;gap:6cqw;font-size:3.2cqw;margin-bottom:4cqw;text-align:center}
+  .totales b{display:block;font-size:7cqw;font-weight:500}
+  .panel li{list-style:none;display:flex;justify-content:space-between;gap:3cqw;font-size:3.4cqw;padding:2.2cqw 0;border-top:1px solid #e2dddd}
+  .panel li span:last-child{color:#666;white-space:nowrap}
+  .panel .vacio{font-size:3.2cqw;color:#888;text-align:center}
+
+  /* Sobre de entrada */
+  .sobre{position:fixed;inset:0;z-index:50;background:var(--rosa);display:grid;place-items:center;cursor:pointer;transition:opacity .9s ease,visibility .9s}
+  .sobre.fuera{opacity:0;visibility:hidden}
+  .sobre .tarjeta{background:#fff;width:min(78vw,330px);aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;box-shadow:0 20px 50px rgba(160,90,110,.25);transition:transform .9s cubic-bezier(.6,0,.3,1)}
+  .sobre.fuera .tarjeta{transform:translateY(-30px) scale(1.04)}
+  .sobre .tarjeta img{width:28%;animation:mece 3s ease-in-out infinite;transform-origin:50% 20%}
+  .sobre p{font-size:clamp(26px,9vw,40px);text-align:center;line-height:1.2}
+  .sobre small{font-family:var(--sans);font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:#888;animation:late 2s ease-in-out infinite}
+  @keyframes late{50%{opacity:.35}}
+
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.lazo.on,.sobre img{animation:none}.flecha{stroke-dashoffset:0}.foto img{transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- borde rasgado: relleno blanco que "muerde" la sección -->
+    <symbol id="rasgo" viewBox="0 0 400 40" preserveAspectRatio="none">
+      <path d="M0 0H400V23.0L400 23.0 393.6 25.2 389.6 23.2 384.8 23.1 378.6 19.1 375.5 22.2 370.8 20.9 367.8 18.8 361.9 16.8 355.1 19.4 352.0 14.7 346.8 19.0 342.3 15.2 337.6 14.3 333.7 16.5 328.7 15.7 324.8 15.8 320.0 16.5 316.9 19.5 311.7 18.9 307.9 20.8 301.5 16.7 297.2 19.7 291.3 20.6 286.6 19.7 280.9 16.4 275.6 18.4 269.2 15.2 263.9 11.4 259.9 14.1 255.2 9.5 250.0 10.5 244.3 7.0 239.6 6.1 233.5 4.3 228.9 3 225.8 3 220.0 3.6 214.6 3 210.9 3 204.0 3 198.8 3 194.9 3 188.1 3 183.2 3 178.0 6.7 175.0 6.7 168.7 9.2 162.8 10.7 157.7 11.0 153.0 9.9 146.5 14.2 142.7 14.8 137.8 15.0 133.4 16.7 127.9 17.7 123.1 15.2 119.2 16.1 113.8 19.5 107.6 19.1 101.4 16.0 95.0 17.7 91.7 14.2 88.6 17.7 84.6 14.3 79.1 15.3 75.8 14.3 70.7 14.5 66.6 17.4 61.8 15.8 56.9 14.8 52.4 17.4 48.6 16.5 42.0 19.7 38.2 21.0 31.9 19.4 28.8 20.7 23.0 21.9 17.1 25.5 12.0 24.0 5.1 27.5 0 27.5Z" fill="#fff"/>
+    </symbol>
+    <symbol id="rasgo2" viewBox="0 0 400 40" preserveAspectRatio="none">
+      <path d="M0 0H400V5.3L400 5.3 396.6 5.2 393.0 3 388.4 5.9 382.2 3.9 378.3 3 374.2 3 370.7 3 364.0 3 357.8 3 354.0 3 348.5 3.5 342.1 5.6 338.8 5.1 333.1 6.4 329.4 7.4 326.0 10.9 319.5 11.3 315.3 14.7 310.0 16.5 303.7 16.7 299.0 18.6 294.3 17.6 290.1 21.8 286.9 18.6 281.4 20.6 276.2 22.0 271.9 24.8 268.1 21.9 264.3 22.9 260.2 21.3 254.2 20.6 248.9 22.9 245.5 18.3 241.6 21.4 236.2 18.1 231.8 17.3 227.0 16.2 221.2 20.1 214.4 19.2 207.6 15.7 203.4 20.7 197.3 18.4 190.5 20.2 184.3 19.4 180.5 20.6 176.9 20.7 170.1 21.2 167.1 20.0 163.4 24.0 158.9 21.7 155.5 25.1 150.8 21.1 147.6 20.1 143.9 22.8 140.3 19.1 135.4 19.2 128.4 16.8 123.3 18.6 118.6 18.1 113.7 12.6 109.1 9.9 104.4 9.2 97.8 9.8 92.8 4.1 88.8 3.9 85.0 3 78.5 3 75.3 4.2 70.0 3.8 65.4 3.1 59.8 3 53.8 3 50.5 3 44.0 4.7 37.3 3.2 31.6 6.8 26.1 8.3 21.0 8.7 15.2 8.1 8.5 13.0 5.2 13.7 0 13.7Z" fill="#fff"/>
+    </symbol>
+    <symbol id="arco" viewBox="0 0 48 40"><path d="M42 6C30 2 12 4 8 22M3 15 8 23 15 17"/></symbol>
+  </defs>
+</svg>
+
+<div class="sobre" id="sobre" role="button" tabindex="0" aria-label="Abrir la invitación">
+  <div class="tarjeta">
+    <img src="cumple/lazo.png" alt="">
+    <p>Tienes una<br>invitación</p>
+    <small>toca para abrir</small>
+  </div>
+</div>
+
+<main class="inv">
+  <!-- Portada -->
+  <section class="portada">
+    <h1>Birthday party!</h1>
+    <p class="sub"><i></i>25 · 26.08.26<i></i></p>
+    <div class="foto reveal">
+      <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+      <img src="cumple/foto1.jpg" alt="Foto de la cumpleañera con su pastel" width="918" height="999">
+      <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+    </div>
+    <p class="frase reveal">25 años, una sola vez en la vida..</p>
+    <img class="lazo reveal" src="cumple/lazo.png" alt="">
+  </section>
+
+  <section class="texto">
+    <h2 class="reveal">¡Queridos amigos!</h2>
+    <p class="reveal">Muy pronto llegará un día muy especial para mí: ¡cumpliré 25 años!<br>Me encantaría compartirlo con ustedes, mis personas más queridas y cercanas.</p>
+    <p class="inv-linea reveal">¡Los invito a mi Birthday party!</p>
+    <img class="pastel reveal" src="cumple/pastel.png" alt="">
+  </section>
+
+  <!-- ¿Dónde será? -->
+  <section class="oscuro lugar">
+    <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+    <h2 class="reveal">¿Dónde será?</h2>
+    <p class="reveal">restaurante The loft<br>Avenida Shakarim, 1<br>ciudad de Semey</p>
+    <a class="btn reveal" href="https://maps.google.com/?q=The+Loft+Проспект+Шакарима+1+Семей" target="_blank" rel="noopener">abrir mapa</a>
+    <p class="fecha reveal">26 · 08 · 26<small>a las 16:00</small></p>
+    <a class="cal reveal" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Birthday%20party&amp;dates=20260826T160000/20260827T010000&amp;location=The%20loft%2C%20Avenida%20Shakarim%201%2C%20Semey">+ agregar al calendario</a>
+    <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+  </section>
+
+  <!-- Itinerario -->
+  <section class="timing">
+    <h2 class="reveal">Itinerario</h2>
+    <div class="linea">
+      <svg class="reveal flecha f1"><use href="#arco"/></svg>
+      <div class="paso p1 reveal"><b>17:00</b><span>llegada de invitados, bocadillos</span></div>
+      <svg class="reveal flecha f2" style="transform:scaleX(-1)"><use href="#arco"/></svg>
+      <div class="paso p2 reveal"><b>18:00</b><span>hora de comida rica, baile y diversión</span></div>
+      <svg class="reveal flecha f3"><use href="#arco"/></svg>
+      <div class="paso p3 reveal"><b>20:00</b><span>pastel de cumpleaños</span></div>
+      <svg class="reveal flecha f4" style="transform:scaleX(-1)"><use href="#arco"/></svg>
+      <div class="paso p4 reveal"><b>01:00</b><span>fin de la fiesta</span></div>
+    </div>
+    <img class="champan reveal" src="cumple/champan.png" alt="">
+  </section>
+
+  <!-- Regalos -->
+  <section class="oscuro deseos">
+    <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+    <h2 class="reveal">Regalos:</h2>
+    <p class="reveal">Si desean hacerme un regalo, lo mejor para mí será un aporte para mis sueños.</p>
+    <p class="reveal">Y si prefieren elegir algo en concreto, preparé para ustedes una pequeña lista de deseos con ideas.</p>
+    <a class="btn reveal" href="#" target="_blank" rel="noopener">lista de deseos</a>
+    <a class="nick reveal" href="#" target="_blank" rel="noopener">jellybellyys</a>
+    <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+  </section>
+
+  <!-- Código de vestimenta -->
+  <section class="dress">
+    <div class="orn reveal"><img src="cumple/lazo.png" alt=""></div>
+    <h2 class="reveal">Código de vestimenta</h2>
+    <p class="reveal">Me esforcé mucho para que la fiesta sea hermosa, y me encantaría que se vistieran con los colores de la celebración</p>
+    <div class="colores reveal"><figure><i></i>blanco</figure><figure><i></i>negro</figure></div>
+  </section>
+
+  <section class="final">
+    <div class="foto reveal">
+      <svg class="rasgo arriba"><use href="#rasgo"/></svg>
+      <img src="cumple/foto2.jpg" alt="Foto de la cumpleañera con su pastel" width="687" height="636">
+      <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
+    </div>
+    <div class="rsvp">
+      <h2 class="reveal"><b>¿Vienes?</b>Les agradecería mucho que confirmen su asistencia antes del 18.08.26</h2>
+      <form id="rsvp">
+        <label for="nombre">¿Cuál es tu nombre?</label>
+        <input id="nombre" name="nombre" required maxlength="80" autocomplete="name">
+        <label for="viene">¿Vienes?</label>
+        <select id="viene" name="viene" required>
+          <option value="">Elige una opción</option>
+          <option value="si">¡Sí, con mucho gusto!</option>
+          <option value="no">Lo siento, no podré ir</option>
+        </select>
+        <label for="personas">¿Cuántas personas vienen contigo? (contándote)</label>
+        <select id="personas" name="personas">
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+        </select>
+        <button type="submit" id="enviar">Enviar</button>
+        <p class="error" id="error" role="alert"></p>
+        <p class="nota">Al presionar el botón aceptas el uso de tus datos para esta invitación</p>
+      </form>
+      <p class="gracias" id="gracias" role="status"></p>
+    </div>
+    <p class="firma reveal">¡Te espero!</p>
+    <div class="panel" id="panel">
+      <h3>Respuestas</h3>
+      <div class="totales"><div><b id="t-si">0</b>vienen</div><div><b id="t-no">0</b>no vienen</div><div><b id="t-pers">0</b>personas</div></div>
+      <ul id="lista"></ul>
+    </div>
+  </section>
+</main>
+
+<script>
+  /* Sobre de entrada */
+  const sobre = document.getElementById('sobre');
+  const abrir = () => { sobre.classList.add('fuera'); document.body.style.overflow = ''; };
+  document.body.style.overflow = 'hidden';
+  sobre.addEventListener('click', abrir);
+  sobre.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); } });
+
+  /* Aparición al hacer scroll */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Confirmación de asistencia */
+  const form = document.getElementById('rsvp'), gracias = document.getElementById('gracias'),
+        error = document.getElementById('error'), enviar = document.getElementById('enviar'),
+        viene = document.getElementById('viene'), personas = document.getElementById('personas');
+  viene.addEventListener('change', () => { personas.disabled = viene.value === 'no'; });
+
+  let db = null, uid = null;
+  const listo = (async () => {
+    if (!window.claude?.use) return;
+    const [d, u] = await Promise.all([claude.use('db'), claude.use('user')]);
+    db = d; uid = u ? await u.id() : null;
+    if (!db) return;
+    if (uid) {
+      const mio = await db.doc('rsvp/' + uid).get().catch(() => null);
+      if (mio?.exists) mostrarGracias(mio.data(), true);
+    }
+    if (u && await u.isOwner()) verPanel();
+  })().catch(() => {});
+
+  function mostrarGracias(r, previo) {
+    form.style.display = 'none';
+    gracias.textContent = '';
+    gracias.append(r.viene === 'si' ? '¡Gracias, ' + r.nombre + '! Te espero ♡' : 'Gracias por avisarme, ' + r.nombre + ' ♡');
+    const sm = document.createElement('small');
+    sm.append(previo ? 'Ya habías respondido. ' : 'Tu respuesta quedó guardada. ');
+    const a = document.createElement('a'); a.href = '#'; a.textContent = 'Cambiar respuesta';
+    a.onclick = e => { e.preventDefault(); gracias.style.display = 'none'; form.style.display = '';
+      document.getElementById('nombre').value = r.nombre; viene.value = r.viene; personas.value = String(r.personas || 1); personas.disabled = r.viene === 'no'; };
+    sm.append(a); gracias.append(sm);
+    gracias.style.display = 'block';
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    error.textContent = '';
+    const r = { nombre: document.getElementById('nombre').value.trim().slice(0, 80), viene: viene.value,
+                personas: viene.value === 'si' ? Number(personas.value) : 0, fecha: new Date().toISOString() };
+    if (!r.nombre || !r.viene) return;
+    enviar.disabled = true; enviar.textContent = 'Enviando…';
+    await Promise.race([listo, new Promise(ok => setTimeout(ok, 10000))]);
+    try {
+      if (!db || !uid) throw new Error('sin-db');
+      await db.doc('rsvp/' + uid).set(r);
+      mostrarGracias(r, false);
+    } catch (err) {
+      error.textContent = 'No se pudo guardar tu respuesta. Inicia sesión en claude.ai o avísale directamente a la cumpleañera.';
+    } finally { enviar.disabled = false; enviar.textContent = 'Enviar'; }
+  });
+
+  function verPanel() {
+    const panel = document.getElementById('panel'), lista = document.getElementById('lista');
+    panel.style.display = 'block';
+    const t = setTimeout(() => { lista.innerHTML = '<p class="vacio">No se pudieron cargar las respuestas.</p>'; }, 10000);
+    db.collection('rsvp').orderBy('fecha', 'desc').onSnapshot(snap => {
+      clearTimeout(t);
+      let si = 0, no = 0, pers = 0; lista.textContent = '';
+      snap.docs.forEach(d => {
+        const r = d.data() || {};
+        if (r.viene === 'si') { si++; pers += Number(r.personas) || 1; } else no++;
+        const li = document.createElement('li'), a = document.createElement('span'), b = document.createElement('span');
+        a.textContent = String(r.nombre || '—');
+        b.textContent = r.viene === 'si' ? 'viene · ' + (r.personas || 1) : 'no viene';
+        li.append(a, b); lista.append(li);
+      });
+      if (snap.empty) lista.innerHTML = '<p class="vacio">Aún no hay respuestas.</p>';
+      document.getElementById('t-si').textContent = si;
+      document.getElementById('t-no').textContent = no;
+      document.getElementById('t-pers').textContent = pers;
+    }, () => { clearTimeout(t); lista.innerHTML = '<p class="vacio">No se pudieron cargar las respuestas.</p>'; });
+  }
+</script>
+</body>
+</html>
