@@ -10,7 +10,7 @@ svg#scene{position:absolute;inset:0}
 .foot{position:absolute;left:0;right:0;bottom:56px;text-align:center;color:#F4EEE3}
 .foot i{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;letter-spacing:.5px}
 .foot .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#D9C29A;margin:0 18px;vertical-align:middle;position:relative;top:-2px}
-.foot b{font-family:'DM Sans',sans-serif;font-weight:500;font-size:19px;letter-spacing:4px;color:#E6D3AE;vertical-align:middle}
+.foot b{font-family:'DM Sans',sans-serif;font-weight:500;font-size:19px;letter-spacing:4px;color:#F4EEE3;vertical-align:middle}
 </style></head><body>
 <svg id="scene" width="1080" height="1350" viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
 <defs>
@@ -99,7 +99,7 @@ svg#scene{position:absolute;inset:0}
   <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.2"/></filter>
   <!-- wax -->
   <radialGradient id="wax" cx="38%" cy="32%" r="75%">
-    <stop offset="0" stop-color="#C9A86E"/><stop offset=".45" stop-color="#9E7D48"/><stop offset="1" stop-color="#5E4524"/>
+    <stop offset="0" stop-color="#A9B79F"/><stop offset=".45" stop-color="#76866C"/><stop offset="1" stop-color="#3F4C39"/>
   </radialGradient>
   <filter id="waxEdge" x="-20%" y="-20%" width="140%" height="140%">
     <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="15" result="n"/>
@@ -129,6 +129,7 @@ svg#scene{position:absolute;inset:0}
 <path d="M0 312 C 300 342, 700 292, 1080 330" stroke="#000" stroke-opacity=".05" stroke-width="12" fill="none" filter="url(#soft6)"/>
 <rect width="1080" height="1350" fill="url(#vig)"/>
 
+<g transform="translate(540 600) scale(.84) translate(-540 -690)">
 <!-- TRAY -->
 <g transform="translate(540 690)">
   <ellipse cx="34" cy="48" rx="392" ry="490" fill="#0a0f14" opacity=".55" filter="url(#soft40)"/>
@@ -168,9 +169,9 @@ svg#scene{position:absolute;inset:0}
     <path d="M110 -210 C 86 -200, 70 -222, 46 -210"/>
     <circle cx="0" cy="-244" r="3.5" fill="url(#foil)" stroke="none"/>
   </g>
-  <text x="0" y="-160" text-anchor="middle" font-family="Fraunces" font-weight="500" font-size="25" letter-spacing="9" fill="url(#foil)" filter="url(#foilRelief)">SAVE THE DATE</text>
+  <text x="0" y="-160" text-anchor="middle" font-family="Fraunces" font-weight="500" font-size="25" letter-spacing="9" fill="#5F6E58">SAVE THE DATE</text>
   <text x="0" y="-60" text-anchor="middle" font-family="Pinyon Script" font-size="92" fill="#2E2C2A" filter="url(#ink)">Mariana</text>
-  <text x="0" y="-3" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="52" font-weight="500" fill="url(#foil)" filter="url(#foilRelief)">&amp;</text>
+  <text x="0" y="-3" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="52" font-weight="500" fill="#8C9A84">&amp;</text>
   <text x="2" y="78" text-anchor="middle" font-family="Pinyon Script" font-size="92" fill="#2E2C2A" filter="url(#ink)">Carlos</text>
   <text x="0" y="262" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="21" fill="#6b645a">invitación formal a seguir</text>
 
@@ -202,14 +203,16 @@ svg#scene{position:absolute;inset:0}
   <circle r="66" cx="8" cy="12" fill="#000" opacity=".45" filter="url(#soft6)"/>
   <g filter="url(#waxLight)">
     <g filter="url(#waxEdge)"><circle r="64" fill="url(#wax)"/></g>
-    <circle r="44" fill="#8C6B3B"/>
-    <circle r="44" fill="none" stroke="#6b5029" stroke-width="3"/>
-    <circle r="37" fill="none" stroke="#C7A66C" stroke-width="1.5" opacity=".8"/>
-    <text y="13" text-anchor="middle" font-family="Pinyon Script" font-size="40" fill="#4a3518">M&amp;C</text>
+    <circle r="44" fill="#6C7C62"/>
+    <circle r="44" fill="none" stroke="#4F5D47" stroke-width="3"/>
+    <circle r="37" fill="none" stroke="#A7B59C" stroke-width="1.5" opacity=".8"/>
+    <text y="13" text-anchor="middle" font-family="Pinyon Script" font-size="40" fill="#35422F">M&amp;C</text>
   </g>
   <ellipse cx="-22" cy="-30" rx="16" ry="7" fill="#fff" opacity=".35" transform="rotate(-35 -22 -30)" filter="url(#soft3)"/>
 </g>
 
+</g>
+<!-- SWATCHES --><g id="sw"></g>
 <!-- PAPER TAG -->
 <g transform="translate(860 112) rotate(5)">
   <path d="M 104 0 C 150 -40, 170 20, 220 -30" stroke="#E8E0D0" stroke-width="1.6" fill="none" opacity=".8"/>
@@ -217,7 +220,7 @@ svg#scene{position:absolute;inset:0}
   <g filter="url(#deckle)"><path d="M -170 -30 h 270 l 30 30 l -30 30 h -270 z" fill="#F1E8DA"/></g>
   <path d="M -170 -30 h 270 l 30 30 l -30 30 h -270 z" fill="#fff" filter="url(#grain)"/>
   <circle cx="104" cy="0" r="5" fill="#56636F"/>
-  <text x="-38" y="-6" text-anchor="middle" font-family="DM Sans" font-weight="500" font-size="11" letter-spacing="3" fill="#86693E">DISEÑO DE EJEMPLO</text><text x="-38" y="19" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-weight="500" font-size="24" fill="#4F5C49">Jardín Eucalipto</text>
+  <text x="-38" y="-6" text-anchor="middle" font-family="DM Sans" font-weight="500" font-size="11" letter-spacing="3" fill="#2E2C2A">DISEÑO DE EJEMPLO</text><text x="-38" y="19" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-weight="500" font-size="24" fill="#4F5C49">Jardín Eucalipto</text>
 </g>
 </svg>
 
@@ -225,6 +228,14 @@ svg#scene{position:absolute;inset:0}
 <div class="foot"><i>Invitaciones digitales para boda</i><span class="dot"></span><b>INVITTOMX.COM</b></div>
 
 <script>
+const SW=[['Jardín Eucalipto',['#8C9A84','#C9D2BF','#FAF5EC'],'#F7F3EA','#2E2C2A'],['Marfil Clásico',['#FAF5EC','#F1E8DA','#D9C29A'],'#FFFDF8','#2E2C2A'],['Terracota Boho',['#B86A4B','#D9A27E','#E8D6BF'],'#F4EADD','#2E2C2A'],['Azul Noche',['#1A2538','#2E3E58','#D9C29A'],'#1A2538','#FAF5EC']];
+window.addEventListener('DOMContentLoaded',()=>{const g=document.getElementById('sw');SW.forEach(([n,c,bg,fg],i)=>{const x=150+i*260,y=1135,r=[-4,2,-2,3][i];
+ const h=`<g transform="translate(${x} ${y}) rotate(${r})"><rect x="-104" y="-50" width="216" height="108" fill="#000" opacity=".4" filter="url(#soft6)" transform="translate(4 7)"/>
+ <g filter="url(#deckle)"><rect x="-108" y="-56" width="216" height="108" fill="${bg}"/></g><rect x="-108" y="-56" width="216" height="108" fill="#fff" filter="url(#grain)" opacity=".7"/>
+ ${c.map((cc,j)=>`<circle cx="${-64+j*30}" cy="-16" r="13" fill="${cc}" stroke="${fg}" stroke-opacity=".25"/>`).join('')}
+ <line x1="18" y1="-16" x2="88" y2="-16" stroke="#D9C29A" stroke-width="1"/>
+ <text x="0" y="30" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-weight="500" font-size="25" fill="${fg}">${n}</text></g>`;
+ g.insertAdjacentHTML('beforeend',h);});});
 const NS='http://www.w3.org/2000/svg';
 function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
 // baroque rim: beads + acanthus leaves alternating, plus cartouches at 4 poles
