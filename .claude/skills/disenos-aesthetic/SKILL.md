@@ -31,6 +31,24 @@ Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador d
 | **Editorial / magazine** | Titular gigante serif, texto pequeño en mayúsculas espaciadas, números grandes, mucho blanco |
 | **Gradiente aura / blur** | Manchas de color difuminadas (blur 80–120px), grano encima, texto blanco limpio |
 
+## 2b. Tendencias 2026 (investigadas: Pinterest Predicts 2026 + Canva Design Trends 2026)
+Gran giro: **adiós al beige/minimal, hola maximalismo e "imperfecto a propósito"**. Prioriza estos estilos si el usuario quiere algo actual:
+| Tendencia | Cómo aplicarla |
+|---|---|
+| **Imperfect by Design** (Canva) | Toques humanos sobre lo pulido: trazos a mano, texto ligeramente torcido, garabatos, bordes irregulares |
+| **Collage / scrapbook táctil** (Canva: búsquedas DIY/collage +90%) | Texturas realistas de papel, cinta, cartón, recortes superpuestos, sombras de objeto físico |
+| **Notes App Chic** (Canva) | Captura de pantalla tipo app de Notas/iMessage, tipografía de sistema, look espontáneo |
+| **Lo-fi / retro-tech** (Canva "Prompt Playground", lo-fi +527%) | Ventanas de Windows 95, píxeles, cursores, barras de carga, pantallas CRT con scanlines |
+| **Reality Warp** (Canva, liminal/uncanny +220%) | Mezcla real + surreal: objetos gigantes, cielos imposibles, distorsiones tipo sueño |
+| **Neo Deco** (Pinterest) | Art Deco moderno: abanicos, arcos escalonados, líneas doradas/latón, simetría, serif geométrica (Poiret One, Limelight) |
+| **Opera / glamour** (Pinterest) | Terciopelo rojo, dorado, cortinas, marcos ornamentados, lujo dramático |
+| **Extra Celestial / alien-core** (Pinterest) | Holográfico, iridiscente, cromo, planetas, verde ácido + plata |
+| **Gummy / jelly** (Pinterest) | Formas infladas brillantes 3D, texturas gelatinosas, colores dulces saturados (gradientes radiales + brillo especular) |
+| **Afrohemian** (Pinterest) | Textiles africanos (kente, mudcloth) + boho: patrones geométricos, ratán, tierra |
+| **Mystic Outlands / cool blues** (Pinterest) | Azules fríos, niebla, bosques oscuros, ruinas, ambiente misterioso |
+
+Paletas 2026: Neo Deco `#0F3D3E #C9A227 #F3E9D2 #1B1B1B #8C2F39` · Celestial `#0B0B2B #7DF9FF #C77DFF #E0E0E0 #B6FF3B` · Gummy `#FF5FA2 #FFB627 #7BDFF2 #B2F7EF #6A4C93` · Mystic `#1F3A4D #5B7B8C #A9BCC4 #2E3B2F #E6E9EA`
+
 ## 3. Paletas listas
 - Coquette: `#F7D6E0 #F2B5D4 #FFF5F7 #C9184A #5E3A45`
 - Beige clean: `#F5EFE6 #E8DFCA #CBB89D #8B7E74 #3E3A36`
@@ -68,6 +86,7 @@ Jerarquía: titular 3–5× el tamaño del texto. Máx. 3 tamaños.
 - **Aura**: 2–3 círculos de color con `filter: blur(100px)`.
 
 ## 7. Qué evitar (lo que lo hace ver "de IA" o genérico)
+- Minimalismo beige "perfecto" sin personalidad (en 2026 se ve anticuado).
 - Degradado morado-azul por defecto, Inter/Arial en todo, tarjetas con sombra difusa idénticas.
 - Demasiados elementos decorativos compitiendo; más de 2 fuentes display.
 - Texto con poco contraste sobre foto (usa overlay o caja).
