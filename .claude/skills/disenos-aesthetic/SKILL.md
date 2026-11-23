@@ -82,6 +82,12 @@ Siempre: @usuario abajo, márgenes ≥80px, títulos 90–170px en 1080 de ancho
 
 **Tipografías de tendencia 2026** (Google Fonts): Instrument Serif (la serif de moda, úsala en itálica), Bricolage Grotesque 800 (titulares con tracking negativo −0.04em), Unbounded (números/display), Fraunces, DM Serif Display, Caveat / Gochi Hand (notas a mano). Combinación ganadora: **sans ultra bold + serif itálica en la misma frase**.
 
+## 4c. Idioma: español de México
+Todo el texto va en **español mexicano** natural, como habla la gente en Instagram:
+- Usa "tú" (nunca "vos" ni "vosotros"); "celular", "mándanos mensaje/DM", "pa’", "¿te late?", "qué flojera", "ya quedó", "padrísimo", "mesa de regalos", "XV años".
+- Evita españolismos ("guay", "móvil", "vale", "ordenador", "coger") y frases neutras de traductor.
+- Fechas dd/mm/aaaa, horas tipo "9 pm", precios en $ MXN.
+
 ## 5. Composición
 - Márgenes generosos (≥6% del ancho). El espacio vacío es lo que lo hace "aesthetic".
 - Usa un eje: centrado simétrico (minimal, invitaciones) o asimetría intencional (editorial, collage).
