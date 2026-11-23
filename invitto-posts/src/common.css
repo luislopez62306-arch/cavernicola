@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Alex+Brush&family=DM+Sans:wght@400;500;600&display=swap');
+:root{--ch:#2E2C2A;--iv:#FAF5EC;--ivd:#F1E8DA;--g:#D9C29A;--gd:#86693E;--mu:#6E665C}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+.serif{font-family:'Fraunces',Georgia,'DejaVu Serif',serif}
+.script{font-family:'Alex Brush','URW Chancery L',cursive}
+body{font-family:'DM Sans','DejaVu Sans',sans-serif}
+.brand{position:absolute;top:60px;left:80px;display:flex;flex-direction:column;gap:4px}
+.brand .w{font-family:'Fraunces',serif;font-size:38px;letter-spacing:2px}
+.brand .h{font-size:20px;letter-spacing:2px}
