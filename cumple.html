@@ -6,16 +6,17 @@
 <title>Birthday party!</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Fredoka:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Fredoka:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --rosa:#fbdce3; --blanco:#fff; --oscuro:#2e3230; --tinta:#1d1d1d;
-    --script:'Great Vibes',cursive; --sans:'Inter',system-ui,sans-serif;
+    --script:'Great Vibes',cursive; --sans:'Inter',system-ui,sans-serif; --serif:'Cormorant Garamond',Georgia,serif;
+    --grano:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     color-scheme:light;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--rosa);font-family:var(--script);color:var(--tinta);-webkit-font-smoothing:antialiased;padding:40px 0}
-  .inv{max-width:420px;margin:0 auto;background:var(--blanco);container-type:inline-size;overflow:hidden;box-shadow:0 10px 40px rgba(160,90,110,.15)}
+  body{background:radial-gradient(circle at 1px 1px,rgba(200,120,140,.16) 1px,transparent 0) 0 0/22px 22px,var(--rosa);font-family:var(--script);color:var(--tinta);-webkit-font-smoothing:antialiased;padding:40px 0}
+  .inv{max-width:430px;margin:0 auto;background:var(--blanco);border-radius:6px;container-type:inline-size;overflow:hidden;box-shadow:0 10px 40px rgba(160,90,110,.15)}
   section{position:relative;text-align:center}
   img{display:block;max-width:100%}
   h1,h2{font-weight:400}
@@ -29,36 +30,42 @@
   .reveal.on{opacity:1;transform:none}
 
   /* Portada */
-  .portada h1{font-size:12cqw;padding:10cqw 0 6cqw;letter-spacing:.02em}
+  .portada h1{font-size:12.5cqw;padding:11cqw 0 1cqw;letter-spacing:.02em}
+  .sub{font-family:var(--serif);font-size:3.3cqw;letter-spacing:.42em;text-transform:uppercase;color:#555;padding:0 0 8cqw;margin-right:-.42em}
+  .sub i{display:inline-block;width:6cqw;height:1px;background:#999;vertical-align:middle;margin:0 2.4cqw}
   .foto{position:relative}
-  .foto{overflow:hidden}
+  .foto{overflow:hidden;background:#d9d9dc}
+  .foto::after{content:'';position:absolute;inset:0;background:var(--grano);opacity:.32;mix-blend-mode:overlay;pointer-events:none;z-index:1}
+  .foto img{filter:contrast(1.04) saturate(.92)}
   .foto img{width:100%;height:auto;transform:scale(1.06);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
   .foto.on img{transform:scale(1)}
-  .frase{font-size:5.6cqw;margin-top:4cqw}
+  .frase{font-family:var(--serif);font-style:italic;font-size:5.4cqw;margin-top:5cqw;color:#333}
   .lazo{width:22cqw;margin:4cqw auto 0;transform-origin:50% 20%}
   .lazo.on{animation:mece 4s ease-in-out 1s infinite}
   @keyframes mece{0%,100%{rotate:0deg}30%{rotate:4deg}70%{rotate:-4deg}}
 
   .texto{padding:20cqw 7cqw 0}
   .texto h2{font-size:9cqw;margin-bottom:9cqw}
-  .texto p{font-size:5.6cqw;line-height:1.75}
-  .texto .inv-linea{margin-top:7cqw;font-size:6.6cqw}
+  .texto p{font-family:var(--serif);font-style:italic;font-size:5.5cqw;line-height:1.6;color:#2a2a2a}
+  .texto .inv-linea{margin-top:9cqw;font-family:var(--script);font-style:normal;font-size:8cqw;line-height:1.2}
   .pastel{width:50cqw;margin:20cqw auto 34cqw}
 
   /* Bloques oscuros */
-  .oscuro{background:var(--oscuro);color:#fff;padding:20cqw 8cqw 22cqw}
+  .oscuro{background:var(--grano) 0 0/160px,var(--oscuro);background-blend-mode:soft-light;color:#fff;padding:20cqw 8cqw 22cqw}
   .oscuro h2{font-size:9cqw;margin-bottom:10cqw}
-  .lugar p{font-size:6cqw;line-height:1.35}
+  .lugar p{font-family:var(--serif);font-style:italic;font-size:5.8cqw;line-height:1.45}
+  .lugar p:first-of-type::first-line{font-family:var(--script);font-style:normal;font-size:7.6cqw}
   .btn{display:inline-block;font-family:var(--sans);font-size:3.2cqw;transition:background .3s,color .3s;text-decoration:none;color:var(--tinta);background:#fff;padding:4.3cqw 9cqw;margin:15cqw 0 9cqw;letter-spacing:.02em}
-  .fecha{font-size:6.4cqw;line-height:2}
+  .fecha{font-family:var(--serif);font-size:5.4cqw;letter-spacing:.3em;line-height:2;margin-right:-.3em}
+  .fecha small{display:block;font-size:4.6cqw;letter-spacing:.2em;font-style:italic;text-transform:none}
 
   /* Itinerario */
   .timing{padding:26cqw 4cqw 0}
   .timing h2{font-size:9cqw;margin-left:16cqw}
   .linea{position:relative;height:84cqw;margin-top:2cqw}
   .paso{position:absolute;width:46cqw}
-  .paso b{display:block;font-weight:400;font-size:7.2cqw}
-  .paso span{display:block;font-size:4.2cqw;line-height:1.35}
+  .paso b{display:block;font-family:var(--serif);font-weight:500;font-style:italic;font-size:7.4cqw}
+  .paso span{display:block;font-family:var(--serif);font-style:italic;font-size:4.3cqw;line-height:1.3;color:#444}
   .flecha{position:absolute;width:12cqw;height:10cqw;stroke:var(--tinta);fill:none;stroke-width:1.2;stroke-dasharray:80;stroke-dashoffset:80;transition:stroke-dashoffset 1.4s ease .3s}
   .flecha.on{stroke-dashoffset:0}
   .p1{left:0;top:8cqw}  .p2{right:-2cqw;top:25cqw} .p3{left:2cqw;top:51cqw} .p4{right:0;top:68cqw}
@@ -66,23 +73,27 @@
   .champan{width:44cqw;margin:14cqw auto 26cqw}
 
   .deseos{padding-top:18cqw;padding-bottom:12cqw}
-  .deseos p{font-size:5.9cqw;line-height:1.9}
+  .deseos p{font-family:var(--serif);font-style:italic;font-size:5.5cqw;line-height:1.6;color:#eee}
   .deseos p+p{margin-top:8cqw}
   .deseos .btn{border-radius:99px;padding:2.6cqw 9cqw;margin:10cqw 0 5cqw;font-size:3cqw}
   .nick{font-family:'Fredoka',sans-serif;font-size:13cqw;color:#fff;letter-spacing:.01em;text-decoration:none;display:block}
 
   /* Dress code */
-  .dress{padding:36cqw 10cqw 0}
+  .dress{padding:30cqw 10cqw 0}
+  .orn{display:flex;align-items:center;justify-content:center;gap:4cqw;margin-bottom:10cqw}
+  .orn::before,.orn::after{content:'';width:18cqw;height:1px;background:#bbb}
+  .orn img{width:9cqw}
   .dress h2{font-size:8cqw;margin-bottom:13cqw}
-  .dress p{font-size:5.6cqw;line-height:1.9}
+  .dress p{font-family:var(--serif);font-style:italic;font-size:5.5cqw;line-height:1.6;color:#2a2a2a}
   .colores{display:flex;justify-content:space-between;margin:24cqw 0 34cqw;padding:0 0}
-  .colores figure{text-align:center;font-size:5cqw}
-  .colores i{width:34cqw;height:24cqw;border:1px solid var(--tinta);display:block;margin-bottom:2cqw}
+  .colores figure{text-align:center;font-family:var(--serif);font-size:3.4cqw;letter-spacing:.3em;text-transform:uppercase;color:#555}
+  .colores i{width:34cqw;height:24cqw;border:1px solid var(--tinta);display:block;margin-bottom:3cqw;box-shadow:0 2cqw 4cqw rgba(0,0,0,.08)}
   .colores figure+figure i{background:#231f20}
 
   /* RSVP */
   .rsvp{padding:4cqw 6cqw 8cqw}
-  .rsvp h2{font-size:6.6cqw;line-height:1.6}
+  .rsvp h2{font-family:var(--serif);font-style:italic;font-size:5.6cqw;line-height:1.5;color:#2a2a2a}
+  .rsvp h2 b{display:block;font-family:var(--script);font-style:normal;font-weight:400;font-size:9cqw;margin-bottom:3cqw;color:var(--tinta)}
   form{width:72cqw;margin:8cqw auto 0;text-align:left;font-family:var(--sans)}
   label{display:block;font-size:3.4cqw;color:#444;margin:4cqw 0 1.5cqw}
   input,select{width:100%;font:inherit;font-size:16px;padding:2.4cqw 3cqw;border:1px solid #c9c9c9;border-radius:2.4cqw;background:#fff;color:var(--tinta)}
@@ -95,7 +106,7 @@
   .gracias small{display:block;font-family:var(--sans);font-size:3cqw;color:#888;margin-top:3cqw}
   .gracias a{color:inherit}
   .error{font-family:var(--sans);font-size:3cqw;color:#a33;text-align:center;margin-top:3cqw;min-height:1em}
-  .cal{display:block;width:max-content;margin:-4cqw auto 0;font-family:var(--sans);font-size:3cqw;color:#fff;opacity:.8}
+  .cal{display:block;width:max-content;margin:6cqw auto 0;text-underline-offset:3px;font-family:var(--sans);font-size:3cqw;color:#fff;opacity:.8}
   .firma{font-size:9cqw;padding:10cqw 0 14cqw}
 
   /* Panel de respuestas (solo la anfitriona) */
@@ -146,6 +157,7 @@
   <!-- Portada -->
   <section class="portada">
     <h1>Birthday party!</h1>
+    <p class="sub"><i></i>25 · 26.08.26<i></i></p>
     <div class="foto reveal">
       <svg class="rasgo arriba"><use href="#rasgo"/></svg>
       <img src="cumple/foto1.jpg" alt="Foto de la cumpleañera con su pastel" width="918" height="999">
@@ -168,7 +180,7 @@
     <h2 class="reveal">¿Dónde será?</h2>
     <p class="reveal">restaurante The loft<br>Avenida Shakarim, 1<br>ciudad de Semey</p>
     <a class="btn reveal" href="https://maps.google.com/?q=The+Loft+Проспект+Шакарима+1+Семей" target="_blank" rel="noopener">abrir mapa</a>
-    <p class="fecha reveal">26.08.26<br>a las 16:00</p>
+    <p class="fecha reveal">26 · 08 · 26<small>a las 16:00</small></p>
     <a class="cal reveal" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Birthday%20party&amp;dates=20260826T160000/20260827T010000&amp;location=The%20loft%2C%20Avenida%20Shakarim%201%2C%20Semey">+ agregar al calendario</a>
     <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
   </section>
@@ -202,6 +214,7 @@
 
   <!-- Código de vestimenta -->
   <section class="dress">
+    <div class="orn reveal"><img src="cumple/lazo.png" alt=""></div>
     <h2 class="reveal">Código de vestimenta</h2>
     <p class="reveal">Me esforcé mucho para que la fiesta sea hermosa, y me encantaría que se vistieran con los colores de la celebración</p>
     <div class="colores reveal"><figure><i></i>blanco</figure><figure><i></i>negro</figure></div>
@@ -214,7 +227,7 @@
       <svg class="rasgo abajo"><use href="#rasgo2"/></svg>
     </div>
     <div class="rsvp">
-      <h2 class="reveal">Les agradecería mucho que confirmen su asistencia antes del 18.08.26</h2>
+      <h2 class="reveal"><b>¿Vienes?</b>Les agradecería mucho que confirmen su asistencia antes del 18.08.26</h2>
       <form id="rsvp">
         <label for="nombre">¿Cuál es tu nombre?</label>
         <input id="nombre" name="nombre" required maxlength="80" autocomplete="name">
