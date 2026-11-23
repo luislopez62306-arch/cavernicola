@@ -1,34 +1,105 @@
-<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Alex+Brush&family=DM+Sans:wght@400;500&display=block" rel="stylesheet"><style>
-:root{--ch:#2E2C2A;--iv:#FAF5EC;--ivd:#F1E8DA;--g:#D9C29A;--gd:#86693E;--mu:#6E665C;--w:#5A1F2E}
-*{margin:0;padding:0;box-sizing:border-box}
-body{width:1080px;height:1350px;overflow:hidden;background:var(--iv);font-family:"DM Sans",sans-serif;color:var(--ch);position:relative}
-.serif{font-family:Fraunces,Georgia,serif}.script{font-family:"Alex Brush",cursive;word-spacing:14px}
-.frame{position:absolute;inset:36px;border:1.5px solid var(--g)}.frame2{position:absolute;inset:46px;border:1px solid rgba(217,194,154,.5)}
-.brand{position:absolute;top:84px;left:96px;display:flex;align-items:baseline;gap:14px}
-.brand b{font-family:Fraunces,serif;font-weight:400;font-size:34px;letter-spacing:1px}.brand span{font-size:17px;color:var(--mu);letter-spacing:1px}
-.center{text-align:center}
-</style></head><body><div class="frame"></div><div class="frame2"></div><div class="brand"><b>Invitto</b><span>@invitto.creastudio</span></div>
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500&display=block" rel="stylesheet">
 <style>
-.kick{position:absolute;top:175px;width:100%;font-size:72px;color:var(--gd)}
-.h{position:absolute;top:258px;width:100%;font-size:80px;font-weight:300}
-.h i{color:var(--w)}
-.rows{position:absolute;top:400px;left:150px;right:150px}
-.row{display:flex;align-items:center;gap:36px;padding:15px 0;border-bottom:1px solid rgba(217,194,154,.6)}
-.row:last-child{border:0}
-.ic{width:76px;height:76px;border-radius:50%;background:var(--ivd);border:1px solid var(--g);display:flex;align-items:center;justify-content:center;flex:none}
-.lb{font-size:34px;font-weight:400}
-.cta{position:absolute;bottom:96px;left:50%;transform:translateX(-50%);background:var(--ch);color:var(--iv);padding:26px 54px;border-radius:60px;font-size:28px;white-space:nowrap;letter-spacing:.5px}
-.cta span{color:var(--g)}
-</style>
-<div class="kick script center">Mis XV años</div>
-<div class="h serif center">Todo en <i>un solo link</i></div>
-<div class="rows">
-<div class='row'><div class='ic'><svg width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='#86693E' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0"/></svg></div><div class='lb serif'>Se abre como un regalo</div></div>
-<div class='row'><div class='ic'><svg width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='#86693E' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></div><div class='lb serif'>Con tu canción favorita</div></div>
-<div class='row'><div class='ic'><svg width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='#86693E' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M10 2h4"/></svg></div><div class='lb serif'>Cuenta regresiva en vivo</div></div>
-<div class='row'><div class='ic'><svg width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='#86693E' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h6M7 14h4M17 6v12" stroke-dasharray="2 1.5"/></svg></div><div class='lb serif'>Pase con el nombre de cada familia</div></div>
-<div class='row'><div class='ic'><svg width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='#86693E' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 12l2 2 4-4"/></svg></div><div class='lb serif'>Confirman por WhatsApp</div></div>
-<div class='row'><div class='ic'><svg width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='#86693E' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></div><div class='lb serif'>Mapa e itinerario</div></div>
+:root{--ch:#2E2C2A;--iv:#FAF5EC;--ivd:#F1E8DA;--g:#D9C29A;--gd:#86693E;--w:#5A1F2E;--bl:#EFE3CF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1350px;overflow:hidden;position:relative;font-family:"DM Sans",sans-serif;color:var(--ch);
+ background:radial-gradient(ellipse 75% 60% at 50% 50%,#fbf6ee 0%,#f3eadb 60%,#e4d5bd 100%)}
+.linen{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(120,90,50,.035) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(120,90,50,.03) 0 1px,transparent 1px 4px)}
+.grain{position:absolute;inset:0;filter:url(#paperF);opacity:.35;mix-blend-mode:multiply}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 52%,transparent 55%,rgba(110,80,45,.22) 100%)}
+.foil{background:linear-gradient(100deg,#6f5530 0%,#a88550 20%,#e9d3a4 33%,#8e6f3f 45%,#c9a96f 60%,#f3e3bd 66%,#86693E 80%,#b8955c 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent}
+.brand{position:absolute;top:64px;left:0;right:0;display:flex;justify-content:space-between;padding:0 72px;align-items:baseline}
+.brand b{font-family:Fraunces,serif;font-weight:400;font-size:34px;letter-spacing:2px}
+.brand span{font-size:16px;letter-spacing:3px;color:#7a6f62}
+.head{position:absolute;top:120px;left:0;right:0;text-align:center}
+.head .s{font-family:"Pinyon Script",cursive;font-size:80px;line-height:1;padding:0 20px;display:inline-block}
+.head h1{font-family:Fraunces,serif;font-weight:300;font-size:82px;line-height:1;color:var(--w);letter-spacing:-1px;margin-top:-4px}
+.head h1 i{font-style:italic}
+.head p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:#6e5a45;margin-top:12px}
+/* deckle card behind */
+.deck{position:absolute;left:340px;top:420px;width:400px;height:720px;transform:rotate(-5deg);background:linear-gradient(160deg,#fffcf6,#f4ead9);
+ filter:url(#deckle) drop-shadow(0 2px 2px rgba(90,60,30,.25)) drop-shadow(10px 22px 26px rgba(90,60,30,.25))}
+.deck2{position:absolute;left:350px;top:430px;width:390px;height:700px;transform:rotate(4deg);background:#efe3cf;
+ filter:url(#deckle) drop-shadow(0 2px 2px rgba(90,60,30,.2)) drop-shadow(8px 18px 20px rgba(90,60,30,.2))}
+.phone{position:absolute;left:390px;top:440px;width:300px;height:620px;border-radius:50px;padding:11px;z-index:5;
+ background:linear-gradient(135deg,#4a4642,#1b1a19 30%,#2e2c2a 60%,#0d0c0c);
+ box-shadow:0 2px 2px rgba(0,0,0,.35),12px 24px 26px rgba(70,45,20,.35),30px 60px 70px rgba(70,45,20,.35),inset 0 0 0 2px rgba(255,255,255,.12)}
+.screen{width:100%;height:100%;border-radius:40px;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 25%,#7a2c3f,#5A1F2E 60%,#3d1420)}
+.notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:86px;height:26px;border-radius:16px;background:#0d0c0c;z-index:3}
+.glare{position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.28),transparent 35%,transparent 75%,rgba(255,255,255,.08));z-index:4}
+.scr{position:absolute;inset:0;text-align:center;padding-top:150px;color:var(--bl)}
+.env{margin:0 auto;width:200px;height:136px;position:relative;background:linear-gradient(#f4ead9,#e6d6bc);border-radius:4px;box-shadow:0 10px 20px rgba(0,0,0,.35)}
+.env::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.5%,rgba(134,105,62,.35) 50%,transparent 51%),linear-gradient(to bottom left,transparent 49.5%,rgba(134,105,62,.35) 50%,transparent 51%);background-size:50% 100%;background-repeat:no-repeat;background-position:left,right}
+.env svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-38%)}
+.scr .xv{font-family:"Pinyon Script",cursive;font-size:44px;margin-top:40px;line-height:1}
+.scr .nm{font-family:Fraunces,serif;font-weight:300;font-size:36px;margin-top:4px;color:#fff6ea}
+.scr .tap{margin-top:34px;font-size:11px;letter-spacing:4px;color:rgba(239,227,207,.75)}
+/* callouts */
+.co{position:absolute;width:270px;z-index:6}
+.co.l{text-align:right}.co.r{text-align:left}
+.co .ic{width:64px;height:64px;border-radius:50%;border:1px solid var(--g);display:inline-flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#fffdf8,#f4ead9);box-shadow:0 1px 1px rgba(90,60,30,.2),0 8px 14px rgba(90,60,30,.12)}
+.co h3{font-family:Fraunces,serif;font-weight:400;font-size:28px;color:var(--w);margin-top:10px;line-height:1.05}
+.co p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:#6e5a45;margin-top:4px;line-height:1.2}
+.lines{position:absolute;inset:0;z-index:4}
+.cta{position:absolute;left:50%;bottom:118px;transform:translateX(-50%);z-index:8;white-space:nowrap;padding:24px 50px;border-radius:60px;
+ background:radial-gradient(ellipse at 40% 20%,#7a2c3f,#5A1F2E 60%,#45141f);color:var(--bl);font-size:20px;letter-spacing:4px;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 0 0 1px rgba(217,194,154,.5),0 3px 3px rgba(60,20,25,.3),0 16px 30px rgba(60,20,25,.3)}
+.cta b{font-weight:500;color:var(--g)}
+.foot{position:absolute;bottom:64px;left:0;right:0;text-align:center;font-size:14px;letter-spacing:5px;color:#7a6f62}
+.bot{position:absolute;z-index:1}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+ <filter id="paperF"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="5"/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .4  0 0 0 0 .28  0 0 0 -1.2 .75"/></filter>
+ <filter id="deckle" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="9"/></filter>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86693E"/><stop offset=".4" stop-color="#d9c29a"/><stop offset=".6" stop-color="#a88550"/><stop offset="1" stop-color="#c9ab74"/></linearGradient>
+ <filter id="blob" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="2"/><feDisplacementMap in="SourceGraphic" scale="8"/></filter>
+ <radialGradient id="wax" cx="38%" cy="34%" r="75%"><stop offset="0" stop-color="#a23a52"/><stop offset=".45" stop-color="#6d2236"/><stop offset="1" stop-color="#3b0f1b"/></radialGradient>
+</svg>
+<div class="linen"></div><div class="grain"></div><div class="vig"></div>
+
+<!-- botanical line art corners -->
+<svg class="bot" style="left:-30px;top:880px" width="300" height="420" viewBox="0 0 300 420"><g fill="none" stroke="#c4a877" stroke-width="1.2" stroke-linecap="round" opacity=".8">
+ <path d="M10 410C60 330 110 260 220 120"/><path d="M80 310c-40-10-60-40-60-70c30 10 55 35 60 70zM120 250c40-5 65-30 70-60c-30 5-60 30-70 60zM150 200c-35-15-50-45-45-75c28 15 45 45 45 75zM60 345c35 5 60 25 70 55c-30 0-60-20-70-55z"/>
+ <path d="M220 120c-14-6-30-2-34 12c-4 14 10 26 24 22c14-4 22-20 10-34zM218 122c-6 6-6 14 0 18c8 4 14-4 10-10M200 130c-10 16 0 34 18 34c20 0 30-18 22-34"/>
+ <path d="M220 120c10-14 30-20 40-10M232 160c14 8 30 6 40-6"/></g>
+ <g fill="#e9dcc3"><circle cx="40" cy="250" r="4"/><circle cx="185" cy="185" r="4"/><circle cx="100" cy="230" r="3"/></g></svg>
+<svg class="bot" style="right:-30px;top:330px;transform:scaleX(-1) rotate(180deg)" width="260" height="360" viewBox="0 0 300 420"><g fill="none" stroke="#c4a877" stroke-width="1.2" stroke-linecap="round" opacity=".7">
+ <path d="M10 410C60 330 110 260 220 120"/><path d="M80 310c-40-10-60-40-60-70c30 10 55 35 60 70zM120 250c40-5 65-30 70-60c-30 5-60 30-70 60zM150 200c-35-15-50-45-45-75c28 15 45 45 45 75z"/>
+ <path d="M220 120c-14-6-30-2-34 12c-4 14 10 26 24 22c14-4 22-20 10-34zM200 130c-10 16 0 34 18 34c20 0 30-18 22-34"/></g></svg>
+
+<div class="brand"><b class="foil">Invitto</b><span>@INVITTO.CREASTUDIO</span></div>
+<div class="head">
+ <div class="s foil">Todo en</div>
+ <h1>un solo <i>link</i></h1>
+ <p>Una invitación que se vive, no solo se lee.</p>
 </div>
-<div style="position:absolute;bottom:200px;width:100%;text-align:center;font-family:Fraunces,serif;font-style:italic;font-size:30px;color:var(--mu)">WhatsApp 668 358 6262</div><div class="cta">Cotiza por WhatsApp <span>·</span> invittomx.com</div>
+
+<div class="deck2"></div><div class="deck"></div>
+<div class="phone"><div class="screen"><div class="notch"></div>
+ <div class="scr">
+  <div class="env"><svg width="64" height="64" viewBox="0 0 200 200"><g filter="url(#blob)"><circle cx="100" cy="100" r="82" fill="url(#wax)"/></g><circle cx="100" cy="100" r="58" fill="none" stroke="#3b0f1b" stroke-width="5"/><text x="100" y="126" text-anchor="middle" font-family="Pinyon Script" font-size="84" fill="#3b0f1b">V</text><ellipse cx="70" cy="64" rx="22" ry="9" fill="#fff" opacity=".25" transform="rotate(-35 70 64)"/></svg></div>
+  <div class="xv foil" style="background:linear-gradient(100deg,#c9ab74,#fff3d6 40%,#d9c29a 60%,#f3e2bb);-webkit-background-clip:text;color:transparent">Mis XV años</div>
+  <div class="nm">Valentina</div>
+  <div class="tap">TOCA PARA ABRIR</div>
+ </div><div class="glare"></div></div></div>
+
+<svg class="lines" viewBox="0 0 1080 1350"><g fill="none" stroke="#b8955c" stroke-width="1" stroke-dasharray="1 0">
+ <path d="M318 520 H360 L398 540"/><path d="M318 760 H384"/><path d="M318 1000 H360 L398 980"/>
+ <path d="M762 520 H720 L682 540"/><path d="M762 760 H696"/><path d="M762 1000 H720 L682 980"/></g>
+ <g fill="#86693E"><circle cx="398" cy="540" r="4"/><circle cx="384" cy="760" r="4"/><circle cx="398" cy="980" r="4"/><circle cx="682" cy="540" r="4"/><circle cx="696" cy="760" r="4"/><circle cx="682" cy="980" r="4"/></g>
+ <g fill="none" stroke="#D9C29A"><circle cx="398" cy="540" r="9"/><circle cx="384" cy="760" r="9"/><circle cx="398" cy="980" r="9"/><circle cx="682" cy="540" r="9"/><circle cx="696" cy="760" r="9"/><circle cx="682" cy="980" r="9"/></g></svg>
+
+<!-- left callouts: icon right-aligned; line ends at x=318 -->
+<div class="co l" style="left:40px;top:470px"><span class="ic"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#86693E" stroke-width="1.3" stroke-linejoin="round"><rect x="5" y="14" width="24" height="16"/><rect x="3" y="9" width="28" height="5"/><path d="M17 9v21M17 9c-3-6-10-6-9-1c1 3 6 1 9 1zM17 9c3-6 10-6 9-1c-1 3-6 1-9 1z"/></svg></span><h3>Se abre como<br>un regalo</h3><p>Sobre y sello animados</p></div>
+<div class="co l" style="left:40px;top:712px"><span class="ic"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#86693E" stroke-width="1.3"><path d="M13 25V8l15-3v17"/><circle cx="9.5" cy="25" r="3.5"/><circle cx="24.5" cy="22" r="3.5"/><path d="M13 12l15-3"/></svg></span><h3>Tu canción<br>favorita</h3><p>Suena al abrirla</p></div>
+<div class="co l" style="left:40px;top:952px"><span class="ic"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#86693E" stroke-width="1.3" stroke-linecap="round"><path d="M10 4h14M10 30h14M11 4c0 8 12 9 12 13s-12 5-12 13M23 4c0 8-12 9-12 13s12 5 12 13"/><path d="M14 27c1-2 5-2 6 0"/></svg></span><h3>Cuenta<br>regresiva</h3><p>Días, horas y minutos</p></div>
+
+<div class="co r" style="left:770px;top:470px"><span class="ic"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#86693E" stroke-width="1.3"><path d="M4 9h26v6a3 3 0 0 0 0 6v6H4v-6a3 3 0 0 0 0-6z"/><path d="M12 9v18" stroke-dasharray="2 2"/><path d="M16 15h9M16 19h6"/></svg></span><h3>Pase con<br>nombre</h3><p>Lugares por invitado</p></div>
+<div class="co r" style="left:770px;top:712px"><span class="ic"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#86693E" stroke-width="1.3" stroke-linejoin="round"><path d="M17 4a13 13 0 0 0-11 20l-2 6 6-2A13 13 0 1 0 17 4z"/><path d="M12 17l4 4 7-8"/></svg></span><h3>Confirman por<br>WhatsApp</h3><p>En un solo toque</p></div>
+<div class="co r" style="left:770px;top:952px"><span class="ic"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#86693E" stroke-width="1.3"><path d="M17 31s-10-10-10-17a10 10 0 0 1 20 0c0 7-10 17-10 17z"/><circle cx="17" cy="14" r="3.5"/></svg></span><h3>Mapa e<br>itinerario</h3><p>Misa, recepción y vals</p></div>
+
+<div class="cta">COTIZA POR WHATSAPP · <b>INVITTOMX.COM</b></div>
+<div class="foot">668 358 6262 · DESDE $1,000 · TODO MÉXICO</div>
 </body></html>
