@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Poiret+One&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:1080px;height:1350px;background:#0F3D3E;overflow:hidden;position:relative;font-family:'Poiret One',sans-serif;color:#F3E9D2}
+svg.bg{position:absolute;inset:0}
+.txt{position:absolute;left:0;right:0;text-align:center}
+.top{top:150px;font-size:30px;letter-spacing:.45em;color:#C9A227;font-weight:700}
+.title{top:610px;font-family:'Limelight',serif;font-size:132px;line-height:1;color:#F3E9D2;letter-spacing:.04em}
+.title span{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:64px;color:#C9A227;margin:14px 0}
+.date{top:1050px;font-size:38px;letter-spacing:.35em;font-weight:700}
+.place{top:1115px;font-size:26px;letter-spacing:.3em;color:#C9A227}
+.grain{position:absolute;inset:0;opacity:.12;mix-blend-mode:overlay}
+</style></head><body>
+<svg class="bg" viewBox="0 0 1080 1350">
+ <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8C766"/><stop offset=".5" stop-color="#C9A227"/><stop offset="1" stop-color="#8E6E14"/></linearGradient></defs>
+ <!-- marco doble con esquinas escalonadas -->
+ <g fill="none" stroke="url(#g)">
+  <path stroke-width="4" d="M90 60H990V90H1020V1260H990V1290H90V1260H60V90H90Z"/>
+  <path stroke-width="1.5" d="M110 85H970V110H995V1240H970V1265H110V1240H85V110H110Z"/>
+ </g>
+ <!-- abanico / sol deco -->
+ <g transform="translate(540 560)">
+  <g stroke="url(#g)" stroke-width="2" fill="none">
+   <path d="M-300 0A300 300 0 0 1 300 0"/><path d="M-250 0A250 250 0 0 1 250 0"/><path d="M-200 0A200 200 0 0 1 200 0"/>
+  </g>
+  <g stroke="url(#g)" stroke-width="2">
+   <line x1="0" y1="0" x2="-300" y2="0"/><line x1="0" y1="0" x2="-277" y2="-115"/><line x1="0" y1="0" x2="-212" y2="-212"/><line x1="0" y1="0" x2="-115" y2="-277"/><line x1="0" y1="0" x2="0" y2="-300"/><line x1="0" y1="0" x2="115" y2="-277"/><line x1="0" y1="0" x2="212" y2="-212"/><line x1="0" y1="0" x2="277" y2="-115"/><line x1="0" y1="0" x2="300" y2="0"/>
+  </g>
+  <path d="M-150 0A150 150 0 0 1 150 0Z" fill="#8C2F39" stroke="url(#g)" stroke-width="3"/>
+  <path d="M-90 0A90 90 0 0 1 90 0Z" fill="url(#g)"/>
+ </g>
+ <!-- línea con diamante -->
+ <g fill="url(#g)"><rect x="240" y="1018" width="250" height="2"/><rect x="590" y="1018" width="250" height="2"/><path d="M540 1004l16 15-16 15-16-15z"/></g>
+ <g fill="url(#g)"><rect x="240" y="198" width="600" height="2"/></g>
+ <!-- columnas escalonadas laterales -->
+ <g fill="none" stroke="url(#g)" stroke-width="2">
+  <path d="M150 1200V420M170 1200V460M190 1200V500"/><path d="M930 1200V420M910 1200V460M890 1200V500"/>
+ </g>
+ <g fill="url(#g)"><circle cx="150" cy="410" r="6"/><circle cx="930" cy="410" r="6"/></g>
+ <path d="M440 1185h200l-20 20h-160z" fill="url(#g)"/>
+</svg>
+<svg class="grain"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<div class="txt top">EST. 2026 · EDICIÓN ESPECIAL</div>
+<div class="txt title">LA GRAN<span>noche de</span>GALA</div>
+<div class="txt date">31 · DIC · 2026</div>
+<div class="txt place">SALÓN DORADO · 9 PM</div>
+</body></html>
