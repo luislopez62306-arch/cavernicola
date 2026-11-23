@@ -1,54 +1,278 @@
-<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,300;0,500;1,300&display=block" rel="stylesheet">
-<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1350px;overflow:hidden}
-:root{--ch:#2E2C2A;--iv:#FAF5EC;--ivd:#F1E8DA;--g:#D9C29A;--gd:#86693E;--mu:#6E665C}
-.serif{font-family:Fraunces,'Playfair Display',Georgia,serif}.script{font-family:'Alex Brush','URW Chancery L',cursive}.sans{font-family:'DM Sans',Helvetica,Arial,sans-serif}
-.brand{position:absolute;display:flex;flex-direction:column;gap:2px}.brand b{font-family:Fraunces,serif;font-weight:500;font-size:34px;letter-spacing:1px}.brand span{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:1px}</style>
-<style>body{background:radial-gradient(ellipse at 50% 40%,#74818E,#5E6B78 55%,#4A5560);position:relative;color:var(--iv)}
-.brand{top:56px;left:64px}.brand span{color:#E3E7EB}
-.label{position:absolute;top:66px;right:64px;font-family:'DM Sans';font-size:17px;letter-spacing:4px;text-transform:uppercase;border:1px solid var(--g);color:var(--g);padding:10px 20px;border-radius:30px}
-svg{position:absolute;left:90px;top:170px}
-.txt{position:absolute;left:0;right:0;top:170px;height:960px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#3A3836}
-.std{font-family:Fraunces;font-weight:500;letter-spacing:12px;font-size:40px;color:var(--gd)}
-.names{font-family:'Alex Brush';font-size:132px;line-height:1.1;margin:26px 0 14px;color:var(--ch)}
-.date{font-family:Fraunces;font-weight:300;font-size:46px;letter-spacing:8px}
-.small{font-family:'DM Sans';font-size:19px;letter-spacing:5px;color:var(--mu);margin-top:26px;text-transform:uppercase}
-.foot{position:absolute;bottom:60px;left:0;right:0;text-align:center;font-family:'DM Sans';font-size:24px;letter-spacing:2px;color:var(--iv)}.foot i{color:var(--g);font-style:normal}
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Italiana&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=block" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#56636F}
+svg#scene{position:absolute;inset:0}
+.brand{position:absolute;top:58px;left:68px;color:#F4EEE3}
+.brand b{display:block;font-family:Italiana,serif;font-weight:400;font-size:44px;letter-spacing:6px;line-height:1}
+.brand span{display:block;margin-top:8px;font-family:'DM Sans',sans-serif;font-size:15px;letter-spacing:3px;color:#D9DEE3;opacity:.9}
+.foot{position:absolute;left:0;right:0;bottom:56px;text-align:center;color:#F4EEE3}
+.foot i{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;letter-spacing:.5px}
+.foot .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#D9C29A;margin:0 18px;vertical-align:middle;position:relative;top:-2px}
+.foot b{font-family:'DM Sans',sans-serif;font-weight:500;font-size:19px;letter-spacing:4px;color:#E6D3AE;vertical-align:middle}
 </style></head><body>
-<div class="brand"><b>Invitto</b><span>@invitto.creastudio</span></div><div class="label">Diseño de ejemplo</div>
-<svg width="900" height="960" viewBox="0 0 900 960"><defs>
-<linearGradient id="pw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F3F4"/><stop offset=".3" stop-color="#A9AFB5"/><stop offset=".55" stop-color="#E6E8EA"/><stop offset=".8" stop-color="#8E959C"/><stop offset="1" stop-color="#D5D8DB"/></linearGradient>
-<radialGradient id="in"><stop offset="0" stop-color="#FDFAF3"/><stop offset="1" stop-color="#EFE6D6"/></radialGradient>
-<filter id="sh"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-opacity=".35"/></filter></defs>
-<ellipse cx="450" cy="480" rx="430" ry="465" fill="url(#pw)" filter="url(#sh)"/>
-<ellipse cx="450" cy="480" rx="405" ry="440" fill="none" stroke="#7D848B" stroke-width="2"/>
-<g fill="none" stroke="#C9CDD1" stroke-width="3"><ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(0 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(15 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(30 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(45 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(60 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(75 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(90 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(105 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(120 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(135 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(150 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(165 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(180 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(195 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(210 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(225 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(240 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(255 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(270 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(285 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(300 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(315 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(330 450 480)'/>
-<ellipse cx='450' cy='58' rx='16' ry='9' transform='rotate(345 450 480)'/></g>
-<ellipse cx="450" cy="480" rx="378" ry="412" fill="url(#in)" stroke="#9AA1A8" stroke-width="3"/>
-<ellipse cx="450" cy="480" rx="352" ry="386" fill="none" stroke="#D9C29A" stroke-width="1.5"/>
-<path d="M370 250 q80 -40 160 0 M330 720 q120 50 240 0" stroke="#D9C29A" stroke-width="2" fill="none"/>
-<circle cx="450" cy="230" r="5" fill="#D9C29A"/><circle cx="450" cy="745" r="5" fill="#D9C29A"/></svg>
-<div class="txt"><div class="std">SAVE THE DATE</div><div class="names">Mariana<br>&amp; Carlos</div><div class="date">28 · 10 · 2027</div><div class="small">Invitación formal a seguir</div></div>
-<div class="foot">Invitaciones digitales para boda <i>·</i> invittomx.com</div>
+<svg id="scene" width="1080" height="1350" viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <!-- linen weave -->
+  <filter id="linen" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9 0.018" numOctaves="2" seed="3" result="h"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.018 0.9" numOctaves="2" seed="7" result="v"/>
+    <feComposite in="h" in2="v" operator="arithmetic" k2=".5" k3=".5" result="w"/>
+    <feColorMatrix in="w" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -1.6 1.05" result="dk"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.004" numOctaves="3" seed="11" result="lo"/>
+    <feColorMatrix in="lo" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 -.35" result="blot"/>
+    <feMerge><feMergeNode in="dk"/><feMergeNode in="blot"/></feMerge>
+  </filter>
+  <filter id="linenDark" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9 0.018" numOctaves="2" seed="5" result="h"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.018 0.9" numOctaves="2" seed="9" result="v"/>
+    <feComposite in="h" in2="v" operator="arithmetic" k2=".5" k3=".5" result="w"/>
+    <feColorMatrix in="w" type="matrix" values="0 0 0 0 0.1  0 0 0 0 0.12  0 0 0 0 0.15  0 0 0 1.8 -0.8"/>
+  </filter>
+  <radialGradient id="vig" cx="44%" cy="40%" r="75%">
+    <stop offset="0" stop-color="#fff" stop-opacity=".16"/>
+    <stop offset=".5" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#0d1218" stop-opacity=".62"/>
+  </radialGradient>
+  <!-- metal -->
+  <linearGradient id="pewter" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F3F4F2"/><stop offset=".18" stop-color="#9DA19F"/>
+    <stop offset=".34" stop-color="#D9DBD8"/><stop offset=".52" stop-color="#7C807F"/>
+    <stop offset=".7" stop-color="#C5C8C5"/><stop offset=".86" stop-color="#6A6E6E"/><stop offset="1" stop-color="#A9ADAB"/>
+  </linearGradient>
+  <radialGradient id="well" cx="40%" cy="34%" r="80%">
+    <stop offset="0" stop-color="#E9EAE7"/><stop offset=".35" stop-color="#C9CBC8"/>
+    <stop offset=".75" stop-color="#9A9E9C"/><stop offset="1" stop-color="#7B7F7E"/>
+  </radialGradient>
+  <filter id="emboss" x="-5%" y="-5%" width="110%" height="110%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="b"/>
+    <feSpecularLighting in="b" surfaceScale="7" specularConstant="1.25" specularExponent="26" lighting-color="#fffdf6" result="s">
+      <feDistantLight azimuth="225" elevation="42"/></feSpecularLighting>
+    <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+    <feDiffuseLighting in="b" surfaceScale="7" diffuseConstant="1.15" lighting-color="#fff" result="d">
+      <feDistantLight azimuth="225" elevation="48"/></feDiffuseLighting>
+    <feComposite in="d" in2="SourceAlpha" operator="in" result="d2"/>
+    <feBlend in="SourceGraphic" in2="d2" mode="multiply" result="m"/>
+    <feComposite in="m" in2="s2" operator="arithmetic" k2="1" k3=".85"/>
+  </filter>
+  <filter id="brushed" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.002 0.6" numOctaves="2" seed="4"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 -.2"/>
+    <feComposite in2="SourceGraphic" operator="in"/>
+  </filter>
+  <filter id="soft40"><feGaussianBlur stdDeviation="40"/></filter>
+  <filter id="soft14"><feGaussianBlur stdDeviation="14"/></filter>
+  <filter id="soft6"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="soft3"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="soft1"><feGaussianBlur stdDeviation="1.2"/></filter>
+  <!-- paper -->
+  <filter id="deckle" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="2" seed="2" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="12" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .28  0 0 0 -1.1 .5" result="g"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="21" result="f"/>
+    <feColorMatrix in="f" type="matrix" values="0 0 0 0 .5  0 0 0 0 .42  0 0 0 0 .3  0 0 0 .3 -.12" result="fl"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="fl"/></feMerge>
+    <feComposite in2="SourceGraphic" operator="in"/>
+  </filter>
+  <filter id="vellumTex" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.3" numOctaves="2" seed="8"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .35 -.05"/>
+    <feComposite in2="SourceGraphic" operator="in"/>
+  </filter>
+  <linearGradient id="foil" x1="0" y1="0" x2="1" y2=".35">
+    <stop offset="0" stop-color="#8A6B3C"/><stop offset=".22" stop-color="#E9D6A8"/>
+    <stop offset=".38" stop-color="#A9894F"/><stop offset=".55" stop-color="#F6E7C1"/>
+    <stop offset=".72" stop-color="#9C7B45"/><stop offset=".88" stop-color="#DCC48F"/><stop offset="1" stop-color="#86693E"/>
+  </linearGradient>
+  <filter id="foilRelief" x="-5%" y="-20%" width="110%" height="140%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation=".6" result="b"/>
+    <feSpecularLighting in="b" surfaceScale="2" specularConstant="1" specularExponent="18" lighting-color="#fff8e4" result="s"><feDistantLight azimuth="225" elevation="55"/></feSpecularLighting>
+    <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+    <feOffset in="SourceAlpha" dx=".8" dy="1" result="o"/><feFlood flood-color="#5a4524" flood-opacity=".35"/><feComposite in2="o" operator="in" result="sh"/>
+    <feMerge><feMergeNode in="sh"/><feMergeNode in="SourceGraphic"/><feMergeNode in="s2"/></feMerge>
+  </filter>
+  <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.2"/></filter>
+  <!-- wax -->
+  <radialGradient id="wax" cx="38%" cy="32%" r="75%">
+    <stop offset="0" stop-color="#C9A86E"/><stop offset=".45" stop-color="#9E7D48"/><stop offset="1" stop-color="#5E4524"/>
+  </radialGradient>
+  <filter id="waxEdge" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="15" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="B"/>
+  </filter>
+  <filter id="waxLight" x="-10%" y="-10%" width="120%" height="120%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+    <feSpecularLighting in="b" surfaceScale="9" specularConstant="1.3" specularExponent="30" lighting-color="#fff6df" result="s"><feDistantLight azimuth="225" elevation="38"/></feSpecularLighting>
+    <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+    <feComposite in="SourceGraphic" in2="s2" operator="arithmetic" k2="1" k3=".75"/>
+  </filter>
+  <radialGradient id="olive" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#7d7a5a"/><stop offset=".6" stop-color="#3b3a2a"/><stop offset="1" stop-color="#1f1e16"/></radialGradient>
+  <linearGradient id="leafA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6F7D66"/><stop offset=".5" stop-color="#9AA88F"/><stop offset="1" stop-color="#7E8C74"/></linearGradient>
+  <linearGradient id="leafB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B7C0AE"/><stop offset=".5" stop-color="#D3D8C8"/><stop offset="1" stop-color="#A3AE98"/></linearGradient>
+  <clipPath id="cardClip"><rect x="-222" y="-302" width="444" height="604"/></clipPath>
+  <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#C9CFC2"/><stop offset=".3" stop-color="#EEF0E8"/><stop offset=".55" stop-color="#AAB3A1"/><stop offset=".8" stop-color="#D8DDD0"/><stop offset="1" stop-color="#9DA693"/>
+  </linearGradient>
+</defs>
+
+<!-- LINEN -->
+<rect width="1080" height="1350" fill="#5E6B78"/>
+<rect width="1080" height="1350" filter="url(#linenDark)" opacity=".55"/>
+<rect width="1080" height="1350" filter="url(#linen)" opacity=".16"/>
+<!-- subtle fold crease in cloth -->
+<path d="M0 300 C 300 330, 700 280, 1080 318" stroke="#fff" stroke-opacity=".03" stroke-width="10" fill="none" filter="url(#soft6)"/>
+<path d="M0 312 C 300 342, 700 292, 1080 330" stroke="#000" stroke-opacity=".05" stroke-width="12" fill="none" filter="url(#soft6)"/>
+<rect width="1080" height="1350" fill="url(#vig)"/>
+
+<!-- TRAY -->
+<g transform="translate(540 690)">
+  <ellipse cx="34" cy="48" rx="392" ry="490" fill="#0a0f14" opacity=".55" filter="url(#soft40)"/>
+  <ellipse cx="12" cy="16" rx="388" ry="486" fill="#0a0f14" opacity=".55" filter="url(#soft6)"/>
+  <ellipse rx="390" ry="488" fill="url(#pewter)"/>
+  <g id="rim" filter="url(#emboss)"></g>
+  <ellipse rx="338" ry="434" fill="none" stroke="#5f6463" stroke-width="5"/>
+  <ellipse rx="334" ry="430" fill="url(#well)"/>
+  <ellipse rx="334" ry="430" filter="url(#brushed)" fill="#fff" opacity=".35"/>
+  <!-- inner shadow of raised rim -->
+  <ellipse rx="334" ry="430" fill="none" stroke="#2c3030" stroke-width="22" opacity=".35" filter="url(#soft14)" transform="translate(10 12)"/>
+  <ellipse rx="318" ry="414" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/>
+  <ellipse rx="322" ry="418" fill="none" stroke="#6a6f6e" stroke-opacity=".6" stroke-width="1"/>
+  <!-- reflection sheen -->
+  <ellipse cx="-120" cy="-190" rx="170" ry="90" fill="#fff" opacity=".35" filter="url(#soft40)" transform="rotate(-35 -120 -190)"/>
+</g>
+
+<!-- CARD -->
+<g transform="translate(534 676) rotate(-3.2)">
+  <rect x="-214" y="-288" width="444" height="604" fill="#0b0f12" opacity=".45" filter="url(#soft14)"/>
+  <rect x="-220" y="-298" width="444" height="604" fill="#141a1d" opacity=".35" filter="url(#soft3)"/>
+  <g filter="url(#deckle)">
+    <rect x="-222" y="-302" width="444" height="604" fill="#FAF5EC"/>
+  </g>
+  <g filter="url(#deckle)">
+    <rect x="-222" y="-302" width="444" height="604" fill="#fff" filter="url(#grain)"/>
+  </g>
+  <!-- light falloff on paper -->
+  <rect x="-222" y="-302" width="444" height="604" fill="url(#vig)" opacity=".25" clip-path="url(#cardClip)"/>
+  <!-- letterpress border -->
+  <rect x="-190" y="-270" width="380" height="540" fill="none" stroke="url(#foil)" stroke-width="1.4"/>
+  <rect x="-182" y="-262" width="364" height="524" fill="none" stroke="url(#foil)" stroke-width=".7"/>
+  <!-- top flourish -->
+  <g fill="none" stroke="url(#foil)" stroke-width="1.6" filter="url(#foilRelief)" stroke-linecap="round">
+    <path d="M-70 -214 C -40 -214, -22 -228, 0 -236 C 22 -228, 40 -214, 70 -214"/>
+    <path d="M-110 -210 C -86 -200, -70 -222, -46 -210"/>
+    <path d="M110 -210 C 86 -200, 70 -222, 46 -210"/>
+    <circle cx="0" cy="-244" r="3.5" fill="url(#foil)" stroke="none"/>
+  </g>
+  <text x="0" y="-160" text-anchor="middle" font-family="Fraunces" font-weight="500" font-size="25" letter-spacing="9" fill="url(#foil)" filter="url(#foilRelief)">SAVE THE DATE</text>
+  <text x="0" y="-60" text-anchor="middle" font-family="Pinyon Script" font-size="92" fill="#2E2C2A" filter="url(#ink)">Mariana</text>
+  <text x="0" y="-3" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="52" font-weight="500" fill="url(#foil)" filter="url(#foilRelief)">&amp;</text>
+  <text x="2" y="78" text-anchor="middle" font-family="Pinyon Script" font-size="92" fill="#2E2C2A" filter="url(#ink)">Carlos</text>
+  <text x="0" y="262" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="21" fill="#6b645a">invitación formal a seguir</text>
+
+  <!-- VELLUM WRAP -->
+  <g>
+    <rect x="-236" y="122" width="472" height="98" fill="#0b0f12" opacity=".18" filter="url(#soft3)" transform="translate(3 5)"/>
+    <rect x="-236" y="118" width="472" height="98" fill="#F7F6F0" opacity=".62"/>
+    <rect x="-236" y="118" width="472" height="98" fill="#fff" filter="url(#vellumTex)"/>
+    <rect x="-236" y="118" width="8" height="98" fill="#d4d6d0" opacity=".8"/>
+    <rect x="228" y="118" width="8" height="98" fill="#c6c9c2" opacity=".8"/>
+    <line x1="-236" y1="118.5" x2="236" y2="118.5" stroke="#fff" stroke-width="1"/>
+    <text x="0" y="168" text-anchor="middle" font-family="Fraunces" font-weight="400" font-size="34" letter-spacing="7" fill="#2E2C2A">28 · 10 · 2027</text>
+    <text x="0" y="198" text-anchor="middle" font-family="DM Sans" font-weight="500" font-size="12.5" letter-spacing="5" fill="#5E6B78">CIUDAD DE MÉXICO</text>
+  </g>
+</g>
+
+<!-- SILK RIBBON trailing -->
+<g>
+  <path d="M 640 1000 C 720 960, 800 1050, 870 1030 C 940 1010, 960 1110, 1100 1120" stroke="#000" stroke-opacity=".32" stroke-width="40" fill="none" filter="url(#soft6)" transform="translate(8 12)"/>
+  <path d="M 640 1000 C 720 960, 800 1050, 870 1030 C 940 1010, 960 1110, 1100 1120" stroke="url(#ribbon)" stroke-width="36" fill="none"/>
+  <path d="M 640 1000 C 720 960, 800 1050, 870 1030 C 940 1010, 960 1110, 1100 1120" stroke="#fff" stroke-opacity=".5" stroke-width="4" fill="none" filter="url(#soft1)" transform="translate(0 -8)"/>
+  <path d="M 640 1000 C 720 960, 800 1050, 870 1030 C 940 1010, 960 1110, 1100 1120" stroke="#7d8775" stroke-opacity=".35" stroke-width="3" fill="none" filter="url(#soft1)" transform="translate(0 10)"/>
+</g>
+<!-- OLIVE SPRIG -->
+<g id="sprig"></g>
+
+<!-- WAX SEAL -->
+<g transform="translate(726 1006)">
+  <circle r="66" cx="8" cy="12" fill="#000" opacity=".45" filter="url(#soft6)"/>
+  <g filter="url(#waxLight)">
+    <g filter="url(#waxEdge)"><circle r="64" fill="url(#wax)"/></g>
+    <circle r="44" fill="#8C6B3B"/>
+    <circle r="44" fill="none" stroke="#6b5029" stroke-width="3"/>
+    <circle r="37" fill="none" stroke="#C7A66C" stroke-width="1.5" opacity=".8"/>
+    <text y="13" text-anchor="middle" font-family="Pinyon Script" font-size="40" fill="#4a3518">M&amp;C</text>
+  </g>
+  <ellipse cx="-22" cy="-30" rx="16" ry="7" fill="#fff" opacity=".35" transform="rotate(-35 -22 -30)" filter="url(#soft3)"/>
+</g>
+
+<!-- PAPER TAG -->
+<g transform="translate(888 108) rotate(6)">
+  <path d="M -40 -6 C -90 -40, -110 20, -150 -14" stroke="#E8E0D0" stroke-width="1.6" fill="none" opacity=".8"/>
+  <path d="M -120 -24 h 220 l 26 24 l -26 24 h -220 z" fill="#000" opacity=".35" filter="url(#soft6)" transform="translate(4 7)"/>
+  <g filter="url(#deckle)"><path d="M -120 -24 h 220 l 26 24 l -26 24 h -220 z" fill="#F1E8DA"/></g>
+  <path d="M -120 -24 h 220 l 26 24 l -26 24 h -220 z" fill="#fff" filter="url(#grain)"/>
+  <circle cx="104" cy="0" r="5" fill="#56636F"/>
+  <text x="-8" y="6" text-anchor="middle" font-family="DM Sans" font-weight="500" font-size="14" letter-spacing="3.2" fill="#86693E">DISEÑO DE EJEMPLO</text>
+</g>
+</svg>
+
+<div class="brand"><b>Invitto</b><span>@invitto.creastudio</span></div>
+<div class="foot"><i>Invitaciones digitales para boda</i><span class="dot"></span><b>INVITTOMX.COM</b></div>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+// baroque rim: beads + acanthus leaves alternating, plus cartouches at 4 poles
+const rim=document.getElementById('rim');
+const RX=364,RY=462,N=64;
+el('ellipse',{rx:388,ry:486,fill:'none',stroke:'#B8BBB8','stroke-width':6},rim);
+el('ellipse',{rx:342,ry:440,fill:'none',stroke:'#B8BBB8','stroke-width':6},rim);
+for(let i=0;i<N;i++){
+  const t=i/N*Math.PI*2, x=RX*Math.cos(t), y=RY*Math.sin(t);
+  const ang=Math.atan2(RY*Math.cos(t),-RX*Math.sin(t))*180/Math.PI;
+  if(i%2==0){el('circle',{cx:x,cy:y,r:9.5,fill:'#C9CCC9'},rim);}
+  else{const g=el('g',{transform:`translate(${x} ${y}) rotate(${ang})`},rim);
+    el('path',{d:'M -22 0 C -14 -16, 14 -16, 22 0 C 14 16, -14 16, -22 0 Z',fill:'#BFC2BF'},g);
+    el('path',{d:'M -16 0 L 16 0',stroke:'#808483','stroke-width':2},g);}
+}
+// pole cartouches
+for(const [x,y,r] of [[0,-466,0],[0,466,180],[-366,0,-90],[366,0,90]]){
+  const g=el('g',{transform:`translate(${x} ${y}) rotate(${r})`},rim);
+  el('path',{d:'M -60 6 C -50 -26, -20 -22, -10 -6 C -4 -30, 4 -30, 10 -6 C 20 -22, 50 -26, 60 6 C 40 -4, 20 16, 0 12 C -20 16, -40 -4, -60 6 Z',fill:'#D2D5D2'},g);
+  el('circle',{cx:0,cy:-14,r:8,fill:'#E0E2DF'},g);
+}
+// olive sprig along a curve, lower-left, partly off tray
+const sp=document.getElementById('sprig');
+const P=t=>{const a=[110,1210],b=[200,960],c=[330,850],d=[440,690];const m=1-t;
+  return [m*m*m*a[0]+3*m*m*t*b[0]+3*m*t*t*c[0]+t*t*t*d[0], m*m*m*a[1]+3*m*m*t*b[1]+3*m*t*t*c[1]+t*t*t*d[1]];};
+let pts=[];for(let i=0;i<=40;i++)pts.push(P(i/40));
+const dStem='M'+pts.map(p=>p.join(' ')).join(' L');
+el('path',{d:dStem,stroke:'#000','stroke-opacity':.35,'stroke-width':5,fill:'none',filter:'url(#soft3)',transform:'translate(8 12)'},sp);
+const shadowG=el('g',{opacity:.38,filter:'url(#soft6)',transform:'translate(12 16)'},sp);
+const leafG=el('g',{},sp);
+el('path',{d:dStem,stroke:'#6b6248','stroke-width':4,fill:'none','stroke-linecap':'round'},sp);
+let k=0;
+for(let i=2;i<=38;i+=2.6){
+  const t=i/40,[x,y]=P(t),[x2,y2]=P(t+.01);const base=Math.atan2(y2-y,x2-x)*180/Math.PI;
+  for(const side of [-1,1]){
+    const a=base+side*(38+ (k%3)*6), L=86-t*22+(k%2)*10;
+    const d=`M0 0 C ${L*.3} ${-L*.16}, ${L*.75} ${-L*.12}, ${L} 0 C ${L*.75} ${L*.12}, ${L*.3} ${L*.16}, 0 0 Z`;
+    el('path',{d,fill:'#000',transform:`translate(${x} ${y}) rotate(${a})`},shadowG);
+    const g=el('g',{transform:`translate(${x} ${y}) rotate(${a})`},leafG);
+    el('path',{d,fill:(k%3==0)?'url(#leafB)':'url(#leafA)'},g);
+    el('path',{d:`M2 0 L ${L*.9} 0`,stroke:'#E7EBDF','stroke-opacity':.55,'stroke-width':1},g);
+    k++;
+  }
+}
+el('path',{d:'M0 0 C 18 -9, 44 -7, 58 0 C 44 7, 18 9, 0 0 Z',fill:'url(#leafA)',transform:`translate(${P(1)[0]} ${P(1)[1]}) rotate(-50)`},leafG);
+for(const [t,s] of [[.35,1],[.62,-1]]){const [x,y]=P(t);const ox=x+s*22,oy=y+18;
+  el('ellipse',{cx:ox+5,cy:oy+8,rx:13,ry:17,fill:'#000',opacity:.4,filter:'url(#soft3)'},sp);
+  el('ellipse',{cx:ox,cy:oy,rx:12,ry:16,fill:'url(#olive)',transform:`rotate(-25 ${ox} ${oy})`},sp);
+  el('ellipse',{cx:ox-4,cy:oy-6,rx:3,ry:5,fill:'#fff',opacity:.55,filter:'url(#soft1)'},sp);}
+</script>
 </body></html>

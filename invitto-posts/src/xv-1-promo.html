@@ -1,38 +1,159 @@
-<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Alex+Brush&family=DM+Sans:wght@400;500&display=block" rel="stylesheet"><style>
-:root{--ch:#2E2C2A;--iv:#FAF5EC;--ivd:#F1E8DA;--g:#D9C29A;--gd:#86693E;--mu:#6E665C;--w:#5A1F2E}
-*{margin:0;padding:0;box-sizing:border-box}
-body{width:1080px;height:1350px;overflow:hidden;background:var(--iv);font-family:"DM Sans",sans-serif;color:var(--ch);position:relative}
-.serif{font-family:Fraunces,Georgia,serif}.script{font-family:"Alex Brush",cursive;word-spacing:14px}
-.frame{position:absolute;inset:36px;border:1.5px solid var(--g)}.frame2{position:absolute;inset:46px;border:1px solid rgba(217,194,154,.5)}
-.brand{position:absolute;top:84px;left:96px;display:flex;align-items:baseline;gap:14px}
-.brand b{font-family:Fraunces,serif;font-weight:400;font-size:34px;letter-spacing:1px}.brand span{font-size:17px;color:var(--mu);letter-spacing:1px}
-.center{text-align:center}
-</style></head><body><div class="frame"></div><div class="frame2"></div><div class="brand"><b>Invitto</b><span>@invitto.creastudio</span></div>
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=block" rel="stylesheet">
 <style>
-.kick{position:absolute;top:170px;width:100%;font-size:92px;color:var(--gd)}
-.h{position:absolute;top:280px;width:100%;font-size:74px;line-height:1.05;font-weight:300}
-.h i{color:var(--w)}
-.sub{position:absolute;top:460px;width:100%;font-size:22px;letter-spacing:6px;text-transform:uppercase;color:var(--mu)}
-.phone{position:absolute;top:540px;left:50%;transform:translateX(-50%);width:330px;height:620px;border-radius:52px;background:var(--ch);padding:14px;box-shadow:0 30px 60px rgba(46,44,42,.25)}
-.scr{width:100%;height:100%;border-radius:40px;background:linear-gradient(180deg,#F1E8DA,#FAF5EC);position:relative;overflow:hidden}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:96px;height:26px;border-radius:14px;background:var(--ch)}
-.foot{position:absolute;bottom:92px;width:100%;font-size:40px;font-weight:400}
-.foot .dot{color:var(--g)}
-</style>
-<div class="kick script center">Mis XV años</div>
-<div class="h serif center">Que digan <i>¡wow!</i><br>antes de llegar</div>
-<div class="sub center">Invitaciones digitales para XV años</div>
-<div class="phone"><div class="scr"><div class="notch"></div>
-<svg width="302" height="592" viewBox="0 0 302 592" style="position:absolute;inset:0">
-<text x="151" y="110" text-anchor="middle" font-family="Alex Brush,cursive" font-size="40" fill="#86693E">Valentina</text>
-<text x="151" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" letter-spacing="4" fill="#6E665C">TE INVITA A SUS XV</text>
-<rect x="36" y="200" width="230" height="160" rx="6" fill="#FAF5EC" stroke="#D9C29A" stroke-width="1.5"/>
-<path d="M36 206 L151 300 L266 206" fill="#F1E8DA" stroke="#D9C29A" stroke-width="1.5"/>
-<circle cx="151" cy="298" r="30" fill="#5A1F2E"/><circle cx="151" cy="298" r="23" fill="none" stroke="#7a3446" stroke-width="2"/>
-<text x="151" y="309" text-anchor="middle" font-family="Fraunces,serif" font-size="28" fill="#D9C29A">V</text>
-<text x="151" y="420" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="17" fill="#2E2C2A">Toca para abrir</text>
-<rect x="86" y="460" width="130" height="40" rx="20" fill="#2E2C2A"/>
-<text x="151" y="485" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" letter-spacing="3" fill="#FAF5EC">ABRIR</text>
-<line x1="80" y1="540" x2="222" y2="540" stroke="#D9C29A"/></svg></div></div>
-<div class="foot serif center">Desde $1,000 <span class="dot">·</span> Para todo México</div>
+:root{--ch:#2E2C2A;--iv:#FAF5EC;--ivd:#F1E8DA;--g:#D9C29A;--gd:#86693E;--w:#5A1F2E;--bl:#EFE3CF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1350px;overflow:hidden;position:relative;font-family:"DM Sans",sans-serif;
+ background:radial-gradient(ellipse 70% 55% at 40% 52%,#7a2c3f 0%,#5A1F2E 45%,#3a121c 80%,#24090f 100%)}
+.satin{position:absolute;inset:0;filter:url(#satinF);opacity:.55;mix-blend-mode:soft-light}
+.satin2{position:absolute;inset:0;background:
+ linear-gradient(118deg,transparent 20%,rgba(255,220,225,.10) 30%,transparent 38%,transparent 55%,rgba(255,210,220,.08) 63%,transparent 72%),
+ linear-gradient(160deg,transparent 40%,rgba(0,0,0,.25) 52%,transparent 60%)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 45% 55%,transparent 50%,rgba(15,3,6,.65) 100%)}
+.grain{position:absolute;inset:0;filter:url(#grainF);opacity:.18;mix-blend-mode:overlay}
+.foil{background:linear-gradient(100deg,#86693E 0%,#c9ab74 18%,#f6e6bf 30%,#b8955c 42%,#e9d3a4 58%,#fff3d6 64%,#a9834c 78%,#d9c29a 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent}
+.brand{position:absolute;top:64px;left:0;right:0;display:flex;justify-content:space-between;padding:0 72px;align-items:baseline;z-index:20}
+.brand b{font-family:Fraunces,serif;font-weight:400;font-size:34px;letter-spacing:2px}
+.brand span{font-size:16px;letter-spacing:3px;color:rgba(239,227,207,.75)}
+.head{position:absolute;top:128px;left:0;right:0;text-align:center;z-index:20}
+.head .s{font-family:"Pinyon Script",cursive;font-size:96px;line-height:1;display:inline-block;padding:0 20px}
+.head h1{font-family:Fraunces,serif;font-weight:300;font-size:84px;line-height:.98;letter-spacing:-1px;margin-top:-6px}
+.head h1 i{font-style:italic}
+.rule{display:flex;justify-content:center;margin-top:18px}
+/* phone */
+.phone{position:absolute;left:600px;top:430px;width:390px;height:790px;border-radius:62px;transform:rotate(7deg);z-index:5;
+ background:linear-gradient(135deg,#4a4642,#1b1a19 30%,#2e2c2a 60%,#0d0c0c);padding:14px;
+ box-shadow:0 2px 2px rgba(0,0,0,.4),18px 30px 30px rgba(10,0,3,.45),40px 70px 90px rgba(10,0,3,.55),inset 0 0 0 2px rgba(255,255,255,.12)}
+.phone::before{content:"";position:absolute;inset:4px;border-radius:58px;border:1px solid rgba(255,255,255,.08)}
+.screen{width:100%;height:100%;border-radius:50px;overflow:hidden;position:relative;
+ background:radial-gradient(ellipse at 50% 30%,#fffaf1,#f3e9d8 70%,#e9dcc6)}
+.screen .notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:32px;border-radius:20px;background:#0d0c0c;z-index:3}
+.screen .glare{position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 32%,transparent 70%,rgba(255,255,255,.12) 85%,transparent);z-index:4;pointer-events:none}
+.scr{position:absolute;inset:0;text-align:center;padding-top:100px;color:var(--w)}
+.scr .k{font-family:"Cormorant Garamond",serif;letter-spacing:6px;font-size:13px;color:var(--gd)}
+.scr .xv{font-family:"Pinyon Script",cursive;font-size:62px;line-height:1;margin-top:20px;color:var(--gd)}
+.scr .nm{font-family:Fraunces,serif;font-weight:300;font-size:50px;margin-top:4px;color:var(--w)}
+.scr .dt{font-family:"Cormorant Garamond",serif;font-size:22px;letter-spacing:5px;margin-top:10px;color:var(--ch)}
+.scr .cd{display:flex;justify-content:center;gap:12px;margin-top:30px}
+.scr .cd div{width:58px;padding:9px 0;border:1px solid var(--g);border-radius:6px;font-family:Fraunces;font-size:22px;color:var(--w);background:rgba(255,255,255,.5)}
+.scr .cd small{display:block;font-family:"DM Sans";font-size:9px;letter-spacing:2px;color:var(--gd)}
+.scr .btn{margin:30px auto 0;width:250px;padding:14px;border-radius:40px;background:var(--w);color:var(--bl);font-size:13px;letter-spacing:3px}
+.scr .music{margin:18px auto 0;width:250px;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ch);text-align:left}
+.scr .bar{flex:1;height:3px;background:#e2d3b8;border-radius:3px;position:relative}.scr .bar::after{content:"";position:absolute;left:0;top:0;height:3px;width:40%;background:var(--gd);border-radius:3px}
+.glow{position:absolute;left:580px;top:440px;width:460px;height:800px;border-radius:80px;background:radial-gradient(ellipse,rgba(255,230,200,.35),transparent 65%);filter:blur(40px);transform:rotate(7deg);z-index:4}
+/* card */
+.cardwrap{position:absolute;left:92px;top:520px;width:500px;height:680px;transform:rotate(-8deg);z-index:8;
+ filter:drop-shadow(0 2px 2px rgba(20,0,5,.45)) drop-shadow(14px 26px 22px rgba(20,0,5,.45)) drop-shadow(30px 60px 60px rgba(20,0,5,.4))}
+.lace{position:absolute;inset:0;background:#f7efe1;
+ -webkit-mask:radial-gradient(circle 12px,#000 97%,transparent) -12px -12px/24px 24px,linear-gradient(#000,#000) content-box;padding:12px;
+ mask:radial-gradient(circle 12px,#000 97%,transparent) -12px -12px/24px 24px,linear-gradient(#000,#000) content-box;}
+.lace::after{content:"";position:absolute;inset:4px;background:radial-gradient(circle 3px,rgba(120,80,45,.55) 60%,transparent) 0 0/24px 24px;opacity:.8;
+ -webkit-mask:linear-gradient(#000,#000),linear-gradient(#000,#000) content-box;padding:18px;-webkit-mask-composite:xor;mask-composite:exclude}
+.card{position:absolute;inset:30px;background:linear-gradient(160deg,#fffbf3,#f6eddd 70%,#efe2cb);overflow:hidden;text-align:center;
+ box-shadow:0 0 0 1px rgba(134,105,62,.25),0 1px 3px rgba(80,50,20,.2)}
+.card .paper{position:absolute;inset:0;filter:url(#paperF);opacity:.5;mix-blend-mode:multiply}
+.card .in{position:absolute;inset:22px;border:1px solid rgba(134,105,62,.55)}
+.card .in2{position:absolute;inset:28px;border:.6px solid rgba(134,105,62,.35)}
+.card .t{position:relative;padding-top:74px}
+.card .k{font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:7px;color:var(--gd)}
+.card .xv{font-family:"Pinyon Script",cursive;font-size:84px;line-height:1;margin-top:28px}
+.card .nm{font-family:Fraunces,serif;font-weight:300;font-size:64px;color:var(--w);margin-top:4px;letter-spacing:1px}
+.card .dt{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:7px;color:var(--ch);margin-top:16px}
+.card .pl{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:#6e5a45;margin-top:8px}
+.bot{position:absolute;bottom:40px;left:50%;transform:translateX(-50%)}
+/* ribbon */
+.ribbon{position:absolute;left:30px;top:-60px;width:40px;height:800px;z-index:9;
+ background:linear-gradient(90deg,#c9a9ad 0%,#f6e4e2 20%,#e3c7c6 38%,#b88d93 62%,#efd9d6 82%,#a87c83 100%);
+ box-shadow:6px 0 10px rgba(60,20,25,.35),2px 0 2px rgba(60,20,25,.3)}
+.ribbon::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 2px,transparent 2px 5px)}
+.seal{position:absolute;left:300px;top:1040px;width:200px;height:200px;z-index:11;transform:rotate(-12deg);
+ filter:drop-shadow(0 3px 2px rgba(20,0,5,.6)) drop-shadow(8px 16px 16px rgba(20,0,5,.5))}
+.bow{position:absolute;left:200px;top:1000px;z-index:10}
+.foot{position:absolute;bottom:58px;left:0;right:0;text-align:center;z-index:20;color:var(--bl)}
+.foot .a{font-family:"Cormorant Garamond",serif;font-size:30px;font-style:italic}
+.foot .b{font-size:15px;letter-spacing:5px;text-transform:uppercase;margin-top:10px;color:rgba(239,227,207,.8)}
+.foot .b em{font-style:normal;color:var(--g)}
+.sprig{position:absolute;z-index:7}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+ <filter id="satinF" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.0016 0.006" numOctaves="3" seed="7"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="1 1"/></feComponentTransfer></filter>
+ <filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+ <filter id="paperF"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" seed="3"/><feColorMatrix type="matrix" values="0 0 0 0 .55  0 0 0 0 .45  0 0 0 0 .32  0 0 0 -1.1 .7"/></filter>
+ <filter id="blob" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="11"/><feDisplacementMap in="SourceGraphic" scale="16"/></filter>
+ <filter id="emb" x="-10%" y="-10%" width="120%" height="120%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="b"/>
+  <feSpecularLighting in="b" surfaceScale="5" specularConstant="1" specularExponent="22" lighting-color="#ffd9df" result="s"><feDistantLight azimuth="225" elevation="42"/></feSpecularLighting>
+  <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+  <feComposite in="SourceGraphic" in2="s2" operator="arithmetic" k1="0" k2="1" k3=".55" k4="0"/>
+ </filter>
+ <radialGradient id="wax" cx="38%" cy="34%" r="75%"><stop offset="0" stop-color="#a23a52"/><stop offset=".45" stop-color="#6d2236"/><stop offset="1" stop-color="#3b0f1b"/></radialGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86693E"/><stop offset=".35" stop-color="#f3e2bb"/><stop offset=".6" stop-color="#b8955c"/><stop offset="1" stop-color="#e6cfa0"/></linearGradient>
+</svg>
+<div class="satin"></div><div class="satin2"></div><div class="vig"></div>
+
+<div class="brand"><b class="foil">Invitto</b><span>@INVITTO.CREASTUDIO</span></div>
+<div class="head">
+ <div class="s foil">Que digan</div>
+ <h1 class="foil"><i>¡wow!</i> antes de llegar</h1>
+ <div class="rule"><svg width="360" height="20" viewBox="0 0 360 20"><g fill="none" stroke="url(#gold)" stroke-width="1.2"><path d="M10 10H150M210 10H350"/><path d="M150 10c8-8 18-8 30 0c12 8 22 8 30 0M150 10c8 8 18 8 30 0c12-8 22-8 30 0"/></g><circle cx="180" cy="10" r="3" fill="#D9C29A"/></svg></div>
+</div>
+
+<!-- baby's breath sprig behind card -->
+<svg class="sprig" style="left:40px;top:470px" width="300" height="300" viewBox="0 0 300 300"><g stroke="#D9C29A" stroke-width="1.3" fill="none" opacity=".85"><path d="M280 290C220 220 170 170 60 60"/><path d="M200 210c-20-40-30-60-70-80M160 168c10-40 0-70-20-100M120 128c-30-10-60-8-90 6M95 100c-5-30-25-50-50-60M230 245c-40-10-70 0-100 20"/></g><g fill="#F6EBD6">
+<circle cx="60" cy="60" r="6"/><circle cx="50" cy="52" r="4"/><circle cx="70" cy="50" r="4"/><circle cx="130" cy="130" r="5"/><circle cx="140" cy="68" r="6"/><circle cx="132" cy="60" r="4"/><circle cx="148" cy="62" r="4"/><circle cx="30" cy="134" r="5"/><circle cx="24" cy="126" r="3.5"/><circle cx="45" cy="40" r="5"/><circle cx="130" cy="265" r="5"/><circle cx="122" cy="258" r="3.5"/><circle cx="200" cy="210" r="4"/></g></svg>
+
+<div class="glow"></div>
+<div class="phone"><div class="screen"><div class="notch"></div>
+ <div class="scr">
+  <svg width="140" height="40" viewBox="0 0 140 40"><g fill="none" stroke="#B8955C" stroke-width="1"><path d="M70 30c-12-16-30-20-60-8M70 30c12-16 30-20 60-8"/><path d="M70 30c-4-10 0-18 0-24c0 6 4 14 0 24z"/></g></svg>
+  <div class="k">TE INVITO A CELEBRAR</div>
+  <div class="xv">Mis XV años</div>
+  <div class="nm">Valentina</div>
+  <div class="dt">12 · 12 · 2026</div>
+  <div class="cd"><div>18<small>DÍAS</small></div><div>07<small>HRS</small></div><div>42<small>MIN</small></div></div>
+  <div class="music"><span>▶</span><div class="bar"></div><span>1:12</span></div>
+  <div class="btn">CONFIRMAR ASISTENCIA</div>
+ </div><div class="glare"></div></div></div>
+
+<div class="cardwrap"><div class="lace"></div>
+ <div class="card"><div class="paper"></div><div class="in"></div><div class="in2"></div>
+  <div class="t">
+   <svg width="170" height="60" viewBox="0 0 170 60"><g fill="none" stroke="#9c7c48" stroke-width="1.1" stroke-linecap="round">
+    <path d="M85 50c0-10-6-16-14-16s-12 8-6 12s12-2 10-8"/><path d="M85 50c0-10 6-16 14-16s12 8 6 12s-12-2-10-8"/>
+    <path d="M85 48C70 52 40 50 14 36M85 48c15 4 45 2 71-12"/><path d="M40 46c-6-8-4-16 4-20c2 8 0 14-4 20zM130 46c6-8 4-16-4-20c-2 8 0 14 4 20z"/>
+    <path d="M85 32c-6-6-6-14 0-20c6 6 6 14 0 20z"/><circle cx="85" cy="6" r="2.5"/></g></svg>
+   <div class="k">TE INVITO A CELEBRAR</div>
+   <div class="xv foil" style="padding:0 10px">Mis XV años</div>
+   <div class="nm">Valentina</div>
+   <div class="dt">12 · 12 · 2026</div>
+   <div class="pl">Mazatlán, Sinaloa</div>
+  </div>
+ </div><div class="ribbon"></div>
+ <svg style="position:absolute;left:-50px;top:60px;z-index:10;filter:drop-shadow(3px 6px 6px rgba(40,5,12,.45))" width="200" height="170" viewBox="0 0 200 170">
+  <defs><linearGradient id="sat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e7e4"/><stop offset=".45" stop-color="#d9b8b9"/><stop offset=".7" stop-color="#f3dedb"/><stop offset="1" stop-color="#a97e85"/></linearGradient></defs>
+  <path d="M100 70C70 30 20 20 14 46c-6 26 40 40 86 24z" fill="url(#sat)"/><path d="M100 70C130 30 180 20 186 46c6 26-40 40-86 24z" fill="url(#sat)"/>
+  <path d="M100 70C80 50 40 42 30 52" fill="none" stroke="#a87c83" stroke-width="1.2" opacity=".7"/><path d="M100 70c20-20 60-28 70-18" fill="none" stroke="#a87c83" stroke-width="1.2" opacity=".7"/>
+  <path d="M94 74L60 160l18-6 8 14 18-90z" fill="url(#sat)"/><path d="M106 74l30 84-17-4-10 14-12-92z" fill="url(#sat)"/>
+  <ellipse cx="100" cy="72" rx="14" ry="12" fill="url(#sat)" stroke="#b28a90" stroke-width="1"/></svg>
+</div>
+
+
+
+<svg class="seal" viewBox="0 0 200 200">
+ <g filter="url(#blob)"><circle cx="100" cy="100" r="80" fill="url(#wax)"/></g>
+ <g filter="url(#emb)">
+  <circle cx="100" cy="100" r="58" fill="#5e1c2e" stroke="#4a1322" stroke-width="3"/>
+  <circle cx="100" cy="100" r="50" fill="none" stroke="#7e2c42" stroke-width="2"/>
+  <text x="100" y="124" text-anchor="middle" font-family="Pinyon Script" font-size="80" fill="#3a0c18">V</text><text x="98.5" y="122.5" text-anchor="middle" font-family="Pinyon Script" font-size="80" fill="none" stroke="#c4677d" stroke-width=".8" opacity=".6">V</text>
+  <path d="M62 132c12 10 26 12 38 12s26-2 38-12" fill="none" stroke="#7e2c42" stroke-width="2"/>
+ </g>
+ <ellipse cx="72" cy="66" rx="22" ry="9" fill="#fff" opacity=".22" transform="rotate(-35 72 66)"/>
+</svg>
+
+<div class="foot">
+ <div class="a">Invitaciones digitales para XV años</div>
+ <div class="b">Desde <em>$1,000</em> · Todo México</div>
+</div>
+<div class="grain"></div>
 </body></html>
