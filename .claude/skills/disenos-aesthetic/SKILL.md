@@ -92,6 +92,34 @@ Jerarquía: titular 3–5× el tamaño del texto. Máx. 3 tamaños.
 - Texto con poco contraste sobre foto (usa overlay o caja).
 - Emojis como decoración en lugar de ilustraciones SVG.
 
+## 7b. Regla de oro: que NO parezca hecho por IA
+Un diseño "de IA" es perfecto, simétrico, limpio, genérico y plano. Un ilustrador real deja huellas del proceso. Aplica **mínimo 5** de estas técnicas en cada diseño:
+
+**Material e impresión (lo más importante)**
+- **Textura de papel real**: fibras con `feTurbulence` baja frecuencia + manchas suaves; el fondo nunca es un color plano.
+- **Tinta imperfecta**: filtro `feDisplacementMap` (scale 2–4) sobre trazos y letras → bordes que "sangran" como serigrafía/letterpress.
+- **Desregistro**: duplica un elemento en otro color desplazado 2–4px con `mix-blend-mode:multiply` (efecto risografía).
+- **Foil / metal creíble**: el dorado NO es un degradado liso; usa ruido + degradado con varios brillos y zonas apagadas.
+- **Tinta gastada**: máscara de ruido que quite 5–15% de la tinta en zonas al azar.
+- **Viñeta y luz**: degradado radial sutil para simular luz real sobre el papel.
+
+**Composición humana**
+- Rompe la simetría en al menos un elemento (un sello girado, un texto en vertical, una nota al margen).
+- Elementos que se salen del marco o se cortan con el borde.
+- Variación de grosor en las líneas (no todas a 2px).
+- Detalles pequeños que premian mirar de cerca: numeración "Nº 047", microtexto, sellos, firmas, notas a mano.
+
+**Tipografía de oficio**
+- Ajusta `letter-spacing` por palabra, usa ligaduras, versalitas, números de estilo antiguo, comillas tipográficas (« » “ ”).
+- Mezcla un texto a mano (script o trazo) con la tipografía formal.
+- Nada de textos genéricos ("Lorem", "Tu texto aquí", "Edición especial"): escribe copy concreto y con personalidad.
+
+**Presentación**
+- Muestra el diseño como objeto físico cuando aplique (mockup sobre mesa/tela con sombra realista, ligera rotación).
+- Paleta limitada como si fueran tintas reales (2–4 tintas), no colores infinitos.
+
+**Señales de IA a eliminar**: degradados perfectos, todo centrado, líneas del mismo grosor, ornamentos repetidos idénticos, brillos plásticos, textos vagos, fondo plano sin textura.
+
 ## 8. Checklist final
 - [ ] Un solo estilo claro, reconocible a primera vista
 - [ ] Paleta ≤5 colores aplicada con 60/30/10
@@ -99,4 +127,5 @@ Jerarquía: titular 3–5× el tamaño del texto. Máx. 3 tamaños.
 - [ ] Al menos un detalle "hecho a mano" (grano, rotación, trazo, sticker)
 - [ ] Márgenes amplios y alineación coherente
 - [ ] Contraste legible (WCAG AA en texto pequeño)
+- [ ] Pasa la regla 7b: textura, imperfección de tinta, asimetría, detalles concretos
 - [ ] Tamaño correcto para la red social y renderizado revisado en PNG

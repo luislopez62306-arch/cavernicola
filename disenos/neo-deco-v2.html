@@ -1,0 +1,118 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Homemade+Apple&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:1080px;height:1350px;overflow:hidden;position:relative;background:#2a0f14}
+.surface{position:absolute;inset:0}
+.card{position:absolute;left:115px;top:95px;width:850px;height:1130px;transform:rotate(-2.2deg);
+ box-shadow:0 2px 3px rgba(0,0,0,.45),0 30px 60px -10px rgba(0,0,0,.65),0 60px 90px -30px rgba(0,0,0,.5)}
+.card svg{display:block}
+.note{position:absolute;left:640px;top:1150px;transform:rotate(-9deg);font-family:'Homemade Apple',cursive;font-size:30px;color:#e9dcc0;opacity:.85}
+</style></head><body>
+<!-- superficie: terciopelo burdeos -->
+<svg class="surface" viewBox="0 0 1080 1350">
+ <defs>
+  <radialGradient id="lamp" cx=".42" cy=".35" r=".85"><stop offset="0" stop-color="#6b1f2a"/><stop offset=".55" stop-color="#3d1219"/><stop offset="1" stop-color="#16070a"/></radialGradient>
+  <filter id="velvet"><feTurbulence type="fractalNoise" baseFrequency=".9 .02" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ </defs>
+ <rect width="1080" height="1350" fill="url(#lamp)"/>
+ <rect width="1080" height="1350" fill="#000" filter="url(#velvet)"/>
+</svg>
+
+<div class="card">
+<svg width="850" height="1130" viewBox="0 0 850 1130">
+ <defs>
+  <!-- papel -->
+  <filter id="paper" x="0" y="0" width="100%" height="100%">
+   <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="4" seed="7" result="blot"/>
+   <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="2" result="fiber"/>
+   <feColorMatrix in="blot" values="0 0 0 0 .02  0 0 0 0 .09  0 0 0 0 .09  0 0 0 -.9 .5" result="b2"/>
+   <feColorMatrix in="fiber" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -.5 .16" result="f2"/>
+   <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="b2"/><feMergeNode in="f2"/></feMerge>
+  </filter>
+  <!-- tinta letterpress: bordes irregulares + desgaste -->
+  <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+   <feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="2" seed="3" result="n"/>
+   <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" result="d"/>
+   <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="11" result="w"/>
+   <feColorMatrix in="w" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.55" result="mask"/>
+   <feComposite in="d" in2="mask" operator="in"/>
+  </filter>
+  <!-- foil: oro con grano y brillos irregulares -->
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2=".7">
+   <stop offset="0" stop-color="#8a6a1e"/><stop offset=".18" stop-color="#e6c873"/><stop offset=".3" stop-color="#a88330"/>
+   <stop offset=".52" stop-color="#f3dc92"/><stop offset=".6" stop-color="#9b7a2a"/><stop offset=".82" stop-color="#d8b55a"/><stop offset="1" stop-color="#6f531a"/>
+  </linearGradient>
+  <filter id="foil" x="-5%" y="-5%" width="110%" height="110%">
+   <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="5" result="g"/>
+   <feColorMatrix in="g" type="saturate" values="0" result="gg"/>
+   <feComposite in="SourceGraphic" in2="gg" operator="arithmetic" k1="0" k2="1" k3=".28" k4="-.12" result="grain"/>
+   <feComposite in="grain" in2="SourceAlpha" operator="in" result="gr"/>
+   <feTurbulence type="fractalNoise" baseFrequency=".5" numOctaves="2" seed="9" result="n"/>
+   <feDisplacementMap in="gr" in2="n" scale="2.4"/>
+  </filter>
+  <filter id="inkl" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.2"/></filter>
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="1"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+ </defs>
+
+ <!-- papel verde -->
+ <rect width="850" height="1130" fill="#123f3f" filter="url(#paper)"/>
+
+ <!-- ORO (foil) -->
+ <g filter="url(#foil)" fill="url(#gold)" stroke="url(#gold)">
+  <g fill="none">
+   <path stroke-width="5" d="M70 40H780V66H810V1064H780V1090H70V1064H40V66H70Z"/>
+   <path stroke-width="1.2" d="M88 60H762V84H790V1046H762V1070H88V1046H60V84H88Z"/>
+  </g>
+  <!-- abanico con rayos de grosor variable -->
+  <g transform="translate(425 470)" fill="none">
+   <path stroke-width="3" d="M-265 0A265 265 0 0 1 265 0"/>
+   <path stroke-width="1" d="M-232 0A232 232 0 0 1 232 0"/>
+   <path stroke-width="2" d="M-196 0A196 196 0 0 1 196 0"/>
+   <g stroke-width="1.4">
+    <line x1="-120" y1="0" x2="-265" y2="0"/><line x1="-111" y1="-46" x2="-245" y2="-101"/><line x1="-85" y1="-85" x2="-187" y2="-187"/><line x1="-46" y1="-111" x2="-101" y2="-245"/>
+    <line x1="0" y1="-120" x2="0" y2="-265" stroke-width="3"/>
+    <line x1="46" y1="-111" x2="101" y2="-245"/><line x1="85" y1="-85" x2="187" y2="-187"/><line x1="111" y1="-46" x2="245" y2="-101"/><line x1="120" y1="0" x2="265" y2="0"/>
+   </g>
+   <path d="M-120 0A120 120 0 0 1 120 0" stroke-width="3"/>
+  </g>
+  <path stroke="none" d="M425 382A88 88 0 0 1 513 470H337A88 88 0 0 1 425 382Z"/>
+  <!-- columnas: grosores distintos -->
+  <g fill="none"><path stroke-width="3" d="M112 1000V360"/><path stroke-width="1" d="M128 1000V400"/><path stroke-width="1.8" d="M144 1000V440"/>
+   <path stroke-width="3" d="M738 1000V360"/><path stroke-width="1" d="M722 1000V400"/><path stroke-width="1.8" d="M706 1000V440"/></g>
+  <g stroke="none"><path d="M112 340l7 12-7 12-7-12z"/><path d="M738 340l7 12-7 12-7-12z"/></g>
+  <!-- separador -->
+  <g stroke="none"><rect x="200" y="868" width="190" height="1.6"/><rect x="460" y="868" width="190" height="1.6"/><path d="M425 856l13 13-13 13-13-13z"/></g>
+  <path stroke="none" d="M345 1000h160l-16 16H361z"/>
+ </g>
+
+ <!-- BURDEOS (con desregistro de impresión) -->
+ <g filter="url(#ink)">
+  <path d="M337 470A88 88 0 0 1 513 470h32A120 120 0 0 0 305 470Z" fill="#8C2F39" transform="translate(2.5 -1.5)" opacity=".95"/>
+ </g>
+
+ <!-- TEXTO tinta crema -->
+ <g filter="url(#ink)" fill="#efe3c8" text-anchor="middle">
+  <text x="425" y="146" font-family="Poiret One" font-size="21" letter-spacing="9" filter="url(#inkl)" fill="#d8b55a" font-weight="700">SOCIEDAD DEL SALÓN VERDE</text>
+  <text x="425" y="186" font-family="Cormorant Garamond" font-style="italic" font-size="24" fill="#d9ccae" filter="url(#inkl)">tiene el honor de invitarle a</text>
+  <text x="425" y="600" font-family="Limelight" font-size="104" letter-spacing="3">LA GRAN</text>
+  <text x="425" y="680" font-family="Cormorant Garamond" font-style="italic" font-size="54" fill="#d8b55a">noche de</text>
+  <text x="425" y="800" font-family="Limelight" font-size="128" letter-spacing="10">GALA</text>
+  <text x="425" y="930" font-family="Poiret One" font-size="30" letter-spacing="8" font-weight="700">31 DIC · 2026</text>
+  <text x="425" y="972" font-family="Cormorant Garamond" font-size="21" letter-spacing="5" fill="#d9ccae" filter="url(#inkl)">DESDE LAS NUEVE · ETIQUETA RIGUROSA</text>
+ </g>
+ <!-- sello numerado, girado, fuera del eje -->
+ <g transform="translate(690 215) rotate(14)" filter="url(#inkl)" opacity=".9">
+  <circle r="46" fill="none" stroke="#b04452" stroke-width="3"/><circle r="39" fill="none" stroke="#b04452" stroke-width="1.2"/>
+  <text text-anchor="middle" y="-8" font-family="Poiret One" font-size="13" letter-spacing="3" fill="#b04452" font-weight="700">INVITACIÓN</text>
+  <text text-anchor="middle" y="20" font-family="Cormorant Garamond" font-size="30" fill="#b04452">Nº 047</text>
+ </g>
+ <!-- microtexto vertical -->
+ <text transform="translate(800 720) rotate(90)" text-anchor="middle" font-family="Poiret One" font-size="11" letter-spacing="6" fill="#d8b55a" opacity=".7" filter="url(#ink)">IMPRESO A MANO · TIRADA DE 120</text>
+ <!-- viñeta de luz -->
+ <rect width="850" height="1130" fill="url(#vig)"/>
+ <radialGradient id="vig" cx=".35" cy=".25" r=".95"><stop offset="0" stop-color="#fff" stop-opacity=".07"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></radialGradient>
+</svg>
+</div>
+<div class="note">¡te guardo baile!</div>
+</body></html>
