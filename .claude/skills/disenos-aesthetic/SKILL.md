@@ -68,6 +68,20 @@ Regla 60/30/10: 60% fondo, 30% secundario, 10% acento.
 - Combo clásico: titular serif itálica + subtítulo sans en MAYÚSCULAS con `letter-spacing: .2em` + una palabra en script.
 Jerarquía: titular 3–5× el tamaño del texto. Máx. 3 tamaños.
 
+## 4b. Formatos virales de Instagram (2026)
+El algoritmo premia **guardados y compartidos** más que likes. Los carruseles (7–10 slides) son el formato estático que más alcance tiene. La **primera slide lo es todo**: gancho de máx. 8 palabras con curiosidad que obligue a deslizar.
+| Formato | Receta |
+|---|---|
+| **Gancho de carrusel** | Número gigante (Unbounded/Bricolage 800) + titular bold con 1 palabra en serif itálica + frase subrayada con marcador + "desliza →" + nota a mano "guárdalo" |
+| **Frase tipográfica** | Fondo oscuro o crema; cada línea en una fuente distinta (serif normal / sans MAYÚS bold / serif itálica en color acento). Texto enorme, alineado a la izquierda |
+| **Notes App Chic** | Captura falsa de la app Notas: fuente del sistema, checks amarillos, tachados, fecha real; tarjeta blanca sobre fondo pastel con nota a mano |
+| **Esto o aquello** | Pares en pastillas redondeadas, el elegido resaltado en color ácido; CTA "dime los tuyos" (genera comentarios) |
+| **Lista / tips** | "X cosas que…", numeración grande, 1 idea por slide |
+| **Antes / después**, **mitos vs realidad**, **POV**, **cosas que nadie te dice** | Contraste en dos columnas o pregunta provocadora en la portada |
+Siempre: @usuario abajo, márgenes ≥80px, títulos 90–170px en 1080 de ancho, cuerpo ≥34px.
+
+**Tipografías de tendencia 2026** (Google Fonts): Instrument Serif (la serif de moda, úsala en itálica), Bricolage Grotesque 800 (titulares con tracking negativo −0.04em), Unbounded (números/display), Fraunces, DM Serif Display, Caveat / Gochi Hand (notas a mano). Combinación ganadora: **sans ultra bold + serif itálica en la misma frase**.
+
 ## 5. Composición
 - Márgenes generosos (≥6% del ancho). El espacio vacío es lo que lo hace "aesthetic".
 - Usa un eje: centrado simétrico (minimal, invitaciones) o asimetría intencional (editorial, collage).
