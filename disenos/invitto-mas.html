@@ -1,0 +1,109 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Pinyon+Script&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}body{background:#bbb;display:flex;gap:30px;padding:30px;width:max-content}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4ECDC;color:#46161d;font-family:'Bricolage Grotesque'}
+.a{position:absolute}
+.lg{position:absolute;right:80px;top:52px;font-family:'Pinyon Script';font-size:52px}
+.big{font-weight:800;letter-spacing:-.045em;line-height:.92}
+.ser{font-family:'Instrument Serif';font-weight:400;letter-spacing:-.01em}.it{font-style:italic}
+.hand{font-family:Caveat;color:#8c2f3c;line-height:1.05}
+.hl{background:linear-gradient(transparent 60%,#b3c6d6 60%,#b3c6d6 92%,transparent 92%)}
+.grain{position:absolute;inset:0;opacity:.08;mix-blend-mode:multiply;pointer-events:none}
+.stripes{position:absolute;left:0;right:0;bottom:0;height:60px;background:repeating-linear-gradient(90deg,#46161d 0 40px,#b3c6d6 40px 80px)}
+.star{position:absolute}
+/* notes */
+.note{background:#fff;border-radius:44px;box-shadow:0 30px 60px -20px rgba(70,22,29,.4);padding:56px 60px;font-family:-apple-system,'Helvetica Neue',Arial}
+.note .bar{display:flex;justify-content:space-between;font-size:30px;color:#E0A800;margin-bottom:34px}
+.note h1{font-size:54px;font-weight:700;color:#111;margin-bottom:8px}
+.note .d{font-size:25px;color:#999;margin-bottom:34px}
+.row{display:flex;gap:22px;align-items:flex-start;font-size:36px;color:#222;line-height:1.3;margin-bottom:24px}
+.ck{flex:none;width:40px;height:40px;border-radius:50%;border:3px solid #ccc;margin-top:4px;position:relative}
+.ck.on{background:#E0A800;border-color:#E0A800}
+.ck.on:after{content:'';position:absolute;left:12px;top:5px;width:10px;height:19px;border:solid #fff;border-width:0 4px 4px 0;transform:rotate(45deg)}
+.done{color:#aaa;text-decoration:line-through}
+/* vs */
+.col{width:440px;border-radius:30px;padding:44px 40px}
+.col h3{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-size:64px;margin-bottom:26px}
+.col p{font-size:31px;font-weight:500;margin-bottom:20px;display:flex;gap:14px}
+/* chat */
+.chat{background:#E9DFD3;border-radius:44px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(70,22,29,.45)}
+.chat .top{background:#46161d;color:#F4ECDC;padding:34px 40px;display:flex;gap:22px;align-items:center;font-family:-apple-system,'Helvetica Neue',Arial}
+.av{width:72px;height:72px;border-radius:50%;background:#b3c6d6;display:flex;align-items:center;justify-content:center;font-family:'Pinyon Script';font-size:40px;color:#46161d}
+.bub{max-width:560px;border-radius:26px;padding:20px 26px;font-family:-apple-system,'Helvetica Neue',Arial;font-size:30px;line-height:1.3;margin:18px 30px;box-shadow:0 2px 2px rgba(0,0,0,.08)}
+.me{background:#DCF5C8;margin-left:auto}
+.they{background:#fff}
+.tm{display:block;text-align:right;font-size:20px;color:#888;margin-top:6px}
+.prev{border-radius:18px;overflow:hidden;background:#f3f3f3;margin-bottom:12px}
+.prev img{display:block;width:100%;height:220px;object-fit:cover;object-position:center 30%}
+.prev div{padding:14px 18px;font-size:24px;color:#555}
+.prev b{display:block;color:#111;font-size:27px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="nz"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/></filter>
+<symbol id="st" viewBox="-50 -50 100 100"><path d="M0-48C6-12 12-6 48 0 12 6 6 12 0 48-6 12-12 6-48 0-12-6-6-12 0-48Z"/></symbol></svg>
+
+<!-- A: notes checklist -->
+<div class="s" id="m1" style="background:#b3c6d6">
+ <div class="lg">Invitto</div>
+ <div class="a note" style="left:120px;top:150px;width:840px;transform:rotate(-1.5deg)">
+  <div class="bar"><span>‹ Notas</span><span>Listo</span></div>
+  <h1>pendientes de la boda 💍</h1><div class="d">23 de noviembre de 2026, 21:14</div>
+  <div class="row"><div class="ck on"></div><span class="done">apartar salón</span></div>
+  <div class="row"><div class="ck on"></div><span class="done">probarme el vestido (lloré)</span></div>
+  <div class="row"><div class="ck on"></div><span class="done">invitaciones → Invitto ✨</span></div>
+  <div class="row"><div class="ck on"></div><span class="done">mandar el link por WhatsApp</span></div>
+  <div class="row"><div class="ck"></div><span>elegir el pastel</span></div>
+  <div class="row"><div class="ck"></div><span>convencer a mi papá de bailar</span></div>
+  <div class="row" style="margin:0"><div class="ck"></div><span>dormir 8 horas (algún día)</span></div>
+ </div>
+ <div class="a hand" style="left:560px;top:1110px;font-size:54px;transform:rotate(-6deg)">una cosa menos 😮‍💨</div>
+ <svg class="star" style="left:90px;top:1120px" width="80" height="80" fill="#46161d"><use href="#st"/></svg>
+ <svg class="grain" width="1080" height="1350"><rect width="100%" height="100%" filter="url(#nz)"/></svg>
+</div>
+
+<!-- B: papel vs link -->
+<div class="s" id="m2">
+ <div class="lg">Invitto</div>
+ <div class="a big" style="left:80px;top:150px;font-size:118px">papel <span class="ser it" style="color:#8c2f3c">vs</span> <span class="hl">link</span></div>
+ <div class="a hand" style="left:640px;top:310px;font-size:42px;transform:rotate(-4deg)">sin ofender a la imprenta</div>
+ <div class="a col" style="left:80px;top:430px;background:#fffdf7;border:2px dashed #c9b9a0;transform:rotate(-2deg)">
+  <h3>papel</h3>
+  <p>✗ semanas de espera</p><p>✗ un costo por cada pieza</p><p>✗ ir a entregarlas</p><p>✗ “¿y el mapa?”</p><p>✗ confirmar uno por uno</p><p style="margin:0">✗ se pierden</p></div>
+ <div class="a col" style="left:560px;top:410px;background:#46161d;color:#F4ECDC;transform:rotate(2deg);box-shadow:0 30px 60px -20px rgba(70,22,29,.6)">
+  <h3 style="color:#b3c6d6">Invitto</h3>
+  <p>✓ un solo link</p><p>✓ llega por WhatsApp</p><p>✓ mapa con un toque</p><p>✓ confirman ahí mismo</p><p>✓ dress code y regalos</p><p style="margin:0">✓ nadie la pierde</p></div>
+ <div class="a hand" style="left:680px;top:1080px;font-size:48px;transform:rotate(5deg)">tú decides 😉</div>
+ <div class="stripes"></div>
+ <svg class="grain" width="1080" height="1350"><rect width="100%" height="100%" filter="url(#nz)"/></svg>
+</div>
+
+<!-- C: frase -->
+<div class="s" id="m3" style="background:#46161d;color:#F4ECDC">
+ <div class="lg">Invitto</div>
+ <div class="a" style="left:80px;top:190px;width:920px">
+  <div class="ser" style="font-size:150px;line-height:.95">la fecha</div>
+  <div class="big" style="font-size:150px;text-transform:uppercase">ya está.</div>
+  <div class="ser it" style="font-size:150px;line-height:1;color:#b3c6d6;margin-top:30px">ahora falta</div>
+  <div class="big" style="font-size:150px">que <span style="background:linear-gradient(transparent 60%,#8c2f3c 60%,#8c2f3c 92%,transparent 92%)">lleguen</span>.</div>
+ </div>
+ <div class="a" style="left:80px;top:1040px;font-size:32px;font-weight:500;opacity:.8;width:620px;line-height:1.35">Una invitación que se abre en el celular, con mapa y confirmación incluidos.</div>
+ <div class="a hand" style="left:720px;top:1100px;font-size:46px;color:#b3c6d6;transform:rotate(-5deg)">mándanos DM ↗</div>
+ <svg class="star" style="left:880px;top:200px" width="90" height="90" fill="#b3c6d6"><use href="#st"/></svg>
+ <svg class="grain" width="1080" height="1350" style="mix-blend-mode:screen;opacity:.05"><rect width="100%" height="100%" filter="url(#nz)"/></svg>
+</div>
+
+<!-- D: whatsapp -->
+<div class="s" id="m4">
+ <div class="lg">Invitto</div>
+ <div class="a big" style="left:80px;top:150px;font-size:100px;width:900px">así llega <span class="ser it" style="color:#8c2f3c">tu</span> invitación</div>
+ <div class="a chat" style="left:150px;top:330px;width:780px;transform:rotate(-1.5deg)">
+  <div class="top"><div class="av">F</div><div><b style="font-size:32px">Familia López 💛</b><div style="font-size:22px;opacity:.7">mamá, papá, tía Lupe, +12</div></div></div>
+  <div style="padding:10px 0 26px">
+   <div class="bub me"><div class="prev"><img src="invitto-muestra.png"><div><b>¡Nos casamos! · Alejandro y Oksana</b>invitto · 27/07/2027</div></div>¡Ya está nuestra invitación! Confirmen ahí mismo porfa 🥹<span class="tm">21:14 ✓✓</span></div>
+   <div class="bub they">¡Qué bonita! Ya confirmé 🥳<span class="tm">21:15</span></div>
+  </div></div>
+ <div class="a hand" style="left:90px;top:1180px;font-size:46px;transform:rotate(-3deg)">y en un minuto ya confirmaron ✓</div>
+ <div class="stripes"></div>
+ <svg class="grain" width="1080" height="1350"><rect width="100%" height="100%" filter="url(#nz)"/></svg>
+</div>
+</body></html>
