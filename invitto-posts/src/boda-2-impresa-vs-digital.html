@@ -1,23 +1,155 @@
-<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,300;0,500;1,300&display=block" rel="stylesheet">
-<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1350px;overflow:hidden}
-:root{--ch:#2E2C2A;--iv:#FAF5EC;--ivd:#F1E8DA;--g:#D9C29A;--gd:#86693E;--mu:#6E665C}
-.serif{font-family:Fraunces,'Playfair Display',Georgia,serif}.script{font-family:'Alex Brush','URW Chancery L',cursive}.sans{font-family:'DM Sans',Helvetica,Arial,sans-serif}
-.brand{position:absolute;display:flex;flex-direction:column;gap:2px}.brand b{font-family:Fraunces,serif;font-weight:500;font-size:34px;letter-spacing:1px}.brand span{font-family:'DM Sans',sans-serif;font-size:18px;letter-spacing:1px}</style>
-<style>body{background:var(--iv);position:relative;color:var(--ch);padding:150px 70px 0}
-.brand{top:56px;left:70px}.brand span{color:var(--mu)}
-.eb{font-family:'DM Sans';letter-spacing:5px;font-size:20px;color:var(--gd);text-transform:uppercase;text-align:center}
-h1{font-family:Fraunces;font-weight:300;font-size:92px;text-align:center;margin:10px 0 50px}h1 em{font-family:'Alex Brush';font-style:normal;color:var(--gd);font-size:118px}
-.t{position:relative}.hl{position:absolute;right:0;top:0;bottom:0;width:340px;background:var(--ch);border-radius:24px;box-shadow:0 0 0 2px var(--g)}
-.r,.h{position:relative;display:grid;grid-template-columns:260px 340px 340px;align-items:center}
-.r{min-height:128px;border-top:1px solid #E2D6C2}.h{height:100px}
-.h div{font-family:Fraunces;font-size:36px;text-align:center}.h .b{color:var(--g)}
-.k{font-family:'DM Sans';font-weight:700;font-size:24px;letter-spacing:1px}
-.a,.b{text-align:center;font-family:'DM Sans';font-size:26px;padding:0 22px;line-height:1.3}.a{color:var(--mu)}.b{color:var(--iv);font-weight:500}
-.x{font-size:40px;color:#A8433A}.ok{font-size:42px;color:var(--g)}
-.cta{position:absolute;bottom:62px;left:70px;right:70px;display:flex;justify-content:center}.cta div{background:var(--g);color:var(--ch);font-family:'DM Sans';font-weight:700;font-size:30px;letter-spacing:1px;padding:26px 56px;border-radius:60px}
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#EFE7D9}
+svg#scene{position:absolute;inset:0}
+.abs{position:absolute}
+.brand{top:52px;left:64px;display:flex;align-items:center;gap:16px}
+.brand .lg{width:120px;height:36px;background:#2E2C2A;-webkit-mask:url(../assets/logo-crema.png) center/contain no-repeat}
+.brand span{font-family:'DM Sans';font-size:15px;letter-spacing:3px;color:#6E665C;border-left:1px solid #C9B791;padding-left:16px}
+h1{top:112px;left:0;right:0;text-align:center;font-weight:400;color:#2E2C2A;line-height:1}
+h1 .a{font-family:Fraunces;font-weight:300;font-size:76px;letter-spacing:-1px}
+h1 .b{font-family:Fraunces;font-style:italic;font-weight:300;font-size:76px}
+h1 .c{font-family:'Pinyon Script';font-size:112px;background:linear-gradient(100deg,#86693E 0%,#E9D6A8 28%,#A3844C 45%,#F4E4BC 60%,#8F7040 80%,#CDB27C 100%);-webkit-background-clip:text;color:transparent;padding:0 14px;filter:drop-shadow(0 1px 0 rgba(90,70,36,.25))}
+.colhead{top:850px;width:540px;text-align:center;font-family:'DM Sans';font-weight:500;font-size:15px;letter-spacing:6px}
+.rows{top:900px;left:0;right:0}
+.row{position:relative;height:66px}
+.row .lab{position:absolute;left:50%;top:0;transform:translateX(-50%);background:#EFE7D9;padding:0 10px;font-family:'DM Sans';font-weight:500;font-size:12px;letter-spacing:3.5px;color:#9A8F80;white-space:nowrap}
+.row .l{position:absolute;right:calc(50% + 46px);top:20px;font-family:'Cormorant Garamond';font-style:italic;font-size:30px;color:#8D877E;white-space:nowrap}
+.row .r{position:absolute;left:calc(50% + 46px);top:16px;font-family:Fraunces;font-weight:500;font-size:31px;color:#2E2C2A;white-space:nowrap}
+.row .r:before{content:'';display:inline-block;width:9px;height:9px;background:#C7A96F;transform:rotate(45deg);margin-right:14px;position:relative;top:-6px}
+.cta{bottom:54px;left:0;right:0;text-align:center}
+.cta .pill{display:inline-flex;align-items:center;gap:18px;padding:20px 42px;border-radius:60px;background:linear-gradient(180deg,#34322F,#24221F);box-shadow:0 14px 30px -10px rgba(46,44,42,.55),inset 0 1px 0 rgba(255,255,255,.12)}
+.cta i{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-size:32px;color:#FAF5EC}
+.cta b{font-family:'DM Sans';font-weight:500;font-size:18px;letter-spacing:4px;color:#E2CC9F}
+.cta .d{width:5px;height:5px;border-radius:50%;background:#D9C29A}
+/* phone screen */
+.screen{position:absolute;left:676px;top:330px;width:262px;height:520px;border-radius:34px;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#22324A,#121B2B 70%);transform:rotate(4deg);transform-origin:center}
+.screen .in{position:absolute;inset:0;text-align:center;color:#EAD9B2}
+.screen .t1{margin-top:66px;font-family:'DM Sans';font-size:9px;letter-spacing:4px;color:#C9B58A}
+.screen .nm{font-family:'Pinyon Script';font-size:46px;line-height:.95;margin-top:14px;background:linear-gradient(100deg,#B99559,#F4E4BC 45%,#B08D52 70%,#E7D2A2);-webkit-background-clip:text;color:transparent}
+.screen .amp{font-family:'Cormorant Garamond';font-style:italic;font-size:24px;color:#D9C29A}
+.screen .dt{margin-top:16px;font-family:Fraunces;font-size:17px;letter-spacing:4px;color:#F1E8DA}
+.screen .pl{margin-top:6px;font-family:'DM Sans';font-size:8.5px;letter-spacing:3px;color:#9FB0C6}
+.screen .btn{margin:22px auto 0;width:150px;padding:9px 0;border:1px solid #C9AE78;border-radius:30px;font-family:'DM Sans';font-size:9px;letter-spacing:3px;color:#EAD9B2}
+.screen .theme{position:absolute;top:22px;left:0;right:0;font-family:'Cormorant Garamond';font-style:italic;font-size:13px;color:#9FB0C6}
+.bubble{position:absolute;left:588px;top:640px;background:#E7F8D9;border-radius:16px 16px 16px 4px;padding:14px 18px 10px;box-shadow:0 18px 30px -12px rgba(30,40,30,.45),0 2px 4px rgba(0,0,0,.12);transform:rotate(-2deg)}
+.bubble .w{font-family:'DM Sans';font-weight:700;font-size:13px;color:#1F8F55;margin-bottom:3px}
+.bubble .m{font-family:'DM Sans';font-weight:500;font-size:22px;color:#1E2A22}
+.bubble .m em{font-style:normal;font-family:'Noto Color Emoji'}
+.bubble .tm{text-align:right;font-family:'DM Sans';font-size:12px;color:#6F8A77;margin-top:2px}
+.bubble .tm b{color:#34B7F1;font-weight:700;letter-spacing:-3px}
 </style></head><body>
-<div class="brand"><b>Invitto</b><span>@invitto.creastudio</span></div>
-<div class="eb">Invitaciones de boda</div><h1>Impresa <em>vs.</em> Digital</h1>
-<div class="t"><div class="hl"></div><div class="h"><div></div><div style="color:var(--mu)">Impresa</div><div class="b">Digital</div></div>
-<div class='r'><div class='k'>Costo</div><div class='a'>Impresión + envío</div><div class='b'>Desde $1,000</div></div><div class='r'><div class='k'>Entrega</div><div class='a'>Días o semanas</div><div class='b'>Al instante</div></div><div class='r'><div class='k'>Música</div><div class='a'><span class=x>✕</span></div><div class='b'><span class=ok>✓</span></div></div><div class='r'><div class='k'>Confirmación</div><div class='a'>Llamada por llamada</div><div class='b'>Automática por WhatsApp</div></div><div class='r'><div class='k'>Invitados de fuera</div><div class='a'>Pagas envío</div><div class='b'>Gratis por link</div></div>
-</div><div class="cta"><div>Cotiza la tuya · invittomx.com</div></div></body></html>
+<svg id="scene" width="1080" height="1350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="linen" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85 0.02" numOctaves="2" seed="3" result="h"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.85" numOctaves="2" seed="7" result="v"/>
+    <feComposite in="h" in2="v" operator="arithmetic" k2=".5" k3=".5"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .28  0 0 0 1.7 -.78"/>
+  </filter>
+  <linearGradient id="light" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#5F6670" stop-opacity=".38"/><stop offset=".45" stop-color="#7A7C7E" stop-opacity=".12"/>
+    <stop offset=".62" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#FFF6E2" stop-opacity=".25"/>
+  </linearGradient>
+  <radialGradient id="vig" cx="55%" cy="45%" r="78%"><stop offset=".55" stop-color="#3a2f22" stop-opacity="0"/><stop offset="1" stop-color="#3a2f22" stop-opacity=".32"/></radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F3DDA9" stop-opacity=".95"/><stop offset=".45" stop-color="#E8CF98" stop-opacity=".35"/><stop offset="1" stop-color="#E8CF98" stop-opacity="0"/></radialGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="12"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 .4  0 0 0 0 .38  0 0 0 0 .35  0 0 0 -1 .45"/>
+    <feComposite in2="SourceGraphic" operator="in"/>
+  </filter>
+  <filter id="s30"><feGaussianBlur stdDeviation="30"/></filter>
+  <filter id="s10"><feGaussianBlur stdDeviation="10"/></filter>
+  <filter id="s4"><feGaussianBlur stdDeviation="4"/></filter>
+  <filter id="s1"><feGaussianBlur stdDeviation="1"/></filter>
+  <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9E4DA"/><stop offset=".3" stop-color="#8E8A84"/><stop offset=".55" stop-color="#D8D3CA"/><stop offset=".8" stop-color="#6B6762"/><stop offset="1" stop-color="#BDB7AE"/></linearGradient>
+  <filter id="stampEdge"><feTurbulence baseFrequency=".9" numOctaves="1" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.5"/></filter>
+  <linearGradient id="gline" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C7A96F" stop-opacity="0"/><stop offset=".15" stop-color="#C7A96F"/><stop offset=".9" stop-color="#C7A96F"/><stop offset="1" stop-color="#C7A96F" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="#EFE7D9"/>
+<rect width="1080" height="1350" filter="url(#linen)" opacity=".5"/>
+<rect width="1080" height="1350" fill="url(#light)"/>
+<rect width="1080" height="1350" fill="url(#vig)"/>
+
+<!-- LEFT: envelope stack -->
+<g id="env" style="filter:saturate(.55)"></g>
+
+<!-- RIGHT: phone -->
+<ellipse cx="808" cy="590" rx="300" ry="330" fill="url(#glow)"/>
+<g transform="rotate(4 807 590)">
+  <rect x="660" y="314" width="294" height="552" rx="48" fill="#2b2620" opacity=".5" filter="url(#s30)" transform="translate(-30 40)"/>
+  <rect x="660" y="314" width="294" height="552" rx="48" fill="#1b1a19" opacity=".5" filter="url(#s4)" transform="translate(-6 8)"/>
+  <rect x="660" y="314" width="294" height="552" rx="48" fill="url(#frame)"/>
+  <rect x="665" y="319" width="284" height="542" rx="43" fill="#151515"/>
+  <rect x="772" y="340" width="70" height="20" rx="10" fill="#050505"/>
+</g>
+<!-- gold hairline divider -->
+<line x1="540" y1="880" x2="540" y2="1180" stroke="url(#gline)" stroke-width="1.2"/>
+</svg>
+
+<div class="abs brand"><div class="lg"></div><span>@invitto.creastudio</span></div>
+<h1 class="abs"><span class="a">¿Impresa</span> <span class="b">o</span><span class="c">digital</span><span class="a">?</span></h1>
+
+<div class="screen"><div class="in">
+  <div class="theme">Tema · Azul Noche</div>
+  <div class="t1">NOS CASAMOS</div>
+  <div class="nm">Mariana</div><div class="amp">&amp;</div><div class="nm">Carlos</div>
+  <div class="dt">28 · 10 · 2027</div>
+  <div class="pl">CIUDAD DE MÉXICO</div>
+  <div class="btn">CONFIRMAR ASISTENCIA</div>
+</div></div>
+<div class="bubble"><div class="w">Familia Ortega</div><div class="m">¡Confirmamos 2 personas! <em>💍</em></div><div class="tm">12:04 <b>✓✓</b></div></div>
+
+<div class="abs colhead" style="left:0;color:#8D877E">IMPRESA</div>
+<div class="abs colhead" style="left:540px;color:#86693E">DIGITAL · INVITTO</div>
+<div class="abs rows">
+  <div class="row"><div class="lab">COSTO</div><div class="l">Impresión + envío</div><div class="r">Desde $1,000</div></div>
+  <div class="row"><div class="lab">ENTREGA</div><div class="l">Días</div><div class="r">Al instante</div></div>
+  <div class="row"><div class="lab">CONFIRMACIÓN</div><div class="l">Llamada por llamada</div><div class="r">Automática por WhatsApp</div></div>
+  <div class="row"><div class="lab">INVITADOS DE FUERA</div><div class="l">Pagas envío</div><div class="r">Gratis por link</div></div>
+</div>
+<div class="abs cta"><span class="pill"><i>Cotiza la tuya</i><span class="d"></span><b>INVITTOMX.COM</b></span></div>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+const env=document.getElementById('env');
+const W=330,H=226;
+const specs=[[285,640,-11,'#E6E1D8'],[270,590,6,'#ECE8E0'],[290,530,-3,'#F2EEE6']];
+specs.forEach(([cx,cy,r,col],i)=>{
+  const g=el('g',{transform:`translate(${cx} ${cy}) rotate(${r})`},env);
+  el('rect',{x:-W/2,y:-H/2,width:W,height:H,fill:'#2a2620',opacity:.35,filter:'url(#s10)',transform:'translate(8 14)'},g);
+  el('rect',{x:-W/2,y:-H/2,width:W,height:H,fill:'#3a352d',opacity:.3,filter:'url(#s1)',transform:'translate(1 2)'},g);
+  el('rect',{x:-W/2,y:-H/2,width:W,height:H,fill:col},g);
+  el('rect',{x:-W/2,y:-H/2,width:W,height:H,fill:'#fff',filter:'url(#grain)'},g);
+  if(i<2){ // back side: flaps
+    el('path',{d:`M${-W/2} ${-H/2} L0 ${H*0.08} L${W/2} ${-H/2}`,fill:'none',stroke:'#b9b2a6','stroke-width':1.4},g);
+    el('path',{d:`M${-W/2} ${H/2} L${-W*0.08} ${-H*0.02} M${W/2} ${H/2} L${W*0.08} ${-H*0.02}`,stroke:'#cfc8bc','stroke-width':1.2},g);
+  } else { // front: address, stamp, postmark
+    for(let k=0;k<3;k++) el('rect',{x:-70,y:10+k*24,width:[150,120,90][k],height:4,rx:2,fill:'#9b958c',opacity:.7},g);
+    el('text',{x:-70,y:0,'font-family':'Pinyon Script','font-size':26,fill:'#6f6a62'},g).textContent='Familia Ortega';
+    const s=el('g',{transform:`translate(${W/2-58} ${-H/2+52})`},g);
+    // perforated stamp
+    let d='';const sw=60,sh=72,rr=3.2;
+    el('rect',{x:-sw/2,y:-sh/2,width:sw,height:sh,fill:'#fbfaf6'},s);
+    for(let x=-sw/2;x<=sw/2;x+=8){el('circle',{cx:x,cy:-sh/2,r:rr,fill:col},s);el('circle',{cx:x,cy:sh/2,r:rr,fill:col},s);}
+    for(let y=-sh/2;y<=sh/2;y+=8){el('circle',{cx:-sw/2,cy:y,r:rr,fill:col},s);el('circle',{cx:sw/2,cy:y,r:rr,fill:col},s);}
+    el('rect',{x:-sw/2+7,y:-sh/2+7,width:sw-14,height:sh-14,fill:'#8A8F86'},s);
+    el('circle',{cx:0,cy:-4,r:12,fill:'#B8B39F'},s);
+    el('text',{x:0,y:26,'text-anchor':'middle','font-family':'DM Sans','font-size':8,fill:'#eee'},s).textContent='MÉXICO $15';
+    // postmark
+    const pm=el('g',{transform:`translate(${W/2-110} ${-H/2+56})`,opacity:.55},g);
+    el('circle',{r:30,fill:'none',stroke:'#4b4844','stroke-width':1.6},pm);
+    el('circle',{r:23,fill:'none',stroke:'#4b4844','stroke-width':.8},pm);
+    for(let k=0;k<4;k++) el('path',{d:`M30 ${-12+k*8} c 12 -6, 24 6, 36 0 s 24 6, 36 0`,fill:'none',stroke:'#4b4844','stroke-width':1.4},pm);
+    el('text',{x:0,y:4,'text-anchor':'middle','font-family':'DM Sans','font-size':8,'letter-spacing':1,fill:'#4b4844'},pm).textContent='CORREOS';
+  }
+});
+// twine around stack
+const t=el('g',{},env);
+el('path',{d:'M 210 380 C 230 520, 214 640, 236 770',stroke:'#000',opacity:.18,'stroke-width':6,fill:'none',filter:'url(#s4)',transform:'translate(6 8)'},t);
+el('path',{d:'M 210 380 C 230 520, 214 640, 236 770',stroke:'#B5A58A','stroke-width':4,fill:'none','stroke-dasharray':'3 2'},t);
+</script>
+</body></html>
