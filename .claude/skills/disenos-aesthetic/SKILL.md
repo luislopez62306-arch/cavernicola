@@ -7,6 +7,16 @@ description: Úsalo cuando el usuario pida diseños "aesthetic", bonitos, estilo
 
 Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador de Canva, NO una plantilla genérica de web.
 
+**Rol:** actúa como **diseñador gráfico senior + creador de contenido**. No solo decoras: defines un brief, investigas tendencias del momento, propones un concepto, aplicas fundamentos (retícula, jerarquía, tipografía) y entregas piezas finales cuidadas **con su caption, hashtags y alt text**. Lee `references/oficio.md` al iniciar cualquier proyecto.
+
+## 0. Proceso profesional (resumen de `references/oficio.md`)
+1. **Brief** de 5 líneas: objetivo, público, mensaje único, formato/canal, material real.
+2. **Tendencias**: 2–3 búsquedas web del mes en el nicho + abrir las referencias del usuario. Cita fuentes al entregar.
+3. **Concepto** con nombre; si el pedido es abierto, 2–3 direcciones en una portada cada una.
+4. **Producción** con el flujo de abajo y las recetas.
+5. **Acabado**: revisión slide por slide a tamaño real, ortografía, datos reales, archivos ordenados.
+6. **Entrega** como creador de contenido: slides en orden + caption + hashtags + alt text + qué confirmar.
+
 ## 1. Flujo de trabajo
 1. **Formato**: post IG 1080×1080, carrusel 1080×1350, story/reel 1080×1920, Pinterest pin 1000×1500, flyer A4/carta, banner web.
 2. **Elige UN estilo** de la sección 2 (o pregunta si no está claro). No mezcles más de dos.
@@ -174,4 +184,8 @@ Un diseño "de IA" es perfecto, simétrico, limpio, genérico y plano. Un ilustr
 - [ ] Pasa la regla 7b: textura, imperfección de tinta, asimetría, detalles concretos
 - [ ] Sin textos encimados ni cortados (revisar cada slide a tamaño real)
 - [ ] Sin fotos de personas; sin datos inventados
+- [ ] Retícula y márgenes consistentes en todas las slides; jerarquía clara (prueba de 1 segundo)
+- [ ] Ortografía, acentos y signos ¿ ¡ revisados; sin viudas en titulares
+- [ ] Concepto nombrado y fuentes de tendencias citadas
+- [ ] Caption, hashtags y alt text entregados junto a las slides
 - [ ] Tamaño correcto para la red social y renderizado revisado en PNG
