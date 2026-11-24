@@ -1,81 +1,113 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..500,0..100,0..1;1,9..144,300..500,0..100,0..1&family=Pinyon+Script&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:wght@500;600&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--rosa:#D9849C;--rosa2:#F3D9DF;--crema:#FBF5EE;--vino:#6E1F33;--tinta:#33252A}
+:root{--rosa:#E8789B;--rosa2:#F7C9D6;--beige:#E7DDD0;--crema:#FBF7F1;--cafe:#8C7B70}
 body{margin:0;background:#ddd;display:flex;gap:30px;padding:30px;flex-wrap:wrap}
-.s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'DM Sans';color:var(--tinta)}
-.s::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:50;opacity:.12;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.paper{background-color:var(--crema);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence baseFrequency='.01 .05' numOctaves='4' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .35 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E")}
-.ph{position:absolute;background-size:cover;background-position:center}
-.kick{font-family:'DM Mono';font-size:19px;letter-spacing:.22em;text-transform:uppercase;font-weight:400}
-.serif{font-family:'Fraunces';font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 0;letter-spacing:-.022em;word-spacing:.06em;margin:0}
-em{font-family:'Fraunces';font-weight:300;font-style:italic;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;letter-spacing:-.02em;word-spacing:.06em}
-.scr{font-family:'Pinyon Script';font-weight:400;letter-spacing:0;font-style:normal}
-.lace{-webkit-mask:radial-gradient(circle 9px at 50% 100%,transparent 8.5px,#000 9px) bottom/22px 100% repeat-x,linear-gradient(#000,#000) top/100% calc(100% - 9px) no-repeat}
-.lace-t{-webkit-mask:radial-gradient(circle 9px at 50% 0,transparent 8.5px,#000 9px) top/22px 100% repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - 9px) no-repeat}
-.sh{box-shadow:0 1px 2px rgba(50,20,25,.12),0 24px 44px -14px rgba(50,20,25,.32)}
-.foot{position:absolute;left:84px;right:84px;bottom:64px;display:flex;justify-content:space-between;align-items:center;font-family:'DM Mono';font-size:17px;letter-spacing:.18em;z-index:20}
-.foot.l{color:var(--vino);border-top:1px solid rgba(110,31,51,.3);padding-top:24px}
-.foot.d{color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.4)}
-.body{font-size:28px;line-height:1.5}
-.vino{color:var(--vino)}
-
-
-.cover .ph{inset:0;background-image:url(fotos/playa.jpg);background-position:center 60%}
-.cover .g{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,12,18,.6),rgba(30,12,18,.1) 45%,transparent 60%,rgba(30,12,18,.4))}
-.cover .kick{position:absolute;left:84px;top:96px;color:#fff}
-.cover h1{position:absolute;left:80px;top:150px;font-size:124px;line-height:.92;color:#fff}
-.cover h1 em{color:#F6D3DC}
-.cover .big{position:absolute;right:70px;top:110px;font-family:'Fraunces';font-style:italic;font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;font-size:300px;line-height:.8;color:rgba(255,255,255,.9)}
-.cover .swipe{position:absolute;right:84px;bottom:130px;color:#fff;font-family:'Pinyon Script';font-size:56px}
-.idea .ph{left:84px;top:84px;width:912px;height:760px;border-radius:4px}
-.idea .num{position:absolute;left:78px;top:880px;font-family:'Fraunces';font-style:italic;font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;font-size:150px;line-height:.8;color:var(--rosa)}
-.idea h2{position:absolute;left:300px;top:885px;width:690px;font-size:78px;line-height:.98}
-.idea h2 em{color:var(--vino)}
-.idea p{position:absolute;left:300px;top:1085px;width:680px;margin:0;font-size:27px;line-height:1.5;color:#6b5458}
-.idea .tip{position:absolute;right:120px;top:770px;z-index:5;padding:16px 26px;font-family:'DM Mono';font-size:17px;letter-spacing:.14em;text-transform:uppercase;background:var(--crema);color:var(--vino);transform:rotate(-3deg)}
-.idea.alt .ph{left:0;top:0;width:1080px;height:860px;border-radius:0}
-.cta .ph{inset:0;background-image:url(fotos/perfil-alberca-toldo.jpg);background-position:center 60%}
-.cta .g{position:absolute;inset:0;background:rgba(30,12,18,.25)}
-.cta .card{position:absolute;left:84px;right:84px;top:250px;padding:80px 74px 90px;box-sizing:border-box;text-align:center}
-.cta .card .kick{color:var(--vino)}
-.cta h2{font-size:96px;line-height:.95;margin:26px 0 0}
-.cta h2 em{color:var(--vino)}
-.cta p{font-size:26px;line-height:1.5;margin:28px auto 0;width:720px;color:#6b5458}
-.cta .wa{margin:40px auto 0;display:inline-block;background:var(--vino);color:var(--crema);font-size:30px;letter-spacing:.06em;padding:24px 44px;border-radius:999px}
-.cta .small{margin-top:28px;font-family:'DM Mono';font-size:17px;letter-spacing:.18em;color:#7a6266}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'Poppins'}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.script{font-family:'Pinyon Script';font-weight:400;line-height:1}
+.bodoni{font-family:'Bodoni Moda';font-weight:400;text-transform:uppercase;letter-spacing:-.01em;transform:scaleX(.78);transform-origin:left top;line-height:.95}
+.glow{text-shadow:0 2px 18px rgba(0,0,0,.28)}
+/* pill estilo iOS como en tus posts */
+.pill{position:absolute;display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.96);border-radius:26px;padding:22px 40px;color:var(--rosa);font-weight:600;font-size:40px;letter-spacing:-.01em;box-shadow:0 8px 24px rgba(60,20,30,.16)}
+.pill img{width:66px;height:66px;border-radius:50%}
+.pill.c{left:50%;transform:translateX(-50%);white-space:nowrap}
+.bub{position:absolute;background:#FFF3C4;color:var(--rosa);font-weight:600;font-size:34px;padding:16px 38px;border-radius:30px 30px 30px 8px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.emo{position:absolute;font-size:64px;font-family:'Noto Color Emoji'}
+/* rayas beige */
+.stripes{background:repeating-linear-gradient(90deg,var(--crema) 0 90px,var(--beige) 90px 180px)}
+/* marco estampilla */
+.stamp{position:absolute;background:#fff;padding:26px;box-shadow:0 14px 34px rgba(80,50,40,.22);
+ padding:24px !important;-webkit-mask:linear-gradient(#000 0 0) content-box,radial-gradient(circle 10px,transparent 9.5px,#000 10px) -14px -14px/28px 28px}
+.stamp div{width:100%;height:100%;background-size:cover;background-position:center}
+.pola{position:absolute;background:#fff;padding:24px 24px 90px;box-shadow:0 16px 36px rgba(0,0,0,.3)}
+.pola div{width:100%;height:100%;background-size:cover;background-position:center}
+.doodle{position:absolute;fill:none;stroke:var(--rosa);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.star{position:absolute;color:var(--rosa2);font-size:46px}
+.lbl{position:absolute;background:#B9ADA2;color:#fff;font-weight:600;letter-spacing:.32em;font-size:30px;padding:16px 36px}
+.num{position:absolute;bottom:56px;right:64px;font-size:24px;font-weight:500;color:#fff;letter-spacing:.1em;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.num.d{color:var(--cafe);text-shadow:none}
+.cap{position:absolute;font-size:30px;line-height:1.4;font-weight:500}
 </style></head><body>
-<section class="s cover"><div class="ph"></div><div class="g"></div>
- <div class="kick">Bridesmaid proposal · Ideas</div>
- <div class="big">5</div>
- <h1 class="serif">ideas para<br>pedirle que sea<br><em>tu dama</em></h1>
- <div class="swipe">desliza</div>
- <div class="foot d"><span>@ELPICNICDEFRANCIA</span><span>01 / 07</span></div></section>
-<section class="s idea paper alt"><div class="ph " style="background-image:url(fotos/perfil-playa-toldo.jpg);background-position:center 70%"></div>
- <div class="tip">la favorita</div><div class="num">01</div>
- <h2 class="serif">Un picnic frente al <em>mar</em></h2><p>Toldo, mesa baja y cojines en la arena al atardecer. Cuando lleguen, que la vista hable por ti.</p>
- <div class="foot l"><span>@ELPICNICDEFRANCIA</span><span>02 / 07</span></div></section>
-<section class="s idea paper "><div class="ph sh" style="background-image:url(fotos/mantel.jpg);background-position:center 70%"></div>
- <div class="tip">guárdalo</div><div class="num">02</div>
- <h2 class="serif">Picnic de cuadros en el <em>jardín</em></h2><p>Mantel rosa, flores, fresas y croissants bajo los árboles. Al final, una tarjeta con la pregunta.</p>
- <div class="foot l"><span>@ELPICNICDEFRANCIA</span><span>03 / 07</span></div></section>
-<section class="s idea paper alt"><div class="ph " style="background-image:url(fotos/perfil-mesa-larga.jpg);background-position:center 55%"></div>
- <div class="tip">pa’ grupos</div><div class="num">03</div>
- <h2 class="serif">Brunch de <em>bridesmaids</em></h2><p>Una mesa larga con flores, copas y un lugar marcado para cada una. Todas juntas, una sola pregunta.</p>
- <div class="foot l"><span>@ELPICNICDEFRANCIA</span><span>04 / 07</span></div></section>
-<section class="s idea paper "><div class="ph sh" style="background-image:url(fotos/detalle.jpg);background-position:center 40%"></div>
- <div class="tip">fácil y lindo</div><div class="num">04</div>
- <h2 class="serif">La pregunta en su <em>plato</em></h2><p>Una tarjeta en cada lugar con “¿quieres ser mi dama?”. La sorpresa llega al sentarse.</p>
- <div class="foot l"><span>@ELPICNICDEFRANCIA</span><span>05 / 07</span></div></section>
-<section class="s idea paper alt"><div class="ph " style="background-image:url(fotos/perfil-mesa-ventana.jpg);background-position:center 65%"></div>
- <div class="tip">para tu maid of honor</div><div class="num">05</div>
- <h2 class="serif">Cena íntima con <em>velas</em></h2><p>Tulipanes, luz cálida y tu mejor amiga. Para cuando la pregunta es solo para una.</p>
- <div class="foot l"><span>@ELPICNICDEFRANCIA</span><span>06 / 07</span></div></section>
-<section class="s cta"><div class="ph"></div><div class="g"></div>
- <div class="card paper sh lace"><div class="kick">El Picnic de Francia</div>
- <h2 class="serif">¿Ya sabes<br>cuál le <span class="scr" style="color:var(--vino);font-size:1.2em">late?</span></h2>
- <p>Nosotras montamos la idea que elijas en Los Mochis y alrededores. Tú solo haz la pregunta.</p>
- <div class="wa">WhatsApp · 668 377 1781</div>
- <div class="small">MÁNDASELO A TU FUTURA DAMA</div></div>
- <div class="foot d"><span>@ELPICNICDEFRANCIA</span><span>07 / 07</span></div></section>
+<svg width="0" height="0" style="position:absolute">
+ <symbol id="pastel" viewBox="0 0 200 220"><path d="M40 210h120M50 210v-50h100v50M60 160v-40h80v40M70 120v-30h60v30M100 90v-30M100 60q-6-14 0-22q6 8 0 22M50 180q12 10 25 0t25 0 25 0 25 0M60 138q10 8 20 0t20 0 20 0 20 0"/><path d="M100 98q-40-30-48 -4q-6 22 48 4zM100 98q40-30 48-4q6 22-48 4zM96 100q-14 30-26 50M104 100q14 30 26 50"/></symbol>
+ <symbol id="corazon" viewBox="0 0 100 90"><path d="M50 82C10 52 4 30 18 16c12-12 28-6 32 8c4-14 20-20 32-8c14 14 8 36-32 66z"/></symbol>
+ <symbol id="anillo" viewBox="0 0 100 120"><circle cx="50" cy="78" r="34"/><path d="M36 40l14-22l14 22l-14 10z"/></symbol>
+</svg>
+
+<!-- 1 Portada: foto + pills + script -->
+<section class="s"><div class="bg" style="background-image:url(fotos/perfil-playa-toldo.jpg);background-position:center 75%"></div>
+ <div class="bg" style="background:linear-gradient(180deg,rgba(0,0,0,.25),transparent 40%,transparent 70%,rgba(0,0,0,.25))"></div>
+ <div class="emo" style="left:90px;top:90px">🤍</div><div class="emo" style="left:180px;top:92px">💍</div>
+ <div class="pill c" style="top:200px"><img src="fotos/logo.jpg">El Picnic de Francia</div>
+ <div class="script glow" style="position:absolute;left:0;right:0;top:330px;text-align:center;color:#FFF6E8;font-size:170px">Be My<br>Bridesmaid?</div>
+ <div class="pill c" style="bottom:170px;color:#9C7B6A">5 ideas para preguntarle</div>
+ <div class="num">01/07</div>
+</section>
+
+<!-- 2 Idea 1: rayas + estampilla -->
+<section class="s stripes">
+ <div class="stamp" style="left:90px;top:150px;width:640px;height:800px;transform:rotate(-3deg)"><div style="background-image:url(fotos/perfil-playa-toldo.jpg);background-position:center 70%"></div></div>
+ <div class="script" style="position:absolute;right:70px;top:250px;font-size:150px;color:var(--rosa);text-align:right">Picnic</div>
+ <div class="lbl" style="right:90px;top:420px">FRENTE AL MAR</div>
+ <svg class="doodle" style="right:110px;top:830px;width:230px;height:250px"><use href="#pastel"/></svg>
+ <div class="star" style="right:380px;top:170px">★</div><div class="star" style="right:60px;top:620px">★</div><div class="star" style="left:60px;top:1010px">★</div>
+ <div class="cap" style="left:110px;top:1040px;width:560px;color:var(--cafe)"><b style="color:var(--rosa)">Idea 01 ·</b> Toldo, mesa baja y cojines en la arena al atardecer.</div>
+ <div class="num d">02/07</div>
+</section>
+
+<!-- 3 Idea 2: polaroids + burbujas (como Be My Girlfriend) -->
+<section class="s"><div class="bg" style="background-image:url(fotos/playa.jpg);filter:blur(2px) saturate(1.05);transform:scale(1.05)"></div>
+ <div class="script glow" style="position:absolute;left:0;right:0;top:90px;text-align:center;color:#FFF3C4;font-size:132px">La caja sorpresa</div>
+ <div class="pola" style="left:70px;top:330px;width:470px;height:520px;transform:rotate(-4deg)"><div style="background-image:url(fotos/mantel.jpg)"></div></div>
+ <div class="pola" style="left:470px;top:520px;width:480px;height:540px;transform:rotate(5deg)"><div style="background-image:url(fotos/detalle.jpg);background-position:center 60%"></div></div>
+ <div class="bub" style="right:70px;top:330px">¿Quieres ser mi dama?</div>
+ <div class="bub" style="right:70px;top:420px">¡Sííí! 🥂💗</div>
+ <div class="emo" style="left:90px;top:1110px;font-size:58px">🤍🤍🤍</div>
+ <div class="cap glow" style="left:90px;top:1200px;color:#fff;font-size:28px">Idea 02 · Moño, tarjeta y un detalle con su nombre.</div>
+ <div class="num">03/07</div>
+</section>
+
+<!-- 4 Idea 3: foto completa + Bodoni condensada (como Haz especial su cumpleaños) -->
+<section class="s"><div class="bg" style="background-image:url(fotos/perfil-mesa-larga.jpg);background-position:center 60%"></div>
+ <div class="bg" style="background:linear-gradient(180deg,rgba(0,0,0,.45),transparent 42%)"></div>
+ <div class="glow" style="position:absolute;left:0;right:0;top:80px;text-align:center;color:#fff">
+  <div class="script" style="font-size:170px">Brunch</div>
+  <div style="font-family:'Bodoni Moda';font-size:92px;letter-spacing:.04em;margin-top:-10px">DE DAMAS</div></div>
+ <svg class="doodle" style="left:90px;top:110px;width:120px;height:110px;stroke:#fff"><use href="#corazon"/></svg>
+ <svg class="doodle" style="right:90px;top:100px;width:150px;height:170px;stroke:#fff"><use href="#pastel"/></svg>
+ <div class="pill c" style="bottom:150px;font-size:34px;color:#9C7B6A">Idea 03 · una mesa larga para todas</div>
+ <div class="num">04/07</div>
+</section>
+
+<!-- 5 Idea 4: rayas + dos estampillas (como Birthday Teable) -->
+<section class="s stripes">
+ <div class="stamp" style="left:70px;top:120px;width:520px;height:560px;transform:rotate(-4deg)"><div style="background-image:url(fotos/detalle.jpg);background-position:center 55%"></div></div>
+ <div class="stamp" style="right:70px;top:640px;width:540px;height:520px;transform:rotate(4deg)"><div style="background-image:url(fotos/perfil-mesa-ventana.jpg);background-position:center 70%"></div></div>
+ <div class="script" style="position:absolute;right:80px;top:200px;font-size:140px;color:var(--rosa);text-align:right">Tarjeta</div>
+ <div class="lbl" style="right:90px;top:370px">EN SU PLATO</div>
+ <svg class="doodle" style="left:110px;top:820px;width:210px;height:230px"><use href="#pastel"/></svg>
+ <div class="star" style="left:600px;top:100px">★</div><div class="star" style="left:60px;top:1150px">★</div><div class="star" style="right:300px;top:560px">★</div>
+ <div class="cap" style="left:90px;top:1210px;width:500px;color:var(--cafe);font-size:26px"><b style="color:var(--rosa)">Idea 04 ·</b> La sorpresa llega al sentarse.</div>
+ <div class="num d">05/07</div>
+</section>
+
+<!-- 6 Idea 5: foto + serif "styled to celebrate" -->
+<section class="s"><div class="bg" style="background-image:url(fotos/perfil-mesa-ventana.jpg);background-position:center 70%"></div>
+ <div class="bg" style="background:linear-gradient(180deg,rgba(0,0,0,.5),transparent 45%)"></div>
+ <div class="glow" style="position:absolute;left:90px;top:120px;color:#fff;font-family:'Instrument Serif';font-size:130px;line-height:.85;letter-spacing:-.03em">cena con<br><span style="padding-left:120px">velas ✦</span></div>
+ <div class="pill" style="left:90px;bottom:150px;font-size:34px;color:#9C7B6A">Idea 05 · para tu maid of honor</div>
+ <div class="num">06/07</div>
+</section>
+
+<!-- 7 CTA -->
+<section class="s"><div class="bg" style="background-image:url(fotos/perfil-alberca-toldo.jpg);background-position:center 60%"></div>
+ <div class="bg" style="background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.1) 55%,rgba(0,0,0,.2))"></div>
+ <div class="emo" style="right:90px;top:90px">💌</div>
+ <div class="pill c" style="top:200px"><img src="fotos/logo.jpg">El Picnic de Francia</div>
+ <div class="script glow" style="position:absolute;left:0;right:0;top:330px;text-align:center;color:#fff;font-size:150px">¿Cuál le late?</div>
+ <div class="bub" style="left:50%;transform:translateX(-50%);top:560px;white-space:nowrap">Mándaselo a tu futura dama</div>
+ <div class="pill c" style="bottom:170px;font-size:38px">Cotiza por WhatsApp · 668 377 1781</div>
+ <div class="num">07/07</div>
+</section>
 </body></html>

@@ -61,4 +61,4 @@ Guárdalo y mándaselo a tu futura dama (o a la novia del grupo 👀). Cotiza po
 6. Mesa con tulipanes y velas: idea 5, cena íntima.
 7. Toldo junto a la alberca con una tarjeta para cotizar por WhatsApp.
 
-**Nota:** las slides 1, 3 y 5 usan fotos generadas con IA. Cámbialas por fotos reales de tus montajes cuando las tengas.
+**Nota:** el estilo copia el de tus posts (pills tipo iOS con tu logo, letra caligráfica, polaroids con burbujas de chat, fondo de rayas beige con fotos tipo estampilla y dibujos rosas). Las slides 3 y 5 usan fotos generadas con IA: cámbialas por fotos reales de tus montajes.
