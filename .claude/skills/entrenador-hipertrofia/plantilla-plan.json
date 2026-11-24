@@ -1,0 +1,796 @@
+{
+ "titulo": "Hipertrofia 6 días",
+ "subtitulo": "Piernas y pecho · Nivel avanzado",
+ "nivel": "Programa de élite · Nivel avanzado",
+ "descripcion": "Programa de 6 semanas para construir masa muscular con prioridad en piernas y pecho, con técnica de élite, progresión semanal y registro de cargas.",
+ "prioridad": "pecho y piernas reciben 2 estímulos fuertes por semana con finisher FST-7",
+ "semanas": 6,
+ "peso_kg": 80,
+ "semana_tipo": [
+  {
+   "dia": "LUN",
+   "tag": "D1",
+   "foco": "Pecho pesado",
+   "prioridad": true
+  },
+  {
+   "dia": "MAR",
+   "tag": "D2",
+   "foco": "Pierna · cuád.",
+   "prioridad": true
+  },
+  {
+   "dia": "MIÉ",
+   "tag": "D3",
+   "foco": "Espalda amplitud",
+   "prioridad": false
+  },
+  {
+   "dia": "JUE",
+   "tag": "D4",
+   "foco": "Pecho volumen",
+   "prioridad": true
+  },
+  {
+   "dia": "VIE",
+   "tag": "D5",
+   "foco": "Pierna · femoral",
+   "prioridad": true
+  },
+  {
+   "dia": "SÁB",
+   "tag": "D6",
+   "foco": "Espalda densidad",
+   "prioridad": false
+  },
+  {
+   "dia": "DOM",
+   "tag": "OFF",
+   "foco": "Descanso",
+   "prioridad": false
+  }
+ ],
+ "dias": [
+  {
+   "n": 1,
+   "titulo": "PECHO PESADO",
+   "subtitulo": "+ Hombro lateral + Tríceps",
+   "duracion": "80–90 min",
+   "prioridad": true,
+   "objetivo": "Fuerza-hipertrofia en pecho superior y medio. Es el día de mover carga: busca superar tus marcas en los dos primeros ejercicios.",
+   "calentamiento": [
+    "5 min de elíptica o remo suave",
+    "Rotaciones de hombro con banda (2×15) y face pull ligero (2×15)",
+    "Flexiones lentas 1×10–12",
+    "Aproximación al press inclinado: 40 %×10 · 60 %×6 · 80 %×3"
+   ],
+   "claves": [
+    "Los dos primeros ejercicios son de fuerza: anota peso y reps y supéralos cada semana.",
+    "Mantén las escápulas retraídas en todos los presses para proteger el hombro.",
+    "El tríceps cierra la sesión con énfasis en la cabeza larga (estiramiento)."
+   ],
+   "ejercicios": [
+    {
+     "nombre": "Press inclinado con barra a 30°",
+     "musculo": "Pecho superior",
+     "series": 4,
+     "reps": "6–8",
+     "rir": "1–2",
+     "tempo": "3-1-1",
+     "descanso": "3 min",
+     "tecnica": "Retrae y deprime escápulas, arco torácico natural. Baja la barra a la clavícula con codos a ~60°. Empuja con los pies en el piso.",
+     "alternativa": "Smith inclinado"
+    },
+    {
+     "nombre": "Press plano con mancuernas",
+     "musculo": "Pecho medio",
+     "series": 3,
+     "reps": "8–10",
+     "rir": "1–2",
+     "tempo": "3-1-1",
+     "descanso": "2,5 min",
+     "tecnica": "Baja hasta sentir el estiramiento del pecho y haz pausa de 1 s abajo. Junta las mancuernas arriba sin chocarlas.",
+     "alternativa": "Press plano en máquina"
+    },
+    {
+     "nombre": "Máquina de press convergente",
+     "musculo": "Pecho completo",
+     "series": 3,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-0-1",
+     "descanso": "2 min",
+     "tecnica": "Asiento con agarres a la altura del pecho medio. Bajada lenta de 3 s; aprieta el pecho 1 s arriba.",
+     "alternativa": "Press en Hammer Strength"
+    },
+    {
+     "nombre": "Elevaciones laterales en polea",
+     "musculo": "Deltoides lateral",
+     "series": 4,
+     "reps": "12–15",
+     "rir": "0–1",
+     "tempo": "2-0-1",
+     "descanso": "60 s",
+     "tecnica": "Polea a la altura de la cadera, brazo por detrás del cuerpo. Sube con el codo, no con la mano, hasta la altura del hombro.",
+     "alternativa": "Laterales con mancuerna"
+    },
+    {
+     "nombre": "Press francés con barra Z",
+     "musculo": "Tríceps (cabeza larga)",
+     "series": 3,
+     "reps": "8–12",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "90 s",
+     "tecnica": "Baja la barra detrás de la cabeza para estirar la cabeza larga. Codos fijos apuntando al techo.",
+     "alternativa": "Press francés en polea"
+    },
+    {
+     "nombre": "Extensión de tríceps sobre la cabeza en polea",
+     "musculo": "Tríceps (cabeza larga)",
+     "series": 3,
+     "reps": "12–15",
+     "rir": "0",
+     "tempo": "2-1-1",
+     "descanso": "60 s",
+     "tecnica": "De espaldas a la polea, codos junto a las orejas. Estira por completo atrás y bloquea arriba.",
+     "alternativa": "Extensión con mancuerna a dos manos"
+    }
+   ],
+   "finisher": "Aperturas en peck deck · FST-7: 7 × 10–15, 30–45 s de descanso. Estira el pecho y bebe agua entre series.",
+   "frase": "La técnica manda sobre el peso. Si el pecho no se siente, baja la carga y alarga la bajada."
+  },
+  {
+   "n": 2,
+   "titulo": "PIERNA · CUÁDRICEPS",
+   "subtitulo": "+ Femoral + Pantorrilla",
+   "duracion": "85–95 min",
+   "prioridad": true,
+   "objetivo": "Máxima tensión en cuádriceps con rango profundo. Es la sesión más exigente de la semana: llega comido e hidratado.",
+   "calentamiento": [
+    "5–8 min de bici estática",
+    "Movilidad de cadera y tobillo (90/90, tobillo a la pared) 2×10",
+    "Sentadilla goblet ligera 2×10",
+    "Aproximación a la sentadilla: barra×10 · 40 %×8 · 60 %×5 · 80 %×2"
+   ],
+   "claves": [
+    "Si la rodilla está fría, haz una tercera serie de pre-activación.",
+    "La sentadilla marca el día: prioriza profundidad sobre peso.",
+    "Toma carbohidratos antes: es la sesión de mayor gasto de la semana."
+   ],
+   "ejercicios": [
+    {
+     "nombre": "Extensión de cuádriceps (pre-activación)",
+     "musculo": "Cuádriceps",
+     "series": 2,
+     "reps": "15–20",
+     "rir": "2",
+     "tempo": "2-1-1",
+     "descanso": "60 s",
+     "tecnica": "Solo para calentar rodilla y conectar con el cuádriceps. Aprieta 1 s arriba.",
+     "alternativa": "—"
+    },
+    {
+     "nombre": "Sentadilla libre o hack",
+     "musculo": "Cuádriceps · glúteo",
+     "series": 4,
+     "reps": "6–8",
+     "rir": "1–2",
+     "tempo": "3-1-1",
+     "descanso": "3–4 min",
+     "tecnica": "Profundidad por debajo del paralelo, rodillas siguiendo la punta de los pies. Pecho alto y abdomen firme (Valsalva).",
+     "alternativa": "Péndulo / Smith"
+    },
+    {
+     "nombre": "Prensa de piernas, pies bajos",
+     "musculo": "Cuádriceps",
+     "series": 4,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-0-1",
+     "descanso": "2,5 min",
+     "tecnica": "Pies bajos y a la anchura de la cadera para cargar cuádriceps. Baja hasta donde la pelvis no se despegue. No bloquees las rodillas.",
+     "alternativa": "Hack en máquina"
+    },
+    {
+     "nombre": "Sentadilla búlgara",
+     "musculo": "Cuádriceps · glúteo",
+     "series": 3,
+     "reps": "8–10 c/p",
+     "rir": "1",
+     "tempo": "2-1-1",
+     "descanso": "2 min",
+     "tecnica": "Torso erguido y paso corto para cuádriceps. Baja vertical, rodilla por delante del pie.",
+     "alternativa": "Zancadas caminando"
+    },
+    {
+     "nombre": "Curl femoral sentado",
+     "musculo": "Femoral",
+     "series": 3,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "90 s",
+     "tecnica": "Inclínate hacia delante para estirar más el femoral. Controla la subida.",
+     "alternativa": "Curl femoral acostado"
+    },
+    {
+     "nombre": "Pantorrilla de pie",
+     "musculo": "Gastrocnemio",
+     "series": 4,
+     "reps": "8–12",
+     "rir": "0–1",
+     "tempo": "2-2-1",
+     "descanso": "60 s",
+     "tecnica": "Pausa de 2 s abajo en estiramiento total. Sube lo más alto posible, sin rebotar.",
+     "alternativa": "Pantorrilla en prensa"
+    }
+   ],
+   "finisher": "Extensión de cuádriceps · FST-7: 7 × 12–15, 30–45 s. Última serie con 10 s de isometría arriba.",
+   "frase": "Las piernas no crecen en la zona cómoda. Profundidad completa en cada repetición."
+  },
+  {
+   "n": 3,
+   "titulo": "ESPALDA · AMPLITUD",
+   "subtitulo": "+ Bíceps",
+   "duracion": "75–85 min",
+   "prioridad": false,
+   "objetivo": "Desarrollar el dorsal a lo ancho. Esta sesión también da descanso activo a pecho y piernas.",
+   "calentamiento": [
+    "5 min de remo ergómetro",
+    "Colgarse de la barra 2×20 s",
+    "Jalón ligero 2×12",
+    "Aproximación: dominadas sin lastre 1×5"
+   ],
+   "claves": [
+    "Es día de descanso relativo para pecho y piernas: entrena duro pero sin finisher.",
+    "Busca el estiramiento completo del dorsal en cada repetición.",
+    "El bíceps se trabaja en posición estirada para mayor estímulo."
+   ],
+   "ejercicios": [
+    {
+     "nombre": "Dominadas lastradas",
+     "musculo": "Dorsal ancho",
+     "series": 4,
+     "reps": "6–8",
+     "rir": "1–2",
+     "tempo": "3-1-1",
+     "descanso": "2,5 min",
+     "tecnica": "Baja hasta extender los brazos por completo. Lleva el pecho a la barra y deprime las escápulas.",
+     "alternativa": "Jalón al pecho pesado"
+    },
+    {
+     "nombre": "Remo con barra",
+     "musculo": "Espalda media · dorsal",
+     "series": 3,
+     "reps": "8–10",
+     "rir": "1–2",
+     "tempo": "2-1-1",
+     "descanso": "2,5 min",
+     "tecnica": "Torso a ~45°, espalda neutra. Tira hacia el ombligo y aprieta 1 s.",
+     "alternativa": "Remo Pendlay"
+    },
+    {
+     "nombre": "Remo en máquina con apoyo en el pecho",
+     "musculo": "Dorsal · romboides",
+     "series": 3,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "2 min",
+     "tecnica": "Lleva el codo hacia la cadera, no hacia atrás. Estira escápulas adelante en cada repetición.",
+     "alternativa": "Remo sentado en polea"
+    },
+    {
+     "nombre": "Pullover en polea",
+     "musculo": "Dorsal (aislado)",
+     "series": 3,
+     "reps": "12–15",
+     "rir": "0–1",
+     "tempo": "3-1-1",
+     "descanso": "90 s",
+     "tecnica": "Brazos casi rectos, cadera atrás. Estira arriba y lleva la cuerda hasta los muslos.",
+     "alternativa": "Pullover con mancuerna"
+    },
+    {
+     "nombre": "Face pull",
+     "musculo": "Deltoides posterior",
+     "series": 3,
+     "reps": "15",
+     "rir": "1",
+     "tempo": "2-1-1",
+     "descanso": "60 s",
+     "tecnica": "Cuerda a la altura de los ojos. Tira separando las manos con rotación externa.",
+     "alternativa": "Pájaros con mancuernas"
+    },
+    {
+     "nombre": "Curl inclinado con mancuernas",
+     "musculo": "Bíceps (cabeza larga)",
+     "series": 3,
+     "reps": "8–12",
+     "rir": "0–1",
+     "tempo": "3-1-1",
+     "descanso": "90 s",
+     "tecnica": "Banco a 45–60°, brazos colgando atrás para estirar el bíceps. Sin balanceo.",
+     "alternativa": "Curl bayesiano en polea"
+    },
+    {
+     "nombre": "Curl martillo",
+     "musculo": "Braquial · antebrazo",
+     "series": 2,
+     "reps": "10–12",
+     "rir": "0",
+     "tempo": "2-0-1",
+     "descanso": "60 s",
+     "tecnica": "Agarre neutro, codos pegados. Trabaja braquial y antebrazo.",
+     "alternativa": "Curl martillo en polea con cuerda"
+    }
+   ],
+   "finisher": "",
+   "frase": "Piensa en los codos, no en las manos: los brazos son solo ganchos."
+  },
+  {
+   "n": 4,
+   "titulo": "PECHO · VOLUMEN Y ESTIRAMIENTO",
+   "subtitulo": "+ Hombro",
+   "duracion": "75–85 min",
+   "prioridad": true,
+   "objetivo": "Segundo estímulo de pecho de la semana, con más reps, más estiramiento y más bombeo que el día 1.",
+   "calentamiento": [
+    "5 min de elíptica",
+    "Rotaciones con banda 2×15",
+    "Cruces en polea ligeros 2×15",
+    "Aproximación con mancuernas: 50 %×10 · 70 %×5"
+   ],
+   "claves": [
+    "Usa 10–15 % menos peso que el día 1: hoy manda el estiramiento.",
+    "Los fondos son exigentes para el hombro: si molestan, usa la alternativa.",
+    "Cierra con el FST-7 de pecho buscando el máximo bombeo."
+   ],
+   "ejercicios": [
+    {
+     "nombre": "Press inclinado con mancuernas a 30°",
+     "musculo": "Pecho superior",
+     "series": 4,
+     "reps": "8–10",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "2,5 min",
+     "tecnica": "Mancuernas profundas, codos a ~60°. Recorrido completo sin chocar arriba.",
+     "alternativa": "Press inclinado en máquina"
+    },
+    {
+     "nombre": "Fondos con lastre, torso inclinado",
+     "musculo": "Pecho inferior · tríceps",
+     "series": 3,
+     "reps": "8–12",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "2 min",
+     "tecnica": "Inclina el torso adelante y abre un poco los codos para cargar el pecho. Baja hasta sentir el estiramiento.",
+     "alternativa": "Press declinado en máquina"
+    },
+    {
+     "nombre": "Cruces en polea de abajo hacia arriba",
+     "musculo": "Pecho superior",
+     "series": 3,
+     "reps": "12–15",
+     "rir": "0–1",
+     "tempo": "2-1-1",
+     "descanso": "90 s",
+     "tecnica": "Poleas bajas, sube hacia el mentón. Trabaja la parte alta del pecho.",
+     "alternativa": "Aperturas inclinadas con mancuerna"
+    },
+    {
+     "nombre": "Press militar en máquina",
+     "musculo": "Deltoides anterior",
+     "series": 3,
+     "reps": "8–10",
+     "rir": "1–2",
+     "tempo": "2-1-1",
+     "descanso": "2 min",
+     "tecnica": "Espalda pegada al respaldo; baja hasta la altura de la barbilla.",
+     "alternativa": "Press militar con mancuernas"
+    },
+    {
+     "nombre": "Elevaciones laterales con mancuernas",
+     "musculo": "Deltoides lateral",
+     "series": 4,
+     "reps": "12–20",
+     "rir": "0",
+     "tempo": "2-0-1",
+     "descanso": "45 s",
+     "tecnica": "Inclínate ligeramente adelante y lidera con el codo. En la última serie haz rest-pause (15 s y repite).",
+     "alternativa": "Laterales en máquina"
+    },
+    {
+     "nombre": "Pushdown de tríceps con cuerda",
+     "musculo": "Tríceps (cabeza lateral)",
+     "series": 3,
+     "reps": "12–15",
+     "rir": "0",
+     "tempo": "2-1-1",
+     "descanso": "60 s",
+     "tecnica": "Abre la cuerda abajo y bloquea 1 s. Codos fijos.",
+     "alternativa": "Pushdown con barra V"
+    }
+   ],
+   "finisher": "Cruces de poleas altas · FST-7: 7 × 12–15, 30–45 s. Cruza las manos al final del recorrido.",
+   "frase": "Sin estiramiento no hay crecimiento. Cada repetición es una oportunidad."
+  },
+  {
+   "n": 5,
+   "titulo": "PIERNA · FEMORAL Y GLÚTEO",
+   "subtitulo": "+ Cuádriceps + Pantorrilla",
+   "duracion": "80–90 min",
+   "prioridad": true,
+   "objetivo": "Desarrollar la cadena posterior y dar a cuádriceps su segundo estímulo de la semana.",
+   "calentamiento": [
+    "5–8 min de bici o caminadora inclinada",
+    "Puente de glúteo 2×15 y bisagra con palo 2×10",
+    "Curl femoral ligero 1×15",
+    "Aproximación al rumano: 40 %×8 · 60 %×5 · 80 %×3"
+   ],
+   "claves": [
+    "Controla la bajada del rumano: es donde está el estímulo.",
+    "El hip thrust exige pausa real arriba, no rebotes.",
+    "Último día de pierna de la semana: vacía el tanque en el finisher."
+   ],
+   "ejercicios": [
+    {
+     "nombre": "Peso muerto rumano",
+     "musculo": "Femoral · glúteo",
+     "series": 4,
+     "reps": "6–8",
+     "rir": "2",
+     "tempo": "3-1-1",
+     "descanso": "3 min",
+     "tecnica": "Cadera atrás, rodillas semiflexionadas, barra pegada a las piernas. Baja hasta sentir el femoral sin redondear la espalda.",
+     "alternativa": "Rumano con mancuernas"
+    },
+    {
+     "nombre": "Curl femoral acostado",
+     "musculo": "Femoral",
+     "series": 4,
+     "reps": "8–12",
+     "rir": "0–1",
+     "tempo": "3-1-1",
+     "descanso": "90 s",
+     "tecnica": "Cadera pegada al banco. Bajada de 3 s y contracción completa arriba.",
+     "alternativa": "Curl femoral nórdico"
+    },
+    {
+     "nombre": "Hip thrust",
+     "musculo": "Glúteo mayor",
+     "series": 3,
+     "reps": "8–10",
+     "rir": "1",
+     "tempo": "2-1-1",
+     "descanso": "2 min",
+     "tecnica": "Barbilla al pecho, tibias verticales arriba. Pausa de 1 s con glúteo apretado.",
+     "alternativa": "Hip thrust en máquina"
+    },
+    {
+     "nombre": "Prensa a una pierna",
+     "musculo": "Glúteo · femoral",
+     "series": 3,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-0-1",
+     "descanso": "90 s",
+     "tecnica": "Pie alto en la plataforma para glúteo y femoral. Controla la profundidad.",
+     "alternativa": "Zancada inversa"
+    },
+    {
+     "nombre": "Sentadilla en Smith con talones elevados",
+     "musculo": "Cuádriceps (vasto medial)",
+     "series": 3,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "2 min",
+     "tecnica": "Talones sobre un disco, torso vertical. Baja profundo para el vasto medial.",
+     "alternativa": "Sentadilla ciclista con mancuernas"
+    },
+    {
+     "nombre": "Pantorrilla sentado",
+     "musculo": "Sóleo",
+     "series": 4,
+     "reps": "12–15",
+     "rir": "0",
+     "tempo": "2-2-1",
+     "descanso": "45 s",
+     "tecnica": "Trabaja el sóleo. Pausa de 2 s abajo.",
+     "alternativa": "Pantorrilla en prensa"
+    }
+   ],
+   "finisher": "Curl femoral sentado · FST-7: 7 × 10–15, 30–45 s. Estira el femoral entre series.",
+   "frase": "Unas piernas completas se ven desde atrás. No descuides los femorales."
+  },
+  {
+   "n": 6,
+   "titulo": "ESPALDA · DENSIDAD",
+   "subtitulo": "+ Hombro posterior + Brazos",
+   "duracion": "75–85 min",
+   "prioridad": false,
+   "objetivo": "Grosor de espalda media, hombro posterior y bombeo de brazos para cerrar la semana.",
+   "calentamiento": [
+    "5 min de remo ergómetro",
+    "Rotaciones con banda 2×15",
+    "Remo en T ligero 2×10",
+    "Aproximación: 50 %×8 · 70 %×4"
+   ],
+   "claves": [
+    "Prioriza la contracción en la espalda media; no tires con los brazos.",
+    "El hombro posterior responde a reps altas y descansos cortos.",
+    "Cierra la semana con la superserie de brazos para bombeo."
+   ],
+   "ejercicios": [
+    {
+     "nombre": "Remo en T",
+     "musculo": "Espalda media · trapecio",
+     "series": 4,
+     "reps": "8–10",
+     "rir": "1–2",
+     "tempo": "2-1-1",
+     "descanso": "2,5 min",
+     "tecnica": "Pecho apoyado o torso a ~45°. Tira hacia el abdomen y aprieta la espalda media.",
+     "alternativa": "Remo con barra"
+    },
+    {
+     "nombre": "Jalón al pecho con agarre neutro",
+     "musculo": "Dorsal ancho",
+     "series": 3,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "2 min",
+     "tecnica": "Inclínate apenas atrás. Lleva los codos hacia las costillas y estira arriba.",
+     "alternativa": "Dominadas agarre neutro"
+    },
+    {
+     "nombre": "Remo con mancuerna a una mano",
+     "musculo": "Dorsal · espalda baja",
+     "series": 3,
+     "reps": "10–12",
+     "rir": "1",
+     "tempo": "3-1-1",
+     "descanso": "90 s",
+     "tecnica": "Rodilla y mano en el banco. Tira en arco hacia la cadera y deja estirar abajo.",
+     "alternativa": "Remo unilateral en máquina"
+    },
+    {
+     "nombre": "Pájaros en máquina (reverse peck deck)",
+     "musculo": "Deltoides posterior",
+     "series": 4,
+     "reps": "15–20",
+     "rir": "0",
+     "tempo": "2-1-1",
+     "descanso": "45 s",
+     "tecnica": "Brazos casi rectos; empuja hacia afuera, no hacia atrás. Sin juntar escápulas.",
+     "alternativa": "Pájaros en polea cruzada"
+    },
+    {
+     "nombre": "Curl con barra",
+     "musculo": "Bíceps",
+     "series": 3,
+     "reps": "8–10",
+     "rir": "1",
+     "tempo": "3-0-1",
+     "descanso": "90 s",
+     "tecnica": "Codos fijos a los costados, sin balanceo. Bajada controlada.",
+     "alternativa": "Curl con barra Z"
+    },
+    {
+     "nombre": "Superserie: curl en polea + extensión de tríceps en polea",
+     "musculo": "Bíceps · tríceps",
+     "series": 3,
+     "reps": "12–15",
+     "rir": "0",
+     "tempo": "2-1-1",
+     "descanso": "60 s",
+     "tecnica": "Haz los dos ejercicios seguidos sin descanso; descansa 60 s después del segundo. Busca bombeo.",
+     "alternativa": "Curl y extensión con mancuernas"
+    }
+   ],
+   "finisher": "",
+   "frase": "Espalda densa, brazos llenos. Cierra la semana más fuerte de lo que la empezaste."
+  }
+ ],
+ "progresion": [
+  {
+   "semana": 1,
+   "fase": "Adaptación",
+   "detalle": "RIR 2–3 · sin finishers. Encuentra tus pesos de trabajo.",
+   "intensidad": 45
+  },
+  {
+   "semana": 2,
+   "fase": "Acumulación",
+   "detalle": "RIR 1–2 · entran los finishers FST-7.",
+   "intensidad": 58
+  },
+  {
+   "semana": 3,
+   "fase": "Progresión",
+   "detalle": "Doble progresión: +reps y luego +2,5–5 % de carga.",
+   "intensidad": 70
+  },
+  {
+   "semana": 4,
+   "fase": "Sobrecarga",
+   "detalle": "+1 serie en el 1.er ejercicio de pecho y cuádriceps.",
+   "intensidad": 84
+  },
+  {
+   "semana": 5,
+   "fase": "Pico",
+   "detalle": "Últimas series a RIR 0 · drop sets en máquinas.",
+   "intensidad": 100
+  },
+  {
+   "semana": 6,
+   "fase": "Descarga",
+   "detalle": "50 % de las series · RIR 3–4 · sin técnicas.",
+   "intensidad": 32
+  }
+ ],
+ "volumen": [
+  {
+   "musculo": "Pecho",
+   "series": 22,
+   "fst": 14,
+   "prioridad": true
+  },
+  {
+   "musculo": "Cuádriceps",
+   "series": 20,
+   "fst": 7,
+   "prioridad": true
+  },
+  {
+   "musculo": "Femoral / glúteo",
+   "series": 17,
+   "fst": 7,
+   "prioridad": true
+  },
+  {
+   "musculo": "Espalda",
+   "series": 26,
+   "fst": 0,
+   "prioridad": false
+  },
+  {
+   "musculo": "Deltoides lat. y post.",
+   "series": 15,
+   "fst": 0,
+   "prioridad": false
+  },
+  {
+   "musculo": "Tríceps",
+   "series": 12,
+   "fst": 0,
+   "prioridad": false
+  },
+  {
+   "musculo": "Bíceps",
+   "series": 11,
+   "fst": 0,
+   "prioridad": false
+  },
+  {
+   "musculo": "Pantorrilla",
+   "series": 8,
+   "fst": 0,
+   "prioridad": false
+  }
+ ],
+ "nutricion": {
+  "macros": [
+   {
+    "nombre": "Proteína",
+    "valor": "2–2,2 g/kg",
+    "ejemplo": "≈ 170 g al día"
+   },
+   {
+    "nombre": "Carbohidratos",
+    "valor": "4–6 g/kg",
+    "ejemplo": "≈ 400 g al día"
+   },
+   {
+    "nombre": "Grasas",
+    "valor": "0,8–1 g/kg",
+    "ejemplo": "≈ 75 g al día"
+   },
+   {
+    "nombre": "Calorías",
+    "valor": "+250–400",
+    "ejemplo": "≈ 3.100 kcal"
+   }
+  ],
+  "menu": [
+   {
+    "hora": "07:00",
+    "comida": "Desayuno",
+    "detalle": "4 huevos + 80 g de avena + 1 plátano + café"
+   },
+   {
+    "hora": "10:30",
+    "comida": "Media mañana",
+    "detalle": "Yogur griego 250 g + 30 g de nueces + fruta"
+   },
+   {
+    "hora": "13:30",
+    "comida": "Comida",
+    "detalle": "180 g de pollo + 150 g de arroz (crudo) + verduras + aceite de oliva"
+   },
+   {
+    "hora": "17:00",
+    "comida": "Pre-entreno",
+    "detalle": "150 g de pavo o atún + 2 tortillas o pan + fruta"
+   },
+   {
+    "hora": "19:30",
+    "comida": "Post-entreno",
+    "detalle": "Batido con 40 g de proteína + 60 g de avena"
+   },
+   {
+    "hora": "21:30",
+    "comida": "Cena",
+    "detalle": "200 g de carne roja magra o salmón + 300 g de papa + ensalada"
+   }
+  ],
+  "reglas": [
+   "Meta: subir 0,25–0,5 % del peso por semana.",
+   "Si no subes en 2 semanas: +150 kcal en carbohidratos.",
+   "Si subes más de 0,7 % por semana: −150 kcal.",
+   "Días de pierna: +50 g de carbohidratos.",
+   "Agua: ~40 ml/kg; +500 ml en días con FST-7."
+  ],
+  "suplementos": [
+   [
+    "Creatina monohidrato",
+    "5 g/día"
+   ],
+   [
+    "Proteína en polvo",
+    "Para cubrir la meta diaria"
+   ],
+   [
+    "Cafeína",
+    "3 mg/kg, 45 min antes"
+   ],
+   [
+    "Vitamina D",
+    "Si hay poca exposición solar"
+   ],
+   [
+    "Omega-3",
+    "1–2 g de EPA+DHA"
+   ]
+  ]
+ },
+ "ajustes": [
+  [
+   "Rindes menos dos sesiones seguidas",
+   "Adelanta la descarga una semana."
+  ],
+  [
+   "Te estancas 2+ semanas en un ejercicio",
+   "Cambia el rango de reps o usa la alternativa."
+  ],
+  [
+   "Un músculo no responde",
+   "+2 a 4 series semanales o un estímulo extra."
+  ],
+  [
+   "Hay dolor articular",
+   "Sustituye por la variante en máquina o polea."
+  ],
+  [
+   "Duermes menos de 6 h",
+   "Quita el finisher ese día."
+  ]
+ ],
+ "frase_final": "El pecho y las piernas se construyen con lo que haces cuando ya no puedes más. Seis días, cero excusas."
+}
