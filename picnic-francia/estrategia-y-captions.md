@@ -42,3 +42,23 @@ Guárdalo y compártelo con quien ya tiene un evento pendiente.
 - Teléfono oficial (se usó el de la bio).
 - Que el toldo, la mesa y los cojines, así como el montaje y desmontaje, vengan incluidos en todos los paquetes.
 - Si hay precios "desde" para agregar una slide de paquetes.
+
+## Carrusel "5 ideas para pedirle que sea tu dama" (7 slides)
+**Caption**
+¿Ya tienes a tus damas pero no sabes cómo preguntarles? 💌
+Te dejamos 5 ideas, desde un picnic frente al mar hasta una cena íntima con velas para tu maid of honor.
+Nosotras montamos la que elijas en Los Mochis y alrededores; tú solo haz la pregunta.
+Guárdalo y mándaselo a tu futura dama (o a la novia del grupo 👀). Cotiza por WhatsApp: 668 377 1781.
+
+**Hashtags:** #bridesmaidproposal #propuestadamas #damasdehonor #bodasmexico #bodaslosmochis #picniclosmochis #elpicnicdefrancia #picnicenlaplaya #losmochissinaloa
+
+**Alt text**
+1. Picnic en la playa al atardecer con mesa baja, flores rosas y cojines; texto "5 ideas para pedirle que sea tu dama".
+2. Toldo blanco con flecos y mesa baja en la arena: idea 1, picnic frente al mar.
+3. Mantel de cuadros rosa con rosas, fresas y croissants: idea 2, picnic en el jardín.
+4. Mesa larga con alcatraces y copas: idea 3, brunch de bridesmaids.
+5. Tarjeta, pastel de corazón y copas frente al mar: idea 4, la pregunta en su plato.
+6. Mesa con tulipanes y velas: idea 5, cena íntima.
+7. Toldo junto a la alberca con una tarjeta para cotizar por WhatsApp.
+
+**Nota:** las slides 1, 3 y 5 usan fotos generadas con IA. Cámbialas por fotos reales de tus montajes cuando las tengas.
