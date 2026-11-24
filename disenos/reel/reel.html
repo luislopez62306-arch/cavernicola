@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&family=Pinyon+Script&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;background:#5a1018;color:#f6ece6}
+.a{position:absolute}
+.glow{left:200px;top:500px;width:800px;height:1000px;border-radius:50%;background:#a3314a;filter:blur(160px);opacity:.55}
+#title{left:0;right:0;top:170px;text-align:center}
+#title .cap{font:500 24px Jost;letter-spacing:.42em;opacity:.8}
+#title .t{font-family:'Instrument Serif';font-size:112px;line-height:.95;margin-top:16px}
+#title .t i{color:#f3c6cf}
+#phone{left:250px;top:470px;width:580px;height:1220px;border-radius:84px;background:#140708;padding:16px;box-shadow:0 70px 100px -40px rgba(0,0,0,.75)}
+#scr{width:100%;height:100%;border-radius:70px;overflow:hidden;position:relative;background:#f3dfe0}
+.isl{left:50%;top:24px;width:150px;height:42px;background:#000;border-radius:24px;transform:translateX(-50%);z-index:9}
+#lock{inset:0;background:url(ger-wall.jpg) center 22%/cover}
+#date{left:0;right:0;top:112px;text-align:center;font:500 26px Jost;color:#6e1a28}
+#time{left:0;right:0;top:140px;text-align:center;font:600 130px Jost;color:#6e1a28;letter-spacing:-.02em}
+#notif{left:20px;right:20px;top:860px;background:rgba(250,244,240,.92);border-radius:32px;padding:20px 22px;color:#1d1013;display:flex;gap:16px;box-shadow:0 14px 34px rgba(0,0,0,.25)}
+.ic{flex:none;width:60px;height:60px;border-radius:15px;background:#5a1018;color:#f6ece6;font-family:'Pinyon Script';font-size:38px;display:flex;align-items:center;justify-content:center}
+#notif b{font:600 22px Jost;display:flex;justify-content:space-between;width:400px}
+#notif b span{font-weight:400;color:#777}
+#notif p{font:400 22px/1.3 Jost;margin-top:4px}
+#tap{width:120px;height:120px;border-radius:50%;border:6px solid rgba(110,26,40,.85);background:rgba(110,26,40,.15);left:220px;top:860px;opacity:0}
+#inv{inset:0;overflow:hidden;opacity:0}
+#strip{left:0;top:0;width:100%}
+#end{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0}
+#end .q{font-family:'Instrument Serif';font-size:120px;line-height:.95}
+#end .q i{color:#f3c6cf}
+#end .lg{font-family:'Pinyon Script';font-size:150px;margin-top:70px}
+#end .s{font:500 24px Jost;letter-spacing:.4em;margin-top:20px;opacity:.85}
+#end .btn{margin-top:70px;font:600 30px Jost;letter-spacing:.18em;background:#f3c6cf;color:#5a1018;padding:28px 56px;border-radius:99px}
+#hand{left:0;right:0;top:1740px;text-align:center;font-family:Caveat;font-size:56px;color:#f3c6cf}
+.grain{inset:0;opacity:.06;mix-blend-mode:screen;pointer-events:none}
+</style></head><body>
+<div class="a glow"></div>
+<div class="a" id="title"><div class="cap">POV</div><div class="t">te llegó <i>esta</i><br>notificación</div></div>
+<div class="a" id="phone"><div id="scr">
+  <div class="a isl"></div>
+  <div class="a" id="lock"><div class="a" id="date">miércoles 23 de diciembre</div><div class="a" id="time">9:41</div>
+    <div class="a" id="notif"><div class="ic">G</div><div><b>Invitación <span>ahora</span></b><p>Te invito a mis XV 💌<br>Toca para abrir</p></div></div>
+    <div class="a" id="tap"></div></div>
+  <div class="a" id="inv"><img class="a" id="strip" src="strip.jpg"></div>
+</div></div>
+<div class="a" id="hand">así se abre ✨</div>
+<div class="a" id="end"><div class="q">¿quieres<br><i>la tuya?</i></div><div class="lg">Invitto</div><div class="s">INVITACIONES DIGITALES</div><div class="btn">MÁNDANOS DM →</div></div>
+<svg class="a grain" width="1080" height="1920"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+const seg=(t,a,b)=>ease(cl((t-a)/(b-a)));
+window.render=t=>{
+  // 0-1.2 phone rises; 1.5-2.2 notif drops in; 2.8-3.4 tap; 3.4-4 open; 4-12 scroll; 12.3-13 end card
+  const rise=seg(t,0,1.2);
+  $('phone').style.transform=`translateY(${(1-rise)*260}px) rotate(${(1-rise)*6}deg)`;
+  $('phone').style.opacity=rise;
+  const n=seg(t,1.5,2.2);
+  $('notif').style.transform=`translateY(${(1-n)*-120}px) scale(${.92+.08*n})`;$('notif').style.opacity=n;
+  const tp=cl((t-2.8)/.6);$('tap').style.opacity=tp>0&&tp<1?(1-tp):0;$('tap').style.transform=`scale(${.4+tp*.9})`;
+  $('notif').style.transform+=t>2.8&&t<3.2?' scale(.96)':'';
+  const o=seg(t,3.4,4);$('inv').style.opacity=o;$('lock').style.transform=`scale(${1+o*.08})`;
+  const maxS=document.getElementById('strip').offsetHeight-document.getElementById('scr').offsetHeight;
+  $('strip').style.transform=`translateY(${-maxS*seg(t,4.3,12)}px)`;
+  $('hand').style.opacity=seg(t,4,4.6)*(1-seg(t,11.8,12.3));
+  const e=seg(t,12.3,13);
+  $('end').style.opacity=e;
+  ['phone','title','hand'].forEach(id=>{$(id).style.filter=e?`blur(${e*14}px)`:'';});
+  $('title').style.opacity=1-e;$('phone').style.opacity=rise*(1-e*.85);
+};
+</script>
+</body></html>
