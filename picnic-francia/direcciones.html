@@ -1,0 +1,73 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;600;700&family=Caveat:wght@600&family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#E07A9A;--rosa2:#F6D3DC;--crema:#FBF4EC;--vino:#7A2338;--salvia:#9DB49A;--tinta:#3A2A2E}
+body{margin:0;background:#ddd;display:flex;gap:30px;padding:30px;flex-wrap:wrap}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'DM Sans'}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.ink{filter:url(#rough)}
+.kick{font-size:24px;letter-spacing:.38em;text-transform:uppercase;font-weight:600}
+.hand{font-family:Caveat;font-weight:600}
+.handle{position:absolute;bottom:56px;left:80px;font-size:24px;letter-spacing:.2em}
+/* A: Mantel gingham */
+.a{background:var(--crema)}
+.a .ging{position:absolute;inset:0;background:
+ repeating-linear-gradient(0deg,rgba(224,122,154,.38) 0 60px,transparent 60px 120px),
+ repeating-linear-gradient(90deg,rgba(224,122,154,.38) 0 60px,transparent 60px 120px),#FFF8F4;transform:rotate(-7deg) scale(1.4) translateY(520px)}
+.a .card{position:absolute;left:110px;top:150px;width:780px;height:760px;background:#FFFDF8;transform:rotate(-2.5deg);box-shadow:0 30px 60px rgba(90,40,50,.22),0 4px 8px rgba(0,0,0,.08);padding:80px;box-sizing:border-box}
+.a h1{font-family:'Instrument Serif';font-weight:400;font-size:128px;line-height:.92;letter-spacing:-.03em;color:var(--tinta);margin:34px 0 0}
+.a h1 i{color:var(--rosa)}
+.a p{font-size:30px;line-height:1.4;color:#6b5458;margin:36px 0 0;width:560px}
+.a .tape{position:absolute;width:230px;height:62px;background:rgba(246,211,220,.85);top:-26px;left:270px;transform:rotate(4deg);clip-path:polygon(3% 0,97% 4%,100% 50%,96% 100%,2% 96%,0 50%)}
+.a .note{position:absolute;right:120px;top:950px;font-size:58px;color:var(--vino);transform:rotate(-6deg)}
+/* B: Editorial vino */
+.b{background:#F4E9E1;color:var(--vino)}
+.b .arch{position:absolute;right:-60px;top:250px;width:560px;height:820px;border-radius:999px 999px 0 0;background:var(--rosa2);overflow:hidden}
+.b h1{position:absolute;left:80px;top:250px;margin:0;font-family:'Instrument Serif';font-size:170px;line-height:.86;letter-spacing:-.04em;font-weight:400}
+.b h1 i{display:block}
+.b h1 b{font-family:'Bricolage Grotesque';font-size:130px;letter-spacing:-.05em;display:block;color:var(--tinta)}
+.b .num{position:absolute;left:80px;top:1010px;font-size:30px;width:470px;line-height:1.4;color:var(--tinta)}
+/* C: Postal / boleto */
+.c{background:var(--rosa)}
+.c .tick{position:absolute;left:90px;top:170px;width:900px;height:920px;background:#FFF6EF;border-radius:28px;transform:rotate(1.8deg);box-shadow:0 26px 50px rgba(80,20,40,.28);padding:70px;box-sizing:border-box;color:var(--vino)}
+.c .tick:before,.c .tick:after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;background:var(--rosa);top:560px}
+.c .tick:before{left:-35px}.c .tick:after{right:-35px}
+.c .perf{position:absolute;left:60px;right:60px;top:594px;border-top:4px dashed rgba(122,35,56,.35)}
+.c h1{font-family:'Bricolage Grotesque';font-size:150px;line-height:.86;letter-spacing:-.05em;margin:30px 0 0;color:var(--tinta)}
+.c h1 i{font-family:'Instrument Serif';font-weight:400;color:var(--rosa);letter-spacing:-.02em}
+.c .row{position:absolute;left:70px;right:70px;top:640px;display:flex;justify-content:space-between;font-size:24px;letter-spacing:.2em;text-transform:uppercase}
+.c .row b{display:block;font-size:44px;letter-spacing:-.01em;text-transform:none;font-family:'Instrument Serif';font-weight:400;margin-top:8px}
+.c .stamp{position:absolute;right:70px;top:60px;transform:rotate(12deg)}
+.tag{position:absolute;top:40px;left:40px;background:#111;color:#fff;font-size:22px;padding:8px 16px;letter-spacing:.15em;z-index:9}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="rough"><feTurbulence baseFrequency=".04" numOctaves="2" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="3"/></filter>
+<symbol id="logo" viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="5"><circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="70" stroke-width="2"/><path d="M58 92q42-46 84 0z"/><path d="M58 92q21-14 42 0q21-14 42 0M100 46v76"/><rect x="72" y="112" width="40" height="26" rx="3"/><path d="M76 112q16-20 32 0M72 122h40M86 112v26M98 112v26"/><path d="M118 138l26-14"/></g></symbol></svg>
+
+<div class="s a grain"><div class="ging"></div>
+ <div class="card ink"><div class="tape"></div>
+  <div class="kick" style="color:var(--rosa)">Los Mochis, Sin.</div>
+  <h1>Tu mesa,<br><i>puesta</i> donde<br>tú digas.</h1>
+  <p>Renta de picnic y table styling para propuestas, cumpleaños y tardes con tus amigas.</p>
+ </div>
+ <div class="note hand">desliza y elige tu set →</div>
+ <svg style="position:absolute;left:90px;bottom:120px;width:120px;color:var(--vino)"><use href="#logo"/></svg>
+</div>
+
+<div class="s b grain"><div class="arch"><svg viewBox="0 0 560 820" style="width:100%;height:100%"><g class="ink" stroke="#7A2338" stroke-width="5" fill="none"><path d="M120 360q160-170 320 0z" fill="#FBF4EC"/><path d="M120 360q40-40 80 0q40-40 80 0q40-40 80 0q40-40 80 0" /><path d="M280 190v470"/><rect x="170" y="560" width="180" height="120" rx="10" fill="#E07A9A"/><path d="M190 560q70-90 140 0M170 610h180M230 560v120M290 560v120"/></g></svg></div>
+ <div class="kick" style="position:absolute;left:80px;top:150px">Nº 01 · Table styling</div>
+ <h1><span>Sin prisa,</span><i>sin estrés,</i><b>con mesa.</b></h1>
+ <div class="num">Montamos el picnic completo: mantel, vajilla, flores y sombrilla. Tú solo llegas.</div>
+ <div class="handle">@elpicnicdefrancia</div>
+</div>
+
+<div class="s c grain"><div class="tick ink">
+ <svg class="stamp" style="width:170px;color:var(--rosa)"><use href="#logo"/></svg>
+ <div class="kick">Pase de abordar · Picnic</div>
+ <h1>Di que <i>sí</i><br>con vista<br>al mar.</h1>
+ <div class="perf"></div>
+ <div class="row"><span>Destino<b>Tu lugar favorito</b></span><span>Pasajeros<b>Los que quieras</b></span></div>
+ <div class="hand" style="position:absolute;left:70px;bottom:50px;font-size:54px">cotiza por WhatsApp →</div>
+</div>
+ <div class="handle" style="color:#fff">@elpicnicdefrancia</div>
+</div>
+</body></html>
