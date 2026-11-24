@@ -1,0 +1,32 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Great+Vibes&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ddd;padding:30px}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F6EFEA;font-family:Inter}
+.s::after{content:"";position:absolute;inset:0;opacity:.18;mix-blend-mode:multiply;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.frame{position:absolute;left:70px;top:150px;width:940px;height:1020px;background:#fff;border-radius:22px;padding:22px;box-sizing:border-box;box-shadow:0 10px 30px rgba(90,40,50,.12)}
+.frame div{width:100%;height:100%;border-radius:12px;background:url(fotos/princess-fondo.jpg) center/cover}
+.girl{position:absolute;left:150px;top:400px;width:800px;filter:drop-shadow(0 14px 22px rgba(80,30,40,.28))}
+.label{position:absolute;left:170px;top:190px;transform:rotate(-3deg);padding:18px 46px 26px;font-family:Fredoka;font-weight:700;font-size:104px;color:#D2447C;letter-spacing:.01em;
+ background:repeating-linear-gradient(0deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px),repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px),#F5BFD3;
+ clip-path:polygon(1% 6%,30% 0,62% 5%,99% 1%,100% 70%,97% 100%,55% 95%,20% 100%,0 94%);box-shadow:0 6px 14px rgba(0,0,0,.12)}
+.script{position:absolute;left:560px;top:345px;font-family:'Great Vibes';font-size:120px;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35);transform:rotate(-4deg)}
+.notif{position:absolute;background:rgba(245,245,247,.96);border-radius:26px;box-shadow:0 10px 26px rgba(0,0,0,.18);padding:22px 28px;width:380px}
+.notif .app{display:flex;align-items:center;gap:12px;font-size:20px;color:#8a8a8e;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.notif .app img{width:40px;height:40px;border-radius:10px}
+.notif b{display:block;margin-top:10px;font-size:28px;color:#111}
+.notif span{display:block;font-size:26px;color:#333;margin-top:4px}
+.notif .btn{margin-top:14px;padding-top:12px;border-top:1px solid #ddd;text-align:center;color:#2F7BF6;font-size:26px;font-weight:600}
+.star{position:absolute}
+</style></head><body>
+<div class="s">
+ <div class="frame"><div></div></div>
+ <img class="girl" src="fotos/princess-sticker.png">
+ <div class="label">birthday girl?</div>
+ <div class="script">obviously</div>
+ <svg class="star" style="left:80px;top:120px;width:150px;transform:rotate(-12deg)" viewBox="0 0 100 100"><path d="M50 4l13 30 33 3-25 21 8 32-29-17-29 17 8-32L4 37l33-3z" fill="#8C5A63" stroke="#F5BFD3" stroke-width="5"/><g fill="#F5BFD3"><circle cx="40" cy="40" r="3"/><circle cx="55" cy="45" r="3"/><circle cx="48" cy="58" r="3"/><circle cx="62" cy="60" r="3"/></g></svg>
+ <svg class="star" style="right:110px;top:110px;width:60px" viewBox="0 0 100 100"><path d="M50 4l13 30 33 3-25 21 8 32-29-17-29 17 8-32L4 37l33-3z" fill="#A9B8E8"/></svg>
+ <svg class="star" style="right:150px;top:300px;width:120px" viewBox="0 0 120 120" fill="none" stroke="#E46A97" stroke-width="5" stroke-linecap="round"><path d="M20 100q40-10 60-60M80 40q-20-10-10 20q20 10 30-20q0-20-20-10"/><path d="M60 92l-14-8 4 14"/></svg>
+ <div class="notif" style="left:30px;top:700px;transform:rotate(-2deg)"><div class="app"><img src="fotos/logo.jpg">El Picnic de Francia · ahora</div><b>Tu picnic está listo 🎀</b><span>Flores, mesa y tu toldo.</span></div>
+ <div class="notif" style="right:-30px;top:880px;width:330px"><div class="app">Recordatorio</div><b>Hoy es tu día</b><div class="btn">Celebrar</div></div>
+</div></body></html>
