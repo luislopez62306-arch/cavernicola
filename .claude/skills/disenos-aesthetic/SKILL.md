@@ -15,6 +15,19 @@ Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador d
 5. Construye en HTML/CSS con SVG inline (o en Canva/Figma si hay conector). Renderiza con Playwright a PNG (`deviceScaleFactor: 2`) y **revisa la captura** antes de entregar.
 6. Pasa el checklist final (sección 8).
 
+## 1b. Preferencias aprendidas del usuario (respétalas siempre)
+- **Edita las imágenes**: nada de pegar capturas planas. Recorta elementos, compón, sombra real, que parezca impreso.
+- **Muestra el diseño de la invitación abierta**, no solo el logo o monograma suelto.
+- **Fotorrealismo** cuando pida "como el ejemplo": mockups con moño de terciopelo, papel de envolver, sobres (ver `references/recetas.md` R1/R2).
+- **El moño/objeto protagonista debe verse completo**; agrandar la etiqueta no debe cortarlo.
+- Evitar rosa chicle/fucsia; preferir burdeos, vino, marfil, champaña, plata, negro.
+- **Nunca usar fotos de clientas/personas**; solo secciones gráficas.
+- No inventar datos (horarios, lugares, precios, estadísticas); si falta, usar plantilla "TU NOMBRE AQUÍ" o preguntar.
+- Español de México (§4c). Si da un link de referencia, ábrelo y cópiale el formato, no las ilustraciones.
+
+## 1c. Recetas y herramientas
+Lee `references/recetas.md` antes de un carrusel o mockup: recetas probadas (moño + etiqueta, invitación abierta, panorámico, galería de marcos, portada editorial, celular), cómo capturar invitaciones web, recortar elementos (`scripts/recortar.py`), imprimir diseño sobre foto y generar fotos con IA.
+
 ## 2. Estilos de tendencia (lo que más se ve en Pinterest/Instagram)
 | Estilo | Claves visuales |
 |---|---|
@@ -148,4 +161,6 @@ Un diseño "de IA" es perfecto, simétrico, limpio, genérico y plano. Un ilustr
 - [ ] Márgenes amplios y alineación coherente
 - [ ] Contraste legible (WCAG AA en texto pequeño)
 - [ ] Pasa la regla 7b: textura, imperfección de tinta, asimetría, detalles concretos
+- [ ] Sin textos encimados ni cortados (revisar cada slide a tamaño real)
+- [ ] Sin fotos de personas; sin datos inventados
 - [ ] Tamaño correcto para la red social y renderizado revisado en PNG
