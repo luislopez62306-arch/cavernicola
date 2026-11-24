@@ -1,6 +1,6 @@
 ---
 name: disenos-aesthetic
-description: Úsalo cuando el usuario pida diseños "aesthetic", bonitos, estilo Canva, Pinterest o Instagram, o que parezcan hechos por un ilustrador — posts, carruseles, stories, flyers, publicidad, invitaciones, mockups de papelería (moño, etiqueta, sobre), portafolios — o cuando comparta un post de Instagram como referencia. Incluye estilos de tendencia, paletas, tipografías, recetas probadas, plantillas HTML y scripts para recortar y renderizar a PNG.
+description: Use when the user asks for "aesthetic", pretty, Canva-, Pinterest- or Instagram-style designs, or work that should look made by an illustrator or graphic designer — posts, carruseles, stories, flyers, publicidad, invitaciones, mockups de papelería (moño, etiqueta, sobre), portafolios, contenido para redes — or shares an Instagram/Pinterest post as a reference ("hazlo como este", "que no se vea de IA", "mejora el diseño").
 ---
 
 # Diseños Aesthetic (estilo Pinterest / Instagram / Canva)
@@ -47,7 +47,7 @@ Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador d
 - Español de México (§4c). Si da un link de referencia, ábrelo y cópiale el formato, no las ilustraciones.
 
 ## 1c. Recetas y herramientas
-Lee `references/recetas.md` antes de un carrusel o mockup: recetas probadas (moño + etiqueta, invitación abierta, panorámico, galería de marcos, portada editorial, celular), cómo capturar invitaciones web, recortar elementos (`scripts/recortar.py`), imprimir diseño sobre foto y generar fotos con IA.
+Lee `references/recetas.md` antes de un carrusel o mockup: recetas probadas (moño + etiqueta, invitación abierta, panorámico, galería de marcos, portada editorial, celular), cómo capturar invitaciones web, recortar elementos (`python3 scripts/recortar.py entrada salida.png [tolerancia] [erosion]`, requiere `pip install scipy`), imprimir diseño sobre foto y generar fotos con IA.
 
 ## 2. Estilos de tendencia (lo que más se ve en Pinterest/Instagram)
 | Estilo | Claves visuales |

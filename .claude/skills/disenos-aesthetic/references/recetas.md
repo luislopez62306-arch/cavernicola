@@ -51,7 +51,7 @@ Ver SKILL.md §4b (gancho de carrusel, frase tipográfica, Notes App, esto o aqu
 5. Las imágenes originales suelen venir **embebidas en base64** en el HTML: extraer con regex `data:image/...;base64,` → son mejores que capturas.
 
 ### Recortar elementos (sin fondo)
-`scripts/recortar.py` (numpy + scipy): distancia de color al fondo del borde → `binary_opening` → componente mayor → `binary_fill_holes` → erosión 1–2px → blur 1px en alfa.
+`python3 scripts/recortar.py entrada salida.png` (numpy + scipy; `pip install scipy` si falta): distancia de color al fondo del borde → `binary_opening` → componente mayor → `binary_fill_holes` → erosión 1–2px → blur 1px en alfa.
 - Fondo azul/verde que se cuela: máscara por canal (`B-R>umbral`) en lugar de distancia.
 - Sello de cera: máscara por "rosado" (`R-G>14`).
 - Revisa SIEMPRE el recorte sobre fondo verde chillón para ver halos.
