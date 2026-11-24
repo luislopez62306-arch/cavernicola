@@ -90,3 +90,11 @@ Luego enseña 3 miniaturas muy distintas antes de producir el resto.
 5. Mejor día/hora sugeridos y si conviene post, carrusel o reel.
 6. Idea de reel de 7–15 s con el mismo concepto (tomas + texto en pantalla + tipo de audio en tendencia, sin inventar nombres de canciones).
 7. Qué confirmar con el cliente.
+
+## §9. Producción en Canva (cuando el cliente pide acabado "de Canva")
+Lo que mejor resultado dio: **Canva `create-design` + fotos reales del cliente**.
+1. Obtén URLs públicas HD de sus posts (embed de IG, ver `scripts/ig_perfil.js`) → `upload-asset-from-url` (una por foto).
+2. `create-design` con `format: "Instagram Post (Portrait)"`, `references: [asset_ids]` y un brief en inglés que diga: formato viral, texto EXACTO en español, dónde va el texto (zona libre de la foto), mezcla script + serif, paleta, "no people", elemento nativo (pill, burbuja, polaroid, estampilla).
+3. Haz 3 a la vez (POV, "mándaselo a…", esto o aquello). Poll con `get-create-design-async-job` respetando `wait_seconds`.
+4. Revisa con `read-design` (`thumbnails` + `design_content`) y aplica la rúbrica §6.
+5. Entrega los links de Canva (editables). Si `export-download.canva.com` está bloqueado por el proxy, la clienta exporta desde Canva.
