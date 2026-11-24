@@ -2,6 +2,45 @@
 
 Pega o sigue este prompt al iniciar cualquier pieza. Es el "sistema" con el que trabaja el skill.
 
+## ⚠️ VERSIÓN 2: lo que cambió tras 7 rondas rechazadas (léelo primero)
+Diagnóstico real de lo que falló: **fotos repetidas y sin editar, letras genéricas, ideas sin gancho propio y acabado "de plantilla"**. Cuatro cambios obligatorios:
+
+### A. Referencia ganadora primero ("remake", no invento)
+1. Pide a la clienta **1–3 cuentas o posts que le encanten** (de su nicho o de cualquier marca). Si no da, busca tú 3 cuentas top del nicho (ej. *luxury picnic*, *event styling*, *tablescape*) y elige **1 post concreto con muchas interacciones**.
+2. Disecciona ese post: encuadre, proporción foto/texto, número de palabras, fuentes (nómbralas), colores (hex), elementos, efecto de la foto.
+3. Haz un **remake** con las fotos y la voz de la clienta. Se copia la *estructura*, no la marca ni el texto.
+
+### B. La foto se edita, no solo se coloca
+- Grado de color coherente para toda la tanda (cálido, sombras levantadas, rosas limpios; prueba `filter: contrast(1.05) saturate(1.08) sepia(.08)` o edición en Canva).
+- Recorte con intención: el objeto protagonista en un tercio, aire donde va el texto. **Nunca la misma foto dos veces en una tanda.**
+- Quitar distracciones (letreros, textos ajenos, cables) con recorte o borrado de Canva.
+- Prefiere primeros planos y detalles (copas, moños, tarjetas, flores) para dar variedad; el plano general solo en 1 de cada 3 piezas.
+
+### C. Diseño en 4 capas (si falta una, no está terminado)
+1. **Foto** editada.
+2. **Objeto físico** que da realismo: cinta, moño de satín, papel rasgado, polaroid, sello, sticker con borde blanco.
+3. **Tipografía en 3 niveles**: gancho (script o serif grande) · apoyo (serif/sans pequeña) · micro (handle, fecha, "Nº", sello).
+4. **Detalle de marca**: logo/sello real, color de marca muestreado de su logo.
+
+### D. Brief para Canva / IA de imagen (plantilla obligatoria, en inglés)
+```
+FORMAT: Instagram post 1080x1350.
+REFERENCE: remake of [cuenta/post] — copy its structure: [describe].
+CONCEPT/HOOK: [formato viral] — Spanish text EXACTLY: "…" (no other text).
+PHOTO: use asset [id]; crop so [objeto] sits in [tercio]; warm film grade, soft highlights.
+LAYOUT: text block in [zona] occupying ~[x]% width; [elemento físico] overlapping photo edge at [posición].
+TYPOGRAPHY: headline in [Canva font, ej. "The Seasons" / "Brittany Signature" / "Playfair Display Italic"], support in [ej. "Glacial Indifference" / "Montserrat"], sizes headline 3x support.
+COLORS: [hex de su marca], text [hex].
+ELEMENTS: [satin bow / washi tape / polaroid / stamp edge / chat bubble], subtle paper texture.
+AVOID: generic stock look, centered-everything layout, more than 8 words, people, extra text, emojis as decoration.
+```
+Fuentes de Canva que se ven "de creadora" (no de plantilla): The Seasons, Brittany Signature, Gistesy, Sloop Script, Allura, Playfair Display Italic, Cormorant Garamond, Bodoni FLF, Glacial Indifference, Montserrat. Equivalentes en HTML: ver `instagram.md` §3.
+
+### E. Cómo enseñar las opciones
+- Junta las 3 opciones **en una sola imagen lado a lado** con números grandes 1-2-3 y pide: "¿Cuál número y qué le cambio?".
+- Cada opción debe diferir en **referencia + foto + tipografía**, no solo en el texto.
+- Antes de enseñarlas, corrige en Canva (`edit-design`) lo que baje la rúbrica: tamaño de burbujas, emojis que no se ven, textos que tocan el objeto.
+
 ---
 
 ## ROL
