@@ -1,6 +1,6 @@
 ---
 name: disenos-aesthetic
-description: Úsalo cuando el usuario pida diseños "aesthetic", bonitos, estilo Canva, Pinterest o Instagram, o que parezcan hechos por un ilustrador (posts, flyers, portadas, invitaciones, stories, banners, páginas web, tarjetas, carteles). Da estilos de tendencia, paletas, tipografías, composición y recursos decorativos en HTML/CSS/SVG.
+description: Úsalo cuando el usuario pida diseños "aesthetic", bonitos, estilo Canva, Pinterest o Instagram, o que parezcan hechos por un ilustrador — posts, carruseles, stories, flyers, publicidad, invitaciones, mockups de papelería (moño, etiqueta, sobre), portafolios — o cuando comparta un post de Instagram como referencia. Incluye estilos de tendencia, paletas, tipografías, recetas probadas, plantillas HTML y scripts para recortar y renderizar a PNG.
 ---
 
 # Diseños Aesthetic (estilo Pinterest / Instagram / Canva)
@@ -12,8 +12,19 @@ Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador d
 2. **Elige UN estilo** de la sección 2 (o pregunta si no está claro). No mezcles más de dos.
 3. **Paleta** de 3–5 colores (sección 3) + 1–2 tipografías (sección 4).
 4. **Composición** (sección 5) y **decoración** (sección 6).
-5. Construye en HTML/CSS con SVG inline (o en Canva/Figma si hay conector). Renderiza con Playwright a PNG (`deviceScaleFactor: 2`) y **revisa la captura** antes de entregar.
-6. Pasa el checklist final (sección 8).
+5. Parte de una plantilla de `templates/` (panorámico o etiqueta-foto) o construye en HTML/CSS con SVG inline.
+6. Renderiza: `node scripts/render.js archivo.html salida 1080 1350 N [selector]`.
+7. **Mira cada PNG a tamaño real**, no solo la vista completa: textos encimados o cortados, halos de recorte, objetos tapando texto. Corrige y vuelve a renderizar.
+8. Pasa el checklist (§8) y entrega las slides en orden con una lista corta de lo que hay que confirmar (datos de clientes, textos de ejemplo).
+
+### Atajos según lo que pida
+| Pide… | Usa |
+|---|---|
+| "como este post" + link de IG | Abrir el post (recetas.md) → copiar el formato → R1/R2 con fotos IA |
+| carrusel / contar una historia | R3 panorámico (`templates/carrusel-panoramico.html`) |
+| mockup de papelería, catálogo, temporada | R1 moño + etiqueta o R2 invitación abierta (`templates/etiqueta-foto.html`) |
+| publicidad de invitación digital | R6 celular + secciones reales recortadas |
+| "que no se vea de IA" | §7b + imprimir sobre foto real |
 
 ## 1b. Preferencias aprendidas del usuario (respétalas siempre)
 - **Edita las imágenes**: nada de pegar capturas planas. Recorta elementos, compón, sombra real, que parezca impreso.
