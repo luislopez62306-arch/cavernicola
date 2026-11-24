@@ -7,7 +7,10 @@ description: Use when the user asks for "aesthetic", pretty, Canva-, Pinterest- 
 
 Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador de Canva, NO una plantilla genérica de web.
 
-**Rol:** actúa como **diseñador gráfico senior + creador de contenido**. No solo decoras: defines un brief, investigas tendencias del momento, propones un concepto, aplicas fundamentos (retícula, jerarquía, tipografía) y entregas piezas finales cuidadas **con su caption, hashtags y alt text**. Lee `references/oficio.md` al iniciar cualquier proyecto.
+**Rol:** actúa como **diseñador gráfico senior + creador de contenido**. No solo decoras: defines un brief, investigas tendencias del momento, propones un concepto, aplicas fundamentos (retícula, jerarquía, tipografía) y entregas piezas finales cuidadas **con su caption, hashtags y alt text**. Lee `references/oficio.md` al iniciar cualquier proyecto y `references/instagram.md` si el cliente tiene perfil de Instagram.
+
+## 00. Antes que nada: prompt maestro
+Lee y sigue **`references/prompt-maestro.md`** en cada encargo: rol de creador de contenido viral, formatos virales para negocios de eventos, banco de ganchos, rúbrica de autocrítica (rehacer si < 8), diagnóstico cuando el cliente dice "no me gusta" y paquete de entrega final (PNG + caption + hashtags + alt + idea de reel).
 
 ## 0. Proceso profesional (resumen de `references/oficio.md`)
 1. **Brief** de 5 líneas: objetivo, público, mensaje único, formato/canal, material real.
@@ -30,6 +33,7 @@ Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador d
 ### Atajos según lo que pida
 | Pide… | Usa |
 |---|---|
+| link a un **perfil** de IG del cliente | `node scripts/ig_perfil.js usuario carpeta` → ficha de estilo (instagram.md §1) → replicar sus formatos con `templates/posts-estilo-ig.html` |
 | "como este post" + link de IG | Abrir el post (recetas.md) → copiar el formato → R1/R2 con fotos IA |
 | carrusel / contar una historia | R3 panorámico (`templates/carrusel-panoramico.html`) |
 | mockup de papelería, catálogo, temporada | R1 moño + etiqueta o R2 invitación abierta (`templates/etiqueta-foto.html`) |
@@ -37,6 +41,12 @@ Objetivo: que el resultado parezca hecho a mano por un ilustrador o diseñador d
 | "que no se vea de IA" | §7b + imprimir sobre foto real |
 
 ## 1b. Preferencias aprendidas del usuario (respétalas siempre)
+- **Tras dos "no me gusta" seguidos, no adivines otra vez**: haz la pregunta de diagnóstico (prompt-maestro §7) y muestra 3 miniaturas muy distintas.
+- **Cada pieza lleva una idea viral** (POV, antes/después, "mándaselo a…", esto o aquello, she said yes), no solo foto + título decorativo.
+- **Si el cliente tiene perfil, iguala SU estilo** (sus formatos, fuentes, pills, polaroids, estampillas, emojis) antes de proponer estilos propios. Propuestas editoriales/genéricas fueron rechazadas.
+- **Texto mínimo**: foto + título de 2–6 palabras. No agregar slides de ventas, listas, párrafos ni numeración salvo que lo pida.
+- **Fotos reales del cliente** (sin personas) por encima de IA; nada de ilustraciones caricaturescas.
+- **Detalle a tamaño real**: revisar encimados, cortes, texto ajeno en las fotos (instagram.md §4).
 - **Edita las imágenes**: nada de pegar capturas planas. Recorta elementos, compón, sombra real, que parezca impreso.
 - **Muestra el diseño de la invitación abierta**, no solo el logo o monograma suelto.
 - **Fotorrealismo** cuando pida "como el ejemplo": mockups con moño de terciopelo, papel de envolver, sobres (ver `references/recetas.md` R1/R2).
@@ -101,6 +111,9 @@ Regla 60/30/10: 60% fondo, 30% secundario, 10% acento.
 - Sans limpia: Poppins, DM Sans, Outfit, Space Grotesk (brutal)
 - Combo clásico: titular serif itálica + subtítulo sans en MAYÚSCULAS con `letter-spacing: .2em` + una palabra en script.
 Jerarquía: titular 3–5× el tamaño del texto. Máx. 3 tamaños.
+
+## 4a. Tipografías de Instagram/Canva
+Ver `references/instagram.md` §3: equivalencias Canva/IG → Google Fonts (Pinyon Script, Great Vibes, Bodoni Moda condensada, Poppins 600, Instrument Serif) y reglas de uso.
 
 ## 4b. Formatos virales de Instagram (2026)
 El algoritmo premia **guardados y compartidos** más que likes. Los carruseles (7–10 slides) son el formato estático que más alcance tiene. La **primera slide lo es todo**: gancho de máx. 8 palabras con curiosidad que obligue a deslizar.

@@ -1,0 +1,78 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#D9849C;--crema:#FBF5EE;--vino:#6E1F33;--tinta:#33252A}
+body{margin:0;background:#ddd;display:flex;gap:30px;padding:30px;flex-wrap:wrap}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'DM Sans';color:var(--tinta)}
+.s::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:50;opacity:.13;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.paper{background-color:var(--crema);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence baseFrequency='.01 .05' numOctaves='4' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .35 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E")}
+.ph{position:absolute;background-size:cover;background-position:center}
+.kick{font-size:20px;letter-spacing:.42em;text-transform:uppercase;font-weight:500}
+.serif{font-family:'Instrument Serif';font-weight:400}
+.it{font-family:'Cormorant Garamond';font-style:italic;font-weight:500}
+.sello{width:96px;height:96px}
+.sh{box-shadow:0 1px 2px rgba(50,20,25,.12),0 20px 40px -12px rgba(50,20,25,.3)}
+
+/* A: foto mantel completa */
+.a .ph{inset:0;background-image:url(fotos/mantel.jpg);background-position:center 60%}
+.a .veil{position:absolute;inset:0;background:radial-gradient(90% 70% at 20% 22%,rgba(252,244,240,.72),rgba(252,244,240,.25) 55%,transparent 75%)}
+.a .kick{position:absolute;left:84px;top:110px;color:var(--vino)}
+.a h1{position:absolute;left:78px;top:170px;margin:0;font-size:128px;line-height:.88;letter-spacing:-.035em;color:var(--vino)}
+.a h1 em{font-family:'Cormorant Garamond';font-weight:500;font-style:italic;letter-spacing:-.02em;color:#B45670}
+.a p{position:absolute;left:84px;top:690px;width:400px;margin:0;font-size:27px;line-height:1.45;color:var(--tinta)}
+.a .foot{position:absolute;left:84px;right:84px;bottom:70px;display:flex;justify-content:space-between;align-items:flex-end;color:#fff;font-size:21px;letter-spacing:.24em;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+
+/* B: editorial con arco */
+.b .arch{left:500px;top:120px;width:500px;height:860px;border-radius:999px 999px 6px 6px;background-image:url(fotos/playa.jpg);background-position:42% center}
+.b .line{position:absolute;left:484px;top:104px;width:530px;height:892px;border-radius:999px 999px 14px 14px;border:1.5px solid rgba(110,31,51,.45)}
+.b .kick{position:absolute;left:80px;top:124px;color:var(--vino)}
+.b h1{position:absolute;left:74px;top:220px;margin:0;font-size:118px;line-height:.9;letter-spacing:-.035em;color:var(--tinta);z-index:3}
+.b h1 em{display:block;font-family:'Cormorant Garamond';font-weight:500;font-style:italic;color:var(--vino);letter-spacing:-.02em}
+.b .txt{position:absolute;left:80px;top:860px;width:360px;font-size:26px;line-height:1.5}
+.b .txt b{font-weight:600;color:var(--vino)}
+.b .foot{position:absolute;left:80px;right:80px;bottom:70px;border-top:1px solid rgba(110,31,51,.35);padding-top:26px;display:flex;justify-content:space-between;align-items:center;font-size:20px;letter-spacing:.26em;color:var(--vino)}
+.b .cap{position:absolute;left:500px;top:1000px;font-size:18px;letter-spacing:.3em;color:rgba(110,31,51,.7)}
+
+/* C: propuesta, foto + tarjeta */
+.c .ph{left:0;top:0;width:1080px;height:1350px;background-image:url(fotos/detalle.jpg);background-position:center 30%}
+.c .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(40,14,22,.25) 60%,rgba(40,14,22,.7))}
+.c .card{position:absolute;left:84px;right:84px;bottom:84px;height:500px;padding:56px 64px;box-sizing:border-box;border-radius:6px}
+.c .card .kick{color:var(--vino);font-size:18px}
+.c h1{margin:22px 0 0;font-size:104px;line-height:.92;letter-spacing:-.035em;color:var(--tinta)}
+.c h1 em{font-family:'Cormorant Garamond';font-weight:500;font-style:italic;color:var(--vino)}
+.c .row{position:absolute;left:64px;right:64px;bottom:50px;padding-top:24px;border-top:1px dashed rgba(110,31,51,.4);display:flex;justify-content:space-between;font-size:17px;letter-spacing:.28em;text-transform:uppercase;color:rgba(51,37,42,.75)}
+.c .row b{display:block;margin-top:8px;font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-size:34px;letter-spacing:0;text-transform:none;color:var(--tinta)}
+.c .top{position:absolute;left:84px;right:84px;top:70px;display:flex;justify-content:space-between;color:#fff;font-size:20px;letter-spacing:.3em;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="sello" viewBox="0 0 200 200"><g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="93" stroke-width="3"/><circle cx="100" cy="100" r="70" stroke-width="1.2"/><path id="arc" d="M30 100a70 70 0 0 1 140 0" stroke="none"/><path id="arc2" d="M26 104a74 74 0 0 0 148 0" stroke="none"/></g>
+<text font-family="Instrument Serif" font-size="24" letter-spacing="4" fill="currentColor"><textPath href="#arc" startOffset="50%" text-anchor="middle">EL PICNIC</textPath></text>
+<text font-family="Instrument Serif" font-size="22" letter-spacing="4" fill="currentColor"><textPath href="#arc2" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">DE FRANCIA</textPath></text>
+<g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M68 98q32-38 64 0z"/><path d="M68 98q16-9 32 0q16-9 32 0M100 60v62"/><rect x="80" y="112" width="28" height="18" rx="2"/><path d="M84 112q10-12 20 0"/></g></symbol></svg>
+
+<div class="s a">
+ <div class="ph"></div><div class="veil"></div>
+ <div class="kick">Renta de picnic · Los Mochis</div>
+ <h1 class="serif">Tu mesa,<br><em>puesta</em><br>donde tú<br>digas.</h1>
+ <p>Para propuestas, cumpleaños y tardes con tus amigas.</p>
+ <div class="foot"><span>@ELPICNICDEFRANCIA</span><svg class="sello" style="color:#fff"><use href="#sello"/></svg></div>
+</div>
+
+<div class="s b paper">
+ <div class="kick">Table styling · Nº 01</div>
+ <div class="line"></div><div class="ph arch sh"></div>
+ <h1 class="serif">Sin prisa,<em>sin estrés,</em>con mesa.</h1>
+ <div class="txt">Montamos el picnic completo: mantel, vajilla, flores y sombrilla. <b>Tú solo llegas.</b></div>
+ <div class="cap">LOS MOCHIS · SINALOA</div>
+ <div class="foot"><span>@ELPICNICDEFRANCIA</span><svg class="sello" style="width:78px;height:78px"><use href="#sello"/></svg></div>
+</div>
+
+<div class="s c">
+ <div class="ph"></div><div class="grad"></div>
+ <div class="top"><span>PROPUESTAS</span><span>LOS MOCHIS</span></div>
+ <div class="card paper sh">
+  <div class="kick">Pase de abordar · Nº 047</div>
+  <h1 class="serif">Di que <em>sí</em><br>con vista al mar.</h1>
+  <div class="row"><span>Destino<b>Tu lugar favorito</b></span><span>Hora<b>Al atardecer</b></span><span>Cotiza<b>Por WhatsApp</b></span></div>
+ </div>
+</div>
+</body></html>
