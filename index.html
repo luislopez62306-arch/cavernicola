@@ -46,7 +46,8 @@ p{font-size:14.5px;line-height:1.8}
 .env .flap svg,.env .front svg{width:100%;height:100%;display:block}
 #sobre.abierto .flap{transform:rotateX(180deg)}
 .env .front{position:absolute;inset:0;z-index:2}
-.seal{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);z-index:4;width:78px;height:78px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#eef1f6,#aab3c4 55%,#7d879b);box-shadow:0 4px 14px rgba(0,0,0,.45),inset 0 -3px 6px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-family:var(--script);font-size:30px;color:var(--ink);transition:opacity .4s}
+.seal{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);z-index:4;width:96px;height:96px;border-radius:50%;background:#283345;box-shadow:0 4px 14px rgba(0,0,0,.45),inset 0 -3px 6px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;overflow:hidden;border:3px solid #b8bfcc;transition:opacity .4s}
+.seal img{width:100%;height:100%;object-fit:cover;transform:scale(1.25)}
 #sobre.abierto .seal{opacity:0}
 .env-txt{position:absolute;bottom:-58px;left:0;right:0;text-align:center;color:var(--mist);font-size:11px;letter-spacing:.35em;text-transform:uppercase;animation:pulso 2s ease-in-out infinite}
 @keyframes pulso{50%{opacity:.4}}
@@ -58,7 +59,9 @@ p{font-size:14.5px;line-height:1.8}
   linear-gradient(180deg,rgba(20,33,61,.15) 0%,rgba(20,33,61,.25) 45%,rgba(20,33,61,.92) 85%),
   url('portada.jpg') center/cover,
   radial-gradient(ellipse at 50% 30%,#4b6593,#1b2a4d 70%)}
-.hero .flores{position:absolute;top:0;left:0;right:0;height:46%;opacity:.95}
+.hero .mono{position:absolute;top:6%;left:50%;width:74%;transform:translateX(-50%);-webkit-mask-image:radial-gradient(circle,#000 55%,transparent 71%);mask-image:radial-gradient(circle,#000 55%,transparent 71%);animation:funde 1.6s ease both}
+@keyframes funde{from{opacity:0}to{opacity:1}}
+.mono-f{width:180px;margin:0 auto 6px;display:block;-webkit-mask-image:radial-gradient(circle,#000 55%,transparent 71%);mask-image:radial-gradient(circle,#000 55%,transparent 71%)}
 .hero .txt{position:relative;padding:0 24px 56px}
 .hero .eyebrow{color:var(--baby)}
 .hero .nombres{font-family:var(--script);font-size:68px;line-height:.95;text-shadow:0 2px 20px rgba(0,0,0,.35)}
@@ -165,7 +168,7 @@ footer .tag{font-size:10px;letter-spacing:.35em;color:var(--baby);margin-top:6px
     <div class="ribbon"></div>
     <div class="front"><svg viewBox="0 0 145 100" preserveAspectRatio="none"><path d="M0 100L72.5 52 145 100z" fill="#1d2f5a"/><path d="M0 0l72.5 56L0 100z" fill="#213563"/><path d="M145 0L72.5 56 145 100z" fill="#213563"/></svg></div>
     <div class="flap"><svg viewBox="0 0 145 58" preserveAspectRatio="none"><path d="M0 0h145L72.5 58z" fill="#2a4073"/><path d="M0 0h145L72.5 58z" fill="none" stroke="#b8bfcc" stroke-width=".4"/></svg></div>
-    <div class="seal">D&amp;E</div>
+    <div class="seal"><img src="monograma.jpg" alt=""></div>
     <div class="env-txt">Toca para abrir</div>
   </div>
 </div>
@@ -175,7 +178,7 @@ footer .tag{font-size:10px;letter-spacing:.35em;color:var(--baby);margin-top:6px
   <!-- 1. Portada -->
   <section class="hero">
     <div class="foto"></div>
-    <svg class="flores" viewBox="0 0 250 160" preserveAspectRatio="xMidYMin meet"><use href="#ramo"/></svg>
+    <img class="mono" src="monograma.jpg" alt="Monograma D &amp; E">
     <div class="txt">
       <div class="eyebrow">Nos casamos</div>
       <div class="nombres">Dunia<span class="y">&amp;</span>Emmanuel</div>
@@ -311,7 +314,7 @@ footer .tag{font-size:10px;letter-spacing:.35em;color:var(--baby);margin-top:6px
   </section>
 
   <footer class="dark" style="padding-top:20px">
-    <svg class="divider" style="color:var(--baby)"><use href="#div"/></svg>
+    <img class="mono-f" src="monograma.jpg" alt="">
     <p class="gracias reveal">“Gracias por ser parte de nuestra historia y por acompañarnos en uno de los días más felices de nuestra vida.”</p>
     <div class="firma">Dunia &amp; Emmanuel</div>
     <div class="tag">26 · XII · 2026</div>
