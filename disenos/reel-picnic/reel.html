@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;background:#fbf4ec;color:#fff}
+.a{position:absolute}
+.ph{inset:0;background-size:cover;background-position:center;opacity:0}
+.sh{inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 60%,rgba(0,0,0,.5))}
+#cap{left:80px;right:80px;top:230px;text-align:center}
+#cap .k{font:500 26px Jost;letter-spacing:.4em}
+#cap .t{font-family:'Instrument Serif';font-size:118px;line-height:.95;margin-top:18px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+#lbl{left:0;right:0;bottom:300px;text-align:center;font:500 30px Jost;letter-spacing:.32em;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+#end{inset:0;background:#fbf4ec;color:#b8566f;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;
+ background-image:repeating-linear-gradient(90deg,rgba(217,132,159,.18) 0 40px,transparent 40px 80px),repeating-linear-gradient(0deg,rgba(217,132,159,.18) 0 40px,transparent 40px 80px);background-size:100% 160px;background-repeat:repeat-x}
+#end .box{background:#fbf4ec;padding:60px 40px;display:flex;flex-direction:column;align-items:center}
+#end img{width:420px}
+#end .q{font-family:'Instrument Serif';font-size:96px;line-height:1;margin-top:50px}
+#end .s{font:500 26px Jost;letter-spacing:.34em;margin-top:30px}
+#end .btn{margin-top:60px;font:600 32px Jost;letter-spacing:.12em;background:#d9849f;color:#fff;padding:28px 54px;border-radius:99px}
+#end .ig{font:500 28px Jost;margin-top:28px;letter-spacing:.08em}
+</style></head><body>
+<div id="phs"></div>
+<div class="a sh"></div>
+<div class="a" id="cap"><div class="k">LOS MOCHIS</div><div class="t">tu mesa,<br><i>lista</i> para<br>celebrar</div></div>
+<div class="a" id="lbl"></div>
+<div class="a" id="end"><div class="box"><img src="logo-picnic.svg"><div class="q">¿Armamos<br><i>el tuyo?</i></div><div class="s">PICNICS · DECORACIÓN DE MESA</div><div class="btn">WHATSAPP 668 377 1781</div><div class="ig">@elpicnicdefrancia</div></div></div>
+<script>
+const F=[['perfil-playa-toldo','PICNIC EN LA PLAYA'],['perfil-mesa-larga','MESAS PARA EVENTOS'],['perfil-alberca-toldo','JUNTO A LA ALBERCA'],['perfil-playa-cabana','PROPUESTAS'],['perfil-mesa-redonda','CUMPLEAÑOS'],['perfil-mesa-ventana','DETALLES QUE ENAMORAN']];
+const phs=document.getElementById('phs');
+F.forEach(([f])=>{const d=document.createElement('div');d.className='a ph';d.style.backgroundImage=`url(${f}.jpg)`;phs.appendChild(d)});
+const P=[...phs.children],$=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const D=1.6,S=0.8; // cada foto 1.6s desde t=0.8
+window.render=t=>{
+  P.forEach((p,i)=>{const s=S+i*D-(i?0.25:S);const o=cl((t-s)/.3);const k=cl((t-s)/(D+.4));
+    p.style.opacity=i==0?1:o;p.style.transform=`scale(${1.12-k*.1}) translate(${(i%2?-1:1)*k*14}px,0)`;});
+  $('cap').style.opacity=1-cl((t-1.8)/.4);
+  const i=Math.floor((t-S)/D);$('lbl').textContent=i>=0&&i<F.length?F[i][1]:'';
+  $('lbl').style.opacity=i>=0&&t<S+F.length*D?cl(((t-S)%D)/.3):0;
+  $('end').style.opacity=cl((t-(S+F.length*D))/.5);
+};
+</script></body></html>

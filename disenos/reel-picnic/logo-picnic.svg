@@ -1,0 +1,15 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<defs><path id="top" d="M33 100 A67 67 0 0 1 167 100"/><path id="bot" d="M18 100 A82 82 0 0 0 182 100"/></defs>
+<circle cx="100" cy="100" r="97" fill="none" stroke="#D9849F" stroke-width="2.4"/>
+<circle cx="100" cy="100" r="90" fill="none" stroke="#D9849F" stroke-width="1"/>
+<text font-family="Cormorant Garamond" font-weight="700" font-size="25" fill="#D9849F" letter-spacing="3"><textPath href="#top" startOffset="50%" text-anchor="middle">EL PICNIC</textPath></text>
+<text font-family="Cormorant Garamond" font-weight="700" font-size="23" fill="#D9849F" letter-spacing="3"><textPath href="#bot" startOffset="50%" text-anchor="middle">DE FRANCIA</textPath></text>
+<g fill="none" stroke="#D9849F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M62 86 C 66 60, 88 52, 104 52 C 122 52, 140 62, 146 86"/>
+ <path d="M62 86 q7 7 14 0 q7 7 14 0 q7 7 14 0 q7 7 14 0 q7 7 14 0 q7 7 12 0"/>
+ <path d="M104 52 L 92 88 M104 52 L104 88 M104 52 L 118 88 M104 52 L 132 87 M104 52 L 78 87"/>
+ <path d="M104 52 v-5"/><path d="M104 88 L 100 132"/>
+ <path d="M70 112 h50 l-5 26 h-40 z"/><path d="M78 112 q17 -24 34 0"/>
+ <path d="M76 120 h42 M77 128 h40 M84 112 l-3 26 M96 112 v26 M108 112 l3 26"/>
+ <path d="M126 136 c8 -14 18 -24 26 -26 c4 2 2 6 -2 10 c-6 6 -14 12 -24 16z"/><path d="M134 128 l4 3 M140 122 l4 3 M146 116 l3 3"/>
+</g></svg>
