@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;background:#0e0c0b;color:#f3ead8}
+.a{position:absolute}
+.glow{left:140px;top:560px;width:800px;height:900px;border-radius:50%;filter:blur(170px);opacity:.5;background:#6b5328}
+#hook{left:80px;right:80px;top:200px;text-align:center}
+#hook .k{font:500 26px Jost;letter-spacing:.42em;color:#c9a96a}
+#hook .t{font-family:'Instrument Serif';font-size:116px;line-height:.95;margin-top:18px}
+#hook .t i{color:#d8bd85}
+.ph{left:290px;top:560px;width:500px;height:1000px;border-radius:72px;background:#050404;padding:14px;box-shadow:0 60px 90px -40px #000,0 0 0 2px #2a241c;opacity:0}
+.ph div{width:100%;height:100%;border-radius:60px;background-size:cover;background-position:center top}
+.lb{left:0;right:0;top:1620px;text-align:center;opacity:0}
+.lb .n{font:500 24px Jost;letter-spacing:.4em;color:#c9a96a}
+.lb .s{font-family:'Instrument Serif';font-style:italic;font-size:72px;margin-top:6px}
+#end{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;background:#0e0c0b}
+#end img{width:560px}
+#end .q{font-family:'Instrument Serif';font-size:104px;line-height:1;margin-top:80px}
+#end .q i{color:#d8bd85}
+#end .s{font:500 26px Jost;letter-spacing:.36em;margin-top:34px;color:#c9a96a}
+#end .btn{margin-top:70px;font:600 30px Jost;letter-spacing:.14em;border:2px solid #c9a96a;color:#e6d3a8;padding:28px 54px;border-radius:99px}
+#end .w{font:500 28px Jost;margin-top:30px;letter-spacing:.1em;opacity:.85}
+.grain{inset:0;opacity:.06;mix-blend-mode:screen}
+</style></head><body>
+<div class="a glow"></div>
+<div class="a" id="hook"><div class="k">INVITACIONES DIGITALES</div><div class="t">¿cuál es <i>tu</i><br>estilo?</div></div>
+<div class="a ph"><div style="background-image:url(w-ana.jpg)"></div></div>
+<div class="a ph"><div style="background-image:url(w-anahi.jpg)"></div></div>
+<div class="a ph"><div style="background-image:url(ger-wall.jpg)"></div></div>
+<div class="a lb"><div class="n">01</div><div class="s">rojo pasión</div></div>
+<div class="a lb"><div class="n">02</div><div class="s">elegancia clásica</div></div>
+<div class="a lb"><div class="n">03</div><div class="s">coquette</div></div>
+<div class="a" id="end"><img src="logo-dorado.png"><div class="q">diseñamos<br><i>la tuya</i></div><div class="s">XV AÑOS · BODAS · EVENTOS</div><div class="btn">WHATSAPP 668 358 6262</div><div class="w">invittomx.com</div></div>
+<svg class="a grain" width="1080" height="1920"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<script>
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2,seg=(t,a,b)=>ease(cl((t-a)/(b-a)));
+const P=[...document.querySelectorAll('.ph')],L=[...document.querySelectorAll('.lb')],$=q=>document.querySelector(q);
+window.render=t=>{
+  P.forEach((p,i)=>{const s=1+i*3,inn=seg(t,s,s+.7),out=i<2?seg(t,s+2.6,s+3.2):seg(t,10,10.6);
+    p.style.opacity=inn*(1-out);p.style.transform=`translateX(${(1-inn)*420-out*420}px) rotate(${(1-inn)*8-out*8}deg) scale(${1+.03*cl((t-s)/3)})`;
+    L[i].style.opacity=seg(t,s+.4,s+.9)*(1-out);L[i].style.transform=`translateY(${(1-seg(t,s+.4,s+.9))*30}px)`;});
+  $('#hook').style.opacity=seg(t,0,.6);
+  $('#end').style.opacity=seg(t,10.2,10.9);
+  $('#end').style.transform=`scale(${1.04-.04*seg(t,10.2,11.5)})`;
+};
+</script></body></html>
