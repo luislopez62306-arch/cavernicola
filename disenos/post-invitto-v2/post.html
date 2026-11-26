@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{display:flex;gap:40px;width:max-content}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#0e0c0b;color:#f3ead8}
+.a{position:absolute}
+.glow{left:420px;top:260px;width:700px;height:900px;border-radius:50%;filter:blur(160px);opacity:.55}
+.frame{inset:36px;border:1px solid rgba(201,169,106,.35)}
+.k{left:90px;top:120px;font:500 22px Jost;letter-spacing:.42em;color:#c9a96a}
+.t{left:86px;top:170px;font-family:'Instrument Serif';font-size:104px;line-height:.92;letter-spacing:-.025em}
+.t i{color:#d8bd85}
+.list{left:90px;top:640px;font:400 27px/1.2 Jost;color:#e9dcc3}
+.list div{padding:20px 0;border-bottom:1px solid rgba(201,169,106,.3);width:360px;display:flex;gap:18px}
+.list b{font:500 18px Jost;color:#c9a96a;letter-spacing:.2em;padding-top:5px}
+.ph{left:560px;top:150px;width:440px;height:930px;border-radius:66px;background:#050404;padding:13px;transform:rotate(4deg);box-shadow:-40px 60px 90px -30px #000,0 0 0 2px #3a3022,inset 0 0 0 2px #1a1612}
+.ph .sc{width:100%;height:100%;border-radius:54px;background-size:cover;background-position:center top;position:relative;overflow:hidden}
+.ph .sc:after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.14),transparent 35%)}
+.isl{left:50%;top:14px;width:110px;height:32px;border-radius:20px;background:#000;transform:translateX(-50%)}
+.tag{font-family:'Instrument Serif';font-style:italic;font-size:40px;color:#e6d3a8;left:90px;top:1112px}
+.bot{left:90px;right:90px;bottom:84px;display:flex;justify-content:space-between;align-items:center}
+.bot img{height:50px}
+.btn{font:600 20px Jost;letter-spacing:.16em;background:#c9a96a;color:#0e0c0b;padding:18px 32px;border-radius:99px}
+.grain{inset:0;opacity:.06;mix-blend-mode:screen}
+</style></head><body>
+<div class="s" id="p1">
+ <div class="a glow" style="background:#7a1e28"></div><div class="a frame"></div>
+ <div class="a k">POSADA NAVIDEÑA</div>
+ <div class="a t">tu posada<br>empieza<br><i>en el celular</i></div>
+ <div class="a list"><div><b>01</b>Invitación animada con sello</div><div><b>02</b>Ubicación con mapa</div><div><b>03</b>Confirmación por WhatsApp</div><div><b>04</b>Música de fondo</div></div>
+ <div class="a ph"><div class="sc" style="background-image:url(posada.jpg)"><div class="a isl"></div></div></div>
+ <div class="a tag">diciembre se celebra con estilo ✨</div>
+ <div class="a bot"><img src="logo-dorado.png"><div class="btn">COTIZA: 668 358 6262</div></div>
+ <svg class="a grain" width="1080" height="1350"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+</div>
+<div class="s" id="p2">
+ <div class="a glow" style="background:#4b6a8a;opacity:.4"></div><div class="a frame"></div>
+ <div class="a k">BODAS · 2027</div>
+ <div class="a t">el “sí”<br>también se<br><i>invita bonito</i></div>
+ <div class="a list"><div><b>01</b>Diseño a la medida</div><div><b>02</b>Cuenta regresiva</div><div><b>03</b>Mesa de regalos</div><div><b>04</b>Confirmación de invitados</div></div>
+ <div class="a ph"><div class="sc" style="background-image:url(boda.png)"><div class="a isl"></div></div></div>
+ <div class="a tag">aparta tu fecha con tiempo 💍</div>
+ <div class="a bot"><img src="logo-dorado.png"><div class="btn">COTIZA: 668 358 6262</div></div>
+ <svg class="a grain" width="1080" height="1350"><rect width="100%" height="100%" filter="url(#n)"/></svg>
+</div>
+</body></html>
