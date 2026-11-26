@@ -1,0 +1,121 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&family=Pinyon+Script&family=Caveat:wght@600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{display:flex;gap:40px;width:max-content}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden}
+.a{position:absolute}
+.ph{border-radius:56px;background:#050404;padding:11px;box-shadow:0 50px 80px -30px rgba(0,0,0,.8),0 0 0 2px #3a3022}
+.ph .sc{width:100%;height:100%;border-radius:46px;background-size:cover;background-position:center top;background-repeat:no-repeat;position:relative;overflow:hidden}
+.ph .sc:after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.18),transparent 32%)}
+.ph .isl{position:absolute;left:50%;top:12px;width:92px;height:27px;border-radius:20px;background:#000;transform:translateX(-50%);z-index:2}
+.gold{background:linear-gradient(100deg,#8a6a32 0%,#e9cf8e 22%,#b28a45 40%,#f6e2a8 55%,#9c7638 75%,#d9b874 100%);-webkit-background-clip:text;color:transparent}
+.grain{inset:0;pointer-events:none}
+
+/* ===== A · NEO DECO ===== */
+#A{background:#0c0a09;color:#f3ead8}
+#A .rays{inset:0;background:repeating-conic-gradient(from -90deg at 50% 118%,rgba(201,169,106,.05) 0 2deg,transparent 2deg 6deg)}
+#A .arch{left:150px;top:370px;width:780px;height:940px;border:2px solid #c9a96a;border-bottom:none;border-radius:390px 390px 0 0}
+#A .arch2{left:170px;top:390px;width:740px;height:920px;border:1px solid rgba(201,169,106,.5);border-bottom:none;border-radius:370px 370px 0 0}
+#A .archbg{left:172px;top:392px;width:736px;height:920px;border-radius:368px 368px 0 0;background:radial-gradient(ellipse at 50% 40%,#3a1a20,#120c0c 70%)}
+#A .k{left:0;right:0;top:86px;text-align:center;font:500 21px Jost;letter-spacing:.5em;color:#c9a96a}
+#A .t{left:0;right:0;top:118px;text-align:center;font:400 112px/1 'Bodoni Moda';letter-spacing:-.01em}
+#A .t i{font-family:'Pinyon Script';font-style:normal;font-size:110px;letter-spacing:0;line-height:1.1}
+#A .p1{left:205px;top:560px;width:300px;height:620px;transform:rotate(-9deg)}
+#A .p2{left:575px;top:560px;width:300px;height:620px;transform:rotate(9deg)}
+#A .p3{left:380px;top:470px;width:330px;height:690px;z-index:3}
+#A .seal{left:770px;top:1000px;width:210px;z-index:5;transform:rotate(14deg);filter:drop-shadow(0 18px 20px rgba(0,0,0,.7))}
+#A .base{left:0;right:0;bottom:0;height:190px;background:linear-gradient(#0c0a09 0,#0c0a09);border-top:2px solid #c9a96a;z-index:4}
+#A .base .l{left:90px;top:62px;height:52px}
+#A .base .btn{right:90px;top:52px;font:600 19px Jost;letter-spacing:.16em;background:linear-gradient(100deg,#b28a45,#f0d99a,#b28a45);color:#0e0c0b;padding:20px 32px;border-radius:99px}
+#A .fan{left:50%;top:-6px;transform:translateX(-50%);width:200px;z-index:5}
+#A .num{left:96px;top:1080px;font:500 17px Jost;letter-spacing:.3em;color:#c9a96a;z-index:5;writing-mode:vertical-rl;transform:rotate(180deg)}
+
+/* ===== B · SCRAPBOOK ===== */
+#B{background:#efe6d6;color:#1b1512}
+#B .paper{inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.6),transparent 60%),radial-gradient(ellipse at 80% 90%,rgba(120,90,50,.18),transparent 55%)}
+#B .grid{inset:0;background-image:linear-gradient(rgba(140,110,70,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(140,110,70,.12) 1px,transparent 1px);background-size:54px 54px}
+#B .t{left:80px;top:90px;font:400 128px/.88 'Instrument Serif';letter-spacing:-.03em;z-index:6}
+#B .t i{color:#8c2f39}
+#B .sub{left:86px;top:340px;font:500 20px Jost;letter-spacing:.38em;color:#6b5a48;z-index:6}
+#B .pol{background:#fbf8f2;padding:20px 20px 70px;box-shadow:0 30px 40px -20px rgba(60,40,20,.55),0 2px 4px rgba(0,0,0,.15)}
+#B .pol .img{background-size:cover;background-position:center top}
+#B .pol .cap{position:absolute;left:0;right:0;bottom:14px;text-align:center;font:600 34px Caveat;color:#3a2a22}
+#B .tape{height:46px;width:170px;background:rgba(201,169,106,.55);clip-path:polygon(0 8%,4% 0,8% 10%,12% 0,16% 8%,20% 0,100% 0,96% 12%,100% 25%,96% 40%,100% 55%,96% 70%,100% 85%,96% 100%,0 100%,4% 85%,0 70%,4% 55%,0 40%,4% 25%);z-index:5}
+#B .tape.r{background:rgba(140,47,57,.45)}
+#B .torn{left:-20px;right:-20px;bottom:0;height:250px;background:#16110e;clip-path:polygon(0 18%,4% 12%,9% 20%,14% 10%,20% 17%,26% 8%,33% 16%,40% 9%,47% 18%,53% 11%,60% 19%,67% 9%,73% 16%,80% 8%,87% 17%,93% 10%,100% 16%,100% 100%,0 100%);z-index:7}
+#B .foot{left:90px;right:90px;bottom:62px;display:flex;justify-content:space-between;align-items:center;z-index:8}
+#B .foot img{height:48px}
+#B .foot .w{font:500 30px Jost;letter-spacing:.12em;color:#e6d3a8}
+#B .foot .w small{display:block;font-size:15px;letter-spacing:.4em;color:#c9a96a;margin-bottom:4px}
+#B .stamp{width:190px;height:190px;border-radius:50%;border:3px dashed #8c2f39;color:#8c2f39;display:flex;align-items:center;justify-content:center;text-align:center;font:600 20px/1.15 Jost;letter-spacing:.16em;transform:rotate(-14deg);opacity:.85;z-index:6}
+#B .hand{font:600 44px Caveat;color:#8c2f39;z-index:6}
+
+/* ===== C · EDITORIAL / REVISTA ===== */
+#C{background:#f4efe6;color:#141010}
+#C .mast{left:0;right:0;top:56px;text-align:center;font:700 190px/1 'Bodoni Moda';letter-spacing:-.04em;color:#141010}
+#C .bar{left:70px;right:70px;top:258px;display:flex;justify-content:space-between;font:500 17px Jost;letter-spacing:.3em;border-top:1px solid #141010;border-bottom:1px solid #141010;padding:12px 0}
+#C .big{right:-30px;top:330px;font:400 640px/1 'Bodoni Moda';font-style:italic;color:#e3d6bf;letter-spacing:-.06em}
+#C .ph{left:120px;top:350px;width:420px;height:880px;transform:rotate(-4deg)}
+#C .h{left:600px;top:420px;width:400px;font:400 92px/.9 'Instrument Serif';letter-spacing:-.02em}
+#C .h i{color:#8c2f39}
+#C .cover-lines{left:600px;top:780px;width:400px}
+#C .cover-lines div{padding:16px 0;border-top:1px solid rgba(20,16,16,.25);font:400 24px/1.2 'Instrument Serif'}
+#C .cover-lines b{display:block;font:600 14px Jost;letter-spacing:.3em;color:#8c2f39;margin-bottom:4px}
+#C .seal{left:440px;top:1060px;width:180px;transform:rotate(-12deg);filter:drop-shadow(0 14px 16px rgba(0,0,0,.45))}
+#C .foot{left:70px;right:70px;bottom:50px;display:flex;justify-content:space-between;align-items:center;font:500 18px Jost;letter-spacing:.24em}
+#C .foot .btn{background:#141010;color:#f4efe6;padding:18px 28px;border-radius:99px}
+#C .foot .logo{height:40px;filter:brightness(0) saturate(100%)}
+</style></head><body>
+
+<!-- A · Neo Deco: arco dorado + 3 invitaciones -->
+<div class="s" id="A">
+ <div class="a rays"></div>
+ <div class="a k">INVITACIONES DIGITALES · 2026</div>
+ <div class="a t"><span class="gold">elige tu</span><br><i class="gold">invitación</i></div>
+ <div class="a archbg"></div><div class="a arch"></div><div class="a arch2"></div>
+ <svg class="a" style="left:470px;top:352px" width="140" height="60" viewBox="0 0 140 60"><g fill="none" stroke="#c9a96a" stroke-width="2"><path d="M70 58 L10 58 A60 60 0 0 1 130 58 Z"/><path d="M70 58 L30 20 M70 58 L52 4 M70 58 L88 4 M70 58 L110 20"/></g><circle cx="70" cy="58" r="6" fill="#c9a96a"/></svg>
+ <div class="a ph p1"><div class="sc" style="background-image:url(danna.jpg)"><div class="isl"></div></div></div>
+ <div class="a ph p2"><div class="sc" style="background-image:url(posada.jpg)"><div class="isl"></div></div></div>
+ <div class="a ph p3"><div class="sc" style="background-image:url(lilia.jpg);background-position:center 30px;background-color:#f1dfe2"><div class="isl"></div></div></div>
+ <img class="a seal" src="sello-colibri.png">
+ <div class="a base"><img class="a l" src="logo-dorado.png"><div class="a btn">COTIZA · 668 358 6262</div></div>
+ <svg class="a grain" width="1080" height="1350" style="opacity:.08;mix-blend-mode:screen"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+</div>
+
+<!-- B · Scrapbook: polaroids de invitaciones -->
+<div class="s" id="B">
+ <div class="a paper"></div><div class="a grid"></div>
+ <div class="a t">¿esto o<br><i>aquello?</i></div>
+ <div class="a sub">¿CUÁL ES TU ESTILO?</div>
+ <div class="a stamp" style="left:820px;top:80px">HECHAS<br>A LA<br>MEDIDA</div>
+ <div class="a pol" style="left:90px;top:420px;width:330px;height:560px;transform:rotate(-7deg);z-index:2"><div class="img" style="width:290px;height:470px;background-image:url(boda.png)"></div><div class="cap">romántica ♡</div></div>
+ <div class="a tape" style="left:180px;top:400px;transform:rotate(-12deg)"></div>
+ <div class="a pol" style="left:380px;top:470px;width:330px;height:560px;transform:rotate(3deg);z-index:3"><div class="img" style="width:290px;height:470px;background-image:url(posada.jpg)"></div><div class="cap">navideña ✦</div></div>
+ <div class="a tape r" style="left:470px;top:452px;transform:rotate(5deg)"></div>
+ <div class="a pol" style="left:670px;top:400px;width:330px;height:560px;transform:rotate(8deg);z-index:2"><div class="img" style="width:290px;height:470px;background-image:url(anahi.jpg)"></div><div class="cap">clásica ✧</div></div>
+ <div class="a tape" style="left:770px;top:385px;transform:rotate(14deg)"></div>
+ <div class="a hand" style="left:660px;top:1010px;transform:rotate(-4deg)">dime cuál en comentarios ↓</div>
+ <svg class="a" style="left:120px;top:1000px;z-index:6" width="260" height="70"><path d="M8 40 C60 10,120 60,180 30 S240 20,252 34" fill="none" stroke="#8c2f39" stroke-width="5" stroke-linecap="round"/></svg>
+ <div class="a torn"></div>
+ <div class="a foot"><img src="logo-dorado.png"><div class="w"><small>WHATSAPP</small>668 358 6262</div></div>
+ <svg class="a grain" width="1080" height="1350" style="opacity:.18;mix-blend-mode:multiply;z-index:9"><filter id="n2"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3"/><feColorMatrix values="0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .2 0 0 0 .6 0"/></filter><rect width="100%" height="100%" filter="url(#n2)"/></svg>
+</div>
+
+<!-- C · Portada de revista -->
+<div class="s" id="C">
+ <div class="a mast">INVITTO</div>
+ <div class="a bar"><span>EDICIÓN XV AÑOS</span><span>DICIEMBRE 2026</span><span>INVITTOMX.COM</span></div>
+ <div class="a big">XV</div>
+ <div class="a ph"><div class="sc" style="background-image:url(lilia.jpg);background-position:center 30px;background-color:#f1dfe2"><div class="isl"></div></div></div>
+ <img class="a seal" src="sello-colibri.png">
+ <div class="a h">la invitación<br>que se <i>abre<br>con un sello</i></div>
+ <div class="a cover-lines">
+  <div><b>LO NUEVO</b>sobre animado que se abre al tocarlo</div>
+  <div><b>AMBIENTE</b>música de fondo desde el primer segundo</div>
+  <div><b>SIN PAPEL</b>se manda por WhatsApp en un link</div>
+ </div>
+ <div class="a foot"><img class="logo" src="logo-dorado.png"><span class="btn">COTIZA · 668 358 6262</span></div>
+ <svg class="a grain" width="1080" height="1350" style="opacity:.14;mix-blend-mode:multiply"><filter id="n3"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .5 0"/></filter><rect width="100%" height="100%" filter="url(#n3)"/></svg>
+</div>
+</body></html>
