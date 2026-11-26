@@ -56,6 +56,13 @@ Lee y sigue **`references/prompt-maestro.md`** en cada encargo: rol de creador d
 - No inventar datos (horarios, lugares, precios, estadísticas); si falta, usar plantilla "TU NOMBRE AQUÍ" o preguntar.
 - Español de México (§4c). Si da un link de referencia, ábrelo y cópiale el formato, no las ilustraciones.
 
+## 1a. Marcas y piezas en movimiento
+- **Antes de diseñar para un cliente conocido lee `references/marcas.md`** (paleta, logo, teléfono, material real, lo que ya gustó). Si pide "para hoy", aterriza en la fecha/temporada actual (diciembre = posadas, XV y bodas de fin de año).
+- **Reels**: sigue `references/reel.md` (render por frame + ffmpeg).
+- **Render nítido**: `render.js` usa `SCALE=2` por defecto (PNG 2160×2700); usa `SCALE=1` solo para revisiones internas.
+- **No repitas**: revisa `disenos/` y usa una invitación distinta a la última pieza.
+- **Excepción de texto mínimo**: en publicidad de servicios (Invitto) una lista corta de 3–4 funciones está bien, pero **solo funciones que la invitación mostrada sí trae**; si no lo sabes, deja título + gancho.
+
 ## 1c. Recetas y herramientas
 Lee `references/recetas.md` antes de un carrusel o mockup: recetas probadas (moño + etiqueta, invitación abierta, panorámico, galería de marcos, portada editorial, celular), cómo capturar invitaciones web, recortar elementos (`python3 scripts/recortar.py entrada salida.png [tolerancia] [erosion]`, requiere `pip install scipy`), imprimir diseño sobre foto y generar fotos con IA.
 
@@ -202,3 +209,4 @@ Un diseño "de IA" es perfecto, simétrico, limpio, genérico y plano. Un ilustr
 - [ ] Concepto nombrado y fuentes de tendencias citadas
 - [ ] Caption, hashtags y alt text entregados junto a las slides
 - [ ] Tamaño correcto para la red social y renderizado revisado en PNG
+- [ ] Datos de marca tomados de `references/marcas.md` (logo, teléfono, paleta), no de memoria

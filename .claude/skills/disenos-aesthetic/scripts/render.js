@@ -1,5 +1,5 @@
 // Renderiza slides a PNG. Uso:
-//   node render.js archivo.html salida-prefijo [ancho=1080] [alto=1350] [n=1] [selector]
+//   [SCALE=2] node render.js archivo.html salida-prefijo [ancho=1080] [alto=1350] [n=1] [selector]
 // - Con selector (p. ej. ".s"): captura cada elemento que coincida.
 // - Sin selector: trata la página como lienzo panorámico de n slides y lo corta.
 const { chromium } = require('playwright');
@@ -8,7 +8,7 @@ const path = require('path');
   const [file, out, W = 1080, H = 1350, n = 1, sel] = process.argv.slice(2);
   const w = +W, h = +H, N = +n;
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: w * Math.max(N, 1) + 60, height: h + 60 }, deviceScaleFactor: 1 });
+  const p = await b.newPage({ viewport: { width: w * Math.max(N, 1) + 60, height: h + 60 }, deviceScaleFactor: +(process.env.SCALE || 2) });
   await p.goto('file://' + path.resolve(file));
   await p.evaluate(() => document.fonts.ready);
   await p.waitForTimeout(1500);
