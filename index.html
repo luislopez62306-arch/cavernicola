@@ -7,35 +7,31 @@
 <meta name="description" content="Boda de Dunia & Emmanuel · 26 de diciembre de 2026 · Ahome, Sinaloa">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --midnight:#14213d; --ink:#1f2f55; --steel:#5b74a3; --baby:#a9c4e2;
-  --mist:#c9ced8; --silver:#b8bfcc; --white:#f7f7f4; --texto:#1f2f55;
-  --script:'Pinyon Script',cursive; --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+  --navy:#1c2b52; --deep:#14213d; --steel:#5b74a3; --baby:#a9c4e2; --mist:#c9ced8; --silver:#b8bfcc;
+  --papel:#f1f4f9; --linea:#2a3c6b;
+  --script:'Pinyon Script',cursive; --serif:'Playfair Display',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--midnight);font-family:var(--sans);font-weight:300;color:var(--texto);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--sans);font-weight:300;color:var(--navy);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-color:var(--deep);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%235b74a3' stroke-opacity='.45' stroke-width='1.2'%3E%3Ccircle cx='60' cy='60' r='14'/%3E%3Ccircle cx='60' cy='60' r='6'/%3E%3Cpath d='M60 46c-8-14-24-14-26 0 12 2 20 6 26 14 6-8 14-12 26-14-2-14-18-14-26 0zM60 74c-8 14-24 14-26 0 12-2 20-6 26-14 6 8 14 12 26 14-2 14-18 14-26 0z'/%3E%3Cpath d='M0 0l20 20M120 0l-20 20M0 120l20-20M120 120l-20-20M0 60h20M100 60h20M60 0v20M60 100v20'/%3E%3Ccircle cx='0' cy='0' r='10'/%3E%3Ccircle cx='120' cy='0' r='10'/%3E%3Ccircle cx='0' cy='120' r='10'/%3E%3Ccircle cx='120' cy='120' r='10'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment:fixed}
 body.locked{overflow:hidden;height:100vh}
-.inv{max-width:480px;margin:0 auto;background:var(--white);box-shadow:0 0 70px rgba(0,0,0,.5);overflow:hidden}
-section{padding:64px 28px;text-align:center;position:relative}
-h2{font-family:var(--script);font-weight:400;font-size:46px;line-height:1.1;color:var(--ink);margin-bottom:10px}
-.eyebrow{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--steel);margin-bottom:14px}
-p{font-size:14.5px;line-height:1.8}
-.serif{font-family:var(--serif);font-size:19px;line-height:1.6}
-.divider{width:150px;height:22px;margin:18px auto;display:block;color:var(--silver)}
-.dark{background:radial-gradient(ellipse at 50% 0%,#2a3d68 0%,var(--midnight) 70%);color:var(--white)}
-.dark h2{color:var(--white)}.dark .eyebrow{color:var(--baby)}
-.mist{background:linear-gradient(180deg,#eef1f6,#e3e8f0)}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+.inv{max-width:440px;margin:0 auto;background:var(--papel);box-shadow:0 0 60px rgba(0,0,0,.55);overflow:hidden;position:relative}
+section{position:relative;padding:56px 30px;text-align:center}
+h2{font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:16px}
+.script{font-family:var(--script);font-weight:400}
+p{font-size:13.5px;line-height:1.75}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
 .reveal.on{opacity:1;transform:none}
-.btn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:13px 26px;border-radius:40px;border:1px solid var(--steel);color:var(--ink);text-decoration:none;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:.3s;background:transparent}
-.btn:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.dark .btn{border-color:var(--baby);color:var(--white)}
-.dark .btn:hover{background:var(--baby);color:var(--midnight)}
-.btn svg{width:16px;height:16px}
+.link{display:inline-block;margin-top:22px;font-family:var(--serif);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:inherit;text-decoration:none;cursor:pointer;background:none;border:0}
+.link:before{content:"/ "}.link:after{content:" /"}
+.line{fill:none;stroke:var(--linea);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
 
 /* Sobre */
 #sobre{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,#2a3d68,#0d1730 75%);transition:opacity 1s ease 1s,visibility 0s 2s}
@@ -43,131 +39,134 @@ p{font-size:14.5px;line-height:1.8}
 .env{position:relative;width:min(84vw,380px);aspect-ratio:1.45;cursor:pointer;perspective:1000px}
 .env .back{position:absolute;inset:0;background:linear-gradient(160deg,#25386a,#17264a);border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
 .env .flap{position:absolute;left:0;right:0;top:0;height:58%;transform-origin:top;transition:transform 1s ease;z-index:3}
-.env .flap svg,.env .front svg{width:100%;height:100%;display:block}
+.env svg{width:100%;height:100%;display:block}
 #sobre.abierto .flap{transform:rotateX(180deg)}
 .env .front{position:absolute;inset:0;z-index:2}
-.seal{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);z-index:4;width:96px;height:96px;border-radius:50%;background:#283345;box-shadow:0 4px 14px rgba(0,0,0,.45),inset 0 -3px 6px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;overflow:hidden;border:3px solid #b8bfcc;transition:opacity .4s}
+.seal{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);z-index:4;width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid var(--silver);background:#283345;box-shadow:0 4px 14px rgba(0,0,0,.45);transition:opacity .4s}
 .seal img{width:100%;height:100%;object-fit:cover;transform:scale(1.25)}
 #sobre.abierto .seal{opacity:0}
 .env-txt{position:absolute;bottom:-58px;left:0;right:0;text-align:center;color:var(--mist);font-size:11px;letter-spacing:.35em;text-transform:uppercase;animation:pulso 2s ease-in-out infinite}
 @keyframes pulso{50%{opacity:.4}}
-.ribbon{position:absolute;top:0;bottom:0;left:50%;width:14px;margin-left:-7px;background:linear-gradient(90deg,#8fb0d6,#c3d6ec,#8fb0d6);z-index:2;opacity:.9}
 
-/* Portada */
-.hero{min-height:100vh;min-height:100svh;padding:0;display:flex;flex-direction:column;justify-content:flex-end;color:var(--white);background:var(--midnight)}
-.hero .foto{position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(20,33,61,.15) 0%,rgba(20,33,61,.25) 45%,rgba(20,33,61,.92) 85%),
-  url('portada.jpg') center/cover,
-  radial-gradient(ellipse at 50% 30%,#4b6593,#1b2a4d 70%)}
-.hero .mono{position:absolute;top:6%;left:50%;width:74%;transform:translateX(-50%);-webkit-mask-image:radial-gradient(circle,#000 55%,transparent 71%);mask-image:radial-gradient(circle,#000 55%,transparent 71%);animation:funde 1.6s ease both}
-@keyframes funde{from{opacity:0}to{opacity:1}}
-.mono-f{width:180px;margin:0 auto 6px;display:block;-webkit-mask-image:radial-gradient(circle,#000 55%,transparent 71%);mask-image:radial-gradient(circle,#000 55%,transparent 71%)}
-.hero .txt{position:relative;padding:0 24px 56px}
-.hero .eyebrow{color:var(--baby)}
-.hero .nombres{font-family:var(--script);font-size:68px;line-height:.95;text-shadow:0 2px 20px rgba(0,0,0,.35)}
-.hero .y{display:block;font-family:var(--serif);font-style:italic;font-size:30px;color:var(--baby);margin:4px 0}
-.hero .fecha{margin-top:22px;font-family:var(--serif);font-size:20px;letter-spacing:.3em;display:flex;align-items:center;justify-content:center;gap:14px}
-.hero .fecha i{width:1px;height:26px;background:var(--silver)}
-.scroll{margin-top:30px;display:inline-block;width:22px;height:36px;border:1px solid var(--mist);border-radius:12px;position:relative}
-.scroll:after{content:"";position:absolute;left:50%;top:7px;width:2px;height:7px;margin-left:-1px;background:var(--mist);border-radius:2px;animation:baja 1.8s infinite}
-@keyframes baja{to{transform:translateY(12px);opacity:0}}
+/* 1. Portada */
+.hero{padding:40px 30px 30px}
+.hero .nombres{position:relative;z-index:2;text-align:left;font-family:var(--script);font-size:44px;line-height:.9;color:var(--navy);margin-left:4px}
+.hero .nombres span{display:block}
+.hero .nombres span+span{margin-left:30px}
+.hero .lazo{position:absolute;right:8px;top:14px;width:150px;height:170px;z-index:1}
+.marco{position:relative;z-index:2;width:76%;margin:22px auto 0;background:var(--navy);padding:16px 16px 0}
+.marco .foto{aspect-ratio:4/5;background:#283345 url('monograma.jpg') center/118% no-repeat;position:relative;overflow:hidden}
+.marco .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.marco .std{font-family:var(--serif);color:var(--papel);font-size:13px;letter-spacing:.14em;padding:12px 0 14px}
+.angeles{display:block;width:88%;margin:-8px auto 0;height:96px}
 
-/* Versículo */
-.verso .q{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.55;color:var(--ink)}
-.verso .cita{margin-top:14px;font-size:11px;letter-spacing:.35em;color:var(--steel);text-transform:uppercase}
+/* 2. Querida familia */
+.semana{display:flex;justify-content:center;align-items:center;gap:8px;margin:26px 0 0}
+.semana span{width:34px;height:30px;border:1px solid var(--linea);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px}
+.semana .corazon{width:64px;height:58px;border:0;position:relative;color:var(--papel);font-size:20px}
+.semana .corazon svg{position:absolute;inset:0;width:100%;height:100%;fill:var(--navy)}
+.semana .corazon b{position:relative;font-weight:400;margin-top:-4px}
+.mes{font-family:var(--script);font-size:32px;margin:0 0 18px 90px;line-height:1}
+.cd{display:flex;justify-content:center;gap:16px;margin:22px 0 6px}
+.cd div{min-width:46px}
+.cd b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;line-height:1}
+.cd small{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
 
-/* Cuenta regresiva */
-.cd{display:flex;justify-content:center;gap:10px;margin-top:22px}
-.cd div{width:70px;padding:14px 0 10px;border:1px solid rgba(201,206,216,.35);border-radius:10px;background:rgba(255,255,255,.04)}
-.cd b{display:block;font-family:var(--serif);font-weight:500;font-size:32px;line-height:1;font-variant-numeric:lining-nums tabular-nums}
-.cd span{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--baby)}
-.cal{margin:26px auto 0;max-width:280px}
-.cal .mes{font-family:var(--serif);font-size:20px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px}
-.cal .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:12px}
-.cal .grid .h{color:var(--baby);font-size:10px;letter-spacing:.1em}
-.cal .grid .d{padding:6px 0;position:relative}
-.cal .grid .d.dia{color:var(--midnight);font-weight:500}
-.cal .grid .d.dia:before{content:"";position:absolute;inset:0 4px;margin:auto;width:30px;height:30px;border-radius:50%;background:var(--baby);z-index:-1}
-.cal .grid .d.dia{z-index:0}
+/* 3. Itinerario */
+.timing{padding-bottom:30px}
+.timing .onda{position:absolute;left:0;top:96px;width:100%;height:calc(100% - 120px);pointer-events:none}
+.ev{position:relative;display:flex;align-items:center;gap:12px;margin:26px 0;min-height:92px}
+.ev .tx{flex:1}
+.ev .tit{font-family:var(--script);font-size:34px;line-height:1}
+.ev .hora{font-family:var(--serif);font-size:16px;margin:2px 0 4px}
+.ev .tx p{font-size:12.5px;line-height:1.55}
+.ev svg.ic{width:62px;height:62px;flex:none}
+.ev.izq{text-align:left}.ev.der{text-align:right;flex-direction:row-reverse}
+.ev .tx{max-width:230px}
+.ev.der .tx{margin-left:auto}
 
-/* Padres / padrinos */
-.familia{display:grid;gap:26px;margin-top:20px}
-.familia h3,.padrinos h3{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--steel);font-weight:500;margin-bottom:8px}
-.familia .n,.padrinos .n{font-family:var(--serif);font-size:20px;line-height:1.45;color:var(--ink)}
-.padrinos{display:grid;grid-template-columns:1fr;gap:22px;margin-top:18px}
-.padrinos .sub{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--silver);display:block;margin-top:6px}
+/* 4. Lugar (bloque corazón) */
+.lugar{padding:0;color:var(--papel)}
+.lugar .cuerpo{background:var(--navy);padding:54px 30px 10px}
+.lugar h2{color:var(--papel)}
+.lugar .punta{display:block;width:100%;height:auto;margin-top:-1px}
+.lugar .sitio{margin-top:18px}
+.lugar .sitio .tit{font-family:var(--script);font-size:32px;color:var(--baby);line-height:1.1}
+.lugar .sitio p{font-size:13px}
+.lugar .sitio .hr{font-family:var(--serif);font-size:15px;letter-spacing:.1em;margin:4px 0}
+.lugar .link{margin-top:10px;color:var(--papel)}
+.baile{display:block;width:100%;height:110px;margin:14px auto 0}
+.lazos{position:absolute;left:0;right:0;bottom:-70px;display:flex;justify-content:space-between;padding:0 10px;pointer-events:none}
+.lazos svg{width:110px;height:170px}
 
-/* Eventos */
-.evento{background:#fff;border:1px solid #dfe4ec;border-radius:18px;padding:34px 22px;margin-top:22px;box-shadow:0 14px 30px rgba(31,47,85,.07)}
-.evento .ic{width:54px;height:54px;margin:0 auto 10px;color:var(--steel)}
-.evento h3{font-family:var(--script);font-weight:400;font-size:38px;color:var(--ink)}
-.evento .hora{font-family:var(--serif);font-size:30px;color:var(--ink);margin:6px 0 2px}
-.evento .lugar{font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-top:10px}
-.evento .dir{font-size:13.5px;color:#5c6782;margin-top:4px}
+/* 5. Dress code */
+.dress{padding-top:110px}
+.corazones{display:flex;justify-content:center;gap:12px;margin:20px 0 6px}
+.corazones svg{width:38px;height:36px}
+.nota{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);margin-top:6px}
+.siluetas{display:block;width:100%;height:170px;margin-top:20px}
 
-/* Itinerario */
-.timeline{position:relative;margin:24px auto 0;max-width:320px;text-align:left}
-.timeline:before{content:"";position:absolute;left:50%;top:6px;bottom:6px;width:1px;background:var(--silver)}
-.t{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;margin-bottom:26px}
-.t .dot{width:11px;height:11px;border-radius:50%;background:var(--baby);border:2px solid var(--white);box-shadow:0 0 0 1px var(--steel);justify-self:center;z-index:1}
-.t .h{text-align:right;font-family:var(--serif);font-size:20px;color:var(--ink);padding-right:12px}
-.t .l{padding-left:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+/* 6. Detalles */
+.det{margin-top:26px}
+.det .tit{font-family:var(--script);font-size:34px;line-height:1}
+.det .mini{width:12px;height:12px;fill:var(--navy);margin:8px auto 6px;display:block}
+.det p{max-width:310px;margin:0 auto}
+.hashtag{font-family:var(--serif);font-style:italic;font-size:16px;word-break:break-word}
+.botones{display:flex;justify-content:center;gap:12px;margin-top:18px}
+.botones a{width:38px;height:38px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--papel)}
+.botones svg{width:18px;height:18px}
 
-/* Dress code */
-.dress svg{width:120px;height:90px;color:var(--ink)}
-.paleta{display:flex;justify-content:center;gap:10px;margin-top:18px}
-.paleta span{width:34px;height:34px;border-radius:50%;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.12)}
-.paleta span.no:after{content:"";position:absolute;left:-3px;right:-3px;top:50%;height:2px;background:#a14a55;transform:rotate(-45deg)}
-.aviso{display:inline-block;margin-top:16px;padding:10px 18px;border-radius:30px;background:#e8edf5;font-size:12.5px;color:var(--ink)}
+/* 7. Formulario */
+.anketa{background:var(--navy);color:var(--papel)}
+.anketa h2{color:var(--papel)}
+form{text-align:left;margin-top:22px}
+.campo{display:block;width:100%;background:none;border:0;border-bottom:1px solid rgba(201,206,216,.55);color:var(--papel);font:inherit;font-size:13px;padding:10px 2px;margin-bottom:12px;outline:none}
+.campo::placeholder{color:rgba(241,244,249,.75)}
+.campo:focus{border-bottom-color:var(--baby)}
+.grupo{margin:18px 0 6px;font-size:13px}
+.opc{display:flex;align-items:center;gap:10px;font-size:12.5px;margin:9px 0;cursor:pointer}
+.opc input{appearance:none;width:13px;height:13px;border:1px solid var(--mist);border-radius:50%;flex:none;cursor:pointer}
+.opc input[type=checkbox]{border-radius:2px}
+.opc input:checked{background:var(--baby);box-shadow:inset 0 0 0 2px var(--navy)}
+.anketa .link{display:block;margin:24px auto 0;color:var(--papel)}
+.fecha-lim{font-size:12px;color:var(--baby);margin-top:6px;text-align:center}
+.anillos{display:block;width:210px;height:130px;margin:26px auto 0}
 
-/* Galería */
-.galeria{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px}
-.galeria .ph{aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:linear-gradient(150deg,#c9d6e8,#8ea4c8);position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-family:var(--script);font-size:26px}
-.galeria .ph.w{grid-column:span 2;aspect-ratio:16/10;background:linear-gradient(150deg,#5b74a3,#1f2f55)}
-.galeria .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-
-/* Sobres / hashtag / RSVP */
-.sobre-ic{width:70px;height:56px;color:var(--steel);margin:0 auto 6px}
-.hashtag{font-family:var(--serif);font-size:20px;color:var(--ink);word-break:break-word;margin-top:12px;font-style:italic}
-.adultos{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:12px 20px;border:1px dashed var(--baby);border-radius:12px;font-size:12.5px;letter-spacing:.06em;color:var(--white)}
-.limite{font-family:var(--serif);font-size:22px;margin-top:6px}
-
-footer{padding:56px 28px 70px;text-align:center}
-footer .gracias{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6}
-footer .firma{font-family:var(--script);font-size:54px;margin-top:20px;color:var(--white)}
-footer .tag{font-size:10px;letter-spacing:.35em;color:var(--baby);margin-top:6px}
+/* 8. Final */
+.final h2{font-size:24px;line-height:1.35}
+.final .foto2{width:64%;aspect-ratio:4/5;margin:26px auto 0;background:#283345 url('monograma.jpg') center/118% no-repeat;position:relative;overflow:hidden}
+.final .foto2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.firma{font-family:var(--script);font-size:36px;line-height:1.1;margin-top:26px}
+.gracias{font-size:12.5px;font-style:italic;max-width:300px;margin:18px auto 0}
 </style>
 </head>
 <body class="locked">
 
-<!-- Símbolos reutilizables -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="div" viewBox="0 0 150 22"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M2 11h52M96 11h52"/><path d="M75 3c-5 4-5 12 0 16 5-4 5-12 0-16z"/><path d="M60 11c4-5 10-5 15 0-5 5-11 5-15 0zM90 11c-4-5-10-5-15 0 5 5 11 5 15 0z"/></g><circle cx="54" cy="11" r="1.6" fill="currentColor"/><circle cx="96" cy="11" r="1.6" fill="currentColor"/></symbol>
-    <!-- Rosa -->
-    <symbol id="rosa" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="var(--c,#f3f4f7)"/><g fill="none" stroke="rgba(20,33,61,.22)" stroke-width="2"><path d="M50 50c8-2 10 8 2 11-11 4-18-8-12-17 8-12 27-8 29 7 3 19-19 29-34 18-17-12-12-39 9-44"/><path d="M14 40c8-20 34-30 54-18M30 86c22 10 50 0 58-22"/></g></symbol>
-    <symbol id="hoja" viewBox="0 0 60 24"><path d="M2 12C16 0 44 0 58 12 44 24 16 24 2 12z" fill="#5f7a72"/><path d="M4 12h52" stroke="#466057" stroke-width="1"/></symbol>
-    <symbol id="ramo">
-      <use href="#hoja" x="0" y="70" width="80" height="32" transform="rotate(-25 40 86)"/>
-      <use href="#hoja" x="170" y="60" width="80" height="32" transform="rotate(30 210 76)"/>
-      <use href="#hoja" x="60" y="110" width="70" height="28" transform="rotate(15 95 124)"/>
-      <use href="#hoja" x="120" y="112" width="70" height="28" transform="rotate(-20 155 126)"/>
-      <use href="#rosa" x="40" y="40" width="70" height="70" style="--c:#a9c4e2"/>
-      <use href="#rosa" x="140" y="38" width="72" height="72" style="--c:#5b74a3"/>
-      <use href="#rosa" x="85" y="20" width="90" height="90" style="--c:#f7f7f4"/>
-      <use href="#rosa" x="70" y="88" width="56" height="56" style="--c:#1f2f55"/>
-      <use href="#rosa" x="130" y="90" width="58" height="58" style="--c:#eef1f6"/>
-    </symbol>
+    <path id="cor" d="M50 92C20 70 0 52 0 28 0 12 12 0 27 0c11 0 19 6 23 14C54 6 62 0 73 0c15 0 27 12 27 28 0 24-20 42-50 64z"/>
+    <!-- Moño de listón en línea -->
+    <symbol id="lazo" viewBox="0 0 110 170"><g class="line">
+      <path d="M55 40C40 22 14 10 8 22c-6 12 18 26 47 20zM55 40c15-18 41-30 47-18 6 12-18 26-47 18z"/>
+      <path d="M50 30c-6 2-8 10-2 14M60 30c6 2 8 10 2 14"/>
+      <path d="M51 44c-6 30-24 54-36 92l10-4 4 10c10-40 22-64 25-96"/>
+      <path d="M59 44c4 34 22 60 30 100l-10-3-5 9c-6-40-18-68-17-104"/>
+      <ellipse cx="55" cy="40" rx="6" ry="5"/>
+    </g></symbol>
+    <!-- Anillos -->
+    <symbol id="ic-anillos" viewBox="0 0 64 64"><g class="line"><circle cx="24" cy="38" r="14"/><circle cx="40" cy="38" r="14"/><path d="M34 10l6-6 6 6-6 8z"/></g></symbol>
+    <symbol id="ic-iglesia" viewBox="0 0 64 64"><g class="line"><path d="M32 4v10M27 9h10M18 30l14-14 14 14M22 26v32h20V26M10 58h44M28 58V46a4 4 0 0 1 8 0v12"/><circle cx="32" cy="34" r="4"/></g></symbol>
+    <symbol id="ic-copas" viewBox="0 0 64 64"><g class="line"><path d="M18 6h12l-2 18a6 6 0 0 1-8 0zM46 6H34l2 18a6 6 0 0 0 8 0zM24 28v24M40 28v24M17 56h14M33 56h14"/><path d="M20 14h8M36 14h8"/><path d="M32 4l-2-3M30 6l-4-2"/></g></symbol>
+    <symbol id="ic-pastel" viewBox="0 0 64 64"><g class="line"><path d="M14 58h36V44H14zM18 44V32h28v12M23 32v-9h18v9"/><path d="M14 50c6 3 12-3 18 0s12 3 18 0M18 38c5 2 9-2 14 0s9 2 14 0"/><path d="M32 23v-6"/><path d="M32 17c-2-2-2-5 0-7 2 2 2 5 0 7z"/></g></symbol>
   </defs>
 </svg>
 
-<!-- Sobre de apertura -->
+<!-- Sobre -->
 <div id="sobre" role="button" tabindex="0" aria-label="Abrir invitación">
   <div class="env">
     <div class="back"></div>
-    <div class="ribbon"></div>
     <div class="front"><svg viewBox="0 0 145 100" preserveAspectRatio="none"><path d="M0 100L72.5 52 145 100z" fill="#1d2f5a"/><path d="M0 0l72.5 56L0 100z" fill="#213563"/><path d="M145 0L72.5 56 145 100z" fill="#213563"/></svg></div>
-    <div class="flap"><svg viewBox="0 0 145 58" preserveAspectRatio="none"><path d="M0 0h145L72.5 58z" fill="#2a4073"/><path d="M0 0h145L72.5 58z" fill="none" stroke="#b8bfcc" stroke-width=".4"/></svg></div>
+    <div class="flap"><svg viewBox="0 0 145 58" preserveAspectRatio="none"><path d="M0 0h145L72.5 58z" fill="#2a4073" stroke="#b8bfcc" stroke-width=".4"/></svg></div>
     <div class="seal"><img src="monograma.jpg" alt=""></div>
     <div class="env-txt">Toca para abrir</div>
   </div>
@@ -177,178 +176,181 @@ footer .tag{font-size:10px;letter-spacing:.35em;color:var(--baby);margin-top:6px
 
   <!-- 1. Portada -->
   <section class="hero">
-    <div class="foto"></div>
-    <img class="mono" src="monograma.jpg" alt="Monograma D &amp; E">
-    <div class="txt">
-      <div class="eyebrow">Nos casamos</div>
-      <div class="nombres">Dunia<span class="y">&amp;</span>Emmanuel</div>
-      <div class="fecha"><span>26</span><i></i><span>12</span><i></i><span>26</span></div>
-      <a href="#verso" class="scroll" aria-label="Bajar"></a>
+    <div class="nombres"><span>Dunia</span><span>Emmanuel</span></div>
+    <svg class="lazo"><use href="#lazo"/></svg>
+    <div class="marco reveal">
+      <div class="foto"><img src="portada.jpg" alt="Dunia y Emmanuel" onerror="this.remove()"></div>
+      <div class="std">— SAVE THE DATE —</div>
+    </div>
+    <!-- Palomas en línea -->
+    <svg class="angeles" viewBox="0 0 340 96"><g class="line">
+      <path d="M40 60c14-4 30-2 44 6-10 2-18 8-22 16M84 66c10-16 6-36-10-48 2 14-4 26-14 32"/><path d="M60 50c-10-8-22-10-34-4 10 2 16 8 18 16"/><circle cx="88" cy="62" r="1.5"/>
+      <path d="M300 60c-14-4-30-2-44 6 10 2 18 8 22 16M256 66c-10-16-6-36 10-48-2 14 4 26 14 32"/><path d="M280 50c10-8 22-10 34-4-10 2-16 8-18 16"/><circle cx="252" cy="62" r="1.5"/>
+      <path d="M100 74c40 18 100 18 140 0" stroke-dasharray="2 5"/>
+      <path d="M170 76c-4-6-12-4-12 2 0 6 12 12 12 12s12-6 12-12c0-6-8-8-12-2z"/>
+    </g></svg>
+  </section>
+
+  <!-- 2. Queridos familia y amigos -->
+  <section style="padding-top:20px">
+    <h2 class="reveal">Queridos familiares<br>y amigos</h2>
+    <p class="reveal">¡Se acerca el día más importante de nuestra vida!</p>
+    <div class="semana reveal">
+      <span>24</span><span>25</span>
+      <span class="corazon"><svg viewBox="0 0 100 92"><use href="#cor"/></svg><b>26</b></span>
+      <span>27</span><span>28</span>
+    </div>
+    <div class="mes reveal">Diciembre</div>
+    <p class="reveal">Comenzamos un nuevo capítulo de nuestra historia y queremos compartir este día tan especial con ustedes. Seremos muy felices de tenerlos cerca, llenando la noche de amor, risas y los recuerdos más bonitos.</p>
+    <div class="cd reveal">
+      <div><b id="dd">--</b><small>Días</small></div>
+      <div><b id="hh">--</b><small>Horas</small></div>
+      <div><b id="mm">--</b><small>Min</small></div>
+      <div><b id="ss">--</b><small>Seg</small></div>
     </div>
   </section>
 
-  <!-- 2. Versículo -->
-  <section class="verso" id="verso">
-    <svg class="divider"><use href="#div"/></svg>
-    <p class="q reveal">«A donde tú vayas, iré yo; y donde tú vivas, viviré yo. Tu pueblo será mi pueblo, y tu Dios será mi Dios.»</p>
-    <div class="cita reveal">Rut 1:16</div>
-    <svg class="divider"><use href="#div"/></svg>
+  <!-- Padres y padrinos (texto breve, mismo estilo) -->
+  <section style="padding-top:10px">
+    <h2 class="reveal">Con la bendición<br>de nuestros padres</h2>
+    <div class="det reveal"><div class="tit">Padres de la novia</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Fredy Arnoldo Suárez Melendres<br>Erika Selene Luque García</p></div>
+    <div class="det reveal"><div class="tit">Padres del novio</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Liberato Sandoval Cruz<br>María Magda Ruiz Ruelas</p></div>
+    <h2 class="reveal" style="margin-top:44px">Nuestros padrinos</h2>
+    <div class="det reveal"><div class="tit">Velación</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Rosa Amelia Valenzuela Ruelas y Martín Cruz Bracamontes<br><small>(novia)</small><br>Plácida Ruiz Ruelas y Pedro Alfonso Valenzuela Carrasco<br><small>(novio)</small></p></div>
+    <div class="det reveal"><div class="tit">Anillos</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Betzabé Ruelas Castro y José Rigoberto Ruiz Sandoval</p></div>
+    <div class="det reveal"><div class="tit">Arras</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Adamariz Adilene y Jesús Francisco</p></div>
+    <div class="det reveal"><div class="tit">Lazo</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Lizbeth Melissa y Juan Eduardo</p></div>
+    <div class="det reveal"><div class="tit">Biblia y rosario</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Erika Franciela y Jesús Fernando</p></div>
+    <div class="det reveal"><div class="tit">Ramo</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Ana Rosa Sandoval Ruiz</p></div>
   </section>
 
-  <!-- 3. Cuenta regresiva -->
-  <section class="dark">
-    <div class="eyebrow">Sábado</div>
-    <h2 class="reveal">Faltan</h2>
-    <div class="cd reveal" id="cd">
-      <div><b id="dd">--</b><span>Días</span></div>
-      <div><b id="hh">--</b><span>Horas</span></div>
-      <div><b id="mm">--</b><span>Min</span></div>
-      <div><b id="ss">--</b><span>Seg</span></div>
-    </div>
-    <div class="cal reveal">
-      <div class="mes">Diciembre 2026</div>
-      <div class="grid" id="cal"></div>
-    </div>
-  </section>
-
-  <!-- 4. Padres -->
-  <section>
-    <div class="eyebrow">Con la bendición de Dios y de nuestros padres</div>
-    <h2 class="reveal">Nuestros padres</h2>
-    <div class="familia">
-      <div class="reveal"><h3>Padres de la novia</h3><div class="n">Fredy Arnoldo Suárez Melendres<br>Erika Selene Luque García</div></div>
-      <svg class="divider" style="margin:0 auto"><use href="#div"/></svg>
-      <div class="reveal"><h3>Padres del novio</h3><div class="n">Liberato Sandoval Cruz<br>María Magda Ruiz Ruelas</div></div>
-    </div>
-  </section>
-
-  <!-- 5. Padrinos -->
-  <section class="mist">
-    <h2 class="reveal">Nuestros padrinos</h2>
-    <div class="padrinos">
-      <div class="reveal"><h3>Velación</h3>
-        <div class="n">Rosa Amelia Valenzuela Ruelas<br>&amp; Martín Cruz Bracamontes<span class="sub">Por parte de la novia</span></div>
-        <div class="n" style="margin-top:14px">Plácida Ruiz Ruelas<br>&amp; Pedro Alfonso Valenzuela Carrasco<span class="sub">Por parte del novio</span></div>
-      </div>
-      <div class="reveal"><h3>Anillos</h3><div class="n">Betzabé Ruelas Castro<br>&amp; José Rigoberto Ruiz Sandoval</div></div>
-      <div class="reveal"><h3>Arras</h3><div class="n">Adamariz Adilene &amp; Jesús Francisco</div></div>
-      <div class="reveal"><h3>Lazo</h3><div class="n">Lizbeth Melissa &amp; Juan Eduardo</div></div>
-      <div class="reveal"><h3>Biblia y rosario</h3><div class="n">Erika Franciela &amp; Jesús Fernando</div></div>
-      <div class="reveal"><h3>Ramo</h3><div class="n">Ana Rosa Sandoval Ruiz</div></div>
-    </div>
-  </section>
-
-  <!-- 6. Ceremonia y recepción -->
-  <section>
-    <div class="eyebrow">Sábado 26 de diciembre de 2026</div>
-    <h2 class="reveal">¿Dónde y cuándo?</h2>
-    <div class="evento reveal">
-      <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M32 4v10M27 9h10M18 30l14-14 14 14M22 26v32h20V26M10 58h44M28 58V46a4 4 0 0 1 8 0v12"/><circle cx="32" cy="34" r="4"/></svg>
-      <h3>Ceremonia religiosa</h3>
-      <div class="hora">7:00 p.m.</div>
-      <div class="lugar">Parroquia San Antonio de Padua</div>
-      <div class="dir">Eucalipto s/n, Centro, 81315 Ahome, Sin.</div>
-      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parroquia+San+Antonio+de+Padua+Eucalipto+Centro+81315+Ahome+Sinaloa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Ver ubicación</a>
-    </div>
-    <div class="evento reveal">
-      <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 6h10l-2 18a6 6 0 0 1-6 0zM42 6h-10l2 18a6 6 0 0 0 6 0zM27 30v22M37 30v22M21 56h12M31 56h12"/><path d="M24 14h6M34 14h6"/></svg>
-      <h3>Recepción</h3>
-      <div class="hora">9:00 p.m.</div>
-      <div class="lugar">Jardín de eventos El Capricho</div>
-      <div class="dir">La Capilla, 81310 Bagojo Colectivo, Sin.</div>
-      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jardin+de+eventos+El+Capricho+Bagojo+Colectivo+Sinaloa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Ver ubicación</a>
-    </div>
-  </section>
-
-  <!-- 7. Itinerario -->
-  <section class="mist">
+  <!-- 3. Itinerario -->
+  <section class="timing">
     <h2 class="reveal">Itinerario</h2>
-    <div class="timeline reveal">
-      <div class="t"><div class="h">7:00 p.m.</div><span class="dot"></span><div class="l">Misa</div></div>
-      <div class="t"><div class="h">9:00 p.m.</div><span class="dot"></span><div class="l">Recepción</div></div>
-      <div class="t" style="margin:0"><div class="h">9:00 p.m.</div><span class="dot"></span><div class="l">Inicio del evento</div></div>
-    </div>
+    <svg class="onda" viewBox="0 0 100 400" preserveAspectRatio="none"><path class="line" d="M50 0C90 40 90 80 50 110S10 180 50 210s40 70 0 100-40 60 0 90" vector-effect="non-scaling-stroke" stroke-opacity=".45"/></svg>
+    <div class="ev izq reveal"><div class="tx"><div class="tit">Ceremonia</div><div class="hora">7:00 p.m.</div><p>Misa en la Parroquia San Antonio de Padua.</p></div><svg class="ic"><use href="#ic-iglesia"/></svg></div>
+    <div class="ev der reveal"><div class="tx"><div class="tit">Votos</div><p>Dos «sí» que se entrelazan en un «para siempre».</p></div><svg class="ic"><use href="#ic-anillos"/></svg></div>
+    <div class="ev izq reveal"><div class="tx"><div class="tit">Recepción</div><div class="hora">9:00 p.m.</div><p>Nos reunimos en el jardín de eventos El Capricho.</p></div><svg class="ic"><use href="#ic-copas"/></svg></div>
+    <div class="ev der reveal"><div class="tx"><div class="tit">Celebración</div><div class="hora">9:00 p.m.</div><p>Inicio del evento: cena, brindis y mucho baile.</p></div><svg class="ic"><use href="#ic-pastel"/></svg></div>
   </section>
 
-  <!-- 8. Dress code -->
+  <!-- 4. Lugar -->
+  <section class="lugar">
+    <div class="cuerpo">
+      <h2 class="reveal">Lugar del evento</h2>
+      <div class="sitio reveal">
+        <div class="tit">Ceremonia religiosa</div>
+        <div class="hr">7:00 P.M.</div>
+        <p>Parroquia San Antonio de Padua<br>Eucalipto s/n, Centro, 81315 Ahome, Sin.</p>
+        <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parroquia+San+Antonio+de+Padua+Eucalipto+Centro+81315+Ahome+Sinaloa">Ver en el mapa</a>
+      </div>
+      <div class="sitio reveal" style="margin-top:28px">
+        <div class="tit">Recepción</div>
+        <div class="hr">9:00 P.M.</div>
+        <p>Jardín de eventos El Capricho<br>La Capilla, 81310 Bagojo Colectivo, Sin.</p>
+        <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jardin+de+eventos+El+Capricho+Bagojo+Colectivo+Sinaloa">Ver en el mapa</a>
+      </div>
+    </div>
+    <svg class="punta" viewBox="0 0 100 46" preserveAspectRatio="none"><path d="M0 0H100V2C100 18 70 28 50 46 30 28 0 18 0 2Z" fill="#1c2b52"/></svg>
+    <div class="lazos"><svg><use href="#lazo"/></svg><svg style="transform:scaleX(-1)"><use href="#lazo"/></svg></div>
+  </section>
+
+  <!-- 5. Dress code -->
   <section class="dress">
-    <div class="eyebrow">Código de vestimenta</div>
-    <svg class="reveal" viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 14l8-6 8 6-4 70H18zM30 8v8M26 20l4 4 4-4"/><path d="M84 8h12l-2 12 14 64H72l14-64z"/><path d="M88 20h8"/></svg>
-    <h2 class="reveal">Formal</h2>
-    <p class="reveal">Les pedimos amablemente evitar los siguientes colores, reservados para los novios y el cortejo:</p>
-    <div class="paleta reveal"><span class="no" style="background:#fff;border:1px solid #d6dbe4" title="Blanco"></span><span class="no" style="background:#1f2f55" title="Azul marino"></span></div>
-    <div class="aviso reveal">Blanco &nbsp;·&nbsp; Azul marino</div>
+    <h2 class="reveal">Código de vestimenta</h2>
+    <p class="reveal">Queremos llenar este día de luz, elegancia y armonía, y su atuendo puede ser parte de esa imagen. El código es <b style="font-weight:500">formal</b>.</p>
+    <div class="corazones reveal">
+      <svg viewBox="0 0 100 92"><use href="#cor" fill="#5b74a3"/></svg>
+      <svg viewBox="0 0 100 92"><use href="#cor" fill="#a9c4e2"/></svg>
+      <svg viewBox="0 0 100 92"><use href="#cor" fill="#b8bfcc"/></svg>
+      <svg viewBox="0 0 100 92"><use href="#cor" fill="#7b8499"/></svg>
+    </div>
+    <div class="nota reveal">Por favor eviten: blanco y azul marino</div>
+    <div class="corazones reveal" style="margin-top:10px">
+      <svg viewBox="-4 -4 108 100"><use href="#cor" fill="#fff" stroke="#c9ced8" stroke-width="3"/><path d="M8 84L92 4" stroke="#a14a55" stroke-width="5"/></svg>
+      <svg viewBox="-4 -4 108 100"><use href="#cor" fill="#1c2b52"/><path d="M8 84L92 4" stroke="#a14a55" stroke-width="5"/></svg>
+    </div>
+    <!-- Siluetas de vestidos y traje -->
+    <svg class="siluetas reveal" viewBox="0 0 340 170"><g stroke="none">
+      <g fill="#5b74a3"><circle cx="40" cy="14" r="8"/><path d="M33 26h14l4 30-4 4 14 108H19L33 60l-4-4z"/></g>
+      <g fill="#a9c4e2"><circle cx="95" cy="14" r="8"/><path d="M88 26h14l3 34 10 108H75l10-108z"/></g>
+      <g fill="#7b8499"><circle cx="150" cy="14" r="8"/><path d="M139 26h22l4 70-4 72h-8l-3-70-3 70h-8l-4-72z"/></g>
+      <g fill="#b8bfcc"><circle cx="205" cy="14" r="8"/><path d="M198 26h14l2 30 16 112h-50l16-112z"/></g>
+      <g fill="#3e5180"><circle cx="260" cy="14" r="8"/><path d="M249 26h22l4 70-4 72h-8l-3-70-3 70h-8l-4-72z"/></g>
+      <g fill="#8fa7c9"><circle cx="312" cy="14" r="8"/><path d="M305 26h14l4 30-4 4 12 108h-38l12-108-4-4z"/></g>
+    </g></svg>
   </section>
 
-  <!-- 9. Galería -->
-  <section class="mist">
-    <div class="eyebrow">Nuestra historia</div>
-    <h2 class="reveal">Galería</h2>
-    <div class="galeria reveal">
-      <div class="ph w"><img src="foto1.jpg" alt="" onerror="this.remove()">D &amp; E</div>
-      <div class="ph"><img src="foto2.jpg" alt="" onerror="this.remove()">♡</div>
-      <div class="ph"><img src="foto3.jpg" alt="" onerror="this.remove()">♡</div>
-      <div class="ph"><img src="foto4.jpg" alt="" onerror="this.remove()">♡</div>
-      <div class="ph"><img src="foto5.jpg" alt="" onerror="this.remove()">♡</div>
+  <!-- 6. Detalles -->
+  <section style="padding-top:20px">
+    <h2 class="reveal">Detalles importantes<br>y deseos</h2>
+    <div class="det reveal"><div class="tit">Lluvia de sobres</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Valoramos mucho su cariño. Si desean tener un detalle con nosotros, habrá lluvia de sobres en la recepción.</p></div>
+    <div class="det reveal"><div class="tit">Solo adultos</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p>Amamos a sus pequeños, pero esta celebración será únicamente para adultos. Gracias por su comprensión.</p></div>
+    <div class="det reveal"><div class="tit">Comparte tus fotos</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p class="hashtag">#porFinElSiMasEsperadoDeEmmanuel</p></div>
+    <div class="det reveal"><div class="tit">Rut 1:16</div><svg class="mini" viewBox="0 0 100 92"><use href="#cor"/></svg><p><i>«A donde tú vayas, iré yo; y donde tú vivas, viviré yo. Tu pueblo será mi pueblo, y tu Dios será mi Dios.»</i></p></div>
+    <div class="botones reveal">
+      <a href="tel:+526681482118" aria-label="Llamar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+      <a href="https://wa.me/526681482118" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
     </div>
   </section>
 
-  <!-- 10. Lluvia de sobres + hashtag -->
-  <section>
-    <svg class="sobre-ic reveal" viewBox="0 0 70 56" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="12" width="64" height="40" rx="3"/><path d="M3 15l32 22 32-22"/><path d="M28 6c0-3 4-4 7 0 3-4 7-3 7 0 0 4-7 8-7 8s-7-4-7-8z" fill="#a9c4e2" stroke="none"/></svg>
-    <h2 class="reveal">Lluvia de sobres</h2>
-    <p class="reveal">Su presencia es nuestro mejor regalo. Si desean tener un detalle con nosotros, habrá una caja para sobres el día de la recepción.</p>
-    <svg class="divider"><use href="#div"/></svg>
-    <div class="eyebrow">Comparte tus fotos</div>
-    <div class="hashtag reveal">#porFinElSiMasEsperadoDeEmmanuel</div>
+  <!-- 7. Confirmación -->
+  <section class="anketa">
+    <h2 class="reveal">Confirmación</h2>
+    <p class="reveal">Para preparar todo con cariño y asegurar la comodidad de todos, les pedimos llenar este breve formulario.</p>
+    <form id="rsvp" class="reveal">
+      <input class="campo" name="nombre" placeholder="Nombre y apellido" required>
+      <input class="campo" name="tel" type="tel" placeholder="Tu número de teléfono">
+      <div class="grupo">Confirma tu asistencia</div>
+      <label class="opc"><input type="radio" name="asis" value="¡Sí, con mucho gusto asistiré!" checked>Sí, con mucho gusto asistiré</label>
+      <label class="opc"><input type="radio" name="asis" value="Lamentablemente no podré asistir">Lamentablemente no podré asistir</label>
+      <div class="grupo">¿Qué prefieres para brindar?</div>
+      <label class="opc"><input type="checkbox" name="beb" value="Vino tinto">Vino tinto</label>
+      <label class="opc"><input type="checkbox" name="beb" value="Vino blanco">Vino blanco</label>
+      <label class="opc"><input type="checkbox" name="beb" value="Champaña">Champaña</label>
+      <label class="opc"><input type="checkbox" name="beb" value="Tequila">Tequila</label>
+      <label class="opc"><input type="checkbox" name="beb" value="Whisky">Whisky</label>
+      <label class="opc"><input type="checkbox" name="beb" value="Sin alcohol">Sin alcohol</label>
+      <button class="link" type="submit">Enviar por WhatsApp</button>
+      <div class="fecha-lim">Fecha límite: domingo 20 de diciembre</div>
+    </form>
+    <!-- Dos corazones entrelazados -->
+    <svg class="anillos reveal" viewBox="0 0 210 130"><g fill="none" stroke="#f1f4f9" stroke-width="1.3">
+      <path d="M78 116C48 96 26 78 26 54c0-16 12-28 27-28 11 0 19 6 25 14 6-8 14-14 25-14 15 0 27 12 27 28 0 24-22 42-52 62z" transform="rotate(-10 78 70)"/>
+      <path d="M132 116c-30-20-52-38-52-62 0-16 12-28 27-28 11 0 19 6 25 14 6-8 14-14 25-14 15 0 27 12 27 28 0 24-22 42-52 62z" transform="rotate(10 132 70)"/>
+      <path d="M100 8c-6 4-10 10-4 14 6 4 12-2 8-8M100 8c6-4 14-4 14 2s-8 6-12 2M104 22c-4 6-12 10-16 8M104 22c2 6 8 12 14 12"/>
+    </g><text x="72" y="78" font-family="Pinyon Script,cursive" font-size="40" fill="#f1f4f9" text-anchor="middle">D</text><text x="138" y="78" font-family="Pinyon Script,cursive" font-size="40" fill="#f1f4f9" text-anchor="middle">E</text></svg>
   </section>
 
-  <!-- 11. Confirmación -->
-  <section class="dark">
-    <div class="eyebrow">R.S.V.P.</div>
-    <h2 class="reveal">Confirma tu asistencia</h2>
-    <p class="reveal">Les agradeceremos confirmar a más tardar el</p>
-    <div class="limite reveal">domingo 20 de diciembre</div>
-    <a class="btn reveal" target="_blank" rel="noopener" href="https://wa.me/526681482118?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Dunia%20y%20Emmanuel%20el%2026%20de%20diciembre."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>Confirmar por WhatsApp</a>
-    <div><div class="adultos reveal">✦ &nbsp;Evento solo para adultos. Agradecemos su comprensión.</div></div>
-  </section>
-
-  <footer class="dark" style="padding-top:20px">
-    <img class="mono-f" src="monograma.jpg" alt="">
+  <!-- 8. Final -->
+  <section class="final">
+    <h2 class="reveal">Que este día brille<br>aún más gracias<br>a su presencia —<br>¡nos vemos pronto!</h2>
+    <div class="foto2 reveal"><img src="foto-final.jpg" alt="" onerror="this.remove()"></div>
     <p class="gracias reveal">“Gracias por ser parte de nuestra historia y por acompañarnos en uno de los días más felices de nuestra vida.”</p>
-    <div class="firma">Dunia &amp; Emmanuel</div>
-    <div class="tag">26 · XII · 2026</div>
-  </footer>
+    <div class="firma reveal">Con amor,<br>Dunia y Emmanuel</div>
+  </section>
 </main>
 
 <script>
-// Sobre
 const sobre=document.getElementById('sobre');
 function abrir(){sobre.classList.add('abierto');document.body.classList.remove('locked');}
 sobre.addEventListener('click',abrir);
 sobre.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')abrir()});
 
-// Cuenta regresiva (Sinaloa, UTC-7)
-const meta=new Date('2026-12-26T19:00:00-07:00').getTime();
-const pad=n=>String(n).padStart(2,'0');
-function tick(){
-  let d=Math.max(0,meta-Date.now())/1000;
-  document.getElementById('dd').textContent=Math.floor(d/86400);
-  document.getElementById('hh').textContent=pad(Math.floor(d%86400/3600));
-  document.getElementById('mm').textContent=pad(Math.floor(d%3600/60));
-  document.getElementById('ss').textContent=pad(Math.floor(d%60));
-}
+const meta=new Date('2026-12-26T19:00:00-07:00').getTime(), pad=n=>String(n).padStart(2,'0');
+function tick(){let d=Math.max(0,meta-Date.now())/1000;
+  dd.textContent=Math.floor(d/86400);hh.textContent=pad(Math.floor(d%86400/3600));
+  mm.textContent=pad(Math.floor(d%3600/60));ss.textContent=pad(Math.floor(d%60));}
 tick();setInterval(tick,1000);
 
-// Calendario diciembre 2026 (inicia en martes)
-const cal=document.getElementById('cal');
-['D','L','M','M','J','V','S'].forEach(h=>cal.insertAdjacentHTML('beforeend',`<div class="h">${h}</div>`));
-const inicio=new Date(2026,11,1).getDay();
-for(let i=0;i<inicio;i++)cal.insertAdjacentHTML('beforeend','<div></div>');
-for(let d=1;d<=31;d++)cal.insertAdjacentHTML('beforeend',`<div class="d${d===26?' dia':''}">${d}</div>`);
+document.getElementById('rsvp').addEventListener('submit',e=>{
+  e.preventDefault();const f=e.target;
+  const beb=[...f.querySelectorAll('[name=beb]:checked')].map(x=>x.value).join(', ')||'—';
+  const txt=`¡Hola! Confirmación boda Dunia & Emmanuel\nNombre: ${f.nombre.value}\nTeléfono: ${f.tel.value||'—'}\nAsistencia: ${f.asis.value}\nBebidas: ${beb}`;
+  window.open('https://wa.me/526681482118?text='+encodeURIComponent(txt),'_blank');
+});
 
-// Aparición al hacer scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
