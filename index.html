@@ -156,6 +156,15 @@ form{text-align:left;margin-top:22px}
 .anketa h2,.lugar h2{background:linear-gradient(100deg,#aab2c2,#f4f6fa 30%,#b7bfcd 55%,#f4f6fa 80%,#aab2c2);-webkit-background-clip:text;background-clip:text;color:transparent}
 .siluetas g{stroke:var(--linea);stroke-width:1.2;fill-opacity:.55}
 .semana span:not(.corazon){transform:rotate(var(--r,0deg))}
+.hero .esq{position:absolute;right:-34px;top:-20px;width:215px;z-index:1;transform:scaleX(-1);filter:drop-shadow(0 4px 6px rgba(20,33,61,.12))}
+.guir{display:block;width:108%;margin:-6px -4% 6px}
+.foto-wrap{position:relative;width:64%;margin:70px auto 0}
+.foto-wrap .foto2{width:100%;margin:0}
+.esq-f{position:absolute;left:-62px;top:-40px;width:170px;z-index:2}
+.final{padding-bottom:110px}
+.final:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:120px;background:url(guirnalda.webp) center bottom/96% auto no-repeat;transform:scaleY(-1)}
+.hero .nombres{text-shadow:0 0 12px var(--papel)}
+.ev img.ic{width:96px;height:96px;flex:none;border-radius:50%;object-fit:cover;background:#122349;border:2px solid var(--silver);box-shadow:0 0 0 5px var(--papel),0 0 0 6px var(--mist),0 10px 18px -6px rgba(20,33,61,.45)}
 </style>
 </head>
 <body class="locked">
@@ -196,7 +205,7 @@ form{text-align:left;margin-top:22px}
   <!-- 1. Portada -->
   <section class="hero">
     <div class="nombres"><span>Dunia</span><span>Emmanuel</span></div>
-    <svg class="lazo"><use href="#lazo"/></svg>
+    <img class="esq" src="esquina.webp" alt="">
     <div class="marco reveal"><span class="washi a"></span><span class="washi b"></span>
       <div class="foto"><img src="portada.jpg" alt="Dunia y Emmanuel" onerror="this.remove()"></div>
       <div class="std foil">— SAVE THE DATE —</div>
@@ -214,6 +223,7 @@ form{text-align:left;margin-top:22px}
 
   <!-- 2. Queridos familia y amigos -->
   <section style="padding-top:20px">
+    <img class="guir reveal" src="guirnalda.webp" alt="">
     <h2 class="reveal">Queridos familiares<br>y amigos</h2>
     <p class="reveal">¡Se acerca el día más importante de nuestra vida!</p>
     <div class="semana reveal">
@@ -249,10 +259,10 @@ form{text-align:left;margin-top:22px}
   <section class="timing">
     <h2 class="reveal">Itinerario</h2>
     <svg class="onda" viewBox="0 0 100 400" preserveAspectRatio="none"><path class="line" d="M50 0C90 40 90 80 50 110S10 180 50 210s40 70 0 100-40 60 0 90" vector-effect="non-scaling-stroke" stroke-opacity=".45" style="filter:none"/></svg>
-    <div class="ev izq reveal"><div class="tx"><div class="tit">Ceremonia</div><div class="hora">7:00 p.m.</div><p>Misa en la Parroquia San Antonio de Padua.</p></div><svg class="ic"><use href="#ic-iglesia"/></svg></div>
-    <div class="ev der reveal"><div class="tx"><div class="tit">Votos</div><p>Dos «sí» que se entrelazan en un «para siempre».</p></div><svg class="ic"><use href="#ic-anillos"/></svg></div>
-    <div class="ev izq reveal"><div class="tx"><div class="tit">Recepción</div><div class="hora">9:00 p.m.</div><p>Nos reunimos en el jardín de eventos El Capricho.</p></div><svg class="ic"><use href="#ic-copas"/></svg></div>
-    <div class="ev der reveal"><div class="tx"><div class="tit">Celebración</div><div class="hora">9:00 p.m.</div><p>Inicio del evento: cena, brindis y mucho baile.</p></div><svg class="ic"><use href="#ic-pastel"/></svg></div>
+    <div class="ev izq reveal"><div class="tx"><div class="tit">Ceremonia</div><div class="hora">7:00 p.m.</div><p>Misa en la Parroquia San Antonio de Padua.</p></div><img class="ic" src="ic-iglesia.webp" alt=""></div>
+    <div class="ev der reveal"><div class="tx"><div class="tit">Votos</div><p>Dos «sí» que se entrelazan en un «para siempre».</p></div><img class="ic" src="ic-novios.webp" alt=""></div>
+    <div class="ev izq reveal"><div class="tx"><div class="tit">Recepción</div><div class="hora">9:00 p.m.</div><p>Nos reunimos en el jardín de eventos El Capricho.</p></div><img class="ic" src="ic-mesa.webp" alt=""></div>
+    <div class="ev der reveal"><div class="tx"><div class="tit">Celebración</div><div class="hora">9:00 p.m.</div><p>Inicio del evento: cena, brindis y mucho baile.</p></div><img class="ic" src="ic-velas.webp" alt=""></div>
   </section>
 
   <!-- 4. Lugar -->
@@ -346,7 +356,7 @@ form{text-align:left;margin-top:22px}
   <!-- 8. Final -->
   <section class="final">
     <h2 class="reveal">Que este día brille<br>aún más gracias<br>a su presencia —<br>¡nos vemos pronto!</h2>
-    <div class="foto2 reveal"><img src="foto-final.jpg" alt="" onerror="this.remove()"></div>
+    <div class="foto-wrap reveal"><img class="esq-f" src="esquina.webp" alt=""><div class="foto2"><img src="foto-final.jpg" alt="" onerror="this.remove()"></div></div>
     <p class="gracias reveal">“Gracias por ser parte de nuestra historia y por acompañarnos en uno de los días más felices de nuestra vida.”</p>
     <div class="firma reveal">Con amor,<br>Dunia y Emmanuel</div>
   </section>
